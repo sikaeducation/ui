@@ -1,9 +1,0 @@
-@use "../../styles/typography";
-@use "../../styles/sizes";
-
-.AppInbox {
-  width: sizes.$content-width-xl;
-  h1 {
-    @include typography.heading-font-1;
-  }
-}

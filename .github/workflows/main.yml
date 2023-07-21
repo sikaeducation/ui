@@ -1,18 +1,15 @@
 name: CI
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-  workflow_dispatch:
+  release:
+    types: [ published ]
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Run tests
-        run: ./scripts/test
+        run: npm ci && npm test
   build:
     needs:
       - test
@@ -22,12 +19,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
       - name: Build app
-        run: npm install && npm run build
-        env:
-          REACT_APP_AUTH_ZERO_AUDIENCE: ${{ secrets.AUTH_ZERO_AUDIENCE }} 
-          REACT_APP_AUTH_ZERO_DOMAIN: ${{ secrets.AUTH_ZERO_DOMAIN }} 
-          REACT_APP_CLIENT_ID: ${{ secrets.AUTH_ZERO_CLIENT_ID }}
-          REACT_APP_ACTIVITY_SERVICE_BASE_URL: ${{ secrets.ACTIVITY_SERVICE_BASE_URL }}
+        run: npm ci && npm run build
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
@@ -43,11 +35,12 @@ jobs:
         with:
           name: build
           path: build
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v1.2.3
+      - name: Setup npmrc
+        uses: actions/setup-node@v3
         with:
-          publish-dir: build
-          production-branch: master
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Deploy to npm
+        run: npm publish
         env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
