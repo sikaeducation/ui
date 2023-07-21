@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run tests
+        run: ./scripts/test
+  build:
+    needs:
+      - test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+      - name: Build app
+        run: npm install && npm run build
+        env:
+          REACT_APP_AUTH_ZERO_AUDIENCE: ${{ secrets.AUTH_ZERO_AUDIENCE }} 
+          REACT_APP_AUTH_ZERO_DOMAIN: ${{ secrets.AUTH_ZERO_DOMAIN }} 
+          REACT_APP_CLIENT_ID: ${{ secrets.AUTH_ZERO_CLIENT_ID }}
+          REACT_APP_ACTIVITY_SERVICE_BASE_URL: ${{ secrets.ACTIVITY_SERVICE_BASE_URL }}
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: build
+  deploy:
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+          path: build
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.2.3
+        with:
+          publish-dir: build
+          production-branch: master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
