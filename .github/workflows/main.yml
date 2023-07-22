@@ -27,9 +27,9 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build
-          path: build
+          path: storybook-static
       - name: Run tests
-        run: npm test:ci
+        run: npm run test:ci
   deploy:
     needs:
       - test
