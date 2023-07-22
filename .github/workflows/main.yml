@@ -14,7 +14,7 @@ jobs:
       - name: Install testing dependencies
         run: npm install concurrently http-server wait-on
       - name: Run tests
-        run: npx concurrently -k -s first -n "Storybook,Component Tests" -c "bgGray.white,auto" \ "npx http-server storybook-static --port 6006 --silent" \ "npx wait-on tcp:6006 && npm test" \
+        run: npx concurrently -k -s first -n "Storybook,Component Tests" -c "bgGray.white,auto" \ "npx http-server storybook-static --port 6006 --silent" \ "npx wait-on tcp:6006 && npm test"
   build:
     needs:
       - test
