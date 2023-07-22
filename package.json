@@ -1,7 +1,6 @@
 {
 	"name": "@sikaeducation/ui",
 	"version": "0.1.11",
-	"private": true,
 	"scripts": {
 		"start": "start-storybook -p 6006",
 		"build": "build-storybook",
@@ -47,6 +46,7 @@
 		"axe-playwright": "^1.1.11",
 		"babel-plugin-named-exports-order": "^0.0.2",
 		"classnames": "^2.3.1",
+		"concurrently": "^8.2.0",
 		"date-fns": "^2.28.0",
 		"eslint": "^8.6.0",
 		"eslint-config-airbnb": "^19.0.4",
@@ -60,6 +60,7 @@
 		"eslint-plugin-react-hooks": "^4.3.0",
 		"eslint-plugin-storybook": "^0.6.8",
 		"expect": "^29.3.1",
+		"http-server": "^14.1.1",
 		"lodash": "^4.17.21",
 		"prettier": "^2.5.1",
 		"prop-types": "^15.8.1",
@@ -80,6 +81,7 @@
 		"storybook-react-context": "^0.6.0",
 		"ts-node": "^10.9.1",
 		"typescript": "^4.5.4",
+		"wait-on": "^7.0.1",
 		"web-vitals": "^2.1.2",
 		"webpack": "^5.52.0",
 		"yaml": "^1.10.2"
