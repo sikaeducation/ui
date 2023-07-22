@@ -1,6 +1,6 @@
 {
 	"name": "@sikaeducation/ui",
-	"version": "0.1.11",
+	"version": "0.1.12",
 	"scripts": {
 		"start": "start-storybook -p 6006",
 		"build": "build-storybook",
