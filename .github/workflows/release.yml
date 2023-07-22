@@ -1,0 +1,16 @@
+name: Automated Release
+
+on:
+  push:
+    tags:
+      - v0.**
+permissions: read-all
+jobs:
+  release-on-push:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: rymndhng/release-on-push-action@v0.28.0
+        with:
+          bump_version_scheme: patch
