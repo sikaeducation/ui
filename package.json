@@ -6,7 +6,9 @@
 		"build": "build-storybook",
 		"test": "test-storybook",
 		"test:watch": "test-storybook --watch",
-		"test:ci": "npx concurrently -k -s first -n \"Storybook,Component Tests\" -c \"bgGray.white,auto\" \"npx http-server storybook-static --port 6006 --silent\" \"npx wait-on tcp:6006 && npm test\""
+		"test:ci": "npx concurrently -k -s first -n \"Storybook,Component Tests\" -c \"bgGray.white,auto\" \"npm:ci:serve\" \"npm:ci:wait-to-test\"",
+		"ci:wait-to-test": "npx wait-on http://127.0.0.1:6006 && npm test",
+		"ci:serve": "http-server storybook-static --port 6006 --silent"
 	},
 	"dependencies": {
 		"@babel/plugin-transform-modules-commonjs": "^7.16.7",

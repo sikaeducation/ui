@@ -14,8 +14,10 @@ jobs:
         with:
           node-version: '19'
           cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
       - name: Build app
-        run: npm ci && npm run build
+        run: npm run build
       - name: Run tests
         run: npm run test:ci
       - name: Setup npmrc
