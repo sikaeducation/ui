@@ -1,4 +1,4 @@
-name: CI
+name: Deploy to npm
 
 on:
   release:
@@ -17,7 +17,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build
-          path: build
+          path: storybook-static
   test:
     needs:
       - build
