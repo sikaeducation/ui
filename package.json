@@ -106,5 +106,5 @@
 	},
 	"repository": "git@github.com:sikaeducation/janus.git",
 	"author": "Kyle Coberly <kyle.coberly@gmail.com>",
-	"license": "Private"
+	"license": "Apache 2.0"
 }
