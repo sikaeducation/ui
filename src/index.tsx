@@ -1,24 +1,28 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./styles/index.scss";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+export * from "./components/AppNotification";
+export * from "./components/Avatar";
+export * from "./components/Breadcrumbs";
+export * from "./components/Button";
+export * from "./components/Checkbox";
+export * from "./components/DataTable";
+export * from "./components/Drawer";
+export * from "./components/EditableField";
+export * from "./components/Form";
+export * from "./components/Heading";
+export * from "./components/Icon";
+export * from "./components/IndicatorDeferred";
+export * from "./components/IndicatorQuestion";
+export * from "./components/IndicatorSubmissionAccepted";
+export * from "./components/IndicatorSubmissionPending";
+export * from "./components/IndicatorSubmissionRejected";
+export * from "./components/IndicatorViewClear";
+export * from "./components/IndicatorViewConfident";
+export * from "./components/IndicatorViewUnclear";
+export * from "./components/Logo";
+export * from "./components/Markdown";
+export * from "./components/Separator";
+export * from "./components/Skeleton";
+export * from "./components/Tag";
+export * from "./components/TextArea";
+export * from "./components/TextInput";
+export * from "./components/Toggle";
 
-if (process.env.NODE_ENV !== "production") {
-  // eslint-disable-next-line
-	console.log("Environment:");
-  // eslint-disable-next-line
-	console.table(process.env);
-}
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
