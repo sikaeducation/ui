@@ -10,7 +10,8 @@
 	"scripts": {
 		"start": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
-		"build": "microbundle -f modern",
+		"build": "microbundle -f modern -o dist/index.js && npm run build:styles",
+		"build:styles": "cp -r src/styles dist/styles",
 		"test": "test-storybook",
 		"test:watch": "test-storybook --watch",
 		"test:ci": "concurrently -k -s first -n \"Storybook,Component Tests\" -c \"bgGray.white,auto\" \"npm:ci:serve\" \"npm:ci:wait-to-test\"",
@@ -85,7 +86,6 @@
 		"remark-frontmatter": "^4.0.1",
 		"remark-gfm": "^3.0.1",
 		"remark-unwrap-images": "^3.0.1",
-		"sass": "^1.45.2",
 		"storybook-addon-react-router-v6": "^0.2.1",
 		"storybook-react-context": "^0.6.0",
 		"ts-node": "^10.9.1",
@@ -115,6 +115,7 @@
 	"author": "Kyle Coberly <kyle.coberly@gmail.com>",
 	"license": "Apache 2.0",
 	"devDependencies": {
-		"microbundle": "^0.15.1"
+		"microbundle": "^0.15.1",
+		"sass": "^1.45.2"
 	}
 }
