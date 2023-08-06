@@ -4,16 +4,13 @@
 	"type": "module",
 	"source": "src/index.ts",
 	"exports": {
-		"require": "./dist/index.cjs",
 		"default": "./dist/index.js"
 	},
-	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
-	"unpkg": "index.umd.js",
 	"scripts": {
 		"start": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
-		"build": "microbundle --globals react=React",
+		"build": "microbundle -f modern",
 		"test": "test-storybook",
 		"test:watch": "test-storybook --watch",
 		"test:ci": "concurrently -k -s first -n \"Storybook,Component Tests\" -c \"bgGray.white,auto\" \"npm:ci:serve\" \"npm:ci:wait-to-test\"",
