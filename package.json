@@ -1,7 +1,6 @@
 {
 	"name": "@sikaeducation/ui",
 	"version": "0.1.22",
-	"type": "module",
 	"source": "src/index.ts",
 	"exports": {
 		"default": "./dist/index.js"

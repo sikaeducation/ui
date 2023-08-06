@@ -9,7 +9,7 @@
 			"dom.iterable",
 			"esnext"
 		],
-		"module": "ESNext",
+		"module": "CommonJS",
 		"moduleResolution": "node",
 		"noEmit": true,
 		"resolveJsonModule": true,
