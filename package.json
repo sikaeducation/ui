@@ -2,15 +2,16 @@
 	"name": "@sikaeducation/ui",
 	"version": "0.2.0",
 	"source": "src/index.ts",
-	"exports": {
-		"default": "./dist/index.js"
-	},
+	"exports": "./dist/index.js",
 	"module": "./dist/index.js",
+	"main": "dist/ui.modern.js",
+	"types": "dist/index.d.ts",
 	"scripts": {
 		"start": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
-		"build": "microbundle -f modern -o dist/index.js && npm run build:styles",
+		"build": "microbundle -f modern && npm run build:styles",
 		"build:styles": "cp -r src/styles dist/styles",
+		"build:package": "cp -r src/styles dist/styles",
 		"test": "test-storybook",
 		"test:watch": "test-storybook --watch",
 		"test:ci": "concurrently -k -s first -n \"Storybook,Component Tests\" -c \"bgGray.white,auto\" \"npm:ci:serve\" \"npm:ci:wait-to-test\"",
