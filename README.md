@@ -7,6 +7,8 @@ Sika's UI library
 ## Scripts
 
 * `start` - Launch a local server on 6006
+* `build` - Build the component library and copy the
+* `build:storybook` - Build static storybook site
 * `test` - Runs all tests
-* `build` - Do a static build of the Storybook site
+* `test:ci` - Run HTTP server and Playwright tests on one process
 * `test:watch` - Run tests continuously
