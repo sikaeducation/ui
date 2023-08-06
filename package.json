@@ -9,6 +9,9 @@
 	"module": "./dist/index.js",
 	"main": "dist/ui.modern.js",
 	"types": "dist/index.d.ts",
+	"files": [
+		"dist/*"
+	],
 	"scripts": {
 		"start": "start-storybook -p 6006",
 		"build": "microbundle -f modern && npm run build:styles",
