@@ -1,9 +1,19 @@
 {
 	"name": "@sikaeducation/ui",
 	"version": "0.1.22",
+	"type": "module",
+	"source": "src/index.ts",
+	"exports": {
+		"require": "./dist/index.cjs",
+		"default": "./dist/index.js"
+	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"unpkg": "index.umd.js",
 	"scripts": {
 		"start": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
+		"build": "microbundle --globals react=React",
 		"test": "test-storybook",
 		"test:watch": "test-storybook --watch",
 		"test:ci": "concurrently -k -s first -n \"Storybook,Component Tests\" -c \"bgGray.white,auto\" \"npm:ci:serve\" \"npm:ci:wait-to-test\"",
@@ -106,5 +116,8 @@
 	},
 	"repository": "git@github.com:sikaeducation/janus.git",
 	"author": "Kyle Coberly <kyle.coberly@gmail.com>",
-	"license": "Apache 2.0"
+	"license": "Apache 2.0",
+	"devDependencies": {
+		"microbundle": "^0.15.1"
+	}
 }
