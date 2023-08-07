@@ -9,7 +9,7 @@
 		"types": "./dist/index.d.ts",
 		"styles": "./dist/index.css",
 		"require": "./dist/index.js",
-		"default": "./dist/index.modern.mjs"
+		"default": "./dist/index.js"
 	},
 	"module": "./dist/index.modern.mjs",
 	"main": "dist/index.js",
