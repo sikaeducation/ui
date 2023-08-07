@@ -7,16 +7,16 @@
 	"source": "src/index.ts",
 	"exports": "./dist/index.js",
 	"module": "./dist/index.js",
-	"main": "dist/ui.modern.js",
+	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"files": [
 		"dist/*"
 	],
 	"scripts": {
 		"start": "start-storybook -p 6006",
-		"build": "microbundle -f modern && npm run build:styles",
-		"build:styles": "cp -r src/styles dist/styles",
+		"build": "rm -rf dist && microbundle -i src/index.ts -o dist/index.js -f modern && npm run build:static-files",
 		"build:storybook": "build-storybook",
+		"build:static-files": "cp -r src/styles dist && cp -r src/assets dist",
 		"test": "test-storybook",
 		"test:watch": "test-storybook --watch",
 		"test:ci": "concurrently -k -s first -n \"Storybook,Component Tests\" -c \"bgGray.white,auto\" \"npm:ci:serve\" \"npm:ci:wait-to-test\"",
