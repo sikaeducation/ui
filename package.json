@@ -7,7 +7,7 @@
 	"source": "src/index.ts",
 	"exports": {
 		"types": "./dist/index.d.ts",
-		"styles": "./dist/index.css",
+		"./dist/index.css": "./dist/index.css",
 		"require": "./dist/index.js",
 		"default": "./dist/index.js"
 	},
