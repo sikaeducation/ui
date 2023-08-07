@@ -5,11 +5,13 @@
 	"repository": "git@github.com:sikaeducation/janus.git",
 	"license": "Apache 2.0",
 	"source": "src/index.ts",
-	"exports": [
-		"./dist/index.js",
-		"./dist/index.css"
-	],
-	"module": "./dist/index.js",
+	"exports": {
+		"default": "./dist/index.modern.mjs",
+		"require": "./dist/index.js",
+		"types": "./dist/index.d.ts",
+		"styles": "./dist/index.css"
+	},
+	"module": "./dist/index.modern.mjs",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"files": [
@@ -17,7 +19,7 @@
 	],
 	"scripts": {
 		"start": "start-storybook -p 6006",
-		"build": "rm -rf dist && microbundle -i src/index.ts -o dist/index.js -f modern && npm run build:static-files",
+		"build": "rm -rf dist && microbundle -f modern,cjs && npm run build:static-files",
 		"build:storybook": "build-storybook",
 		"build:static-files": "cp -r src/styles dist && cp -r src/assets dist",
 		"test": "test-storybook",
