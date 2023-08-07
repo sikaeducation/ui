@@ -8,10 +8,9 @@
 	"exports": {
 		"./dist/index.d.ts": "./dist/index.d.ts",
 		"./dist/index.css": "./dist/index.css",
-		"require": "./dist/index.js",
-		"default": "./dist/index.js"
+		".": "./dist/index.js"
 	},
-	"module": "./dist/index.modern.mjs",
+	"module": "./dist/index.js",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"files": [
