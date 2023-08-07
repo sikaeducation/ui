@@ -5,14 +5,15 @@
 	"repository": "git@github.com:sikaeducation/janus.git",
 	"license": "Apache 2.0",
 	"source": "src/index.ts",
+	"type": "module",
 	"exports": {
-		"default": "./dist/index.modern.mjs",
-		"require": "./dist/index.js",
+		"default": "./dist/index.js",
+		"require": "./dist/index.cjs",
 		"types": "./dist/index.d.ts",
 		"styles": "./dist/index.css"
 	},
-	"module": "./dist/index.modern.mjs",
-	"main": "dist/index.js",
+	"module": "./dist/index.js",
+	"main": "dist/index.cjs",
 	"types": "dist/index.d.ts",
 	"files": [
 		"dist/*"
