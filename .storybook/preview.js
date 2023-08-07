@@ -1,4 +1,4 @@
-import "../src/styles/reset.scss"
+import "../src/styles/reset.scss";
 
 export const parameters = {
 	actions: { argTypesRegex: "^on[A-Z].*" },
@@ -10,10 +10,12 @@ export const parameters = {
 	},
 	a11y: {
 		config: {
-			rules: [{
-				id: "color-contrast",
-				selector: "*:not(.Button.primary-button)",
-			}]
-		}
-	}
-}
+			rules: [
+				{
+					id: "color-contrast",
+					selector: "*:not(.Button.primary-button)",
+				},
+			],
+		},
+	},
+};
