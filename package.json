@@ -18,9 +18,9 @@
 	],
 	"scripts": {
 		"start": "start-storybook -p 6006",
-		"build": "rm -rf dist && microbundle -f modern,cjs && npm run build:static-files",
+		"build": "rm -rf dist && microbundle --globals react=React -f modern,cjs && npm run build:static-files",
 		"build:storybook": "build-storybook",
-		"build:static-files": "cp -r src/styles dist && cp -r src/assets dist",
+		"build:static-files": "cp -r src/styles dist && cp -r src/styles/fonts dist/fonts",
 		"test": "test-storybook",
 		"test:watch": "test-storybook --watch",
 		"test:ci": "concurrently -k -s first -n \"Storybook,Component Tests\" -c \"bgGray.white,auto\" \"npm:ci:serve\" \"npm:ci:wait-to-test\"",
