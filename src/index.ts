@@ -9,7 +9,7 @@ export { default as EditableField } from "./components/EditableField";
 export { default as Form } from "./components/Form";
 export { default as Heading } from "./components/Heading";
 export { default as Icon } from "./components/Icon";
-export { default as IndicatorQuestion } from "./components/IndicatorQuestion";
+export { default as Question } from "./components/Question";
 export { default as Logo } from "./components/Logo";
 export { default as Markdown } from "./components/Markdown";
 export { default as Separator } from "./components/Separator";

@@ -1,4 +1,4 @@
-import "./IndicatorQuestion.scss";
+import "./Question.scss";
 
 type props = {
   rejected: number;

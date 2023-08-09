@@ -1,7 +1,7 @@
 import { Meta, IconGallery, IconItem } from "@storybook/addon-docs/";
 import {
-	Checkmark, Article, Close, Accepted, Pending,
-	Rejected, Clear, Confident, Unclear, Deferred
+	Accepted, Article, Checkmark, Clear, Close,
+	Confident, Deferred, Pending, Rejected, Unclear
 } from "../Icon/Icon.stories";
 
 <Meta title="Design/Iconography" />
@@ -11,6 +11,10 @@ import {
 <IconGallery>
   {[
     {
+      label: "Accepted",
+      Component: Accepted,
+    },
+    {
       label: "Article",
       Component: Article,
     },
@@ -19,12 +23,20 @@ import {
       Component: Checkmark,
     },
     {
-      label: "Deferred",
-      Component: Deferred,
+      label: "Clear",
+      Component: Clear,
     },
     {
-      label: "Accepted",
-      Component: Accepted,
+      label: "Close",
+      Component: Close,
+    },
+    {
+      label: "Confident",
+      Component: Confident,
+    },
+    {
+      label: "Deferred",
+      Component: Deferred,
     },
     {
       label: "Pending",
@@ -33,14 +45,6 @@ import {
     {
       label: "Rejected",
       Component: Rejected,
-    },
-    {
-      label: "Clear",
-      Component: Clear,
-    },
-    {
-      label: "Confident",
-      Component: Confident,
     },
     {
       label: "Unclear",

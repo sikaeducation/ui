@@ -1,14 +1,14 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import IndicatorQuestion from ".";
+import Question from ".";
 
 export default {
-  title: "Activities/Indicators/IndicatorQuestion",
-  component: IndicatorQuestion,
-} as ComponentMeta<typeof IndicatorQuestion>;
+  title: "Activities/Question",
+  component: Question,
+} as ComponentMeta<typeof Question>;
 
-const Template: ComponentStory<typeof IndicatorQuestion> = (args) => (
-  <IndicatorQuestion {...args} />
+const Template: ComponentStory<typeof Question> = (args) => (
+  <Question {...args} />
 );
 
 export const OnlyRejected = Template.bind({});
