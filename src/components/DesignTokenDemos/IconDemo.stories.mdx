@@ -1,13 +1,8 @@
 import { Meta, IconGallery, IconItem } from "@storybook/addon-docs/";
-import { Default as IndicatorDeferred } from "../IndicatorDeferred/IndicatorDeferred.stories";
-import { RejectedPendingAccepted as IndicatorQuestion } from "../IndicatorQuestion/IndicatorQuestion.stories";
-import { Default as IndicatorSubmissionAccepted } from "../IndicatorSubmissionAccepted/IndicatorSubmissionAccepted.stories";
-import { Default as IndicatorSubmissionPending } from "../IndicatorSubmissionPending/IndicatorSubmissionPending.stories";
-import { Default as IndicatorSubmissionRejected } from "../IndicatorSubmissionRejected/IndicatorSubmissionRejected.stories";
-import { Default as IndicatorViewClear } from "../IndicatorViewClear/IndicatorViewClear.stories";
-import { Default as IndicatorViewConfident } from "../IndicatorViewConfident/IndicatorViewConfident.stories";
-import { Default as IndicatorViewUnclear } from "../IndicatorViewUnclear/IndicatorViewUnclear.stories";
-import { Checkmark, Article } from "../Icon/Icon.stories";
+import {
+	Checkmark, Article, Close, Accepted, Pending,
+	Rejected, Clear, Confident, Unclear, Deferred
+} from "../Icon/Icon.stories";
 
 <Meta title="Design/Iconography" />
 
@@ -25,35 +20,31 @@ import { Checkmark, Article } from "../Icon/Icon.stories";
     },
     {
       label: "Deferred",
-      Component: IndicatorDeferred,
+      Component: Deferred,
     },
     {
-      label: "Question",
-      Component: IndicatorQuestion,
+      label: "Accepted",
+      Component: Accepted,
     },
     {
-      label: "Submission Accepted",
-      Component: IndicatorSubmissionAccepted,
+      label: "Pending",
+      Component: Pending,
     },
     {
-      label: "Submission Pending",
-      Component: IndicatorSubmissionPending,
-    },
-    {
-      label: "Submission Rejected",
-      Component: IndicatorSubmissionRejected,
+      label: "Rejected",
+      Component: Rejected,
     },
     {
       label: "Clear",
-      Component: IndicatorViewClear,
+      Component: Clear,
     },
     {
       label: "Confident",
-      Component: IndicatorViewConfident,
+      Component: Confident,
     },
     {
       label: "Unclear",
-      Component: IndicatorViewUnclear,
+      Component: Unclear,
     },
   ].map(({ label, Component }) => (
     <IconItem name={label}>
