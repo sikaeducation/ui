@@ -8,9 +8,9 @@
 	"exports": {
 		"./dist/index.d.ts": "./dist/index.d.ts",
 		"./dist/index.css": "./dist/index.css",
-		".": "./dist/index.js",
 		"./dist/styles/index.scss": "./dist/styles/index.scss",
-		"./dist/styles/reset.scss": "./dist/styles/reset.scss"
+		"./dist/styles/reset.scss": "./dist/styles/reset.scss",
+		".": "./dist/index.js"
 	},
 	"module": "./dist/index.js",
 	"main": "dist/index.js",
