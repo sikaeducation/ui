@@ -1,8 +1,7 @@
-@use "../../styles/colors";
-@use "../../styles/forms";
+@import "../../styles/index.scss";
 
 .Toggle {
-  @include forms.form-control;
+  @include forms-form-control;
   display: inline-block;
   margin-bottom: 0;
   label {
@@ -11,6 +10,6 @@
     top: 2px; // Visual alignment
   }
   .MuiSwitch-colorPrimary {
-    color: colors.$primary-5 !important;
+    color: $colors-primary-5 !important;
   }
 }

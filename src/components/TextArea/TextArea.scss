@@ -1,21 +1,17 @@
-@use "../../styles/sizes";
-@use "../../styles/borders";
-@use "../../styles/typography";
-@use "../../styles/colors";
-@use "../../styles/forms";
+@import "../../styles/index.scss";
 
 .TextArea {
-  @include forms.form-control;
+  @include forms-form-control;
   display: block;
-  margin-bottom: sizes.$s3;
+  margin-bottom: $sizes-s3;
   position: relative;
   textarea {
-    @include borders.trace;
-    @include borders.underline-on-focus;
+    @include borders-trace;
+    @include borders-underline-on-focus;
     border: none;
-    min-height: sizes.$s9;
+    min-height: $sizes-s9;
     width: calc(100% + 16px);
-    padding: sizes.$s2 sizes.$s2;
+    padding: $sizes-s2 $sizes-s2;
     overflow-y: auto;
     margin-left: -8px; // Visually adjust to align with input
     resize: vertical;
@@ -23,10 +19,10 @@
       resize: none;
       cursor: pointer;
       min-height: auto;
-      @include borders.underline-on-focus;
+      @include borders-underline-on-focus;
       &:focus {
         cursor: text;
-        min-height: sizes.$s9;
+        min-height: $sizes-s9;
         resize: vertical;
       }
     }

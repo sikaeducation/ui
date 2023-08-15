@@ -1,19 +1,17 @@
-@use "../../styles/sizes";
-@use "../../styles/colors";
-@use "../../styles/borders";
+@import "../../styles/index.scss";
 
 .DataTable {
-  max-width: sizes.$s17;
+  max-width: $sizes-s17;
   margin: 0 auto;
   .table-headers {
     text-align: left;
-    color: colors.$grey-4;
-    padding-bottom: sizes.$s3;
+    color: $colors-grey-4;
+    padding-bottom: $sizes-s3;
   }
   .table-row {
     display: grid;
-    gap: sizes.$s2;
-    border-radius: borders.$radius;
+    gap: $sizes-s2;
+    border-radius: $borders-radius;
   }
   .field {
     overflow: hidden;
@@ -21,7 +19,7 @@
     text-overflow: ellipsis;
     align-content: start;
     &:focus {
-      @include borders.trace;
+      @include borders-trace;
     }
   }
 }

@@ -1,28 +1,26 @@
-@use "../../styles/sizes";
-@use "../../styles/colors";
-@use "../../styles/borders";
+@import "../../styles/index.scss";
 
 .Form {
-  background-color: colors.$white;
+  background-color: $colors-white;
   display: flex;
   flex-flow: column nowrap;
-  padding: sizes.$s7 sizes.$s8;
-  border-radius: borders.$radius;
-  max-width: sizes.$s15;
+  padding: $sizes-s7 $sizes-s8;
+  border-radius: $borders-radius;
+  max-width: $sizes-s15;
   .Heading {
-    margin-bottom: sizes.$s5;
+    margin-bottom: $sizes-s5;
   }
   .actions {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-top: sizes.$s4;
+    margin-top: $sizes-s4;
     .Button {
-      margin-left: sizes.$s4;
+      margin-left: $sizes-s4;
     }
   }
   .error {
-    color: colors.$failure-5;
-    margin-top: sizes.$s6;
+    color: $colors-failure-5;
+    margin-top: $sizes-s6;
   }
 }

@@ -1,34 +1,31 @@
-@use "../../styles/sizes";
-@use "../../styles/colors";
-@use "../../styles/shadows";
-@use "../../styles/borders";
+@import "../../styles/index.scss";
 
 .BordersAndShadows {
   section > div {
     margin-bottom: 24px;
   }
   .border-radius {
-    border-radius: borders.$radius;
+    border-radius: $borders-radius;
     outline: 1px solid #333;
     padding: 24px;
   }
   .trace {
-    @include borders.trace;
+    @include borders-trace;
   }
   .low-shadow {
     border: 1px dashed #eee;
-    @include shadows.small;
+    @include shadows-small;
   }
   .high-shadow {
     border: 1px dashed #eee;
-    @include shadows.large;
+    @include shadows-large;
   }
   .underlay-container {
     position: relative;
     padding: 24px;
     .shade {
       z-index: 20;
-      @include shadows.underlay;
+      @include shadows-underlay;
       position: absolute;
       left: 0;
       right: 0;

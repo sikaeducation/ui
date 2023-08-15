@@ -1,17 +1,15 @@
-@use "../../styles/sizes";
-@use "../../styles/borders";
-@use "../../styles/colors";
+@import "../../styles/index.scss";
 
 .IndicatorQuestion {
-  color: colors.$grey-5;
+  color: $colors-grey-5;
   margin-bottom: 0;
   font-weight: 700;
-  font-size: sizes.$f4;
+  font-size: $sizes-f4;
   > span {
-    border-radius: borders.$radius;
+    border-radius: $borders-radius;
   }
   .indicator {
-    padding: 0 sizes.$s1;
+    padding: 0 $sizes-s1;
   }
   .indicator:first-child {
     border-top-right-radius: 0;
@@ -25,20 +23,20 @@
     border-bottom-left-radius: 0;
   }
   .failure {
-    background-color: colors.$failure-5;
-    color: colors.$white;
+    background-color: $colors-failure-5;
+    color: $colors-white;
   }
   .warning {
-    color: colors.$warning-5;
+    color: $colors-warning-5;
   }
   .success {
-    background-color: colors.$success-6;
-    color: colors.$white;
+    background-color: $colors-success-6;
+    color: $colors-white;
   }
   & + em {
     font-style: normal;
-    font-size: sizes.$f5;
-    color: colors.$grey-5;
+    font-size: $sizes-f5;
+    color: $colors-grey-5;
   }
   & + em::before {
     content: "/ ";
