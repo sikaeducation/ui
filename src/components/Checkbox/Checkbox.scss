@@ -1,8 +1,7 @@
-@use "../../styles/colors";
-@use "../../styles/forms";
+@import "../../styles/index.scss";
 
 .Checkbox {
-  @include forms.form-control;
+  @include forms-form-control;
   display: inline-block;
   margin-bottom: 0;
   label {
@@ -11,9 +10,9 @@
     top: 2px; // Visual alignment
   }
   .MuiCheckbox-colorPrimary {
-    color: colors.$primary-3 !important;
+    color: $colors-primary-3 !important;
   }
   .MuiCheckbox-colorSecondary {
-    color: colors.$grey-4 !important;
+    color: $colors-grey-4 !important;
   }
 }

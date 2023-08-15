@@ -1,9 +1,8 @@
-@use "../../styles/sizes";
-@use "../../styles/borders";
+@import "../../styles/index.scss";
 
 .Avatar {
-  width: sizes.$s7;
-  border-radius: borders.$radius;
+  width: $sizes-s7;
+  border-radius: $borders-radius;
 }
 .react-gravatar {
   display: inline-block;
