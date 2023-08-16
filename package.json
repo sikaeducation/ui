@@ -6,10 +6,10 @@
 	"license": "Apache 2.0",
 	"source": "src/index.ts",
 	"exports": {
-		"./dist/index.d.ts": "./dist/index.d.ts",
-		"./dist/index.css": "./dist/index.css",
-		"./dist/styles/index.scss": "./dist/styles/index.scss",
-		"./dist/styles/reset.scss": "./dist/styles/reset.scss",
+		"./types": "./dist/index.d.ts",
+		"./styles.css": "./dist/index.css",
+		"./styles.scss": "./dist/styles/_index.scss",
+		"./reset": "./dist/styles/_reset.scss",
 		".": "./dist/index.js"
 	},
 	"module": "./dist/index.js",
