@@ -1,4 +1,6 @@
-@import "./index.scss";
+@use "sizes";
+@use "borders";
+@use "typography";
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
 v2.0 | 20110126
@@ -52,17 +54,17 @@ table {
   box-sizing: border-box;
 }
 body {
-  @include typography-body-font;
+  @include typography.body-font;
 }
 a {
   color: inherit;
 }
 input, select, label, button, textarea {
   display: block;
-  @include typography-body-font;
+  @include typography.body-font;
 }
 p, ul, ol, section, form, blockquote {
-  margin-bottom: $sizes-f5;
+  margin-bottom: sizes.$f5;
 }
 strong {
   font-weight: 700;
@@ -71,8 +73,8 @@ em {
   font-style: italic;
 }
 code {
-  @include typography-code-font;
+  @include typography.code-font;
 }
 img, blockquote, code, pre {
-  border-radius: $borders-radius;
+  border-radius: borders.$radius;
 }

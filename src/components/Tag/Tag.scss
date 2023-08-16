@@ -1,4 +1,4 @@
-@import "../../styles/index.scss";
+@use "../../styles/index.scss" as *;
 
 .Tag {
   color: $colors-grey-3;

@@ -1,4 +1,4 @@
-@import "../../styles/index.scss";
+@use "../../styles/index.scss" as *;
 
 .Avatar {
   width: $sizes-s7;
