@@ -88,16 +88,9 @@ module.exports = {
       },
     },
     {
-      files: ["features/**/*.ts"],
+      files: ["src/components/**/index.{ts,tsx}"],
       rules: {
-        "func-names": "off",
-        "@typescript-eslint/ban-ts-comment": "off",
-      },
-    },
-    {
-      files: ["src/slices/*.ts"],
-      rules: {
-        "no-param-reassign": "off",
+        "no-restricted-exports": "off",
       },
     },
   ],

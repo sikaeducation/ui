@@ -1,3 +1,1 @@
-import Separator from "./Separator";
-
-export default Separator;
+export { default } from "./Separator";
