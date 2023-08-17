@@ -25,6 +25,7 @@ export default function TextArea({
         id={id}
         value={value}
         required={isRequired}
+        tabIndex={0}
         className={classNames({ editable })}
         onChange={(event) => {
           updateValue(event.target.value);
