@@ -62,6 +62,11 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
+      - name: Download Storybook build
+        uses: actions/download-artifact@v3
+        with:
+          name: storybook-build
+          path: storybook-static
       - name: Run Storybook tests
         run: npm run test:ci
   publish:
