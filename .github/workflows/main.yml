@@ -86,6 +86,9 @@ jobs:
         with:
           name: storybook-build
           path: storybook-static
+      - name: Install dependencies
+        # if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm install
       - name: Install Playwright
         run: npx playwright@1.37.1 install --with-deps chromium
       - name: Run Storybook tests
