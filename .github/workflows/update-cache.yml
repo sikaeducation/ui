@@ -34,7 +34,7 @@ jobs:
         id: cache-playwright
         uses: actions/cache@v3
         with:
-          path: .cache/ms-playwright
+          path: ~/.cache/ms-playwright
           key: playwright-${{ steps.dependency-version.outputs.DEPENDENCY_VERSION }}
       - name: Install dependencies
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
