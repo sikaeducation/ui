@@ -6,8 +6,7 @@ Sika's UI library
 
 ## Dependencies
 
-* ESLint
-* Prettier
+* ESLint & Prettier
 
 ## Scripts
 
