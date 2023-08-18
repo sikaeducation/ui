@@ -3,6 +3,13 @@ name: Deploy to npm
 on:
   release:
     types: [ published ]
+concurrency:
+  # For pull requests, cancel all currently-running jobs for this workflow
+  # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#concurrency
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+env:
+  FORCE_COLOR: 1
 jobs:
   build:
     runs-on: ubuntu-latest
