@@ -73,13 +73,21 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-node-modules-${{ steps.dependency-version.outputs.DEPENDENCY_VERSION }}
+      - name: Cache Playwright
+        id: cache-playwright
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-playwright
+        with:
+          path: .cache/ms/playwright
+          key: ${{ runner.os }}-node-modules-${{ steps.dependency-version.outputs.DEPENDENCY_VERSION }}
       - name: Download Storybook build
         uses: actions/download-artifact@v3
         with:
           name: storybook-build
           path: storybook-static
       - name: Install Playwright
-        run: npx playwright install --with-deps
+        run: npx playwright@1.37.1 install --with-deps chromium
       - name: Run Storybook tests
         run: npm run test:ci
   publish:
