@@ -7,8 +7,8 @@
 	"source": "src/index.ts",
 	"exports": {
 		"./types": "./dist/index.d.ts",
-		"./styles.css": "./dist/index.css",
-		"./styles.scss": "./dist/styles/_index.scss",
+		"./ui.css": "./dist/index.css",
+		"./styles": "./dist/styles/_index.scss",
 		"./reset": "./dist/styles/_reset.scss",
 		".": "./dist/index.js"
 	},
