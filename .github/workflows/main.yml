@@ -25,7 +25,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Get dependency version
         id: dependency-version
-        run: 'DEPENDENCY_VERSION=$(cat .dependency-version) >> $GITHUB_OUTPUT'
+        run: "DEPENDENCY_VERSION=$(cat .dependency-version) >> $GITHUB_OUTPUT"
         shell: bash
       - name: Cache node modules
         id: cache-node-modules
@@ -60,7 +60,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Get dependency version
         id: dependency-version
-        run: 'DEPENDENCY_VERSION=$(cat .dependency-version) >> $GITHUB_OUTPUT'
+        run: "DEPENDENCY_VERSION=$(cat .dependency-version) >> $GITHUB_OUTPUT"
         shell: bash
       - name: Cache node modules
         id: cache-node-modules
@@ -95,7 +95,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: Get dependency version
         id: dependency-version
-        run: 'DEPENDENCY_VERSION=$(cat .dependency-version) >> $GITHUB_OUTPUT'
+        run: "DEPENDENCY_VERSION=$(cat .dependency-version) >> $GITHUB_OUTPUT"
         shell: bash
       - name: Cache node modules
         id: cache-node-modules
