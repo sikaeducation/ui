@@ -38,7 +38,7 @@ jobs:
           key: ${{ runner.os }}-node-modules-${{ steps.dependency-version.outputs.DEPENDENCY_VERSION }}
       - name: Install dependencies
         # if: steps.cache-node-modules.outputs.cache-hit != 'true'
-        run: npm ci
+        run: npm install
       - name: Build Storybook
         run: npm run build:storybook
       - name: Upload Storybook build
@@ -79,7 +79,7 @@ jobs:
           path: storybook-static
       - name: Install dependencies
         # if: steps.cache-node-modules.outputs.cache-hit != 'true'
-        run: npm ci
+        run: npm install
       - name: Run Storybook tests
         run: npm run test:ci
   publish:
