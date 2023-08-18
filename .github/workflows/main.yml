@@ -62,3 +62,5 @@ jobs:
           NETLIFY_DEPLOY_MESSAGE: "Deploy v${{ github.ref }}"
           NETLIFY_DEPLOY_TO_PROD: true
           build_directory: storybook-static
+          build_command: echo "Build exists, skipping npm run build"
+          install_command: echo "Install exists, skipping npm install"
