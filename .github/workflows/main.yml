@@ -23,14 +23,6 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
           registry-url: 'https://registry.npmjs.org'
-      - name: Cache node modules
-        id: cache-npm
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
       - name: Install dependencies
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm ci
@@ -54,19 +46,14 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
           registry-url: 'https://registry.npmjs.org'
-      - name: Cache node modules
-        id: cache-npm
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
       - name: Download Storybook build
         uses: actions/download-artifact@v3
         with:
           name: storybook-build
           path: storybook-static
+      - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci
       - name: Run Storybook tests
         run: npm run test:ci
   publish:
@@ -82,14 +69,9 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
           registry-url: 'https://registry.npmjs.org'
-      - name: Cache node modules
-        id: cache-npm
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
+      - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm ci
       - name: Build UI library
         run: npm run build
       - name: Publish @sikaeducation/ui to npm
