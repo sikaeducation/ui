@@ -3,17 +3,13 @@ name: Deploy to npm
 on:
   push:
     branches:
-      - release
-concurrency:
-  # For pull requests, cancel all currently-running jobs for this workflow
-  # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#concurrency
-  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
-  cancel-in-progress: true
+      - main
 env:
   FORCE_COLOR: 1
 jobs:
   build_deploy_publish:
     runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
