@@ -38,7 +38,6 @@
 		"@fortawesome/react-fontawesome": "^0.1.18",
 		"@material-ui/core": "^4.12.4",
 		"@material-ui/lab": "^4.0.0-alpha.61",
-		"@sikaeducation/eslint-config-ts-react": "^0.3.2",
 		"eslint": "^8.47.0",
 		"prettier": "^3.0.2",
 		"react-gravatar": "^2.6.3",
@@ -62,6 +61,7 @@
 	"devDependencies": {
 		"@babel/plugin-transform-modules-commonjs": "^7.16.7",
 		"@playwright/test": "^1.37.1",
+		"@sikaeducation/eslint-config-ts-react": "^0.3.2",
 		"@storybook/addon-a11y": "^6.5.14",
 		"@storybook/addon-actions": "^6.5.14",
 		"@storybook/addon-essentials": "^6.5.14",
