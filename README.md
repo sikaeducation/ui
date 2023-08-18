@@ -2,7 +2,7 @@
 
 Sika's UI library
 
-[![CI](https://github.com/sikaeducation/janus/actions/workflows/main.yml/badge.svg)](https://github.com/sikaeducation/janus/actions/workflows/main.yml)
+[![CI](https://github.com/sikaeducation/ui/actions/workflows/main.yml/badge.svg)](https://github.com/sikaeducation/ui/actions/workflows/main.yml)
 
 ## Scripts
 
