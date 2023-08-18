@@ -27,4 +27,3 @@ storybook-static
 test-results
 
 /dist
-.dependency-version

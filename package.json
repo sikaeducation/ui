@@ -29,7 +29,8 @@
 		"test:ci": "concurrently -k -s first -n \"Storybook,Component Tests\" -c \"bgGray.white,auto\" \"npm:ci:serve\" \"npm:ci:wait-to-test\"",
 		"ci:wait-to-test": "wait-on tcp:127.0.0.1:6006 && test-storybook --url http://127.0.0.1:6006",
 		"ci:serve": "http-server storybook-static --port 6006 --silent",
-		"get-dependency-version": "cat package-lock.json | jq '.dependencies' | sha1sum > .dependency-version"
+		"_generate-dependency-version": "cat package-lock.json | jq '.dependencies' | sha1sum > .dependency-version",
+		"postinstall": "npm run _generate-dependency-version"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.1.1",
