@@ -36,7 +36,7 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-node-modules-${{ steps.dependency-version.outputs.DEPENDENCY_VERSION }}
       - name: Install dependencies
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        # if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm ci
       - name: Build Storybook
         run: npm run build:storybook
@@ -76,7 +76,7 @@ jobs:
           name: storybook-build
           path: storybook-static
       - name: Install dependencies
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        # if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm ci
       - name: Run Storybook tests
         run: npm run test:ci
@@ -106,7 +106,7 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-node-modules-${{ steps.dependency-version.outputs.DEPENDENCY_VERSION }}
       - name: Install dependencies
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        # if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm ci
       - name: Build UI library
         run: npm run build
