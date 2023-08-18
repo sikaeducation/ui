@@ -23,7 +23,7 @@ type Props<RowType> = {
 };
 
 export default function DataTable<
-  RowType extends { id: string; [key: string]: unknown }
+  RowType extends { id: string; [key: string]: unknown },
 >({ tableData, fields, activeId }: Props<RowType>) {
   const size = useWindowSize();
   const normalizedFields = normalizeFields(size, fields);
