@@ -7,7 +7,7 @@ on:
 env:
   FORCE_COLOR: 1
 jobs:
-  build_deploy_publish:
+  update_cache:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
