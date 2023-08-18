@@ -108,9 +108,9 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-node-modules-${{ steps.dependency-version.outputs.DEPENDENCY_VERSION }}
-      - name: Install dependencies
-        # if: steps.cache-node-modules.outputs.cache-hit != 'true'
-        run: npm ci
+      # - name: Install dependencies
+      #   # if: steps.cache-node-modules.outputs.cache-hit != 'true'
+      #   run: npm ci
       - name: Build UI library
         run: npm run build
       - name: Publish @sikaeducation/ui to npm
