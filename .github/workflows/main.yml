@@ -3,11 +3,11 @@ name: Deploy and publish
 on:
   push:
     tags:
-      - v*
+      - release
 env:
   FORCE_COLOR: 1
 jobs:
-  build_deploy_publish:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -48,12 +48,45 @@ jobs:
           path: storybook-static
       - name: Run Storybook tests
         run: npm run test:ci
+  publish_npm:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19
+          cache: npm
+          cache-dependency-path: .dependency-version
+          registry-url: 'https://registry.npmjs.org'
+      - name: Get dependency version
+        id: dependency-version
+        run: |
+          echo "DEPENDENCY_VERSION=$(cat .dependency-version)" >> $GITHUB_OUTPUT
+        shell: bash
+      - name: Cache node modules
+        id: cache-node-modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: node-modules-${{ steps.dependency-version.outputs.DEPENDENCY_VERSION }}
       - name: Build UI library
         run: npm run build
       - name: Publish @sikaeducation/ui to npm
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  deploy_storybook:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Download Storybook build
+        uses: actions/download-artifact@v3
+        with:
+          name: storybook-build
+          path: storybook-static
       - name: Deploy Storybook to Netlify
         uses: jsmrcaga/action-netlify-deploy@v2.0.0
         with:
