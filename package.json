@@ -61,7 +61,7 @@
 	"devDependencies": {
 		"@babel/plugin-transform-modules-commonjs": "^7.16.7",
 		"@playwright/test": "^1.37.1",
-		"@sikaeducation/eslint-config-ts-react": "^0.3.2",
+		"@sikaeducation/eslint-config-ts-react": "^0.3.3",
 		"@storybook/addon-a11y": "^6.5.14",
 		"@storybook/addon-actions": "^6.5.14",
 		"@storybook/addon-essentials": "^6.5.14",
