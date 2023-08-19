@@ -6,9 +6,11 @@ on:
       - release
 env:
   FORCE_COLOR: 1
+permissions: write-all
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
+    name: Install dependencies and build Storybook
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -16,9 +18,43 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 19
-          cache: npm
-          cache-dependency-path: .dependency-version
-          registry-url: 'https://registry.npmjs.org'
+      - name: Get dependency version
+        id: dependency-version
+        run: |
+          echo "DEPENDENCY_VERSION=$(cat .dependency-version)" >> $GITHUB_OUTPUT
+        shell: bash
+      - name: Cache node modules
+        id: cache-node-modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: node-modules-${{ steps.dependency-version.outputs.DEPENDENCY_VERSION }}
+      - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: npm install
+      - name: Build Storybook
+        run: npm run build:storybook
+      - name: Upload Storybook build
+        uses: actions/upload-artifact@v3
+        with:
+          name: storybook-build
+          path: storybook-static
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    name: Test components
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Download Storybook build
+        uses: actions/download-artifact@v3
+        with:
+          name: storybook-build
+          path: storybook-static
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19
       - name: Get dependency version
         id: dependency-version
         run: |
@@ -36,19 +72,10 @@ jobs:
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ steps.dependency-version.outputs.DEPENDENCY_VERSION }}
-      - name: Install dependencies
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
-        run: npm install
-      - name: Build Storybook
-        run: npm run build:storybook
-      - name: Upload Storybook build
-        uses: actions/upload-artifact@v3
-        with:
-          name: storybook-build
-          path: storybook-static
       - name: Run Storybook tests
         run: npm run test:ci
   publish_npm:
+    name: Publish UI library to npm
     runs-on: ubuntu-latest
     needs: test
     steps:
@@ -58,9 +85,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 19
-          cache: npm
-          cache-dependency-path: .dependency-version
-          registry-url: 'https://registry.npmjs.org'
       - name: Get dependency version
         id: dependency-version
         run: |
@@ -79,6 +103,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   deploy_storybook:
+    name: Deploy Storybook
     runs-on: ubuntu-latest
     needs: test
     steps:
@@ -97,3 +122,16 @@ jobs:
           build_directory: storybook-static
           build_command: echo "Build exists, skipping npm run build"
           install_command: echo "Install exists, skipping npm install"
+  create_release:
+    name: Create release
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Publish release
+        uses: elgohr/Github-Release-Action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+        with:
+          title: Release
