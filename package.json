@@ -5,6 +5,7 @@
 	"repository": "git@github.com:sikaeducation/janus.git",
 	"license": "Apache 2.0",
 	"source": "src/index.ts",
+	"type": "module",
 	"exports": {
 		"./types": "./dist/index.d.ts",
 		"./components.css": "./dist/index.css",
@@ -61,7 +62,7 @@
 	"devDependencies": {
 		"@babel/plugin-transform-modules-commonjs": "^7.16.7",
 		"@playwright/test": "^1.37.1",
-		"@sikaeducation/eslint-config-ts-react": "^0.3.3",
+		"@sikaeducation/eslint-config-ts-react": "^0.5.7",
 		"@storybook/addon-a11y": "^6.5.14",
 		"@storybook/addon-actions": "^6.5.14",
 		"@storybook/addon-essentials": "^6.5.14",
