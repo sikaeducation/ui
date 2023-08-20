@@ -48,7 +48,6 @@
 		"react-syntax-highlighter": "^15.4.5",
 		"react-use-clipboard": "^1.0.7",
 		"remark-frontmatter": "^4.0.1",
-		"remark-gfm": "^3.0.1",
 		"remark-unwrap-images": "^3.0.1"
 	},
 	"peerDependencies": {
@@ -62,9 +61,10 @@
 	"devDependencies": {
 		"@babel/plugin-transform-modules-commonjs": "^7.16.7",
 		"@playwright/test": "^1.37.1",
-		"@sikaeducation/eslint-config-ts-react": "^0.5.7",
+		"@sikaeducation/eslint-config-ts-react": "^0.5.11",
 		"@storybook/addon-a11y": "^6.5.14",
 		"@storybook/addon-actions": "^6.5.14",
+		"@storybook/addon-docs": "^7.3.2",
 		"@storybook/addon-essentials": "^6.5.14",
 		"@storybook/addon-interactions": "^6.5.14",
 		"@storybook/addon-links": "^6.5.14",
@@ -100,6 +100,7 @@
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-scripts": "5.0.0",
+		"remark-gfm": "^3.0.1",
 		"sass": "^1.45.2",
 		"storybook-addon-react-router-v6": "^0.2.1",
 		"storybook-react-context": "^0.6.0",

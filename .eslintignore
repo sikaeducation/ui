@@ -1,4 +1,4 @@
 *.css
 *.svg
-storybook-static
-dist
+/storybook-static
+/dist
