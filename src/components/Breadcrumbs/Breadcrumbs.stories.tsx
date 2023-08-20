@@ -1,97 +1,95 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { expect } from "@storybook/jest";
+import type { Meta, StoryObj } from "@storybook/react"
 import { within } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 import { withRouter } from "storybook-addon-react-router-v6";
 
 import Breadcrumbs from ".";
 
-export default {
-  title: "UI/Breadcrumbs",
-  component: Breadcrumbs,
-  decorators: [withRouter],
-} as ComponentMeta<typeof Breadcrumbs>;
+const meta: Meta<typeof Breadcrumbs> = {
+	component: Breadcrumbs,
+	decorators: [withRouter],
+}
+export default meta
 
-const Template: ComponentStory<typeof Breadcrumbs> = (args) => (
-  <Breadcrumbs {...args} />
-);
+type Story = StoryObj<typeof Breadcrumbs>
 
-export const NoLinks = Template.bind({});
-NoLinks.args = {
-  links: [],
-};
-NoLinks.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
+export const NoLinks: Story = {
+	args: {
+		links: [],
+	},
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+		const elements = canvas.queryByRole("listitem");
 
-  const elements = await canvas.queryByRole("listitem");
+		await expect(elements).not.toBeInTheDocument();
+	}
+}
 
-  expect(elements).not.toBeInTheDocument();
-};
+export const OneLink: Story = {
+	args: {
+		links: [
+			{
+				path: "/some-path",
+				label: "Some Label",
+				slug: "some-slug",
+			},
+		],
+	},
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+		const elements = canvas.queryByRole("listitem");
 
-export const OneLink = Template.bind({});
-OneLink.args = {
-  links: [
-    {
-      path: "/some-path",
-      label: "Some Label",
-      slug: "some-slug",
-    },
-  ],
-};
-OneLink.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
+		await expect(elements).not.toBeInTheDocument();
+	},
+}
 
-  const elements = await canvas.queryByRole("listitem");
+export const TwoLinks: Story = {
+	args: {
+		links: [
+			{
+				path: "/some-path",
+				label: "Some Label",
+				slug: "some-slug",
+			},
+			{
+				path: "/some-other-path",
+				label: "Some Other Label",
+				slug: "some-other-slug",
+			},
+		],
+	},
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+		const elements = canvas.findAllByRole("listitem");
 
-  expect(elements).not.toBeInTheDocument();
-};
+		await expect(elements).toHaveLength(2);
+	},
+}
 
-export const TwoLinks = Template.bind({});
-TwoLinks.args = {
-  links: [
-    {
-      path: "/some-path",
-      label: "Some Label",
-      slug: "some-slug",
-    },
-    {
-      path: "/some-other-path",
-      label: "Some Other Label",
-      slug: "some-other-slug",
-    },
-  ],
-};
-TwoLinks.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
+export const MultipleLinks: Story = {
+	args: {
+		links: [
+			{
+				path: "/some-path",
+				label: "Some Label",
+				slug: "some-slug",
+			},
+			{
+				path: "/some-other-path",
+				label: "Some Other Label",
+				slug: "some-other-slug",
+			},
+			{
+				path: "/yet-another-path",
+				label: "Yet Another Label",
+				slug: "yet-another-slug",
+			},
+		],
+	},
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+		const elements = canvas.findAllByRole("listitem");
 
-  const elements = await canvas.findAllByRole("listitem");
-
-  expect(elements).toHaveLength(2);
-};
-
-export const MultipleLinks = Template.bind({});
-MultipleLinks.args = {
-  links: [
-    {
-      path: "/some-path",
-      label: "Some Label",
-      slug: "some-slug",
-    },
-    {
-      path: "/some-other-path",
-      label: "Some Other Label",
-      slug: "some-other-slug",
-    },
-    {
-      path: "/yet-another-path",
-      label: "Yet Another Label",
-      slug: "yet-another-slug",
-    },
-  ],
-};
-MultipleLinks.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
-
-  const elements = await canvas.findAllByRole("listitem");
-
-  expect(elements).toHaveLength(3);
-};
+		await expect(elements).toHaveLength(3);
+	},
+}

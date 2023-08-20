@@ -1,12 +1,9 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-
+import type { Meta, StoryObj } from "@storybook/react"
 import Notification from ".";
 
-export default {
-  title: "UI/Notification",
-  component: Notification,
-} as ComponentMeta<typeof Notification>;
+const meta: Meta<typeof Notification> = { component: Notification }
+export default meta
 
-const Template: ComponentStory<typeof Notification> = () => <Notification />;
+type Story = StoryObj<typeof Notification>
 
-export const Default = Template.bind({});
+export const Default: Story = {}

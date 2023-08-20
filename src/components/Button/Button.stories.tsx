@@ -1,74 +1,80 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { jest, expect } from "@storybook/jest";
 import { within, userEvent } from "@storybook/testing-library";
 
 import Button from ".";
 
-export default {
-  title: "UI/Button",
-  component: Button,
-} as ComponentMeta<typeof Button>;
+const meta: Meta<typeof Button> = {
+	component: Button,
+}
+export default meta
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+type Story = StoryObj<typeof Button>
 
-export const Action = Template.bind({});
-const action = jest.fn();
-Action.args = {
-  type: "primary",
-  children: "Do it!",
-  action,
-};
-Action.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
-  expect(action).not.toHaveBeenCalled();
+export const Action: Story = {
+	args: {
+		type: "primary",
+		children: "Do it!",
+		action: jest.fn(),
+	},
+	play: async ({ args, canvasElement }) => {
+		const canvas = within(canvasElement);
+		expect(args.action).not.toHaveBeenCalled();
 
-  const button = await canvas.findByRole("button");
-  userEvent.click(button);
+		const button = await canvas.findByRole("button");
+		userEvent.click(button);
 
-  expect(action).toHaveBeenCalled();
-};
+		expect(args.action).toHaveBeenCalled();
+	},
+}
 
-export const PrimarySmall = Template.bind({});
-PrimarySmall.args = {
-  type: "primary",
-  children: "Do it!",
-  action,
-};
-PrimarySmall.storyName = "Primary - Small";
+export const PrimarySmall: Story = {
+	storyName: "Primary - Small",
+	args: {
+		type: "primary",
+		children: "Do it!",
+		action: jest.fn(),
+	},
+}
 
-export const PrimarySmallFailure = Template.bind({});
-PrimarySmallFailure.args = {
-  type: "primary",
-  children: "Do it!",
-  actionType: "failure",
-};
-PrimarySmallFailure.storyName = "Primary - Failure - Small";
+export const PrimarySmallFailure: Story = {
+	storyName: "Primary - Failure - Small",
+	args: {
+		type: "primary",
+		children: "Do it!",
+		actionType: "failure",
+	}
+}
 
-export const PrimaryLarge = Template.bind({});
-PrimaryLarge.args = {
-  type: "primary",
-  size: "large",
-  children: "Do it!",
-};
-PrimaryLarge.storyName = "Primary - Large";
+export const PrimaryLarge: Story = {
+	storyName: "Primary - Large",
+	args: {
+		type: "primary",
+		size: "large",
+		children: "Do it!",
+	}
+}
 
-export const PrimaryLargeFailure = Template.bind({});
-PrimaryLargeFailure.args = {
-  type: "primary",
-  size: "large",
-  children: "Do it!",
-  actionType: "failure",
-};
-PrimaryLargeFailure.storyName = "Primary - Failure - Large";
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  type: "secondary",
-  children: "Maybe do it?",
-};
-
-export const Ghost = Template.bind({});
-Ghost.args = {
-  type: "ghost",
-  children: "Could do it",
-};
+export const PrimaryLargeFailure: Story = {
+	storyName: "Primary - Failure - Large",
+	args: {
+		type: "primary",
+		size: "large",
+		children: "Do it!",
+		actionType: "failure",
+	}
+}
+export const Secondary: Story = {
+	storyName: "Secondary",
+	args: {
+		type: "secondary",
+		children: "Maybe do it?",
+	}
+}
+export const Ghost: Story = {
+	storyName: "Ghost",
+	args: {
+		type: "ghost",
+		children: "Could do it",
+	}
+}

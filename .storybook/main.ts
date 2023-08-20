@@ -1,4 +1,7 @@
-export default {
+import type { StorybookConfig } from "@storybook/react-webpack5"
+
+const config: StorybookConfig = {
+	framework: "@storybook/react-webpack5",
 	stories: [
 		"../src/**/*.mdx",
 		"../src/**/*.stories.mdx",
@@ -13,14 +16,9 @@ export default {
 		"@storybook/addon-a11y",
 		"@storybook/addon-mdx-gfm"
 	],
-	framework: {
-		name: "@storybook/react-webpack5",
-		options: {}
-	},
-	features: {
-		interactionsDebugger: true,
-	},
 	docs: {
 		autodocs: true
-	}
+	},
 };
+
+export default config
