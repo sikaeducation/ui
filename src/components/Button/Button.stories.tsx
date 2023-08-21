@@ -29,7 +29,7 @@ export const Action: Story = {
 }
 
 export const PrimarySmall: Story = {
-	storyName: "Primary - Small",
+	name: "Primary - Small",
 	args: {
 		type: "primary",
 		children: "Do it!",
@@ -38,7 +38,7 @@ export const PrimarySmall: Story = {
 }
 
 export const PrimarySmallFailure: Story = {
-	storyName: "Primary - Failure - Small",
+	name: "Primary - Failure - Small",
 	args: {
 		type: "primary",
 		children: "Do it!",
@@ -47,7 +47,7 @@ export const PrimarySmallFailure: Story = {
 }
 
 export const PrimaryLarge: Story = {
-	storyName: "Primary - Large",
+	name: "Primary - Large",
 	args: {
 		type: "primary",
 		size: "large",
@@ -56,7 +56,7 @@ export const PrimaryLarge: Story = {
 }
 
 export const PrimaryLargeFailure: Story = {
-	storyName: "Primary - Failure - Large",
+	name: "Primary - Failure - Large",
 	args: {
 		type: "primary",
 		size: "large",
@@ -65,14 +65,14 @@ export const PrimaryLargeFailure: Story = {
 	}
 }
 export const Secondary: Story = {
-	storyName: "Secondary",
+	name: "Secondary",
 	args: {
 		type: "secondary",
 		children: "Maybe do it?",
 	}
 }
 export const Ghost: Story = {
-	storyName: "Ghost",
+	name: "Ghost",
 	args: {
 		type: "ghost",
 		children: "Could do it",
