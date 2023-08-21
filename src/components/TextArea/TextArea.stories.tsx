@@ -1,35 +1,39 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { StoryObj, Meta } from "@storybook/react";
 import { useState } from "react";
 
 import TextArea from ".";
 
-export default {
-  title: "UI/TextArea",
-  component: TextArea,
-  argTypes: {
-    value: {
-      control: {
-        disable: true,
-      },
-    },
-  },
-} as ComponentMeta<typeof TextArea>;
+const meta: Meta<typeof TextArea> = {
+	component: TextArea,
+	argTypes: {
+		value: {
+			control: {
+				disable: true,
+			},
+		},
+	},
+}
+export default meta
 
-const Template: ComponentStory<typeof TextArea> = (args) => {
-  const [currentContent, setContent] = useState(args.value ?? "");
-  return <TextArea {...args} updateValue={setContent} value={currentContent} />;
-};
+type Story = StoryObj<typeof TextArea>
 
-export const Default = Template.bind({});
-Default.args = {
-  value: "Some content",
-  id: "some-id",
-  label: "Some label",
-  isRequired: true,
-};
+export const Default: Story = {
+	render: (args) => {
+		const [currentContent, setContent] = useState(args.value ?? "");
+		return <TextArea {...args} updateValue={setContent} value={currentContent} />;
+	},
+	args: {
+		value: "Some content",
+		id: "some-id",
+		label: "Some label",
+		isRequired: true,
+	}
+}
 
-export const Editable = Template.bind({});
-Editable.args = {
-  ...Default.args,
-  editable: true,
-};
+export const Editable: Story = {
+	...Default,
+	args: {
+		...Default.args,
+		editable: true,
+	}
+}

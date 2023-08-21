@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryObj, Meta } from "@storybook/react";
 import { expect } from "@storybook/jest";
 import { within, userEvent } from "@storybook/testing-library";
 
@@ -7,29 +7,29 @@ import Toggle from ".";
 
 const { click } = userEvent;
 
-export default {
-  title: "UI/Toggle",
-  component: Toggle,
-} as ComponentMeta<typeof Toggle>;
+const meta: Meta<typeof Toggle> = { component: Toggle }
+export default meta
 
-const Template: ComponentStory<typeof Toggle> = (args) => {
-  const [value, updateValue] = useState(args.value ?? true);
-  return <Toggle {...args} value={value} updateValue={updateValue} />;
-};
+type Story = StoryObj<typeof Toggle>
 
-export const Primary = Template.bind({});
-Primary.args = {
-  label: "Some Input",
-  id: "some-id",
-  value: true,
-};
-Primary.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
+export const Primary: Story = {
+	render: (args) => {
+		const [value, updateValue] = useState(args.value ?? true);
+		return <Toggle {...args} value={value} updateValue={updateValue} />;
+	},
+	args: {
+		label: "Some Input",
+		id: "some-id",
+		value: true,
+	},
+	play: async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
 
-  const checkbox = await canvas.findByRole("checkbox");
-  expect(checkbox).toBeChecked();
-  click(checkbox);
-  expect(checkbox).not.toBeChecked();
-  click(checkbox);
-  expect(checkbox).toBeChecked();
-};
+		const checkbox = await canvas.findByRole("checkbox");
+		expect(checkbox).toBeChecked();
+		click(checkbox);
+		expect(checkbox).not.toBeChecked();
+		click(checkbox);
+		expect(checkbox).toBeChecked();
+	},
+}

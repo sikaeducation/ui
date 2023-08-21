@@ -1,15 +1,14 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { StoryObj, Meta } from "@storybook/react";
 
 import Tag from ".";
 
-export default {
-  title: "UI/Tag",
-  component: Tag,
-} as ComponentMeta<typeof Tag>;
+const meta: Meta<typeof Tag> = { component: Tag }
+export default meta
 
-const Template: ComponentStory<typeof Tag> = (args) => <Tag {...args} />;
+type Story = StoryObj<typeof Tag>
 
-export const Default = Template.bind({});
-Default.args = {
-  children: "Hello, world!",
-};
+export const Default: Story = {
+	args: {
+		children: "Hello, world!",
+	}
+}

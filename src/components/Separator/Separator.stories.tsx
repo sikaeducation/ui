@@ -1,12 +1,12 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { StoryObj, Meta } from "@storybook/react";
 
 import Separator from ".";
 
-export default {
-  title: "UI/Separator",
-  component: Separator,
-} as ComponentMeta<typeof Separator>;
+const meta: Meta<typeof Separator> = {
+	component: Separator,
+}
+export default meta
 
-const Template: ComponentStory<typeof Separator> = () => <Separator />;
+type Story = StoryObj<typeof Separator>
 
-export const Default = Template.bind({});
+export const Default: Story = {}

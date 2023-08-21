@@ -1,46 +1,51 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { StoryObj, Meta } from "@storybook/react";
 
 import Question from ".";
 
-export default {
-  title: "Activities/Question",
-  component: Question,
-} as ComponentMeta<typeof Question>;
+const meta: Meta<typeof Question> = {
+	component: Question,
+}
+export default meta
 
-const Template: ComponentStory<typeof Question> = (args) => (
-  <Question {...args} />
-);
+type Story = StoryObj<typeof Question>
 
-export const OnlyRejected = Template.bind({});
-OnlyRejected.args = {
-  rejected: 1,
-};
-export const OnlyPending = Template.bind({});
-OnlyPending.args = {
-  pending: 2,
-};
-export const OnlyAccepted = Template.bind({});
-OnlyAccepted.args = {
-  accepted: 3,
-};
-export const RejectedAndPending = Template.bind({});
-RejectedAndPending.args = {
-  rejected: 1,
-  pending: 2,
-};
-export const RejectedAndAccepted = Template.bind({});
-RejectedAndAccepted.args = {
-  rejected: 1,
-  accepted: 3,
-};
-export const PendingAndAccepted = Template.bind({});
-PendingAndAccepted.args = {
-  pending: 2,
-  accepted: 3,
-};
-export const RejectedPendingAccepted = Template.bind({});
-RejectedPendingAccepted.args = {
-  rejected: 1,
-  pending: 2,
-  accepted: 3,
-};
+export const OnlyRejected: Story = {
+	args: {
+		rejected: 1,
+	},
+}
+export const OnlyPending: Story = {
+	args: {
+		pending: 2,
+	},
+}
+export const OnlyAccepted: Story = {
+	args: {
+		accepted: 3,
+	},
+}
+export const RejectedAndPending: Story = {
+	args: {
+		rejected: 1,
+		pending: 2,
+	},
+}
+export const RejectedAndAccepted: Story = {
+	args: {
+		rejected: 1,
+		accepted: 3,
+	},
+}
+export const PendingAndAccepted: Story = {
+	args: {
+		pending: 2,
+		accepted: 3,
+	},
+}
+export const RejectedPendingAccepted: Story = {
+	args: {
+		rejected: 1,
+		pending: 2,
+		accepted: 3,
+	},
+}

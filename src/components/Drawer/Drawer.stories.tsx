@@ -1,34 +1,34 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react"
 
 import Drawer from ".";
 import Heading from "../Heading";
 
-export default {
-  title: "UI/Drawer",
-  component: Drawer,
-} as ComponentMeta<typeof Drawer>;
+const meta: Meta<typeof Drawer> = { component: Drawer }
+export default meta
 
-const Template: ComponentStory<typeof Drawer> = (args) => <Drawer {...args} />;
+type Story = StoryObj<typeof Drawer>
 
-export const Default = Template.bind({});
-Default.args = {
-  children: (
-    <article>
-      <Heading level={2}>Some important thing</Heading>
-      <p>Some detail about it</p>
-    </article>
-  ),
-  close: () => {},
-};
+export const Default: Story = {
+	args: {
+		children: (
+			<article>
+				<Heading level={2}>Some important thing</Heading>
+				<p>Some detail about it</p>
+			</article>
+		),
+		close: () => { },
+	}
+}
 
-export const Modal = Template.bind({});
-Modal.args = {
-  children: (
-    <article>
-      <Heading level={2}>Some important thing</Heading>
-      <p>Some detail about it</p>
-    </article>
-  ),
-  modal: true,
-  close: () => {},
-};
+export const Modal: Story = {
+	args: {
+		children: (
+			<article>
+				<Heading level={2}>Some important thing</Heading>
+				<p>Some detail about it</p>
+			</article>
+		),
+		modal: true,
+		close: () => { },
+	}
+}

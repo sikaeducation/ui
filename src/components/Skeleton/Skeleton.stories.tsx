@@ -1,12 +1,10 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { StoryObj, Meta } from "@storybook/react";
 
 import Skeleton from ".";
 
-export default {
-  title: "UI/Skeleton",
-  component: Skeleton,
-} as ComponentMeta<typeof Skeleton>;
+const meta: Meta<typeof Skeleton> = { component: Skeleton }
+export default meta
 
-const Template: ComponentStory<typeof Skeleton> = () => <Skeleton />;
+type Story = StoryObj<typeof Skeleton>
 
-export const Default = Template.bind({});
+export const Default: Story = {}

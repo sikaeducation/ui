@@ -1,60 +1,59 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { StoryObj, Meta } from "@storybook/react";
 
 import Icon from ".";
 
-export default {
-  title: "UI/Icon",
-  component: Icon,
-} as ComponentMeta<typeof Icon>;
+const meta: Meta<typeof Icon> = { component: Icon }
+export default meta
 
-const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />;
+type Story = StoryObj<typeof Icon>
 
-export const Checkmark = Template.bind({});
-Checkmark.args = {
-  type: "checkmark",
-};
-
-export const Article = Template.bind({});
-Article.args = {
-  type: "article",
-};
-
-export const Close = Template.bind({});
-Close.args = {
-  type: "close",
-};
-
-export const Accepted = Template.bind({});
-Accepted.args = {
-  type: "accepted",
-};
-
-export const Pending = Template.bind({});
-Pending.args = {
-  type: "pending",
-};
-
-export const Rejected = Template.bind({});
-Rejected.args = {
-  type: "rejected",
-};
-
-export const Clear = Template.bind({});
-Clear.args = {
-  type: "clear",
-};
-
-export const Confident = Template.bind({});
-Confident.args = {
-  type: "confident",
-};
-
-export const Unclear = Template.bind({});
-Unclear.args = {
-  type: "unclear",
-};
-
-export const Deferred = Template.bind({});
-Deferred.args = {
-  type: "deferred",
-};
+export const Checkmark: Story = {
+	args: {
+		type: "checkmark",
+	},
+}
+export const Article: Story = {
+	args: {
+		type: "article",
+	},
+}
+export const Close: Story = {
+	args: {
+		type: "close",
+	},
+}
+export const Accepted: Story = {
+	args: {
+		type: "accepted",
+	},
+}
+export const Pending: Story = {
+	args: {
+		type: "pending",
+	},
+}
+export const Rejected: Story = {
+	args: {
+		type: "rejected",
+	},
+}
+export const Clear: Story = {
+	args: {
+		type: "clear",
+	},
+}
+export const Confident: Story = {
+	args: {
+		type: "confident",
+	},
+}
+export const Unclear: Story = {
+	args: {
+		type: "unclear",
+	},
+}
+export const Deferred: Story = {
+	args: {
+		type: "deferred",
+	},
+}
