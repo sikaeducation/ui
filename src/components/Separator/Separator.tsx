@@ -1,5 +1,5 @@
 import "./Separator.scss";
 
-export default function Separator() {
-  return <hr className="Separator" />;
+export default function Separator(){
+	return <hr className="Separator" />;
 }

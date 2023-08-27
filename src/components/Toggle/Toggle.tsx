@@ -10,23 +10,23 @@ type Props = {
 };
 
 export default function Toggle({
-  id,
-  label,
-  value,
-  updateValue,
-  required = false,
-}: Props) {
-  return (
-    <div className="Toggle">
-      <label htmlFor={id}>{label}</label>
-      <MaterialSwitch
-        checked={!!value}
-        id={id}
-        required={required}
-        name={id}
-        onChange={() => updateValue(!value)}
-        color="primary"
-      />
-    </div>
-  );
+	id,
+	label,
+	value,
+	updateValue,
+	required = false,
+}: Props){
+	return (
+  <div className="Toggle">
+  <label htmlFor={id}>{label}</label>
+  <MaterialSwitch
+  checked={!!value}
+  id={id}
+  required={required}
+  name={id}
+  onChange={() => updateValue(!value)}
+  color="primary"
+			/>
+		</div>
+	);
 }

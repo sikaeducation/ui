@@ -7,14 +7,17 @@ import Toggle from ".";
 
 const { click } = userEvent;
 
-const meta: Meta<typeof Toggle> = { component: Toggle }
-export default meta
+const meta: Meta<typeof Toggle> = { component: Toggle };
+export default meta;
 
-type Story = StoryObj<typeof Toggle>
+type Story = StoryObj<typeof Toggle>;
 
 export const Primary: Story = {
 	render: (args) => {
-		const [value, updateValue] = useState(args.value ?? true);
+		const [
+			value,
+			updateValue,
+		] = useState(args.value ?? true);
 		return <Toggle {...args} value={value} updateValue={updateValue} />;
 	},
 	args: {
@@ -22,7 +25,7 @@ export const Primary: Story = {
 		id: "some-id",
 		value: true,
 	},
-	play: async ({ canvasElement }) => {
+	play: async({ canvasElement }) => {
 		const canvas = within(canvasElement);
 
 		const checkbox = await canvas.findByRole("checkbox");
@@ -32,4 +35,4 @@ export const Primary: Story = {
 		click(checkbox);
 		expect(checkbox).toBeChecked();
 	},
-}
+};

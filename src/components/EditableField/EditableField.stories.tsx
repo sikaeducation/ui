@@ -12,16 +12,23 @@ const meta: Meta<typeof EditableField> = {
 			},
 		},
 	},
-}
-export default meta
+};
+export default meta;
 
-type Story = StoryObj<typeof EditableField>
+type Story = StoryObj<typeof EditableField>;
 
 export const Default: Story = {
 	render: (args) => {
-		const [currentContent, setContent] = useState(args.value ?? "");
+		const [
+			currentContent,
+			setContent,
+		] = useState(args.value ?? "");
 		return (
-			<EditableField {...args} updateValue={setContent} value={currentContent} />
+  <EditableField
+  {...args}
+  updateValue={setContent}
+  value={currentContent}
+			/>
 		);
 	},
 	args: {
@@ -31,4 +38,4 @@ export const Default: Story = {
 		isRequired: true,
 		className: "Heading primary-heading",
 	},
-}
+};

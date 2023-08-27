@@ -6,10 +6,10 @@ import Button from ".";
 
 const meta: Meta<typeof Button> = {
 	component: Button,
-}
-export default meta
+};
+export default meta;
 
-type Story = StoryObj<typeof Button>
+type Story = StoryObj<typeof Button>;
 
 export const Action: Story = {
 	args: {
@@ -17,7 +17,7 @@ export const Action: Story = {
 		children: "Do it!",
 		action: jest.fn(),
 	},
-	play: async ({ args, canvasElement }) => {
+	play: async({ args, canvasElement }) => {
 		const canvas = within(canvasElement);
 		expect(args.action).not.toHaveBeenCalled();
 
@@ -26,7 +26,7 @@ export const Action: Story = {
 
 		expect(args.action).toHaveBeenCalled();
 	},
-}
+};
 
 export const PrimarySmall: Story = {
 	name: "Primary - Small",
@@ -35,7 +35,7 @@ export const PrimarySmall: Story = {
 		children: "Do it!",
 		action: jest.fn(),
 	},
-}
+};
 
 export const PrimarySmallFailure: Story = {
 	name: "Primary - Failure - Small",
@@ -43,8 +43,8 @@ export const PrimarySmallFailure: Story = {
 		type: "primary",
 		children: "Do it!",
 		actionType: "failure",
-	}
-}
+	},
+};
 
 export const PrimaryLarge: Story = {
 	name: "Primary - Large",
@@ -52,8 +52,8 @@ export const PrimaryLarge: Story = {
 		type: "primary",
 		size: "large",
 		children: "Do it!",
-	}
-}
+	},
+};
 
 export const PrimaryLargeFailure: Story = {
 	name: "Primary - Failure - Large",
@@ -62,19 +62,17 @@ export const PrimaryLargeFailure: Story = {
 		size: "large",
 		children: "Do it!",
 		actionType: "failure",
-	}
-}
+	},
+};
 export const Secondary: Story = {
-	name: "Secondary",
 	args: {
 		type: "secondary",
 		children: "Maybe do it?",
-	}
-}
+	},
+};
 export const Ghost: Story = {
-	name: "Ghost",
 	args: {
 		type: "ghost",
 		children: "Could do it",
-	}
-}
+	},
+};

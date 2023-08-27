@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react"
+import type { Meta, StoryObj } from "@storybook/react";
 import { within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
 import { withRouter } from "storybook-addon-react-router-v6";
@@ -8,22 +8,22 @@ import Breadcrumbs from ".";
 const meta: Meta<typeof Breadcrumbs> = {
 	component: Breadcrumbs,
 	decorators: [withRouter],
-}
-export default meta
+};
+export default meta;
 
-type Story = StoryObj<typeof Breadcrumbs>
+type Story = StoryObj<typeof Breadcrumbs>;
 
 export const NoLinks: Story = {
 	args: {
 		links: [],
 	},
-	play: async ({ canvasElement }) => {
+	play: async({ canvasElement }) => {
 		const canvas = within(canvasElement);
 		const elements = canvas.queryByRole("listitem");
 
 		await expect(elements).not.toBeInTheDocument();
-	}
-}
+	},
+};
 
 export const OneLink: Story = {
 	args: {
@@ -35,13 +35,13 @@ export const OneLink: Story = {
 			},
 		],
 	},
-	play: async ({ canvasElement }) => {
+	play: async({ canvasElement }) => {
 		const canvas = within(canvasElement);
 		const elements = canvas.queryByRole("listitem");
 
 		await expect(elements).not.toBeInTheDocument();
 	},
-}
+};
 
 export const TwoLinks: Story = {
 	args: {
@@ -58,13 +58,13 @@ export const TwoLinks: Story = {
 			},
 		],
 	},
-	play: async ({ canvasElement }) => {
+	play: async({ canvasElement }) => {
 		const canvas = within(canvasElement);
 		const elements = canvas.findAllByRole("listitem");
 
 		await expect(elements).toHaveLength(2);
 	},
-}
+};
 
 export const MultipleLinks: Story = {
 	args: {
@@ -86,10 +86,10 @@ export const MultipleLinks: Story = {
 			},
 		],
 	},
-	play: async ({ canvasElement }) => {
+	play: async({ canvasElement }) => {
 		const canvas = within(canvasElement);
 		const elements = canvas.findAllByRole("listitem");
 
 		await expect(elements).toHaveLength(3);
 	},
-}
+};

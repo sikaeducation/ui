@@ -4,9 +4,9 @@ import Separator from ".";
 
 const meta: Meta<typeof Separator> = {
 	component: Separator,
-}
-export default meta
+};
+export default meta;
 
-type Story = StoryObj<typeof Separator>
+type Story = StoryObj<typeof Separator>;
 
-export const Default: Story = {}
+export const Default: Story = {};

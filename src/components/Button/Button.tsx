@@ -16,35 +16,35 @@ type Props = {
 };
 
 const buttonClasses: Record<ButtonType, string> = {
-  primary: "primary-button",
-  secondary: "secondary-button",
-  ghost: "tertiary-button",
+	primary: "primary-button",
+	secondary: "secondary-button",
+	ghost: "tertiary-button",
 };
 
 export default function ButtonFormSubmission({
-  action,
-  children,
-  type,
-  submit = false,
-  size = "small",
-  actionType = "normal",
-  disabled = false,
-}: Props) {
-  const buttonClass = buttonClasses[type];
-  return (
-    <button
-      onClick={action}
-      type={submit ? "submit" : "button"}
-      className={classNames({
-        Button: true,
-        [buttonClass]: true,
-        disabled,
-        failure: actionType === "failure",
-        small: size === "small",
-        large: size === "large",
-      })}
-    >
-      {children}
-    </button>
-  );
+	action,
+	children,
+	type,
+	submit = false,
+	size = "small",
+	actionType = "normal",
+	disabled = false,
+}: Props){
+	const buttonClass = buttonClasses[type];
+	return (
+  <button
+  onClick={action}
+  type={submit ? "submit" : "button"}
+  className={classNames({
+  	Button: true,
+  	[buttonClass]: true,
+  	disabled,
+  	failure: actionType === "failure",
+  	small: size === "small",
+  	large: size === "large",
+  })}
+		>
+  {children}
+		</button>
+	);
 }

@@ -12,28 +12,33 @@ const meta: Meta<typeof TextArea> = {
 			},
 		},
 	},
-}
-export default meta
+};
+export default meta;
 
-type Story = StoryObj<typeof TextArea>
+type Story = StoryObj<typeof TextArea>;
 
 export const Default: Story = {
 	render: (args) => {
-		const [currentContent, setContent] = useState(args.value ?? "");
-		return <TextArea {...args} updateValue={setContent} value={currentContent} />;
+		const [
+			currentContent,
+			setContent,
+		] = useState(args.value ?? "");
+		return (
+  <TextArea {...args} updateValue={setContent} value={currentContent} />
+		);
 	},
 	args: {
 		value: "Some content",
 		id: "some-id",
 		label: "Some label",
 		isRequired: true,
-	}
-}
+	},
+};
 
 export const Editable: Story = {
 	...Default,
 	args: {
 		...Default.args,
 		editable: true,
-	}
-}
+	},
+};

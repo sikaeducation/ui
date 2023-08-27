@@ -1,19 +1,20 @@
 import type { StoryObj, Meta } from "@storybook/react";
 
 import DataTable from ".";
+
 const meta: Meta<typeof DataTable> = {
 	component: DataTable,
-}
-export default meta
+};
+export default meta;
 
-type Story = StoryObj<typeof DataTable>
+type Story = StoryObj<typeof DataTable>;
 
 export const Empty: Story = {
 	args: {
 		fields: [],
 		tableData: [],
-	}
-}
+	},
+};
 
 export const NoData: Story = {
 	args: {
@@ -36,7 +37,7 @@ export const NoData: Story = {
 		],
 		tableData: [],
 	},
-}
+};
 
 export const OneRow: Story = {
 	args: {
@@ -55,6 +56,7 @@ export const OneRow: Story = {
 				header: "Header 3",
 				proportion: "30%",
 				key: "header_3",
+				// eslint-disable-next-line no-console
 				action: (id) => console.log("I got clicked", id),
 			},
 		],
@@ -67,7 +69,7 @@ export const OneRow: Story = {
 			},
 		],
 	},
-}
+};
 
 export const MultipleRows: Story = {
 	args: {
@@ -109,7 +111,7 @@ export const MultipleRows: Story = {
 			},
 		],
 	},
-}
+};
 
 export const LongField: Story = {
 	args: {
@@ -135,12 +137,12 @@ export const LongField: Story = {
 				id: "1",
 				header_1: "Data one",
 				header_2:
-					"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
 				header_3: "Data three",
 			},
 		],
 	},
-}
+};
 
 export const MobileFields: Story = {
 	args: {
@@ -173,7 +175,7 @@ export const MobileFields: Story = {
 				id: "1",
 				header_1: "Data one",
 				header_2:
-					"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
 				header_3: "Data three",
 			},
 		],
@@ -183,4 +185,4 @@ export const MobileFields: Story = {
 			defaultViewport: "mobile1",
 		},
 	},
-}
+};

@@ -5,6 +5,6 @@ type Props = {
   altText: string;
 };
 
-export default function Avatar({ imageUrl, altText }: Props) {
-  return <img className="Avatar" src={imageUrl} alt={altText} />;
+export default function Avatar({ imageUrl, altText }: Props){
+	return <img className="Avatar" src={imageUrl} alt={altText} />;
 }

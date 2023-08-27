@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { ComponentPropsWithoutRef } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
@@ -7,12 +5,12 @@ import { dracula as style } from "react-syntax-highlighter/dist/esm/styles/prism
 import Heading from "../Heading";
 import Separator from "../Separator";
 
-export function addLinkToImage({ src, alt }: ComponentPropsWithoutRef<"img">) {
-  return (
-    <a href={src} className="image-container" rel="noopener noreferrer">
-      <img src={src} alt={alt} />
-    </a>
-  );
+export function addLinkToImage({ src, alt }: ComponentPropsWithoutRef<"img">){
+	return (
+  <a href={src} className="image-container" rel="noopener noreferrer">
+  <img src={src} alt={alt} />
+		</a>
+	);
 }
 
 // This ties up the link with the app data and state
@@ -26,7 +24,7 @@ export function addLinkToImage({ src, alt }: ComponentPropsWithoutRef<"img">) {
 //   lastPerformanceBySlugByLearner,
 //   lastQuestionPerformancesBySlugByLearnerByQuestion,
 //   getIndicator,
-// }: any) {
+// }) {
 //   return function _formatLinks({
 //     children,
 //     href,
@@ -82,38 +80,34 @@ export function addLinkToImage({ src, alt }: ComponentPropsWithoutRef<"img">) {
 //   };
 // }
 
-export function formatCode({
-  inline,
-  className: elementClassName,
-  children,
-}: any) {
-  const match = /language-(\w+)/.exec(elementClassName || "");
-  return !inline && match ? (
-    <SyntaxHighlighter style={style} language={match[1]} PreTag="div">
-      {String(children).replace(/\n$/, "")}
-    </SyntaxHighlighter>
-  ) : (
-    <code className={elementClassName}>{children}</code>
-  );
+export function formatCode({ inline, className: elementClassName, children }){
+	const match = /language-(\w+)/.exec(elementClassName || "");
+	return !inline && match
+		? 			<SyntaxHighlighter style={style} language={match[1]} PreTag="div">
+				{String(children).replace(/\n$/, "")}
+  </SyntaxHighlighter>
+
+		: 			<code className={elementClassName}>{children}</code>
+	;
 }
 
-export function formatHeading(level: number) {
-  return function _formatHeading({ children }: any) {
-    switch (level) {
-      case 1:
-        return <Heading level={1}>{children}</Heading>;
-      case 2:
-        return <Heading level={2}>{children}</Heading>;
-      case 3:
-        return <Heading level={3}>{children}</Heading>;
-      case 4:
-        return <Heading level={4}>{children}</Heading>;
-      default:
-        return <Heading level={1}>{children}</Heading>;
-    }
-  };
+export function formatHeading(level: number){
+	return function _formatHeading({ children }){
+		switch (level){
+			case 1:
+				return <Heading level={1}>{children}</Heading>;
+			case 2:
+				return <Heading level={2}>{children}</Heading>;
+			case 3:
+				return <Heading level={3}>{children}</Heading>;
+			case 4:
+				return <Heading level={4}>{children}</Heading>;
+			default:
+				return <Heading level={1}>{children}</Heading>;
+		}
+	};
 }
 
-export function getSeparator() {
-  return <Separator />;
+export function getSeparator(){
+	return <Separator />;
 }

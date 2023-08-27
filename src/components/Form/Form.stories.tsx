@@ -5,10 +5,10 @@ import Button from "../Button";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 
-const meta: Meta<typeof Form> = { component: Form }
-export default meta
+const meta: Meta<typeof Form> = { component: Form };
+export default meta;
 
-type Story = StoryObj<typeof Form>
+type Story = StoryObj<typeof Form>;
 
 export const Default: Story = {
 	args: {
@@ -35,6 +35,7 @@ export const Default: Story = {
 				Component: Button,
 				type: "secondary",
 				size: "large",
+				// eslint-disable-next-line no-console
 				action: () => console.log("Hello, world!"),
 			},
 			{
@@ -42,15 +43,16 @@ export const Default: Story = {
 				Component: Button,
 				type: "primary",
 				size: "large",
+				// eslint-disable-next-line no-console
 				action: () => console.log("Hello, world!"),
 			},
 		],
 	},
-}
+};
 
 export const WithChildren: Story = {
 	args: {
 		...Default.args,
 		children: <p>Some free text here</p>,
 	},
-}
+};
