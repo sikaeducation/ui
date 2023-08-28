@@ -2,14 +2,14 @@ import "./Breadcrumbs.scss";
 import { Link } from "react-router-dom";
 
 type internalLink = {
-  slug: string;
-  path: string;
-  label: string;
-  isLinked?: boolean;
+	slug: string;
+	path: string;
+	label: string;
+	isLinked?: boolean;
 };
 
 type props = {
-  links: internalLink[];
+	links: internalLink[];
 };
 
 export default function Breadcrumbs({ links }: props){
@@ -20,12 +20,12 @@ export default function Breadcrumbs({ links }: props){
 	}));
 
 	return (
-  <nav className="Breadcrumbs">
-  <ol>
-  {normalizedLinks.map(({
-  	slug, path, label, isLinked,
-  }) => <li key={slug}>
-  {isLinked ? <Link to={path}>{label}</Link> : label}
+		<nav className="Breadcrumbs">
+			<ol>
+				{normalizedLinks.map(({
+					slug, path, label, isLinked,
+				}) => <li key={slug}>
+						{isLinked ? <Link to={path}>{label}</Link> : label}
 					</li>)}
 			</ol>
 		</nav>

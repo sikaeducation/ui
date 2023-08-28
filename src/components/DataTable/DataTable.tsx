@@ -29,52 +29,56 @@ export default function DataTable<
 	const proportions = normalizedFields.map(getProportion(size));
 	const headers = normalizedFields.map(({ header }) => header);
 	const columnWidths = proportions.join(" ");
-	const handleKey
-		= (action?: (id?: string) => void, id?: string) => (event: KeyboardEvent<HTMLSpanElement>) => {
+	const handleKey = (action?: (id?: string) => void, id?: string) => {
+		return (event: KeyboardEvent<HTMLSpanElement>) => {
 			if (event.code === "Enter" && action){
 				action(id);
 			}
 		};
+	};
 
 	return (
 		<div className="DataTable" role="grid">
 			{headers.length
-				? 					<div
-						role="row"
-						style={{ gridTemplateColumns: columnWidths }}
-						className="table-row table-headers"
-					>
-						{headers.map((header) => <span key={header} className="table-header" role="cell">
-								{header}
-							</span>)}
-					</div>
+				? <div
+					role="row"
+					style={{ gridTemplateColumns: columnWidths }}
+					className="table-row table-headers"
+				>
+					{headers.map((header) => <span key={header} className="table-header" role="cell">
+						{header}
+					</span>)}
+				</div>
 
 				: null}
 
 			{tableData.length > 0
 				? tableData.map((row) => <div
-						key={row.id}
-						role="row"
-						style={{ gridTemplateColumns: columnWidths }}
-						className={classNames({
-							"table-row": true,
-							active: row.id === activeId,
-						})}
-					>
-						{normalizedFields.length
-							? normalizedFields.map(({ key, title, action }) => <span
-									onClick={() => action && action(row.id)}
-									onKeyDown={(event) => action && handleKey(action, row.id)(event)}
-									title={title}
-									className="field"
-									key={key}
-									tabIndex={0}
-									role="gridcell"
-								>
-									{row[key || ""] ? row[key] : null}
-								</span>)
-							: null}
-					</div>)
+					key={row.id}
+					role="row"
+					style={{ gridTemplateColumns: columnWidths }}
+					className={classNames({
+						"table-row": true,
+						active: row.id === activeId,
+					})}
+				>
+					{normalizedFields.length
+						? normalizedFields.map(({ key, title, action }) => <span
+							onClick={() => action && action(row.id)}
+							onKeyDown={(event) => {
+								return action
+									&& handleKey(action, row.id)(event);
+							}}
+							title={title}
+							className="field"
+							key={key}
+							tabIndex={0}
+							role="gridcell"
+						>
+							{row[key || ""] ? row[key] : null}
+						</span>)
+						: null}
+				</div>)
 				: null}
 		</div>
 	);

@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable jest/no-commented-out-tests */
 import { render, screen, within } from "@testing-library/react";
 // import { MemoryRouter } from "react-router-dom";
 import {
@@ -10,6 +12,7 @@ import {
 
 describe("#addLinkToImage", () => {
 	it("adds a link to an image", async() => {
+		expect.assertions(2);
 		const linkedImage = addLinkToImage({
 			src: "https://sikaeducation.com",
 			alt: "Sika Education",
@@ -79,6 +82,7 @@ describe("#addLinkToImage", () => {
 
 describe("#formatCode", () => {
 	it("formats inline bash", async() => {
+		expect.assertions(1);
 		const code = formatCode({
 			inline: true,
 			children: "echo $SOME_ENVIRONMENT_VARIABLE",
@@ -93,8 +97,9 @@ describe("#formatCode", () => {
 	});
 
 	it("formats block TypeScript", async() => {
+		expect.assertions(1);
 		const codeExample
-      = "const someObject: { someKey: string; } = { someKey: 'Some value'}";
+			= "const someObject: { someKey: string; } = { someKey: 'Some value'}";
 		const code = formatCode({
 			inline: false,
 			children: codeExample,
@@ -111,6 +116,7 @@ describe("#formatCode", () => {
 
 describe("#formatHeading", () => {
 	it("formats h1s", async() => {
+		expect.assertions(2);
 		const h1 = formatHeading(1)({
 			children: "Some Heading",
 		});
@@ -124,6 +130,7 @@ describe("#formatHeading", () => {
 	});
 
 	it("formats h2s", async() => {
+		expect.assertions(2);
 		const h2 = formatHeading(2)({
 			children: "Some Heading",
 		});
@@ -137,6 +144,7 @@ describe("#formatHeading", () => {
 	});
 
 	it("formats h3s", async() => {
+		expect.assertions(2);
 		const h3 = formatHeading(3)({
 			children: "Some Heading",
 		});
@@ -150,6 +158,7 @@ describe("#formatHeading", () => {
 	});
 
 	it("formats h4s", async() => {
+		expect.assertions(2);
 		const h4 = formatHeading(4)({
 			children: "Some Heading",
 		});
@@ -165,6 +174,7 @@ describe("#formatHeading", () => {
 
 describe("#getSeparator", () => {
 	it("gets a separator", async() => {
+		expect.assertions(0);
 		const separator = getSeparator();
 		render(separator);
 		await screen.findByRole("separator");

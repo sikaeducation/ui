@@ -6,13 +6,13 @@ type ButtonType = "primary" | "secondary" | "ghost";
 type Size = "small" | "large";
 type ActionType = "normal" | "failure";
 type Props = {
-  children: ReactNode;
-  type: ButtonType;
-  action?: () => void;
-  submit?: boolean;
-  size?: Size;
-  disabled?: boolean;
-  actionType?: ActionType;
+	children: ReactNode;
+	type: ButtonType;
+	action?: () => void;
+	submit?: boolean;
+	size?: Size;
+	disabled?: boolean;
+	actionType?: ActionType;
 };
 
 const buttonClasses: Record<ButtonType, string> = {
@@ -32,19 +32,19 @@ export default function ButtonFormSubmission({
 }: Props){
 	const buttonClass = buttonClasses[type];
 	return (
-  <button
-  onClick={action}
-  type={submit ? "submit" : "button"}
-  className={classNames({
-  	Button: true,
-  	[buttonClass]: true,
-  	disabled,
-  	failure: actionType === "failure",
-  	small: size === "small",
-  	large: size === "large",
-  })}
+		<button
+			onClick={action}
+			type={submit ? "submit" : "button"}
+			className={classNames({
+				Button: true,
+				[buttonClass]: true,
+				disabled,
+				failure: actionType === "failure",
+				small: size === "small",
+				large: size === "large",
+			})}
 		>
-  {children}
+			{children}
 		</button>
 	);
 }

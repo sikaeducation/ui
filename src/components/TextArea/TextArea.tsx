@@ -4,13 +4,13 @@ import "./TextArea.scss";
 type FieldType = "text" | "url" | "email" | "password";
 
 type props = {
-  value?: string;
-  updateValue: (newValue: string) => void;
-  id: string;
-  label: string;
-  isRequired?: boolean;
-  editable?: boolean;
-  type?: FieldType;
+	value?: string;
+	updateValue: (newValue: string) => void;
+	id: string;
+	label: string;
+	isRequired?: boolean;
+	editable?: boolean;
+	type?: FieldType;
 };
 
 export default function TextArea({
@@ -27,16 +27,16 @@ export default function TextArea({
 		return <></>;
 	}
 	return (
-  <div className="TextArea">
-  <label htmlFor={id}>{label}</label>
-  <textarea
-  id={id}
-  value={value}
-  required={isRequired}
-  className={classNames({ editable })}
-  onChange={(event) => {
-  	updateValue(event.target.value);
-  }}
+		<div className="TextArea">
+			<label htmlFor={id}>{label}</label>
+			<textarea
+				id={id}
+				value={value}
+				required={isRequired}
+				className={classNames({ editable })}
+				onChange={(event) => {
+					updateValue(event.target.value);
+				}}
 			/>
 		</div>
 	);

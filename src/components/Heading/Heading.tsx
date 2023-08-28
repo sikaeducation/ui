@@ -5,10 +5,10 @@ import "./Heading.scss";
 type HeadingLevels = 1 | 2 | 3 | 4;
 
 type Props = {
-  className?: string;
-  children: ReactNode;
-  margin?: boolean;
-  level: HeadingLevels;
+	className?: string;
+	children: ReactNode;
+	margin?: boolean;
+	level: HeadingLevels;
 };
 
 export default function Heading({
@@ -20,68 +20,68 @@ export default function Heading({
 	switch (level){
 		case 1:
 			return (
-  <h1
-  className={classNames({
-  	Heading: true,
-  	"primary-heading": true,
-  	margin,
-  	[className]: true,
-  })}
-			>
-  {children}
-			</h1>
+				<h1
+					className={classNames({
+						Heading: true,
+						"primary-heading": true,
+						margin,
+						[className]: true,
+					})}
+				>
+					{children}
+				</h1>
 			);
 		case 2:
 			return (
-  <h2
-  className={classNames({
-  	Heading: true,
-  	"secondary-heading": true,
-  	margin,
-  	[className]: true,
-  })}
-			>
-  {children}
-			</h2>
+				<h2
+					className={classNames({
+						Heading: true,
+						"secondary-heading": true,
+						margin,
+						[className]: true,
+					})}
+				>
+					{children}
+				</h2>
 			);
 		case 3:
 			return (
-  <h3
-  className={classNames({
-  	Heading: true,
-  	"tertiary-heading": true,
-  	margin,
-  	[className]: true,
-  })}
-			>
-  {children}
-			</h3>
+				<h3
+					className={classNames({
+						Heading: true,
+						"tertiary-heading": true,
+						margin,
+						[className]: true,
+					})}
+				>
+					{children}
+				</h3>
 			);
 		case 4:
 			return (
-  <h4
-  className={classNames({
-  	Heading: true,
-  	"quaternary-heading": true,
-  	margin,
-  	[className]: true,
-  })}
-			>
-  {children}
-			</h4>
+				<h4
+					className={classNames({
+						Heading: true,
+						"quaternary-heading": true,
+						margin,
+						[className]: true,
+					})}
+				>
+					{children}
+				</h4>
 			);
 		default:
 			return (
-  <h1
-  className={classNames({
-  	Heading: true,
-  	"primary-heading": true,
-  	margin,
-  	[className]: true,
-  })}
-			>
-  {children}
-			</h1>
+				<h1
+					className={classNames({
+						Heading: true,
+						"primary-heading": true,
+						margin,
+						[className]: true,
+					})}
+				>
+					{children}
+				</h1>
 			);
 	}
 }

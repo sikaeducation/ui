@@ -1,4 +1,5 @@
-import { ComponentPropsWithoutRef } from "react";
+import { ComponentPropsWithoutRef, ReactNode } from "react";
+import { CodeComponent } from "react-markdown/lib/ast-to-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
 import { dracula as style } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -7,8 +8,8 @@ import Separator from "../Separator";
 
 export function addLinkToImage({ src, alt }: ComponentPropsWithoutRef<"img">){
 	return (
-  <a href={src} className="image-container" rel="noopener noreferrer">
-  <img src={src} alt={alt} />
+		<a href={src} className="image-container" rel="noopener noreferrer">
+			<img src={src} alt={alt} />
 		</a>
 	);
 }
@@ -69,10 +70,10 @@ export function addLinkToImage({ src, alt }: ComponentPropsWithoutRef<"img">){
 //
 //     return href ? (
 //       <>
-//         <Link className="internal-link" to={href || ""}>
-//           {children}
-//         </Link>
-//         {lastPerformance && getIndicator(lastPerformance as postedPerformance)}
+//       <Link className="internal-link" to={href || ""}>
+//         {children}
+//       </Link>
+//       {lastPerformance && getIndicator(lastPerformance as postedPerformance)}
 //       </>
 //     ) : (
 //       <a href="https://sikaeducation.com">{children}</a>
@@ -80,19 +81,22 @@ export function addLinkToImage({ src, alt }: ComponentPropsWithoutRef<"img">){
 //   };
 // }
 
-export function formatCode({ inline, className: elementClassName, children }){
+export function formatCode({
+	inline,
+	className: elementClassName,
+	children,
+}: keyof (JSX.IntrinsicElements | CodeComponent)){
 	const match = /language-(\w+)/.exec(elementClassName || "");
 	return !inline && match
-		? 			<SyntaxHighlighter style={style} language={match[1]} PreTag="div">
-				{String(children).replace(/\n$/, "")}
-  </SyntaxHighlighter>
-
-		: 			<code className={elementClassName}>{children}</code>
+		? <SyntaxHighlighter style={style as Record<string, string>} language={match[1]} PreTag="div">
+			{String(children).replace(/\n$/, "")}
+		</SyntaxHighlighter>
+		: <code className={elementClassName}>{children}</code>
 	;
 }
 
 export function formatHeading(level: number){
-	return function _formatHeading({ children }){
+	return function _formatHeading({ children }: { children: ReactNode }){
 		switch (level){
 			case 1:
 				return <Heading level={1}>{children}</Heading>;
