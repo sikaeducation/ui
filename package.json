@@ -7,11 +7,11 @@
 	"source": "src/index.ts",
 	"type": "module",
 	"exports": {
-		"./types": "./dist/index.d.ts",
+		".": "./dist/index.js",
 		"./components.css": "./dist/index.css",
-		"./styles": "./dist/styles/_index.scss",
 		"./reset": "./dist/styles/_reset.scss",
-		".": "./dist/index.js"
+		"./styles": "./dist/styles/_index.scss",
+		"./types": "./dist/index.d.ts"
 	},
 	"module": "./dist/index.js",
 	"main": "dist/index.js",
@@ -109,7 +109,6 @@
 		"eslint-plugin-storybook": "^0.6.13",
 		"expect": "^29.3.1",
 		"http-server": "^14.1.1",
-		"prettier": "^3.0.2",
 		"storybook": "^7.3.2",
 		"storybook-addon-react-router-v6": "^2.0.5",
 		"storybook-react-context": "^0.6.0",
