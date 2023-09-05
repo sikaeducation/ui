@@ -1,4 +1,5 @@
-import { ComponentPropsWithoutRef, ReactNode } from "react";
+import { ComponentPropsWithoutRef, PropsWithChildren, ReactNode } from "react";
+import { CodeProps } from "react-markdown/lib/ast-to-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
 import { dracula as style } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -84,7 +85,7 @@ export function formatCode({
 	inline,
 	className: elementClassName,
 	children,
-}: { inline: boolean; className: string; children: ReactNode }){
+}: CodeProps){
 	const match = /language-(\w+)/.exec(elementClassName || "");
 	return !inline && match
 		? <SyntaxHighlighter style={style as Record<string, string>} language={match[1]} PreTag="div">
