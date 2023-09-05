@@ -1,4 +1,4 @@
-export { default as AppNotification } from "./components/AppNotification";
+export { default as Notification } from "./components/Notification";
 export { default as Avatar } from "./components/Avatar";
 export { default as Breadcrumbs } from "./components/Breadcrumbs";
 export { default as Button } from "./components/Button";
