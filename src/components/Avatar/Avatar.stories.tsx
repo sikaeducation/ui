@@ -6,4 +6,9 @@ export default meta;
 
 type Story = StoryObj<typeof Avatar>;
 
-export const Default: Story = {};
+export const Default: Story = {
+	args: {
+		imageUrl: "https://via.placeholder.com/500#medium",
+		altText: "Me!",
+	},
+};
