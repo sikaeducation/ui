@@ -2,12 +2,13 @@ import "./Checkbox.scss";
 import { Checkbox as MaterialCheckbox } from "@material-ui/core";
 
 type Props = {
-  id: string;
-  label: string;
-  value: boolean | string;
-  updateValue: (newValue: boolean) => void;
-  required?: boolean;
-  type?: "primary" | "secondary";
+	className?: string;
+	id: string;
+	label: string;
+	required?: boolean;
+	type?: "primary" | "secondary";
+	updateValue: (newValue: boolean) => void;
+	value: boolean | string;
 };
 
 export default function Checkbox({
@@ -19,15 +20,15 @@ export default function Checkbox({
 	type = "primary",
 }: Props){
 	return (
-  <div className="Checkbox">
-  <label htmlFor={id}>{label}</label>
-  <MaterialCheckbox
-  checked={!!value}
-  id={id}
-  required={required}
-  name={id}
-  color={type}
-  onChange={() => updateValue(!value)}
+		<div className="Checkbox">
+			<label htmlFor={id}>{label}</label>
+			<MaterialCheckbox
+				checked={!!value}
+				id={id}
+				required={required}
+				name={id}
+				color={type}
+				onChange={() => updateValue(!value)}
 			/>
 		</div>
 	);

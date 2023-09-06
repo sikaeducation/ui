@@ -1,81 +1,84 @@
-// import type { ReactNode } from "react";
-// import { Button, TextArea, Checkbox, TextInput } from "../..";
-// import Heading from "../Heading";
+import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import { Button, TextArea, Checkbox, TextInput } from "../..";
+import Heading from "../Heading";
 import "./Form.scss";
 
-// type FieldType = "text" | "url" | "email" | "password";
-// type ButtonType = "primary" | "secondary" | "ghost";
-// type Size = "small" | "large";
-//
-// type Field = {
-// 	id: string;
-// 	label: string;
-// 	Component: (typeof TextInput | typeof TextArea | typeof Checkbox);
-// 	type?: FieldType;
-// };
-//
-// type Action = {
-// 	label: string;
-// 	Component: typeof Button;
-// 	action: (payload: unknown) => void;
-// 	type?: ButtonType;
-// 	size?: Size;
-// };
-//
-// type Props = {
-// 	heading: string;
-// 	newItem: Record<string, unknown>;
-// 	setNewItem: (value: Record<string, unknown>) => void;
-// 	fields: Field[];
-// 	actions: Action[];
-// 	children?: ReactNode;
-// };
+type FormData = boolean | string | number;
 
-export default function Form(){
-	// {
-	// heading,
-	// fields,
-	// actions,
-	// newItem,
-	// setNewItem,
-	// children,
-	// } /*: Props */,
+type FormField = {
+	id: string;
+	label: string;
+	className?: string;
+	required?: boolean;
+	value: FormData;
+	updateValue: (newValue: FormData) => void;
+	type?: ComponentPropsWithoutRef<typeof TextInput>["type"] | ComponentPropsWithoutRef<typeof TextArea>["type"] | ComponentPropsWithoutRef<typeof Checkbox>["type"];
+	Component: (typeof TextInput | typeof TextArea | typeof Checkbox);
+}
+
+type Action = ComponentPropsWithoutRef<typeof Button>
+	& {
+		id: string;
+		label: string;
+		required?: boolean;
+		value: FormData;
+		updateValue: (newValue: FormData) => void;
+	} & {
+		Component: typeof Button;
+	};
+
+type Props = {
+	heading: string;
+	newItem: Record<string, FormData>;
+	setNewItem: (value: Record<string, FormData>) => void;
+	fields: FormField[];
+	actions: Action[];
+	children?: ReactNode;
+};
+
+export default function Form({
+	heading,
+	fields,
+	actions,
+	newItem,
+	setNewItem,
+	children,
+}: Props){
 	return (
-  <div className="Form">
-  {/*
+		<div className="Form">
 			<Heading level={2}>{heading}</Heading>
 			<form>
-				{fields.map(({ id, label, Component, type }) => (
-					<Component
-						key={id}
-						id={id}
-						label={label}
-						value={newItem[id] || ""}
-						updateValue={(newValue: unknown) =>
-							setNewItem({
-								...newItem,
-								[id]: newValue,
-							})
-						}
-						type={type}
-					/>
-				))}
+				{fields.map(({ id, label, Component, type }) => <Component
+					key={id}
+					id={id}
+					label={label}
+					value={newItem[String(id)] ? String(newItem[String(id)]) : ""}
+					updateValue={(newValue: FormData) => setNewItem({
+						...newItem,
+						[id]: newValue,
+					})
+					}
+					type={type as undefined}
+				/>)}
 				{children}
 				<fieldset className="actions">
-					{actions.map(({ label, Component, type, action, size }) => (
-						<Component
-							key={label}
-							label={label}
-							action={action}
-							type={type}
-							size={size}
-						>
+					{actions.map(({
+						label,
+						Component,
+						type,
+						action,
+						size,
+					}) => <Component
+						key={label}
+						action={action}
+						type={type}
+						size={size}
+					>
 							{label}
-						</Component>
-					))}
+						</Component>)}
 				</fieldset>
 			</form>
-			*/}
+
 		</div>
 	);
 }

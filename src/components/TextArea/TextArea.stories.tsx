@@ -24,14 +24,18 @@ export const Default: Story = {
 			setContent,
 		] = useState(args.value ?? "");
 		return (
-  <TextArea {...args} updateValue={setContent} value={currentContent} />
+			<TextArea
+				{...args}
+				updateValue={setContent}
+				value={currentContent}
+			/>
 		);
 	},
 	args: {
 		value: "Some content",
 		id: "some-id",
 		label: "Some label",
-		isRequired: true,
+		required: true,
 	},
 };
 

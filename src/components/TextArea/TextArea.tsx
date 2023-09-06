@@ -1,16 +1,15 @@
 import classNames from "classnames";
 import "./TextArea.scss";
 
-type FieldType = "text" | "url" | "email" | "password";
-
-type props = {
-	value?: string;
-	updateValue: (newValue: string) => void;
+type Props = {
+	className?: string;
+	editable?: boolean;
 	id: string;
 	label: string;
-	isRequired?: boolean;
-	editable?: boolean;
-	type?: FieldType;
+	required?: boolean;
+	type?: "text";
+	updateValue: (newValue: string) => void;
+	value?: string;
 };
 
 export default function TextArea({
@@ -18,22 +17,20 @@ export default function TextArea({
 	label,
 	value = "",
 	updateValue,
-	isRequired,
+	required,
 	editable = false,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	type = "text",
-}: props){
-	if (type !== "text"){
-		// eslint-disable-next-line react/jsx-no-useless-fragment
-		return <></>;
-	}
+	className = "",
+}: Props){
 	return (
 		<div className="TextArea">
 			<label htmlFor={id}>{label}</label>
 			<textarea
 				id={id}
 				value={value}
-				required={isRequired}
-				className={classNames({ editable })}
+				required={required}
+				className={`${className} ${classNames({ editable })}`}
 				onChange={(event) => {
 					updateValue(event.target.value);
 				}}
