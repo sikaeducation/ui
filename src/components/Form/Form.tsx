@@ -21,8 +21,6 @@ type Action = ComponentPropsWithoutRef<typeof Button>
 		id: string;
 		label: string;
 		required?: boolean;
-		value: FormData;
-		updateValue: (newValue: FormData) => void;
 	} & {
 		Component: typeof Button;
 	};
@@ -42,7 +40,7 @@ export default function Form({
 	actions,
 	newItem,
 	setNewItem,
-	children,
+	children = <></>,
 }: Props){
 	return (
 		<div className="Form">
@@ -69,13 +67,12 @@ export default function Form({
 						action,
 						size,
 					}) => <Component
-						key={label}
-						action={action}
-						type={type}
-						size={size}
-					>
-							{label}
-						</Component>)}
+							key={label}
+							action={action}
+							type={type}
+							size={size}
+							children={label}
+						/>)}
 				</fieldset>
 			</form>
 
