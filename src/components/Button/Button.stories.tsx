@@ -22,7 +22,7 @@ export const Action: Story = {
 		expect(args.action).not.toHaveBeenCalled();
 
 		const button = await canvas.findByRole("button");
-		userEvent.click(button);
+		await userEvent.click(button);
 
 		expect(args.action).toHaveBeenCalled();
 	},

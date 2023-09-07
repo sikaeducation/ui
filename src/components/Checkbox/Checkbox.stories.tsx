@@ -13,6 +13,11 @@ const { click } = userEvent;
 type Story = StoryObj<typeof Checkbox>;
 
 export const Primary: Story = {
+	args: {
+		label: "Some Input",
+		id: "some-id",
+		value: true,
+	},
 	render: (args) => {
 		const [
 			value,
@@ -20,20 +25,15 @@ export const Primary: Story = {
 		] = useState(args.value ?? true);
 		return <Checkbox {...args} value={value} updateValue={updateValue} />;
 	},
-	args: {
-		label: "Some Input",
-		id: "some-id",
-		value: true,
-	},
 	play: async({ canvasElement }) => {
 		const canvas = within(canvasElement);
 
-		const checkbox = await canvas.findByRole("checkbox");
-		expect(checkbox).toBeChecked();
-		click(checkbox);
-		expect(checkbox).not.toBeChecked();
-		click(checkbox);
-		expect(checkbox).toBeChecked();
+		const checkbox = await canvas.findByRole<HTMLInputElement>("checkbox");
+		expect(checkbox.checked).toBe(true);
+		await click(checkbox);
+		expect(checkbox.checked).toBe(false);
+		await click(checkbox);
+		expect(checkbox.checked).toBe(true);
 	},
 };
 

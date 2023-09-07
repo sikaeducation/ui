@@ -60,9 +60,9 @@ export const TwoLinks: Story = {
 	},
 	play: async({ canvasElement }) => {
 		const canvas = within(canvasElement);
-		const elements = canvas.findAllByRole("listitem");
+		const elements = await canvas.findAllByRole("listitem");
 
-		await expect(elements).toHaveLength(2);
+		expect(elements).toHaveLength(2);
 	},
 };
 
@@ -88,8 +88,8 @@ export const MultipleLinks: Story = {
 	},
 	play: async({ canvasElement }) => {
 		const canvas = within(canvasElement);
-		const elements = canvas.findAllByRole("listitem");
+		const elements = await canvas.findAllByRole("listitem");
 
-		await expect(elements).toHaveLength(3);
+		expect(elements).toHaveLength(3);
 	},
 };

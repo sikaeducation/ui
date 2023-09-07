@@ -28,11 +28,11 @@ export const Primary: Story = {
 	play: async({ canvasElement }) => {
 		const canvas = within(canvasElement);
 
-		const checkbox = await canvas.findByRole("checkbox");
-		expect(checkbox).toBeChecked();
-		click(checkbox);
-		expect(checkbox).not.toBeChecked();
-		click(checkbox);
-		expect(checkbox).toBeChecked();
+		const checkbox = await canvas.findByRole<HTMLInputElement>("checkbox");
+		expect(checkbox.checked).toBe(true);
+		await click(checkbox);
+		expect(checkbox.checked).toBe(false);
+		await click(checkbox);
+		expect(checkbox.checked).toBe(true);
 	},
 };
