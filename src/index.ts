@@ -16,6 +16,7 @@ export { default as TextInput } from "./components/TextInput";
 export { default as Toggle } from "./components/Toggle";
 export { default as Circle } from "./components/Circle";
 export { default as Arrowhead } from "./components/Arrowhead";
+export { default as OutlinedCircle } from "./components/OutlinedCircle";
 export { default as Breadcrumbs } from "./modules/Breadcrumbs";
 export { default as DataTable } from "./modules/DataTable";
 export { default as Form } from "./modules/Form";
