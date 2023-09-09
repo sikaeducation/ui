@@ -1,6 +1,7 @@
+import { ReactComponentLike } from "prop-types";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
-import { Button, TextArea, Checkbox, TextInput } from "../..";
-import Heading from "../Heading";
+import Button from "../../components/Button";
+import Heading from "../../components/Heading";
 import "./Form.scss";
 
 type FormData = boolean | string | number;
@@ -12,8 +13,8 @@ type FormField = {
 	required?: boolean;
 	value: FormData;
 	updateValue: (newValue: FormData) => void;
-	type?: ComponentPropsWithoutRef<typeof TextInput>["type"] | ComponentPropsWithoutRef<typeof TextArea>["type"] | ComponentPropsWithoutRef<typeof Checkbox>["type"];
-	Component: (typeof TextInput | typeof TextArea | typeof Checkbox);
+	type?: string;
+	Component: ReactComponentLike;
 }
 
 type Action = ComponentPropsWithoutRef<typeof Button>
