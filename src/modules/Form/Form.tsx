@@ -1,7 +1,7 @@
 import { ReactComponentLike } from "prop-types";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
-import Button from "../../components/Button";
-import Heading from "../../components/Heading";
+import Button from "../../elements/Button";
+import Heading from "../../elements/Heading";
 import "./Form.scss";
 
 type FormData = boolean | string | number;

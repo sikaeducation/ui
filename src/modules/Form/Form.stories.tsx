@@ -1,9 +1,9 @@
 import type { StoryObj, Meta } from "@storybook/react";
 
 import Form from ".";
-import Button from "../../components/Button";
-import TextInput from "../../components/TextInput";
-import TextArea from "../../components/TextArea";
+import Button from "../../elements/Button";
+import TextInput from "../../elements/TextInput";
+import TextArea from "../../elements/TextArea";
 
 const meta: Meta<typeof Form> = { component: Form };
 export default meta;

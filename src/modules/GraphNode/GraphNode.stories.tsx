@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import GraphNode from ".";
-import Circle from "../../components/Circle";
-import OutlinedCircle from "../../components/OutlinedCircle";
+import Circle from "../../elements/Circle";
+import OutlinedCircle from "../../elements/OutlinedCircle";
 
 const meta: Meta<typeof GraphNode> = {
 	component: GraphNode, decorators: [

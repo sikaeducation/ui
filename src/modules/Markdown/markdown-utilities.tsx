@@ -3,8 +3,8 @@ import { CodeProps } from "react-markdown/lib/ast-to-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
 import { dracula as style } from "react-syntax-highlighter/dist/esm/styles/prism";
-import Heading from "../../components/Heading";
-import Separator from "../../components/Separator";
+import Heading from "../../elements/Heading";
+import Separator from "../../elements/Separator";
 
 export function addLinkToImage({ src, alt }: ComponentPropsWithoutRef<"img">){
 	return (
