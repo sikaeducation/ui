@@ -7,11 +7,6 @@ type LinkProps = ComponentProps<typeof Link>
 
 const meta: Meta<LinkProps> = {
 	component: Link,
-	render: ({ children, href }) => (
-		<Link href={href} >
-			{children}
-		</Link >
-	),
 };
 export default meta;
 
