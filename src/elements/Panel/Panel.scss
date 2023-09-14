@@ -1,0 +1,29 @@
+@use "../../styles" as *;
+
+.Panel {
+	border: 1px solid $colors-grey-10;
+	border-radius: $borders-radius;
+
+	&.raised {
+		@include shadows-small;
+	}
+	&.floating {
+		@include shadows-large;
+	}
+	&.failure {
+		border: 5px solid $colors-failure-5;
+		background-color: $colors-failure-10;
+	}
+	&.warning {
+		border: 5px solid $colors-warning-5;
+		background-color: $colors-warning-10;
+	}
+	&.success {
+		border: 5px solid $colors-success-5;
+		background-color: $colors-success-10;
+	}
+	&.info {
+		border: 5px solid $colors-primary-5;
+		background-color: $colors-primary-10;
+	}
+}
