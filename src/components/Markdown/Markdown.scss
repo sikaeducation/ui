@@ -10,21 +10,6 @@
     width: 100%;
   }
 
-  // Links
-  .internal-link {
-    & + em {
-      display: none;
-    }
-    & + .indicator {
-      font-size: $sizes-f2;
-      display: inline;
-    }
-  }
-  .external-link-icon {
-    font-size: $sizes-f2;
-    color: $colors-grey-5;
-  }
-
   // Lists
   ul, ol {
     padding-left: 0;
