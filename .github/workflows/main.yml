@@ -18,23 +18,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 19
-      - name: Get dependency version
-        id: dependency-version
-        run: |
-          echo "DEPENDENCY_VERSION=$(cat .dependency-version)" >> $GITHUB_OUTPUT
-        shell: bash
-      - name: Cache node modules
-        id: cache-node-modules
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: node-modules-${{ steps.dependency-version.outputs.DEPENDENCY_VERSION }}
       - name: Install dependencies
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm install
-      - name: Install browsers
-        if: steps.cache-playwright.outputs.cache-hit != 'true'
-        run: npx playwright install
       - name: Build Storybook
         run: npm run build:storybook
       - name: Upload Storybook build
@@ -58,23 +43,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 19
-      - name: Get dependency version
-        id: dependency-version
-        run: |
-          echo "DEPENDENCY_VERSION=$(cat .dependency-version)" >> $GITHUB_OUTPUT
-        shell: bash
-      - name: Cache node modules
-        id: cache-node-modules
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: node-modules-${{ steps.dependency-version.outputs.DEPENDENCY_VERSION }}
-      - name: Cache Playwright
-        id: cache-playwright
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-${{ steps.dependency-version.outputs.DEPENDENCY_VERSION }}
+      - name: Install dependencies
+        run: npm install
+      - name: Install browsers
+        run: npx playwright install
       - name: Run Storybook tests
         run: npm run test:ci
   publish_npm:
@@ -89,17 +61,8 @@ jobs:
         with:
           node-version: 19
           registry-url: 'https://registry.npmjs.org'
-      - name: Get dependency version
-        id: dependency-version
-        run: |
-          echo "DEPENDENCY_VERSION=$(cat .dependency-version)" >> $GITHUB_OUTPUT
-        shell: bash
-      - name: Cache node modules
-        id: cache-node-modules
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: node-modules-${{ steps.dependency-version.outputs.DEPENDENCY_VERSION }}
+      - name: Install dependencies
+        run: npm install
       - name: Build UI library
         run: npm run build
       - name: Publish @sikaeducation/ui to npm
