@@ -35,28 +35,84 @@ export const Floating: Story = {
 		children: "Empty",
 	},
 };
-export const Failure: Story = {
+export const FailureFlat: Story = {
+	args: {
+		height: "flat",
+		children: "Empty",
+		background: "failure",
+	},
+};
+export const FailureRaised: Story = {
+	args: {
+		height: "raised",
+		children: "Empty",
+		background: "failure",
+	},
+};
+export const FailureFloating: Story = {
 	args: {
 		height: "floating",
 		children: "Empty",
 		background: "failure",
 	},
 };
-export const Warning: Story = {
+export const WarningFlat: Story = {
+	args: {
+		height: "flat",
+		children: "Empty",
+		background: "warning",
+	},
+};
+export const WarningRaised: Story = {
+	args: {
+		height: "raised",
+		children: "Empty",
+		background: "warning",
+	},
+};
+export const WarningFloating: Story = {
 	args: {
 		height: "floating",
 		children: "Empty",
 		background: "warning",
 	},
 };
-export const Success: Story = {
+export const SuccessFlat: Story = {
+	args: {
+		height: "flat",
+		children: "Empty",
+		background: "success",
+	},
+};
+export const SuccessRaised: Story = {
+	args: {
+		height: "raised",
+		children: "Empty",
+		background: "success",
+	},
+};
+export const SuccessFloating: Story = {
 	args: {
 		height: "floating",
 		children: "Empty",
 		background: "success",
 	},
 };
-export const Info: Story = {
+export const InfoFlat: Story = {
+	args: {
+		height: "flat",
+		children: "Empty",
+		background: "info",
+	},
+};
+export const InfoRaised: Story = {
+	args: {
+		height: "raised",
+		children: "Empty",
+		background: "info",
+	},
+};
+export const InfoFloating: Story = {
 	args: {
 		height: "floating",
 		children: "Empty",
