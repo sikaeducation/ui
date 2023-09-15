@@ -26,4 +26,7 @@
 		border: 5px solid $colors-primary-5;
 		background-color: $colors-primary-10;
 	}
+	&.light {
+		background-color: $colors-grey-10;
+	}
 }

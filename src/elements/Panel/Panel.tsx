@@ -6,7 +6,7 @@ type Props = {
 	className?: string;
 	children: ReactNode | ReactNode[];
 	height: "flat" | "raised" | "floating";
-	background: "none" | "failure" | "warning" | "success" | "info";
+	background: "none" | "failure" | "warning" | "success" | "info" | "light";
 };
 
 export default function Panel({
@@ -25,6 +25,7 @@ export default function Panel({
 			warning: background === "warning",
 			success: background === "success",
 			info: background === "info",
+			light: background === "light",
 		})}`}>
 			{children}
 		</div>

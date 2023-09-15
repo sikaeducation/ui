@@ -119,3 +119,24 @@ export const InfoFloating: Story = {
 		background: "info",
 	},
 };
+export const LightFlat: Story = {
+	args: {
+		height: "flat",
+		children: "Empty",
+		background: "light",
+	},
+};
+export const LightRaised: Story = {
+	args: {
+		height: "raised",
+		children: "Empty",
+		background: "light",
+	},
+};
+export const LightFloating: Story = {
+	args: {
+		height: "floating",
+		children: "Empty",
+		background: "light",
+	},
+};
