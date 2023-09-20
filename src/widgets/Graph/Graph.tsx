@@ -43,7 +43,7 @@ export default function Graph({
 						stroke="black"
 						cx={node.x}
 						cy={node.y}
-						r="100"
+						r="1"
 					/>
 				))
 			}

@@ -9,14 +9,18 @@ import data from "./sample-data";
 const { groups, nodes, links } = data;
 
 const meta: Meta<typeof Graph> = {
-	component: Graph, decorators: [
+	component: Graph,
+	argTypes: {
+		options: {
+			control: "object",
+		},
+	},
+	decorators: [
 		(Story) => <svg
 			width="400"
 			height="400"
-			viewBox="-15000 -15000 30000 30000"
-			style={{
-				border: "1px solid red",
-			}}
+			viewBox="-50 -50  100 100"
+			style={{ border: "1px solid red" }}
 		>
 			<defs>
 				<Circle />
@@ -28,6 +32,7 @@ const meta: Meta<typeof Graph> = {
 		</svg>,
 	],
 };
+
 export default meta;
 
 type Story = StoryObj<typeof Graph>;
