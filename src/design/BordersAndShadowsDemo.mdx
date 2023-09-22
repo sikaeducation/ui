@@ -6,16 +6,23 @@ import "./BordersAndShadows.scss";
 # Borders & Shadows
 
 <div className="BordersAndShadows">
-  <section />
   <section>
-    <p />
-    <div className="low-shadow" />
-    <p />
-    <div className="high-shadow" />
-    <p />
-    <div className="shade-container">
-      <div className="shade" />
-      <p />
+		<h2>Borders</h2>
+    <p>`@include borders-trace;`</p>
+    <div className="trace">&nbsp;</div>
+    <p>`$border-radius;`</p>
+    <div className="border-radius">&nbsp;</div>
+	</section>
+  <section>
+		<h2>Shadows</h2>
+    <p>`@include shadows-small;`</p>
+    <div className="low-shadow">&nbsp;</div>
+    <p>`@include shadows-large;`</p>
+    <div className="high-shadow">&nbsp;</div>
+    <p>`@include shadows-underlay;`</p>
+    <div className="underlay-container">
+      <div className="shade">&nbsp;</div>
+			<p>This is some content</p>
     </div>
   </section>
 </div>

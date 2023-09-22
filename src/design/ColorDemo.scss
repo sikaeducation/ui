@@ -6,7 +6,7 @@
     list-style-type: none;
     padding-left: 0;
     display: grid;
-    grid-template-columns: repeat(9, 30px);
+    grid-template-columns: repeat(10, 30px);
   }
   li {
     height: 30px;
@@ -53,6 +53,9 @@
   .grey-9 {
     background-color: $colors-grey-9;
   }
+  .grey-10 {
+    background-color: $colors-grey-10;
+  }
   .primary-1 {
     background-color: $colors-primary-1;
   }
@@ -79,6 +82,9 @@
   }
   .primary-9 {
     background-color: $colors-primary-9;
+  }
+  .primary-10 {
+    background-color: $colors-primary-10;
   }
   .success-1 {
     background-color: $colors-success-1;
@@ -107,6 +113,9 @@
   .success-9 {
     background-color: $colors-success-9;
   }
+  .success-10 {
+    background-color: $colors-success-10;
+  }
   .warning-1 {
     background-color: $colors-warning-1;
   }
@@ -134,6 +143,9 @@
   .warning-9 {
     background-color: $colors-warning-9;
   }
+  .warning-10 {
+    background-color: $colors-warning-10;
+  }
   .failure-1 {
     background-color: $colors-failure-1;
   }
@@ -160,5 +172,8 @@
   }
   .failure-9 {
     background-color: $colors-failure-9;
+  }
+  .failure-10 {
+    background-color: $colors-failure-10;
   }
 }
