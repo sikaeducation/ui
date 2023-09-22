@@ -2,6 +2,7 @@ import { Meta } from "@storybook/blocks";
 import "./TypographyDemo.scss";
 
 import Heading from "../elements/Heading"
+import TextContent from "../elements/TextContent"
 
 <Meta title="Design/Typography" />
 
@@ -9,14 +10,14 @@ import Heading from "../elements/Heading"
 
 <div className="TypographyDemo">
   <section>
-    <p>Typefaces:</p>
+    <h2>Typefaces:</h2>
     <div className="heading-typeface">Gill Sans Condensed</div>
     <div className="primary-typeface">Gill Sans</div>
   </section>
   <section>
-    <p>Headings:</p>
+    <h2>Headings:</h2>
     <Heading level={1}>Heading 1</Heading>
-    <p>
+    <TextContent>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -24,9 +25,9 @@ import Heading from "../elements/Heading"
       reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
       pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
       culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+    </TextContent>
     <Heading level={2}>Heading 2</Heading>
-    <p>
+    <TextContent>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -34,9 +35,9 @@ import Heading from "../elements/Heading"
       reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
       pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
       culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+    </TextContent>
     <Heading level={3}>Heading 3</Heading>
-    <p>
+    <TextContent>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -44,9 +45,9 @@ import Heading from "../elements/Heading"
       reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
       pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
       culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+    </TextContent>
     <Heading level={4}>Heading 4</Heading>
-    <p>
+    <TextContent>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -54,11 +55,11 @@ import Heading from "../elements/Heading"
       reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
       pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
       culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+    </TextContent>
   </section>
   <section className="body-text">
     <h2>Body text</h2>
-    <p>
+    <TextContent>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -66,14 +67,14 @@ import Heading from "../elements/Heading"
       reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
       pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
       culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-    <p>
+    </TextContent>
+    <TextContent>
       I urge you to <strong>boldly</strong> reconsider your position.
-    </p>
-    <p>
+    </TextContent>
+    <TextContent>
       Are you sure that&apos;s what you <em>actually</em> want to do?
-    </p>
-    <p>
+    </TextContent>
+    <TextContent>
       <pre>
         <code>
           {`function someFunction(someParameter: someType){
@@ -81,31 +82,33 @@ return someParameter;
 }`}
         </code>
       </pre>
-    </p>
-    <ul>
-      <li>Unordered List 1</li>
-      <li>Unordered List 2</li>
-      <li>Unordered List 3</li>
-    </ul>
-    <ol>
-      <li>Ordered List 1</li>
-      <li>Ordered List 2</li>
-      <li>Ordered List 3</li>
-    </ol>
-    <blockquote>This is a blockquote</blockquote>
+    </TextContent>
+    <TextContent>
+			<ul>
+				<li>Unordered List 1</li>
+				<li>Unordered List 2</li>
+				<li>Unordered List 3</li>
+			</ul>
+			<ol>
+				<li>Ordered List 1</li>
+				<li>Ordered List 2</li>
+				<li>Ordered List 3</li>
+			</ol>
+			<blockquote>This is a blockquote</blockquote>
+    </TextContent>
   </section>
   <section className="font-sizes">
-    <p>Font sizes</p>
-    <p className="size-1">Font size 1</p>
-    <p className="size-2">Font size 2</p>
-    <p className="size-3">Font size 3</p>
-    <p className="size-4">Font size 4</p>
-    <p className="size-5">Font size 5</p>
-    <p className="size-6">Font size 6</p>
-    <p className="size-7">Font size 7</p>
-    <p className="size-8">Font size 8</p>
-    <p className="size-9">Font size 9</p>
-    <p className="size-10">Font size 10</p>
-    <p className="size-11">Font size 11</p>
+    <h2>Font sizes</h2>
+    <TextContent className="size-1">Font size 1</TextContent>
+    <TextContent className="size-2">Font size 2</TextContent>
+    <TextContent className="size-3">Font size 3</TextContent>
+    <TextContent className="size-4">Font size 4</TextContent>
+    <TextContent className="size-5">Font size 5</TextContent>
+    <TextContent className="size-6">Font size 6</TextContent>
+    <TextContent className="size-7">Font size 7</TextContent>
+    <TextContent className="size-8">Font size 8</TextContent>
+    <TextContent className="size-9">Font size 9</TextContent>
+    <TextContent className="size-10">Font size 10</TextContent>
+    <TextContent className="size-11">Font size 11</TextContent>
   </section>
 </div>
