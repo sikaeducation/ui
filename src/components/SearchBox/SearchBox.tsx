@@ -1,7 +1,7 @@
 import "./SearchBox.scss";
 import Icon from "../../elements/Icon";
 import Button from "../../elements/Button";
-import { FormEventHandler, useState } from "react";
+import { FormEventHandler, useState, useRef } from "react";
 import classNames from "classnames";
 
 type Props = {
@@ -30,6 +30,10 @@ export default function SearchBox({
 			event.preventDefault();
 			action(searchTerm);
 		};
+		const [
+			inputRef,
+			setInputFocus,
+		] = useFocus();
 		return <form className={classNames({
 			SearchBox: true,
 			focused,
@@ -52,11 +56,40 @@ export default function SearchBox({
 					setFocused(false);
 				}}
 				className={className}
-				aria-label="Search term"
+				ref={inputRef}
 			/>
-			<Button type="primary">
-				<Icon type="search" />
-			</Button>
+			{
+				searchTerm
+					? <Button type="primary">
+						<Icon type="search" />
+					</Button>
+					: <div
+						className="search-wrapper"
+						id={`${id}-search-icon`}
+						aria-label="search"
+						onClick={() => {
+							setInputFocus();
+						}}
+					>
+						<Icon type="search"
+						/>
+					</div>
+			}
 		</form >;
 	}
 }
+
+const useFocus = () => {
+	const inputElement = document.createElement("input");
+	const htmlElRef = useRef<HTMLInputElement>(inputElement);
+	const setFocus = () => {
+		if (htmlElRef.current) {
+			htmlElRef.current.focus();
+		}
+	};
+
+	return [
+		htmlElRef,
+		setFocus,
+	] as const;
+};

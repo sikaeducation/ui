@@ -7,6 +7,8 @@
 	justify-content: center;
 	width: 100%;
   margin-bottom: $sizes-s3;
+	position: relative;
+	overflow-x: clip;
 	&.focused {
 		@include borders-halo-on-focus;
 	}
@@ -14,15 +16,13 @@
 		max-width: $sizes-s12;
 		input {
 			padding: $sizes-s2 $sizes-s3;
+			font-size: $sizes-f3;
 		}
-		.Button {
+		.Button, .search-wrapper {
 			padding: $sizes-s2 $sizes-s3;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			.search-icon {
-				font-size: $sizes-f5;
-			}
+		}
+		.search-icon {
+			font-size: $sizes-f3;
 		}
 	}
 	&.medium {
@@ -31,11 +31,11 @@
 			padding: $sizes-s3 $sizes-s4;
 			font-size: $sizes-f6;
 		}
-		.Button {
+		.Button, .search-wrapper {
 			padding: $sizes-s3 $sizes-s4;
-			.search-icon {
-				font-size: $sizes-f6;
-			}
+		}
+		.search-icon {
+			font-size: $sizes-f6;
 		}
 	}
 	&.large {
@@ -44,11 +44,11 @@
 			padding: $sizes-s5 $sizes-s6;
 			font-size: $sizes-f7;
 		}
-		.Button {
+		.Button, .search-wrapper {
 			padding: $sizes-s4 $sizes-s5;
-			.search-icon {
-				font-size: $sizes-f8;
-			}
+		}
+		.search-icon {
+			font-size: $sizes-f8;
 		}
 	}
   input {
@@ -65,8 +65,26 @@
     box-shadow: none!important;
 		border-top-left-radius: 0!important;
 		border-bottom-left-radius: 0!important;
+		position: relative;
+		right: 0;
+		animation: $sizes-transition ease-out fly-right-to-left;
 		.search-icon {
 			color: $colors-white;
 		}
+	}
+	.search-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+	}
+}
+
+@keyframes fly-right-to-left {
+	from {
+		right: -100px;
+	}
+	to {
+		right: 0;
 	}
 }
