@@ -1,53 +1,62 @@
 import "./SearchBox.scss";
 import Icon from "../../elements/Icon";
 import Button from "../../elements/Button";
-import { useState } from "react";
+import { FormEventHandler, useState } from "react";
 import classNames from "classnames";
 
 type Props = {
 	className?: string;
 	id: string;
-	required?: boolean;
-	type?: "text" | "url" | "email" | "password";
-	updateValue: (newValue: string) => void;
-	value: string;
+	updateSearchTerm: (newValue: string) => void;
+	searchTerm: string;
+	size: "small" | "medium" | "large";
+	action: (searchTerm: string) => void;
 };
 
 export default function SearchBox({
 	id,
-	value,
-	updateValue,
-	type = "text",
-	required = false,
+	searchTerm,
+	updateSearchTerm,
 	className = "",
+	size,
+	action,
 }: Props) {
 	const [
 		focused,
 		setFocused,
 	] = useState(false);
-	return (
-		<div className={classNames({
+	{
+		const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+			event.preventDefault();
+			action(searchTerm);
+		};
+		return <form className={classNames({
 			SearchBox: true,
 			focused,
-		})}>
+			large: size === "large",
+			medium: size === "medium",
+			small: size === "small",
+		})}
+			onSubmit={handleSubmit}
+		>
 			<input
 				id={id}
 				name={id}
-				type={type}
-				value={value}
-				onChange={(event) => updateValue(event.target.value)}
+				type="search"
+				value={searchTerm}
+				onChange={(event) => updateSearchTerm(event.target.value)}
 				onFocus={() => {
 					setFocused(true);
 				}}
 				onBlur={() => {
 					setFocused(false);
 				}}
-				required={required}
 				className={className}
+				aria-label="Search term"
 			/>
 			<Button type="primary">
 				<Icon type="search" />
 			</Button>
-		</div >
-	);
+		</form >;
+	}
 }

@@ -1,7 +1,6 @@
 @use "../../styles" as *;
 
 .SearchBox {
-  @include forms-form-control;
 	@include borders-trace;
 	@include shadows-small;
   display: inline-flex;
@@ -11,10 +10,50 @@
 	&.focused {
 		@include borders-halo-on-focus;
 	}
+	&.small {
+		max-width: $sizes-s12;
+		input {
+			padding: $sizes-s2 $sizes-s3;
+		}
+		.Button {
+			padding: $sizes-s2 $sizes-s3;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			.search-icon {
+				font-size: $sizes-f5;
+			}
+		}
+	}
+	&.medium {
+		max-width: $sizes-s13;
+		input {
+			padding: $sizes-s3 $sizes-s4;
+			font-size: $sizes-f6;
+		}
+		.Button {
+			padding: $sizes-s3 $sizes-s4;
+			.search-icon {
+				font-size: $sizes-f6;
+			}
+		}
+	}
+	&.large {
+		max-width: $sizes-s15;
+		input {
+			padding: $sizes-s5 $sizes-s6;
+			font-size: $sizes-f7;
+		}
+		.Button {
+			padding: $sizes-s4 $sizes-s5;
+			.search-icon {
+				font-size: $sizes-f8;
+			}
+		}
+	}
   input {
     border: none;
 		flex: 1;
-    padding: $sizes-s2 $sizes-s3;
 		border-top-right-radius: 0;
 		border-bottom-right-radius: 0;
 		&:focus {
