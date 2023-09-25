@@ -1,21 +1,29 @@
-import { ReactComponentLike } from "prop-types";
-import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import type { ComponentPropsWithoutRef, ComponentType, ReactNode } from "react";
 import Button from "../../elements/Button";
 import Heading from "../../elements/Heading";
 import "./Form.scss";
 
 type FormData = boolean | string | number;
 
-type FormField = {
+type RawFormField = {
 	id: string;
 	label: string;
 	className?: string;
 	required?: boolean;
-	value: FormData;
-	updateValue: (newValue: FormData) => void;
 	type?: string;
-	Component: ReactComponentLike;
+	Component: ComponentType<{
+		id: string,
+		label: string,
+		value: FormData,
+		updateValue: (value: FormData) => void,
+		type?: string;
+	}>;
 }
+
+// type FormField = RawFormField & {
+// 	value: FormData;
+// 	updateValue: (newValue: FormData) => void;
+// }
 
 type Action = ComponentPropsWithoutRef<typeof Button>
 	& {
@@ -30,7 +38,7 @@ type Props = {
 	heading: string;
 	newItem: Record<string, FormData>;
 	setNewItem: (value: Record<string, FormData>) => void;
-	fields: FormField[];
+	fields: RawFormField[];
 	actions: Action[];
 	children?: ReactNode;
 };
@@ -42,7 +50,7 @@ export default function Form({
 	newItem,
 	setNewItem,
 	children = <></>,
-}: Props){
+}: Props) {
 	return (
 		<div className="Form">
 			<Heading level={2}>{heading}</Heading>
