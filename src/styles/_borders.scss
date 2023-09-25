@@ -5,6 +5,7 @@ $radius: 4px;
 
 @mixin trace {
   outline: 1px solid colors.$grey-9;
+	border: none;
   border-radius: $radius;
 }
 

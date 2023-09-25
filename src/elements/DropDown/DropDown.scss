@@ -1,0 +1,15 @@
+@use "../../styles" as *;
+
+.DropDown {
+  @include forms-form-control;
+  display: block;
+  margin-bottom: $sizes-s3;
+  position: relative;
+	select {
+		@include borders-trace;
+		padding: $sizes-s1 $sizes-s3;
+		background-color: $colors-white;
+		width: $sizes-s12;
+		color: $colors-grey-2;
+	}
+}
