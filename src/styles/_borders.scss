@@ -18,3 +18,8 @@ $radius: 4px;
     border-bottom: 3px solid colors.$primary-5;
   }
 }
+
+@mixin halo-on-focus {
+  transition: box-shadow sizes.$transition;
+	box-shadow: 0 0 30px colors.$grey-9;
+}

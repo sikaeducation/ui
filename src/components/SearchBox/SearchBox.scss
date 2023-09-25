@@ -1,0 +1,33 @@
+@use "../../styles" as *;
+
+.SearchBox {
+  @include forms-form-control;
+	@include borders-trace;
+	@include shadows-small;
+  display: inline-flex;
+	justify-content: center;
+	width: 100%;
+  margin-bottom: $sizes-s3;
+	&.focused {
+		@include borders-halo-on-focus;
+	}
+  input {
+    border: none;
+		flex: 1;
+    padding: $sizes-s2 $sizes-s3;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		&:focus {
+			outline: none;
+		}
+  }
+	.Button {
+    border: none;
+    box-shadow: none!important;
+		border-top-left-radius: 0!important;
+		border-bottom-left-radius: 0!important;
+		.search-icon {
+			color: $colors-white;
+		}
+	}
+}
