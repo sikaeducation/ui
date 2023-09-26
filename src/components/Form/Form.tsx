@@ -5,30 +5,48 @@ import TextInput from "../../elements/TextInput";
 import TextArea from "../../elements/TextArea";
 import DropDown from "../../elements/DropDown";
 import "./Form.scss";
+import { Checkbox } from "@material-ui/core";
 
 type FormData = boolean | string | number;
-
-type RawFormField = {
+type BaseFormControl = {
 	id: string;
 	label: string;
 	className?: string;
 	required?: boolean;
-	type?: "text" | "email" | "password" | "url";
-	Component: typeof TextInput | typeof TextArea | typeof DropDown;
-	value: FormData;
 }
-
-// type FormField = RawFormField & {
-// 	value: FormData;
-// 	updateValue: (newValue: FormData) => void;
-// }
-
-type Action = ComponentPropsWithoutRef<typeof Button>
+type FormControlTextInput = BaseFormControl
+	& ComponentPropsWithoutRef<typeof TextInput>
 	& {
-		id: string;
-		label: string;
-		required?: boolean;
-	} & {
+		controlType: "TextInput";
+		Component: typeof TextInput;
+		type?: "text" | "email" | "password" | "url";
+	}
+type FormControlTextArea = BaseFormControl
+	& ComponentPropsWithoutRef<typeof TextArea>
+	& {
+		controlType: "TextArea";
+		Component: typeof TextArea;
+	}
+type FormControlDropDown = BaseFormControl
+	& ComponentPropsWithoutRef<typeof DropDown>
+	& {
+		controlType: "DropDown";
+		Component: typeof DropDown;
+	}
+type FormControlCheckbox = BaseFormControl
+	& ComponentPropsWithoutRef<typeof Checkbox>
+	& {
+		controlType: "Checkbox";
+		Component: typeof Checkbox;
+	}
+type FormControl = | FormControlTextInput
+	| FormControlTextArea
+	| FormControlDropDown
+	| FormControlCheckbox;
+
+type Action = BaseFormControl
+	& ComponentPropsWithoutRef<typeof Button>
+	& {
 		Component: typeof Button;
 	};
 
@@ -36,10 +54,9 @@ type Props = {
 	heading: string;
 	newItem: Record<string, FormData>;
 	setNewItem: (value: Record<string, FormData>) => void;
-	fields: RawFormField[];
+	fields: FormControl[];
 	actions: Action[];
 	children?: ReactNode;
-	options?: { label: string, id: string }[]
 };
 
 export default function Form({
@@ -48,26 +65,25 @@ export default function Form({
 	actions,
 	newItem,
 	setNewItem,
-	options,
 	children = <></>,
 }: Props) {
 	return (
 		<div className="Form">
 			<Heading level={2}>{heading}</Heading>
 			<form>
-				{fields.map(({ id, label, Component, type }) => <Component
-					key={id}
-					id={id}
-					label={label}
-					value={newItem[String(id)] ? String(newItem[String(id)]) : ""}
-					updateValue={(newValue: FormData) => setNewItem({
-						...newItem,
-						[id]: newValue,
-					})
-					}
-					type={type as undefined}
-					options={options}
-				/>)}
+				{fields.map((field) => {
+					const { id, label, Component } = field;
+					return <Component
+						key={id}
+						id={id}
+						label={label}
+						value={newItem[String(id)] ? String(newItem[String(id)]) : ""}
+						updateValue={(newValue: FormData) => setNewItem({
+							...newItem,
+							[id]: newValue,
+						})}
+					/>;
+				})}
 				{children}
 				<fieldset className="actions">
 					{actions.map(({
@@ -85,7 +101,6 @@ export default function Form({
 						/>)}
 				</fieldset>
 			</form>
-
 		</div>
 	);
 }
