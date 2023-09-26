@@ -18,10 +18,9 @@ export default function Checkbox({
 	updateValue,
 	required = false,
 	type = "primary",
-}: Props){
+}: Props) {
 	return (
 		<div className="Checkbox">
-			<label htmlFor={id}>{label}</label>
 			<MaterialCheckbox
 				checked={!!value}
 				id={id}
@@ -30,6 +29,7 @@ export default function Checkbox({
 				color={type}
 				onChange={() => updateValue(!value)}
 			/>
+			<label htmlFor={id}>{label}</label>
 		</div>
 	);
 }

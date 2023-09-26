@@ -20,8 +20,6 @@ export default function DropDown({
 	updateValue,
 	required,
 	editable = false,
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	type = "text",
 	className = "",
 	options = [],
 }: Props) {

@@ -7,7 +7,6 @@ type Props = {
 	id: string;
 	label: string;
 	required?: boolean;
-	type?: "text";
 	updateValue: (newValue: string) => void;
 	value?: string;
 };
@@ -20,9 +19,8 @@ export default function TextArea({
 	required,
 	editable = false,
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	type = "text",
 	className = "",
-}: Props){
+}: Props) {
 	return (
 		<div className="TextArea">
 			<label htmlFor={id}>{label}</label>

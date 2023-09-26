@@ -4,10 +4,12 @@
   @include forms-form-control;
   display: inline-block;
   margin-bottom: 0;
+	width: 100%;
+	margin-left: -1 * $sizes-s4;
   label {
     display: inline-block;
     position: relative;
-    top: 2px; // Visual alignment
+    top: 1px; // Visual alignment
   }
   .MuiCheckbox-colorPrimary {
     color: $colors-primary-3 !important;

@@ -7,9 +7,10 @@
   position: relative;
 	select {
 		@include borders-trace;
-		padding: $sizes-s1 $sizes-s3;
 		background-color: $colors-white;
-		width: $sizes-s12;
 		color: $colors-grey-2;
+    width: calc(100% + $sizes-s2 + $sizes-s2);
+    padding: $sizes-s1 $sizes-s2;
+    margin-left: -1 * $sizes-s2;
 	}
 }

@@ -4,8 +4,8 @@ import Heading from "../../elements/Heading";
 import TextInput from "../../elements/TextInput";
 import TextArea from "../../elements/TextArea";
 import DropDown from "../../elements/DropDown";
+import Checkbox from "../../elements/Checkbox";
 import "./Form.scss";
-import { Checkbox } from "@material-ui/core";
 
 type FormData = boolean | string | number;
 type BaseFormControl = {
@@ -15,29 +15,24 @@ type BaseFormControl = {
 	required?: boolean;
 }
 type FormControlTextInput = BaseFormControl
-	& ComponentPropsWithoutRef<typeof TextInput>
+	& Partial<ComponentPropsWithoutRef<typeof TextInput>>
 	& {
 		controlType: "TextInput";
-		Component: typeof TextInput;
-		type?: "text" | "email" | "password" | "url";
 	}
 type FormControlTextArea = BaseFormControl
-	& ComponentPropsWithoutRef<typeof TextArea>
+	& Partial<ComponentPropsWithoutRef<typeof TextArea>>
 	& {
 		controlType: "TextArea";
-		Component: typeof TextArea;
 	}
 type FormControlDropDown = BaseFormControl
-	& ComponentPropsWithoutRef<typeof DropDown>
+	& Partial<ComponentPropsWithoutRef<typeof DropDown>>
 	& {
 		controlType: "DropDown";
-		Component: typeof DropDown;
 	}
 type FormControlCheckbox = BaseFormControl
-	& ComponentPropsWithoutRef<typeof Checkbox>
+	& Partial<ComponentPropsWithoutRef<typeof Checkbox>>
 	& {
 		controlType: "Checkbox";
-		Component: typeof Checkbox;
 	}
 type FormControl = | FormControlTextInput
 	| FormControlTextArea
@@ -45,10 +40,7 @@ type FormControl = | FormControlTextInput
 	| FormControlCheckbox;
 
 type Action = BaseFormControl
-	& ComponentPropsWithoutRef<typeof Button>
-	& {
-		Component: typeof Button;
-	};
+	& ComponentPropsWithoutRef<typeof Button>;
 
 type Props = {
 	heading: string;
@@ -72,27 +64,52 @@ export default function Form({
 			<Heading level={2}>{heading}</Heading>
 			<form>
 				{fields.map((field) => {
-					const { id, label, Component } = field;
-					return <Component
-						key={id}
-						id={id}
-						label={label}
-						value={newItem[String(id)] ? String(newItem[String(id)]) : ""}
-						updateValue={(newValue: FormData) => setNewItem({
+					const { id, label, controlType } = field;
+					const commonOptions = {
+						id: id,
+						label: label,
+						value: newItem[String(id)] ? String(newItem[String(id)]) : "",
+						updateValue: (newValue: FormData) => setNewItem({
 							...newItem,
 							[id]: newValue,
-						})}
-					/>;
+						}),
+					};
+					if (controlType === "DropDown") {
+						return <DropDown
+							{...commonOptions}
+							key={id}
+							options={controlType === "DropDown" ? field.options : undefined}
+						/>;
+					}
+					if (controlType === "TextInput") {
+						return <TextInput
+							{...commonOptions}
+							key={id}
+							type={field.type}
+						/>;
+					}
+					if (controlType === "TextArea") {
+						return <TextArea
+							{...commonOptions}
+							key={id}
+						/>;
+					}
+					if (controlType === "Checkbox") {
+						return <Checkbox
+							{...commonOptions}
+							key={id}
+							type={field.type}
+						/>;
+					}
 				})}
 				{children}
 				<fieldset className="actions">
 					{actions.map(({
 						label,
-						Component,
 						type,
 						action,
 						size,
-					}) => <Component
+					}) => <Button
 							key={label}
 							action={action}
 							type={type}

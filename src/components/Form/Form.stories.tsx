@@ -1,16 +1,28 @@
 import type { StoryObj, Meta } from "@storybook/react";
 
 import Form from ".";
-import Button from "../../elements/Button";
-import TextInput from "../../elements/TextInput";
-import TextArea from "../../elements/TextArea";
+import { useState } from "react";
 
 const meta: Meta<typeof Form> = { component: Form };
 export default meta;
 
 type Story = StoryObj<typeof Form>;
+type FormData = string | boolean | number;
 
 export const Default: Story = {
+	render: (args) => {
+		const [
+			newItem,
+			setNewItem,
+		] = useState<Record<string, FormData>>(args.newItem ?? {});
+		return (
+			<Form
+				{...args}
+				newItem={newItem}
+				setNewItem={setNewItem}
+			/>
+		);
+	},
 	args: {
 		heading: "Some Form",
 		newItem: {
@@ -20,38 +32,62 @@ export const Default: Story = {
 			{
 				id: "some-field",
 				label: "Some Field",
-				Component: TextInput,
+				controlType: "TextInput",
 				type: "text",
-				value: "",
 			},
 			{
 				id: "some-other-field",
 				label: "Some Other Field",
-				Component: TextArea,
-				type: "text",
-				value: "",
+				controlType: "TextArea",
+			},
+			{
+				id: "another-field",
+				label: "Another Field",
+				controlType: "DropDown",
+				options: [
+					{
+						id: "1",
+						label: "1",
+					},
+					{
+						id: "2",
+						label: "2",
+					},
+					{
+						id: "3",
+						label: "3",
+					},
+				],
+			},
+			{
+				id: "yet-another-field",
+				label: "Yet Another Field",
+				controlType: "Checkbox",
+				type: "primary",
+			},
+			{
+				id: "still-more-fields",
+				label: "Still More Fields",
+				controlType: "Checkbox",
+				type: "secondary",
 			},
 		],
 		actions: [
 			{
 				id: "a",
 				label: "Some Action",
-				Component: Button,
 				type: "secondary",
 				size: "large",
-				// eslint-disable-next-line no-console
-				action: () => console.log("Hello, world!"),
-				children: <>Some Action</>,
+				action: () => console.log("Secondary action fired"),
+				children: <>Secondary Action</>,
 			},
 			{
 				id: "b",
 				label: "Some Other Action",
-				Component: Button,
 				type: "primary",
 				size: "large",
-				// eslint-disable-next-line no-console
-				action: () => console.log("Hello, world!"),
-				children: <>Some Action</>,
+				action: () => console.log("Primary action fired"),
+				children: <>Primary Action</>,
 			},
 		],
 	},
