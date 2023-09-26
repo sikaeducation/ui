@@ -40,7 +40,7 @@ type FormControl = | FormControlTextInput
 	| FormControlCheckbox;
 
 type Action = BaseFormControl
-	& ComponentPropsWithoutRef<typeof Button>;
+	& Partial<ComponentPropsWithoutRef<typeof Button>>
 
 type Props = {
 	heading: string;

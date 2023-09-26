@@ -79,7 +79,6 @@ export const Default: Story = {
 				type: "secondary",
 				size: "large",
 				action: () => console.log("Secondary action fired"),
-				children: <>Secondary Action</>,
 			},
 			{
 				id: "b",
@@ -87,7 +86,6 @@ export const Default: Story = {
 				type: "primary",
 				size: "large",
 				action: () => console.log("Primary action fired"),
-				children: <>Primary Action</>,
 			},
 		],
 	},
