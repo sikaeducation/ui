@@ -112,7 +112,7 @@ export default function Form({
 					}) => <Button
 							key={label}
 							action={action}
-							type={type}
+							type={type ?? "primary"}
 							size={size}
 							children={label}
 						/>)}
