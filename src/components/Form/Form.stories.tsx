@@ -23,7 +23,6 @@ export const Default: Story = {
 				Component: TextInput,
 				type: "text",
 				value: "",
-				updateValue: () => { },
 			},
 			{
 				id: "some-other-field",
@@ -31,7 +30,6 @@ export const Default: Story = {
 				Component: TextArea,
 				type: "text",
 				value: "",
-				updateValue: () => { },
 			},
 		],
 		actions: [

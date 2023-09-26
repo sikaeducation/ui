@@ -10,7 +10,7 @@ type Props = {
 	type?: "text";
 	updateValue: (newValue: string) => void;
 	value?: string;
-	options: { id: string; label: string; }[];
+	options?: { id: string; label: string; }[];
 };
 
 export default function DropDown({
@@ -23,7 +23,7 @@ export default function DropDown({
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	type = "text",
 	className = "",
-	options,
+	options = [],
 }: Props) {
 	return (
 		<div className="DropDown">

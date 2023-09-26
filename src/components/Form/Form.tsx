@@ -1,6 +1,9 @@
-import type { ComponentPropsWithoutRef, ComponentType, ReactNode } from "react";
+import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import Button from "../../elements/Button";
 import Heading from "../../elements/Heading";
+import TextInput from "../../elements/TextInput";
+import TextArea from "../../elements/TextArea";
+import DropDown from "../../elements/DropDown";
 import "./Form.scss";
 
 type FormData = boolean | string | number;
@@ -10,14 +13,9 @@ type RawFormField = {
 	label: string;
 	className?: string;
 	required?: boolean;
-	type?: string;
-	Component: ComponentType<{
-		id: string,
-		label: string,
-		value: FormData,
-		updateValue: (value: FormData) => void,
-		type?: string;
-	}>;
+	type?: "text" | "email" | "password" | "url";
+	Component: typeof TextInput | typeof TextArea | typeof DropDown;
+	value: FormData;
 }
 
 // type FormField = RawFormField & {
@@ -41,6 +39,7 @@ type Props = {
 	fields: RawFormField[];
 	actions: Action[];
 	children?: ReactNode;
+	options?: { label: string, id: string }[]
 };
 
 export default function Form({
@@ -49,6 +48,7 @@ export default function Form({
 	actions,
 	newItem,
 	setNewItem,
+	options,
 	children = <></>,
 }: Props) {
 	return (
@@ -66,6 +66,7 @@ export default function Form({
 					})
 					}
 					type={type as undefined}
+					options={options}
 				/>)}
 				{children}
 				<fieldset className="actions">
