@@ -31,8 +31,8 @@ export default function TagManager({
 		})}>
 			<ul className="tag-list">
 				{tags.map((tag) => (
-					<li key={tag} onClick={() => removeTag(tag)}>
-						<Tag>{tag}</Tag>
+					<li key={tag}>
+						<Tag close={() => removeTag(tag)}>{tag}</Tag>
 					</li>
 				))}
 				{

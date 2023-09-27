@@ -17,8 +17,8 @@
 	}
 	.Button {
 		margin-right: $sizes-s1;
-	}
-	.Icon {
-		color: $colors-white;
+		.Icon {
+			color: $colors-white;
+		}
 	}
 }

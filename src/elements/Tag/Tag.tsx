@@ -5,8 +5,8 @@ import "./Tag.scss";
 
 type Props = {
 	close?: () => void;
-	active: boolean;
-	engage: () => void;
+	active?: boolean;
+	engage?: () => void;
 	children: ReactNode;
 };
 
