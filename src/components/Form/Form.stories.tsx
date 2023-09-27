@@ -7,7 +7,7 @@ const meta: Meta<typeof Form> = { component: Form };
 export default meta;
 
 type Story = StoryObj<typeof Form>;
-type FormData = string | boolean | number;
+type FormData = string | boolean | number | string[];
 
 export const Default: Story = {
 	render: (args) => {
@@ -26,23 +26,28 @@ export const Default: Story = {
 	args: {
 		heading: "Some Form",
 		newItem: {
-			someField: "Some Value",
+			"text-input": "Some Value",
+			"tag-manager": [
+				"Tag One",
+				"Tag Two",
+				"Tag Three",
+			],
 		},
 		fields: [
 			{
-				id: "some-field",
-				label: "Some Field",
+				id: "text-input",
+				label: "TextInput",
 				controlType: "TextInput",
 				type: "text",
 			},
 			{
-				id: "some-other-field",
-				label: "Some Other Field",
+				id: "textarea",
+				label: "TextArea",
 				controlType: "TextArea",
 			},
 			{
-				id: "another-field",
-				label: "Another Field",
+				id: "dropdown",
+				label: "DropDown",
 				controlType: "DropDown",
 				options: [
 					{
@@ -60,16 +65,21 @@ export const Default: Story = {
 				],
 			},
 			{
-				id: "yet-another-field",
-				label: "Yet Another Field",
+				id: "primary-checkbox",
+				label: "Primary Checkbox",
 				controlType: "Checkbox",
 				type: "primary",
 			},
 			{
-				id: "still-more-fields",
-				label: "Still More Fields",
+				id: "secondary-checkbox",
+				label: "Secondary Checkbox",
 				controlType: "Checkbox",
 				type: "secondary",
+			},
+			{
+				id: "tag-manager",
+				label: "TagManager",
+				controlType: "TagManager",
 			},
 		],
 		actions: [

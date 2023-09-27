@@ -9,7 +9,6 @@
 	}
 	.tag-list {
 		display: inline-block;
-		padding: $sizes-s1;
 		line-height: 2.3;
 		> li {
 			margin-right: $sizes-s2;
@@ -17,8 +16,10 @@
 	}
 	.Button {
 		margin-right: $sizes-s1;
-		.Icon {
-			color: $colors-white;
+		.secondary-button {
+			.Icon {
+				color: $colors-white;
+			}
 		}
 	}
 }

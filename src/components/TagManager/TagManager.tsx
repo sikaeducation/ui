@@ -45,7 +45,7 @@ export default function TagManager({
 						</li>
 						: <Button
 							size="tiny"
-							type="primary"
+							type="secondary"
 							action={() => setIsAdding(true)}
 						>
 							<Icon type="plus" />

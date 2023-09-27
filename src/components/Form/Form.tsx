@@ -5,9 +5,10 @@ import TextInput from "../../elements/TextInput";
 import TextArea from "../../elements/TextArea";
 import DropDown from "../../elements/DropDown";
 import Checkbox from "../../elements/Checkbox";
+import TagManager from "../TagManager";
 import "./Form.scss";
 
-type FormData = boolean | string | number;
+type FormData = boolean | string | number | string[];
 type BaseFormControl = {
 	id: string;
 	label: string;
@@ -34,10 +35,16 @@ type FormControlCheckbox = BaseFormControl
 	& {
 		controlType: "Checkbox";
 	}
+type FormControlTagManager = BaseFormControl
+	& Partial<ComponentPropsWithoutRef<typeof TagManager>>
+	& {
+		controlType: "TagManager";
+	}
 type FormControl = | FormControlTextInput
 	| FormControlTextArea
 	| FormControlDropDown
-	| FormControlCheckbox;
+	| FormControlCheckbox
+	| FormControlTagManager;
 
 type Action = BaseFormControl
 	& Partial<ComponentPropsWithoutRef<typeof Button>>
@@ -99,6 +106,32 @@ export default function Form({
 							{...commonOptions}
 							key={id}
 							type={field.type}
+						/>;
+					}
+					if (controlType === "TagManager") {
+						const tags = newItem[id];
+						if (!Array.isArray(tags)) return <></>;
+						return <TagManager
+							{...commonOptions}
+							key={id}
+							tags={tags}
+							removeTag={(tagToRemove) => {
+								setNewItem({
+									...newItem,
+									[id]: tags
+										.filter((tag) => tag !== tagToRemove),
+								});
+							}}
+							addTag={(tag) => {
+								setNewItem({
+									...newItem,
+									[id]: [
+										...tags,
+										"hi",
+										tag,
+									],
+								});
+							}}
 						/>;
 					}
 				})}
