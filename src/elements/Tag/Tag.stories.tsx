@@ -12,3 +12,10 @@ export const Default: Story = {
 		children: "Hello, world!",
 	},
 };
+
+export const Closeable: Story = {
+	args: {
+		children: "Hello, world!",
+		close: () => console.log("Closed"),
+	},
+};

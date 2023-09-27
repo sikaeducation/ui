@@ -41,6 +41,7 @@ export default function ButtonFormSubmission({
 				Button: true,
 				[buttonClass]: true,
 				disabled,
+				interactive: !disabled,
 				failure: actionType === "failure",
 				tiny: size === "tiny",
 				small: size === "small",

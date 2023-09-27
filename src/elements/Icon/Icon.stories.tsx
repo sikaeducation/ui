@@ -57,3 +57,9 @@ export const Deferred: Story = {
 		type: "deferred",
 	},
 };
+export const Interactive: Story = {
+	args: {
+		type: "close",
+		action: () => console.log("Closed"),
+	},
+};

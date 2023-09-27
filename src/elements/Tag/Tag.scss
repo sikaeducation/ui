@@ -8,4 +8,11 @@
   border-radius: $borders-radius;
 	white-space: nowrap;
 	@include shadows-small;
+	.Icon {
+		display: inline-block;
+		margin-left: $sizes-s2;
+		position: relative; // Visual alignment
+		top: 1px; // Visual alignment
+		font-size: inherit;
+	}
 }

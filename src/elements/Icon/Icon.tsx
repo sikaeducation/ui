@@ -12,6 +12,7 @@ import {
 	faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import classNames from "classnames";
 
 type IconType =
 	| "accepted"
@@ -29,6 +30,7 @@ type IconType =
 
 type Props = {
 	type: IconType;
+	action?: () => void;
 };
 
 const icons = {
@@ -83,6 +85,13 @@ const icons = {
 	search: <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" title="search" />,
 } as const;
 
-export default function Icon({ type }: Props) {
-	return <span className="Icon">{icons[type]}</span>;
+export default function Icon(props: Props) {
+	const { action, type } = props;
+	return <span
+		className={classNames({
+			Icon: true,
+			interactive: !!action,
+		})}
+		onClick={action ? () => action() : undefined}
+	>{icons[type]}</span>;
 }
