@@ -9,8 +9,9 @@
 		align-items: center;
 		width: $sizes-s5;
 		height: $sizes-s5;
-		padding-top: 2px; // Visual alignment
-		margin-bottom: 1px; // Visual alignment
+		padding-top: 3px; // Visual alignment
+		position: relative;
+		top: 2px; // Visual alignment
   }
   &.small {
     padding: $sizes-s1 $sizes-s3;

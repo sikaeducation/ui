@@ -2,7 +2,7 @@
 
 .QuickAdd {
 	margin: 2px $sizes-s1 0 $sizes-s1;
-	&, input, .Button {
+	&, input {
 		display: inline-block;
 	}
 	input {
@@ -12,10 +12,9 @@
 		margin-right: $sizes-s2;
 	}
 	.Button {
-		vertical-align: middle;
 		margin-right: $sizes-s1;
 	}
 	.Icon {
-		color: white;
+		color: $colors-white;
 	}
 }
