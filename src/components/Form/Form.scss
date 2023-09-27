@@ -17,6 +17,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+		margin-right: -9px; // Visual alignment
     margin-top: $sizes-s4;
     .Button {
       margin-left: $sizes-s4;
