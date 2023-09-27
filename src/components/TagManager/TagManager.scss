@@ -2,10 +2,10 @@
 
 .TagManager {
 	border: 1px dashed red;
-	ul, form {
+	ul {
 		margin-bottom: 0;
 	}
-	.tag-list, li, form, input, .Button {
+	.tag-list, li, .Button {
 		display: inline-block;
 	}
 	.tag-list {
@@ -16,20 +16,12 @@
 			margin-right: $sizes-s2;
 		}
 	}
-	form {
-		margin: 2px $sizes-s1 0 $sizes-s1;
-	}
-	input {
-		@include borders-trace;
-		font-size: $sizes-f1;
-		padding: $sizes-s1;
-		margin-right: $sizes-s2;
-	}
 	.Button {
 		vertical-align: middle;
 		margin-right: $sizes-s1;
 	}
 	.Icon {
-		color: white;
+		vertical-align: middle;
+		color: $colors-white;
 	}
 }

@@ -1,0 +1,21 @@
+@use "../../styles" as *;
+
+.QuickAdd {
+	margin: 2px $sizes-s1 0 $sizes-s1;
+	&, input, .Button {
+		display: inline-block;
+	}
+	input {
+		@include borders-trace;
+		font-size: $sizes-f1;
+		padding: $sizes-s1;
+		margin-right: $sizes-s2;
+	}
+	.Button {
+		vertical-align: middle;
+		margin-right: $sizes-s1;
+	}
+	.Icon {
+		color: white;
+	}
+}
