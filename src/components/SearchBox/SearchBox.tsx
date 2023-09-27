@@ -1,7 +1,8 @@
 import "./SearchBox.scss";
 import Icon from "../../elements/Icon";
 import Button from "../../elements/Button";
-import { FormEventHandler, useState, useRef } from "react";
+import { FormEventHandler, useState } from "react";
+import { useFocus } from "../../hooks/use-focus";
 import classNames from "classnames";
 
 type Props = {
@@ -78,18 +79,3 @@ export default function SearchBox({
 		</form >;
 	}
 }
-
-const useFocus = () => {
-	const inputElement = document.createElement("input");
-	const htmlElRef = useRef<HTMLInputElement>(inputElement);
-	const setFocus = () => {
-		if (htmlElRef.current) {
-			htmlElRef.current.focus();
-		}
-	};
-
-	return [
-		htmlElRef,
-		setFocus,
-	] as const;
-};

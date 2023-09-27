@@ -8,6 +8,7 @@ import {
 	faMinus,
 	faQuestion,
 	faTimes,
+	faPlus,
 	faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -23,6 +24,7 @@ type IconType =
 	| "checkmark"
 	| "article"
 	| "close"
+	| "plus"
 	| "search";
 
 type Props = {
@@ -76,6 +78,7 @@ const icons = {
 		<FontAwesomeIcon icon={faCheck} className="checkmark" title="Checkmark" />,
 	article:
 		<FontAwesomeIcon icon={faBookOpen} className="article" title="Article" />,
+	plus: <FontAwesomeIcon icon={faPlus} className="plus" title="Plus" />,
 	close: <FontAwesomeIcon icon={faClose} className="close" title="Close" />,
 	search: <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" title="search" />,
 } as const;

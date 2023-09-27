@@ -5,7 +5,7 @@
 	ul, form {
 		margin-bottom: 0;
 	}
-	.tag-list, li, form, input, [type=submit] {
+	.tag-list, li, form, input, .Button {
 		display: inline-block;
 	}
 	.tag-list {
@@ -21,11 +21,15 @@
 	}
 	input {
 		@include borders-trace;
-		font-size: $sizes-f2;
-		padding-bottom: $sizes-s1;
+		font-size: $sizes-f1;
+		padding: $sizes-s1;
 		margin-right: $sizes-s2;
 	}
-	[type=submit] {
-		vertical-align: bottom;
+	.Button {
+		vertical-align: middle;
+		margin-right: $sizes-s1;
+	}
+	.Icon {
+		color: white;
 	}
 }

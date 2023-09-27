@@ -4,6 +4,13 @@
   &.tiny {
     font-size: $sizes-f7;
     line-height: 0.8;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		width: $sizes-s5;
+		height: $sizes-s5;
+		padding-top: 2px; // Visual alignment
+		margin-bottom: 1px; // Visual alignment
   }
   &.small {
     padding: $sizes-s1 $sizes-s3;
