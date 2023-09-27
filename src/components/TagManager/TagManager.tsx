@@ -7,6 +7,7 @@ import QuickAdd from "../../components/QuickAdd";
 import classNames from "classnames";
 
 type Props = {
+	id: string;
 	className?: string;
 	tags: string[];
 	removeTag: (id: string) => void;
@@ -14,6 +15,7 @@ type Props = {
 };
 
 export default function TagManager({
+	id,
 	className = "",
 	tags,
 	removeTag,
@@ -39,6 +41,7 @@ export default function TagManager({
 					isAdding
 						? <li>
 							<QuickAdd
+								id={id}
 								add={(newTag: string) => addTag(newTag)}
 								stop={() => setIsAdding(false)}
 							/>

@@ -1,14 +1,16 @@
 import "./QuickAdd.scss";
-import { FormEvent, FormEventHandler, KeyboardEventHandler, useRef, useState } from "react";
+import { FormEvent, KeyboardEventHandler, useRef, useState } from "react";
 import Button from "../../elements/Button";
 import Icon from "../../elements/Icon";
 
 type Props = {
+	id: string;
 	add: (newItem: string) => void;
 	stop: () => void;
 };
 
 export default function QuickAdd({
+	id,
 	add,
 	stop,
 }: Props) {
@@ -16,13 +18,7 @@ export default function QuickAdd({
 		newItem,
 		setNewItem,
 	] = useState("");
-	const $form = useRef(document.createElement("form"));
-
-	const handleSubmission: FormEventHandler<HTMLFormElement> = (event) => {
-		event.stopPropagation();
-		event.preventDefault();
-		addNewItem();
-	};
+	const $form = useRef(document.createElement("div"));
 
 	const addNewItem = () => {
 		if (newItem) {
@@ -39,14 +35,15 @@ export default function QuickAdd({
 		}
 		if (event.key === "Enter") {
 			event.stopPropagation();
-			event.preventDefault(); // Stops double submission in nested forms
+			event.preventDefault(); // Stops submission in nested forms
 			addNewItem();
 		}
 	};
 
 	return (
-		<form className="QuickAdd" ref={$form} onSubmit={handleSubmission}>
+		<div className="QuickAdd" ref={$form}>
 			<input
+				id={id}
 				aria-label="New item"
 				value={newItem}
 				autoFocus={true}
@@ -72,6 +69,6 @@ export default function QuickAdd({
 			>
 				<Icon type="close" />
 			</Button>
-		</form>
+		</div>
 	);
 }

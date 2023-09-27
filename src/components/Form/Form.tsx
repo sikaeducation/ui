@@ -1,57 +1,10 @@
+import { BaseFormControl, FormControl } from "./form-controls";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import Button from "../../elements/Button";
 import Heading from "../../elements/Heading";
-import TextInput from "../../elements/TextInput";
-import TextArea from "../../elements/TextArea";
-import DropDown from "../../elements/DropDown";
-import Checkbox from "../../elements/Checkbox";
-import TagManager from "../TagManager";
+import { controlTypes } from "./form-controls";
 import "./Form.scss";
-import Toggle from "../../elements/Toggle";
 
-type FormData = boolean | string | number | string[];
-type BaseFormControl = {
-	id: string;
-	label: string;
-	className?: string;
-	required?: boolean;
-}
-type FormControlTextInput = BaseFormControl
-	& Partial<ComponentPropsWithoutRef<typeof TextInput>>
-	& {
-		controlType: "TextInput";
-	}
-type FormControlTextArea = BaseFormControl
-	& Partial<ComponentPropsWithoutRef<typeof TextArea>>
-	& {
-		controlType: "TextArea";
-	}
-type FormControlDropDown = BaseFormControl
-	& Partial<ComponentPropsWithoutRef<typeof DropDown>>
-	& {
-		controlType: "DropDown";
-	}
-type FormControlCheckbox = BaseFormControl
-	& Partial<ComponentPropsWithoutRef<typeof Checkbox>>
-	& {
-		controlType: "Checkbox";
-	}
-type FormControlTagManager = BaseFormControl
-	& Partial<ComponentPropsWithoutRef<typeof TagManager>>
-	& {
-		controlType: "TagManager";
-	}
-type FormControlToggle = BaseFormControl
-	& Partial<ComponentPropsWithoutRef<typeof Toggle>>
-	& {
-		controlType: "Toggle";
-	}
-type FormControl = | FormControlTextInput
-	| FormControlTextArea
-	| FormControlDropDown
-	| FormControlCheckbox
-	| FormControlTagManager
-	| FormControlToggle;
 
 type Action = BaseFormControl
 	& Partial<ComponentPropsWithoutRef<typeof Button>>
@@ -89,53 +42,51 @@ export default function Form({
 						}),
 					};
 					if (controlType === "DropDown") {
-						return <DropDown
-							{...commonOptions}
-							key={id}
-							options={controlType === "DropDown" ? field.options : undefined}
-						/>;
+						return controlTypes[controlType](
+							field, newItem, setNewItem,
+						);
 					}
 					if (controlType === "TextInput") {
-						return <TextInput
-							{...commonOptions}
-							key={id}
-							type={field.type}
-						/>;
+						return controlTypes[controlType]({
+							...commonOptions,
+							key: id,
+							type: field.type,
+						});
 					}
 					if (controlType === "TextArea") {
-						return <TextArea
-							{...commonOptions}
-							key={id}
-						/>;
+						return controlTypes[controlType]({
+							...commonOptions,
+							key: id,
+						});
 					}
 					if (controlType === "Checkbox") {
-						return <Checkbox
-							{...commonOptions}
-							key={id}
-							type={field.type}
-						/>;
+						return controlTypes[controlType]({
+							...commonOptions,
+							key: id,
+							type: field.type,
+						});
 					}
 					if (controlType === "Toggle") {
-						return <Toggle
-							{...commonOptions}
-							key={id}
-						/>;
+						return controlTypes[controlType]({
+							...commonOptions,
+							key: id,
+						});
 					}
 					if (controlType === "TagManager") {
 						const tags = newItem[id];
 						if (!Array.isArray(tags)) return <></>;
-						return <TagManager
-							{...commonOptions}
-							key={id}
-							tags={tags}
-							removeTag={(tagToRemove) => {
+						return controlTypes[controlType]({
+							...commonOptions,
+							key: id,
+							tags: tags,
+							removeTag: (tagToRemove: string) => {
 								setNewItem({
 									...newItem,
 									[id]: tags
 										.filter((tag) => tag !== tagToRemove),
 								});
-							}}
-							addTag={(tag) => {
+							},
+							addTag: (tag: string) => {
 								setNewItem({
 									...newItem,
 									[id]: [
@@ -144,8 +95,8 @@ export default function Form({
 										tag,
 									],
 								});
-							}}
-						/>;
+							},
+						});
 					}
 				})}
 				{children}
