@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import "./Button.scss";
 
 type ButtonType = "primary" | "secondary" | "ghost";
-type Size = "small" | "large";
+type Size = "tiny" | "small" | "large";
 type ActionType = "normal" | "failure";
 type Props = {
 	action?: () => void;
@@ -31,7 +31,7 @@ export default function ButtonFormSubmission({
 	actionType = "normal",
 	disabled = false,
 	className = "",
-}: Props){
+}: Props) {
 	const buttonClass = buttonClasses[type];
 	return (
 		<button
@@ -42,6 +42,7 @@ export default function ButtonFormSubmission({
 				[buttonClass]: true,
 				disabled,
 				failure: actionType === "failure",
+				tiny: size === "tiny",
 				small: size === "small",
 				large: size === "large",
 			})}`}

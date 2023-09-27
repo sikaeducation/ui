@@ -1,6 +1,10 @@
 @use "../../styles" as *;
 
 .Button {
+  &.tiny {
+    font-size: $sizes-f7;
+    line-height: 0.8;
+  }
   &.small {
     padding: $sizes-s1 $sizes-s3;
     font-size: $sizes-f3;
@@ -35,7 +39,6 @@
     border-radius: $borders-radius;
     border: none;
     cursor: pointer;
-    padding: $sizes-s2 $sizes-s3;
     transition: background-color $sizes-transition;
     @include shadows-small;
     &:hover {

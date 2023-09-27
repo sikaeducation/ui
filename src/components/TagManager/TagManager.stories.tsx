@@ -10,12 +10,12 @@ export default meta;
 
 type Story = StoryObj<typeof TagManager>;
 
-export const Small: Story = {
+export const Default: Story = {
 	render: (args) => {
 		const [
 			tags,
 			updateTags,
-		] = useState<string[]>([]);
+		] = useState<string[]>([...args.tags]);
 		const addTag = (tag: string) => {
 			updateTags([
 				...tags,
@@ -34,5 +34,18 @@ export const Small: Story = {
 	},
 	args: {
 		id: "some-id",
+		tags: [
+			"some-id",
+			"some-other-id",
+			"yet-another-idea",
+			"2-some-id",
+			"2-some-other-id",
+			"2-yet-another-idea",
+			"3-some-id",
+			"3-some-other-id",
+			"3-yet-another-idea",
+			"4-some-id",
+			"4-some-other-id",
+		],
 	},
 };

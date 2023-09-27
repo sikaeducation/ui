@@ -1,8 +1,8 @@
 import "./TagManager.scss";
 import Tag from "../../elements/Tag";
-import TextInput from "../../elements/TextInput";
-import { FormEventHandler, useState } from "react";
+import { FormEvent, FormEventHandler, useState } from "react";
 import Button from "../../elements/Button";
+//import Icon from "../../elements/Button";
 import classNames from "classnames";
 
 type Props = {
@@ -41,22 +41,36 @@ export default function TagManager({
 			TagManager: true,
 			[className]: true,
 		})}>
-			<ul>
+			<ul className="tag-list">
 				{tags.map((tag) => (
-					<span onClick={handleTagRemoval(tag)}>
+					<li onClick={handleTagRemoval(tag)}>
 						<Tag key={tag}>{tag}</Tag>
-					</span>
+					</li>
 				))}
+				<li>
+					<form onSubmit={handleTagSubmission}>
+						<input
+							id={id}
+							value={newTag}
+							onChange={
+								(event: FormEvent<HTMLInputElement>) => {
+									updateNewTag(`
+										${event.currentTarget.value}
+									`);
+								}
+							}
+						/>
+						<Button
+							size="tiny"
+							type="primary"
+							submit={true}
+						>
+							+
+							{/* <Icon type="check"> */}
+						</Button>
+					</form>
+				</li>
 			</ul>
-			<form onSubmit={handleTagSubmission}>
-				<TextInput
-					id={id}
-					label="New"
-					value={newTag}
-					updateValue={updateNewTag}
-				/>
-				<Button type="secondary">Add</Button>
-			</form>
 		</div>
 	);
 }

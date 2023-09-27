@@ -1,4 +1,31 @@
 @use "../../styles" as *;
 
 .TagManager {
+	border: 1px dashed red;
+	ul, form {
+		margin-bottom: 0;
+	}
+	.tag-list, li, form, input, [type=submit] {
+		display: inline-block;
+	}
+	.tag-list {
+		display: inline-block;
+		padding: $sizes-s1;
+		line-height: 2;
+		> li {
+			margin-right: $sizes-s2;
+		}
+	}
+	form {
+		margin: 2px $sizes-s1 0 $sizes-s1;
+	}
+	input {
+		@include borders-trace;
+		font-size: $sizes-f2;
+		padding-bottom: $sizes-s1;
+		margin-right: $sizes-s2;
+	}
+	[type=submit] {
+		vertical-align: bottom;
+	}
 }
