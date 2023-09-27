@@ -8,6 +8,12 @@
   border-radius: $borders-radius;
 	white-space: nowrap;
 	@include shadows-small;
+	&.interactive {
+		cursor: pointer;
+	}
+	&.active {
+		background-color: $colors-primary-9;
+	}
 	.Icon {
 		display: inline-block;
 		margin-left: $sizes-s2;

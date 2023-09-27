@@ -1,18 +1,31 @@
+import classNames from "classnames";
 import { ReactNode } from "react";
 import Icon from "../Icon";
 import "./Tag.scss";
 
 type Props = {
 	close?: () => void;
-	engage?: () => void;
+	active: boolean;
+	engage: () => void;
 	children: ReactNode;
 };
 
 export default function Tag(props: Props) {
-	return <span className="Tag">
-		{props.children}
+	const { children, close, engage, active } = props;
+
+	return <span
+		className={
+			classNames({
+				Tag: true,
+				active,
+				interactive: engage,
+			})
+		}
+		onClick={engage ? () => engage() : undefined}
+	>
+		{children}
 		{
-			props.close ? <Icon type="close" action={close} /> : null
+			close ? <Icon type="close" action={close} /> : null
 		}
 	</span>;
 }
