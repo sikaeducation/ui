@@ -2,11 +2,11 @@ import "./Toggle.scss";
 import { Switch as MaterialSwitch } from "@material-ui/core";
 
 type Props = {
-  id: string;
-  label: string;
-  value: boolean | string;
-  updateValue: (newValue: boolean) => void;
-  required?: boolean;
+	id: string;
+	label: string;
+	value: boolean | string;
+	updateValue: (newValue: boolean) => void;
+	required?: boolean;
 };
 
 export default function Toggle({
@@ -15,18 +15,18 @@ export default function Toggle({
 	value,
 	updateValue,
 	required = false,
-}: Props){
+}: Props) {
 	return (
-  <div className="Toggle">
-  <label htmlFor={id}>{label}</label>
-  <MaterialSwitch
-  checked={!!value}
-  id={id}
-  required={required}
-  name={id}
-  onChange={() => updateValue(!value)}
-  color="primary"
+		<div className="Toggle">
+			<MaterialSwitch
+				checked={!!value}
+				id={id}
+				required={required}
+				name={id}
+				onChange={() => updateValue(!value)}
+				color="primary"
 			/>
+			<label htmlFor={id}>{label}</label>
 		</div>
 	);
 }

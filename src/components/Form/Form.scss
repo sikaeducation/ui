@@ -13,6 +13,10 @@
 	.TagManager {
 		margin-left: $sizes-s2 * -1; // Visual alignment
 	}
+	.Toggle {
+		margin-top: $sizes-s2;
+		margin-left: $sizes-s4 * -1; // Visual alignment
+	}
   .actions {
     display: flex;
     justify-content: flex-end;

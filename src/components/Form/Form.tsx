@@ -7,6 +7,7 @@ import DropDown from "../../elements/DropDown";
 import Checkbox from "../../elements/Checkbox";
 import TagManager from "../TagManager";
 import "./Form.scss";
+import Toggle from "../../elements/Toggle";
 
 type FormData = boolean | string | number | string[];
 type BaseFormControl = {
@@ -40,11 +41,17 @@ type FormControlTagManager = BaseFormControl
 	& {
 		controlType: "TagManager";
 	}
+type FormControlToggle = BaseFormControl
+	& Partial<ComponentPropsWithoutRef<typeof Toggle>>
+	& {
+		controlType: "Toggle";
+	}
 type FormControl = | FormControlTextInput
 	| FormControlTextArea
 	| FormControlDropDown
 	| FormControlCheckbox
-	| FormControlTagManager;
+	| FormControlTagManager
+	| FormControlToggle;
 
 type Action = BaseFormControl
 	& Partial<ComponentPropsWithoutRef<typeof Button>>
@@ -106,6 +113,12 @@ export default function Form({
 							{...commonOptions}
 							key={id}
 							type={field.type}
+						/>;
+					}
+					if (controlType === "Toggle") {
+						return <Toggle
+							{...commonOptions}
+							key={id}
 						/>;
 					}
 					if (controlType === "TagManager") {

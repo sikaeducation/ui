@@ -81,6 +81,11 @@ export const Default: Story = {
 				label: "TagManager",
 				controlType: "TagManager",
 			},
+			{
+				id: "toggle",
+				label: "Toggle",
+				controlType: "Toggle",
+			},
 		],
 		actions: [
 			{
