@@ -1,11 +1,11 @@
 import type { ComponentPropsWithoutRef } from "react";
-import Toggle from "../../elements/Toggle";
 import TagManager from "../TagManager";
 
 import TextInput, { FormControlTextInput } from "./FormControls/TextInput";
 import TextArea, { FormControlTextArea } from "./FormControls/TextArea";
 import DropDown, { FormControlDropDown } from "./FormControls/DropDown";
 import Checkbox, { FormControlCheckbox } from "./FormControls/Checkbox";
+import Toggle, { FormControlToggle } from "./FormControls/Toggle";
 
 export type FormData = boolean | string | number | string[];
 
@@ -21,11 +21,6 @@ type FormControlTagManager = BaseFormControl
 	& {
 		controlType: "TagManager";
 	}
-type FormControlToggle = BaseFormControl
-	& Partial<ComponentPropsWithoutRef<typeof Toggle>>
-	& {
-		controlType: "Toggle";
-	}
 
 export type FormControl = | FormControlTextInput
 	| FormControlTextArea
@@ -37,37 +32,13 @@ export type FormControl = | FormControlTextInput
 const isTagManager = (field: FormControl): field is FormControlTagManager => {
 	return field.controlType === "TagManager";
 };
-const isToggle = (field: FormControl): field is FormControlToggle => {
-	return field.controlType === "Toggle";
-};
 
 const controlTypes = {
 	DropDown,
 	TextInput,
 	TextArea,
 	Checkbox,
-	"Toggle": (
-		field: FormControlToggle,
-		newItem: Record<string, FormData>,
-		setNewItem: (newItem: Record<string, FormData>) => void,
-	) => {
-		if (!isToggle(field)) return <></>;
-		const { id, label } = field;
-		const value = newItem[String(id)] ? String(newItem[String(id)]) : "";
-		const updateValue = (newValue: FormData) => {
-			return setNewItem({
-				...newItem,
-				[id]: newValue,
-			});
-		};
-		return <Toggle
-			key={id}
-			id={id}
-			label={label}
-			value={value}
-			updateValue={updateValue}
-		/>;
-	},
+	Toggle,
 	"TagManager": (
 		field: FormControlTagManager,
 		newItem: Record<string, FormData>,
