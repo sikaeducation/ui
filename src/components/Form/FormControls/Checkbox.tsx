@@ -1,23 +1,28 @@
 import type { ComponentPropsWithoutRef } from "react";
 import { BaseFormControl } from "./Base";
 import Checkbox from "../../../elements/Checkbox";
-import { FormControl, FormData } from "../form-controls";
+import { NewFormData } from "../form-controls";
 
 export type FormControlCheckbox = BaseFormControl
-	& Partial<ComponentPropsWithoutRef<typeof Checkbox>>
+	& Omit<ComponentPropsWithoutRef<typeof Checkbox>, "updateValue" | "value">
 	& {
 		controlType: "Checkbox";
 	}
 
-export default function getCheckbox(
+type GetCheckbox = (
 	field: FormControlCheckbox,
-	newItem: Record<string, FormData>,
-	setNewItem: (newItem: Record<string, FormData>) => void,
-) {
-	if (!isCheckbox(field)) return <></>;
+	newItem: NewFormData,
+	setNewItem: (newItem: NewFormData) => void,
+) => ReturnType<typeof Checkbox>;
+
+const getCheckbox: GetCheckbox = (
+	field,
+	newItem,
+	setNewItem,
+) => {
 	const { id, label, type } = field;
-	const value = newItem[String(id)] ? String(newItem[String(id)]) : "";
-	const updateValue = (newValue: FormData) => {
+	const value = String(newItem[id] ? newItem[id] : "");
+	const updateValue = (newValue: boolean) => {
 		return setNewItem({
 			...newItem,
 			[id]: newValue,
@@ -31,8 +36,5 @@ export default function getCheckbox(
 		value={value}
 		updateValue={updateValue}
 	/>;
-}
-
-function isCheckbox(field: FormControl): field is FormControlCheckbox {
-	return field.controlType === "Checkbox";
 };
+export default getCheckbox;

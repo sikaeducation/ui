@@ -1,29 +1,33 @@
 import { ComponentPropsWithoutRef } from "react";
 import { BaseFormControl } from "./Base";
 import TextInput from "../../../elements/TextInput";
-import { FormControl, FormData } from "../form-controls";
+import { NewFormData } from "../form-controls";
 
 export type FormControlTextInput = BaseFormControl
-	& Partial<ComponentPropsWithoutRef<typeof TextInput>>
+	& Omit<ComponentPropsWithoutRef<typeof TextInput>, "updateValue" | "value">
 	& {
 		controlType: "TextInput";
 	}
 
-export default function getTextInput(
+type GetTextInput = (
 	field: FormControlTextInput,
-	newItem: Record<string, FormData>,
-	setNewItem: (newItem: Record<string, FormData>) => void,
-) {
-	if (!isTextInput(field)) return (<></>);
-	const { id, label } = field;
-	const value = newItem[String(id)] ? String(newItem[String(id)]) : "";
+	newItem: NewFormData,
+	setNewItem: (newItem: NewFormData) => void,
+) => ReturnType<typeof TextInput>
+
+const getTextInput: GetTextInput = (
+	field,
+	newItem,
+	setNewItem,
+) => {
+	const { id, label, type } = field;
+	const value = String(newItem[id] ? newItem[id] : "");
 	const updateValue = (newValue: string) => {
 		return setNewItem({
 			...newItem,
 			[id]: newValue,
 		});
 	};
-	const type = field.type;
 	return <TextInput
 		key={id}
 		id={id}
@@ -32,8 +36,6 @@ export default function getTextInput(
 		type={type}
 		updateValue={updateValue}
 	/>;
-}
+};
 
-function isTextInput(field: FormControl): field is FormControlTextInput {
-	return field.controlType === "TextInput";
-}
+export default getTextInput;

@@ -1,29 +1,33 @@
 import type { ComponentPropsWithoutRef } from "react";
 import { BaseFormControl } from "./Base";
 import DropDown from "../../../elements/DropDown";
-import { FormControl, FormData } from "../form-controls";
+import { NewFormData } from "../form-controls";
 
 export type FormControlDropDown = BaseFormControl
-	& Partial<ComponentPropsWithoutRef<typeof DropDown>>
+	& Omit<ComponentPropsWithoutRef<typeof DropDown>, "updateValue" | "value">
 	& {
 		controlType: "DropDown";
 	}
 
-export default function getDropDown(
+type GetDropDown = (
 	field: FormControlDropDown,
-	newItem: Record<string, FormData>,
-	setNewItem: (newItem: Record<string, FormData>) => void,
-) {
-	if (!isDropDown(field)) return <></>;
-	const { id, label } = field;
-	const value = newItem[String(id)] ? String(newItem[String(id)]) : "";
-	const updateValue = (newValue: FormData) => {
+	newItem: NewFormData,
+	setNewItem: (newItem: NewFormData) => void,
+) => ReturnType<typeof DropDown>;
+
+const getDropDown: GetDropDown = (
+	field,
+	newItem,
+	setNewItem,
+) => {
+	const { id, label, options } = field;
+	const value = String(newItem[id] ? newItem[id] : "");
+	const updateValue = (newValue: string) => {
 		return setNewItem({
 			...newItem,
 			[id]: newValue,
 		});
 	};
-	const options = field.options;
 	return <DropDown
 		key={id}
 		id={id}
@@ -32,8 +36,6 @@ export default function getDropDown(
 		options={options}
 		updateValue={updateValue}
 	/>;
-}
-
-function isDropDown(field: FormControl): field is FormControlDropDown {
-	return field.controlType === "DropDown";
 };
+
+export default getDropDown;

@@ -1,23 +1,28 @@
 import { ComponentPropsWithoutRef } from "react";
 import { BaseFormControl } from "./Base";
 import TextArea from "../../../elements/TextArea";
-import { FormControl, FormData } from "../form-controls";
+import { NewFormData } from "../form-controls";
 
 export type FormControlTextArea = BaseFormControl
-	& Partial<ComponentPropsWithoutRef<typeof TextArea>>
+	& Omit<ComponentPropsWithoutRef<typeof TextArea>, "updateValue" | "value">
 	& {
 		controlType: "TextArea";
 	}
 
-export default function getTextArea(
+type GetTextArea = (
 	field: FormControlTextArea,
-	newItem: Record<string, FormData>,
-	setNewItem: (newItem: Record<string, FormData>) => void,
-) {
-	if (!isTextArea(field)) return <></>;
+	newItem: NewFormData,
+	setNewItem: (newItem: NewFormData) => void,
+) => ReturnType<typeof TextArea>
+
+const getTextArea: GetTextArea = (
+	field,
+	newItem,
+	setNewItem,
+) => {
 	const { id, label } = field;
-	const value = newItem[String(id)] ? String(newItem[String(id)]) : "";
-	const updateValue = (newValue: FormData) => {
+	const value = String(newItem[id] ? newItem[id] : "");
+	const updateValue = (newValue: string) => {
 		return setNewItem({
 			...newItem,
 			[id]: newValue,
@@ -30,8 +35,6 @@ export default function getTextArea(
 		value={value}
 		updateValue={updateValue}
 	/>;
-}
-
-function isTextArea(field: FormControl): field is FormControlTextArea {
-	return field.controlType === "TextArea";
 };
+
+export default getTextArea;

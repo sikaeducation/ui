@@ -1,28 +1,34 @@
 import type { ComponentPropsWithoutRef } from "react";
 import { BaseFormControl } from "./Base";
 import Toggle from "../../../elements/Toggle";
-import { FormControl, NewFormData } from "../form-controls";
+import { NewFormData } from "../form-controls";
 
 export type FormControlToggle = BaseFormControl
-	& Partial<ComponentPropsWithoutRef<typeof Toggle>>
+	& Omit<ComponentPropsWithoutRef<typeof Toggle>, "updateValue" | "value">
 	& {
 		controlType: "Toggle";
 	}
 
-export default function getToggle(
+type GetToggle = (
 	field: FormControlToggle,
 	newItem: NewFormData,
 	setNewItem: (newItem: NewFormData) => void,
-) {
-	if (!isToggle(field)) return <></>;
+) => ReturnType<typeof Toggle>;
+
+const getToggle: GetToggle = (
+	field,
+	newItem,
+	setNewItem,
+) => {
 	const { id, label } = field;
-	const value = newItem[String(id)] ? String(newItem[String(id)]) : "";
+	const value = String(newItem[id] ? newItem[id] : "");
 	const updateValue = (newValue: boolean) => {
 		return setNewItem({
 			...newItem,
 			[id]: newValue,
 		});
 	};
+
 	return <Toggle
 		key={id}
 		id={id}
@@ -30,8 +36,6 @@ export default function getToggle(
 		value={value}
 		updateValue={updateValue}
 	/>;
-}
-
-function isToggle(field: FormControl): field is FormControlToggle {
-	return field.controlType === "Toggle";
 };
+
+export default getToggle;
