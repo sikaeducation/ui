@@ -3,10 +3,10 @@ import TextInput from "../../elements/TextInput";
 import TextArea from "../../elements/TextArea";
 import DropDown from "../../elements/DropDown";
 import Checkbox from "../../elements/Checkbox";
-import TagManager from "../TagManager";
 import Toggle from "../../elements/Toggle";
+import TagManager from "../TagManager";
 
-type FormData = boolean | string | number | string[];
+export type FormData = boolean | string | number | string[];
 
 export type BaseFormControl = {
 	id: string;
