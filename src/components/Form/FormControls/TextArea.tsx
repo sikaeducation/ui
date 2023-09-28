@@ -9,7 +9,7 @@ export type FormControlTextArea = BaseFormControl
 		controlType: "TextArea";
 	}
 
-export default function getTextInput(
+export default function getTextArea(
 	field: FormControlTextArea,
 	newItem: Record<string, FormData>,
 	setNewItem: (newItem: Record<string, FormData>) => void,
