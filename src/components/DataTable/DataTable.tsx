@@ -23,7 +23,7 @@ type Props<RowType> = {
 
 export default function DataTable<
 	RowType extends { id: string;[key: string]: unknown },
->({ tableData, fields, activeId }: Props<RowType>){
+>({ tableData, fields, activeId }: Props<RowType>) {
 	const size = useWindowSize();
 	const normalizedFields = normalizeFields(size, fields);
 	const proportions = normalizedFields.map(getProportion(size));
@@ -31,7 +31,7 @@ export default function DataTable<
 	const columnWidths = proportions.join(" ");
 	const handleKey = (action?: (id?: string) => void, id?: string) => {
 		return (event: KeyboardEvent<HTMLSpanElement>) => {
-			if (event.code === "Enter" && action){
+			if (event.code === "Enter" && action) {
 				action(id);
 			}
 		};
@@ -75,7 +75,7 @@ export default function DataTable<
 							tabIndex={0}
 							role="gridcell"
 						>
-							{row[key || ""] ? row[key] : null}
+							{String(row[key || ""]) ? String(row[key]) : null}
 						</span>)
 						: null}
 				</div>)
@@ -84,17 +84,17 @@ export default function DataTable<
 	);
 }
 
-function hasSmallProportion(field: Field){
+function hasSmallProportion(field: Field) {
 	return typeof field.proportion === "number" || !!field.proportion.small;
 }
 
-function getProportion(size: ReturnType<typeof useWindowSize>){
+function getProportion(size: ReturnType<typeof useWindowSize>) {
 	return (field: Field) => typeof field.proportion === "string"
 		? field.proportion
 		: field.proportion[size.breakpoint || "large"];
 }
 
-function normalizeFields(size: Size, fields: Field[]){
+function normalizeFields(size: Size, fields: Field[]) {
 	return (
 		size.breakpoint === "small" ? fields.filter(hasSmallProportion) : fields
 	).map((field) => ({
