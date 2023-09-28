@@ -6,7 +6,7 @@ type Props = {
 	label: string;
 	required?: boolean;
 	type?: "text" | "url" | "email" | "password";
-	updateValue: (newValue: string) => void;
+	updateValue: (newValue: FormData) => void;
 	value: string;
 };
 
@@ -18,7 +18,7 @@ export default function TextInput({
 	type = "text",
 	required = false,
 	className = "",
-}: Props){
+}: Props) {
 	return (
 		<div className="TextInput">
 			<label htmlFor={id}>{label}</label>
