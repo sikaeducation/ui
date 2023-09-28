@@ -5,7 +5,7 @@ import Heading from "../../elements/Heading";
 import { controlTypes } from "./form-controls";
 import "./Form.scss";
 
-
+type FormData = string | boolean | number | string[];
 type Action = BaseFormControl
 	& Partial<ComponentPropsWithoutRef<typeof Button>>
 
@@ -47,11 +47,9 @@ export default function Form({
 						);
 					}
 					if (controlType === "TextInput") {
-						return controlTypes[controlType]({
-							...commonOptions,
-							key: id,
-							type: field.type,
-						});
+						return controlTypes[controlType](
+							field, newItem, setNewItem,
+						);
 					}
 					if (controlType === "TextArea") {
 						return controlTypes[controlType]({

@@ -7,6 +7,7 @@ import TagManager from "../TagManager";
 import Toggle from "../../elements/Toggle";
 
 type FormData = boolean | string | number | string[];
+
 export type BaseFormControl = {
 	id: string;
 	label: string;
@@ -76,8 +77,30 @@ export const controlTypes = {
 			updateValue={updateValue}
 		/>;
 	},
+	"TextInput": (
+		field: FormControlTextInput,
+		newItem: Record<string, FormData>,
+		setNewItem: (newItem: Record<string, FormData>) => void,
+	) => {
+		const { id, label } = field;
+		const value = newItem[String(id)] ? String(newItem[String(id)]) : "";
+		const updateValue = (newValue: FormData) => {
+			return setNewItem({
+				...newItem,
+				[id]: newValue,
+			});
+		};
+		const type = field.type;
+		return <TextInput
+			key={id}
+			id={id}
+			label={label}
+			value={value}
+			type={type}
+			updateValue={updateValue}
+		/>;
+	},
 	// Next: Do the above stuff to the below types
-	"TextInput": (props) => <TextInput {...props} />,
 	"TextArea": (props) => <TextArea {...props} />,
 	"Checkbox": (props) => <Checkbox {...props} />,
 	"Toggle": (props) => <Toggle {...props} />,
