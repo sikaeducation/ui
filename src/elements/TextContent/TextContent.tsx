@@ -4,12 +4,12 @@ import classNames from "classnames";
 
 type Props = {
 	children: ReactNode;
-	className: string;
+	className?: string;
 };
 
 export default function TextArea({
 	children,
-	className,
+	className = "",
 }: Props) {
 	return (
 		<p className={classNames({
