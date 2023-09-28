@@ -63,9 +63,9 @@ export function getFormControl(
 			return controlTypes["TagManager"](
 				field, newItem, setNewItem,
 			);
-		// case "MarkdownPreviewer":
-		// 	return controlTypes["MarkdownPreviewer"](
-		// 		field, newItem, setNewItem,
-		// 	);
+		case "MarkdownPreviewer":
+			return controlTypes["MarkdownPreviewer"](
+				field, newItem, setNewItem,
+			);
 	}
 }

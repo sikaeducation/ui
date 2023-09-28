@@ -117,3 +117,29 @@ export const WithChildren: Story = {
 		children: <p>Some free text here</p>,
 	},
 };
+
+export const OnlyMarkdownPreviewer: Story = {
+	render: Default.render,
+	args: {
+		heading: "Some Form",
+		newItem: {
+			"markdown-previewer": "# Hello, world!",
+		},
+		fields: [
+			{
+				id: "markdown-previewer",
+				label: "MarkdownPreviewer",
+				controlType: "MarkdownPreviewer",
+			},
+		],
+		actions: [
+			{
+				id: "b",
+				label: "Some Action",
+				type: "primary",
+				size: "large",
+				action: () => console.log("Primary action fired"),
+			},
+		],
+	},
+};

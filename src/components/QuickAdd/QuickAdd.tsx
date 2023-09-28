@@ -34,7 +34,6 @@ export default function QuickAdd({
 			stop();
 		}
 		if (event.key === "Enter") {
-			event.stopPropagation();
 			event.preventDefault(); // Stops submission in nested forms
 			addNewItem();
 		}

@@ -20,7 +20,7 @@ const getTextArea: GetTextArea = (
 	setNewItem,
 ) => {
 	const { id, label } = field;
-	const value = String(newItem[id] ? newItem[id] : "");
+	const value = (newItem[id] ? newItem[id] : "") as string;
 	const updateValue = (newValue: string) => {
 		return setNewItem({
 			...newItem,

@@ -18,7 +18,6 @@ export default function TextArea({
 	updateValue,
 	required,
 	editable = false,
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	className = "",
 }: Props) {
 	return (
