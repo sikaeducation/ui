@@ -86,6 +86,11 @@ export const Default: Story = {
 				label: "Toggle",
 				controlType: "Toggle",
 			},
+			{
+				id: "markdown-previewer",
+				label: "MarkdownPreviewer",
+				controlType: "MarkdownPreviewer",
+			},
 		],
 		actions: [
 			{

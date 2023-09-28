@@ -11,8 +11,8 @@ type Props = {
 
 export default function MarkdownPreviewer({
 	id,
-	content,
 	label,
+	content,
 	updateContent,
 }: Props) {
 	return (

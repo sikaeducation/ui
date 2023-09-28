@@ -4,6 +4,7 @@ import DropDown, { FormControlDropDown } from "./FormControls/DropDown";
 import Checkbox, { FormControlCheckbox } from "./FormControls/Checkbox";
 import Toggle, { FormControlToggle } from "./FormControls/Toggle";
 import TagManager, { FormControlTagManager } from "./FormControls/TagManager";
+import MarkdownPreviewer, { FormControlMarkdownPreviewer } from "./FormControls/MarkdownPreviewer";
 
 type FormData = boolean | string | number | string[];
 export type NewFormData = Record<string, FormData>
@@ -19,7 +20,8 @@ export type FormControl = | FormControlTextInput
 	| FormControlDropDown
 	| FormControlCheckbox
 	| FormControlTagManager
-	| FormControlToggle;
+	| FormControlToggle
+	| FormControlMarkdownPreviewer;
 
 const controlTypes = {
 	DropDown,
@@ -28,6 +30,7 @@ const controlTypes = {
 	Checkbox,
 	Toggle,
 	TagManager,
+	MarkdownPreviewer,
 } as const;
 
 export function getFormControl(
@@ -58,6 +61,10 @@ export function getFormControl(
 			);
 		case "TagManager":
 			return controlTypes["TagManager"](
+				field, newItem, setNewItem,
+			);
+		case "MarkdownPreviewer":
+			return controlTypes["MarkdownPreviewer"](
 				field, newItem, setNewItem,
 			);
 	}
