@@ -1,11 +1,11 @@
 import type { ComponentPropsWithoutRef } from "react";
-import Checkbox from "../../elements/Checkbox";
 import Toggle from "../../elements/Toggle";
 import TagManager from "../TagManager";
 
 import TextInput, { FormControlTextInput } from "./FormControls/TextInput";
 import TextArea, { FormControlTextArea } from "./FormControls/TextArea";
 import DropDown, { FormControlDropDown } from "./FormControls/DropDown";
+import Checkbox, { FormControlCheckbox } from "./FormControls/Checkbox";
 
 export type FormData = boolean | string | number | string[];
 
@@ -16,11 +16,6 @@ export type BaseFormControl = {
 	required?: boolean;
 }
 
-type FormControlCheckbox = BaseFormControl
-	& Partial<ComponentPropsWithoutRef<typeof Checkbox>>
-	& {
-		controlType: "Checkbox";
-	}
 type FormControlTagManager = BaseFormControl
 	& Partial<ComponentPropsWithoutRef<typeof TagManager>>
 	& {
@@ -39,9 +34,6 @@ export type FormControl = | FormControlTextInput
 	| FormControlTagManager
 	| FormControlToggle;
 
-const isCheckbox = (field: FormControl): field is FormControlCheckbox => {
-	return field.controlType === "Checkbox";
-};
 const isTagManager = (field: FormControl): field is FormControlTagManager => {
 	return field.controlType === "TagManager";
 };
@@ -53,29 +45,7 @@ const controlTypes = {
 	DropDown,
 	TextInput,
 	TextArea,
-	"Checkbox": (
-		field: FormControlCheckbox,
-		newItem: Record<string, FormData>,
-		setNewItem: (newItem: Record<string, FormData>) => void,
-	) => {
-		if (!isCheckbox(field)) return <></>;
-		const { id, label, type } = field;
-		const value = newItem[String(id)] ? String(newItem[String(id)]) : "";
-		const updateValue = (newValue: FormData) => {
-			return setNewItem({
-				...newItem,
-				[id]: newValue,
-			});
-		};
-		return <Checkbox
-			key={id}
-			id={id}
-			label={label}
-			type={type}
-			value={value}
-			updateValue={updateValue}
-		/>;
-	},
+	Checkbox,
 	"Toggle": (
 		field: FormControlToggle,
 		newItem: Record<string, FormData>,
