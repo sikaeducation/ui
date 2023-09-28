@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef } from "react";
 import { BaseFormControl } from "./Base";
 import Toggle from "../../../elements/Toggle";
-import { FormControl, FormData } from "../form-controls";
+import { FormControl, NewFormData } from "../form-controls";
 
 export type FormControlToggle = BaseFormControl
 	& Partial<ComponentPropsWithoutRef<typeof Toggle>>
@@ -11,13 +11,13 @@ export type FormControlToggle = BaseFormControl
 
 export default function getToggle(
 	field: FormControlToggle,
-	newItem: Record<string, FormData>,
-	setNewItem: (newItem: Record<string, FormData>) => void,
+	newItem: NewFormData,
+	setNewItem: (newItem: NewFormData) => void,
 ) {
 	if (!isToggle(field)) return <></>;
 	const { id, label } = field;
 	const value = newItem[String(id)] ? String(newItem[String(id)]) : "";
-	const updateValue = (newValue: FormData) => {
+	const updateValue = (newValue: boolean) => {
 		return setNewItem({
 			...newItem,
 			[id]: newValue,
