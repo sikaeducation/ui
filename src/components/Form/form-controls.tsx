@@ -5,9 +5,7 @@ import Checkbox, { FormControlCheckbox } from "./FormControls/Checkbox";
 import Toggle, { FormControlToggle } from "./FormControls/Toggle";
 import TagManager, { FormControlTagManager } from "./FormControls/TagManager";
 
-// TODO: Stop exporting this
-export type FormData = boolean | string | number | string[];
-// Keep exporting this
+type FormData = boolean | string | number | string[];
 export type NewFormData = Record<string, FormData>
 export type BaseFormControl = {
 	id: string;

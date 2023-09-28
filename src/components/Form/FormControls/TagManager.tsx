@@ -1,20 +1,24 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { BaseFormControl } from "./Base";
 import TagManager from "../../../components/TagManager";
-import { FormControl, FormData } from "../form-controls";
+import { BaseFormControl, NewFormData } from "../form-controls";
 
 export type FormControlTagManager = BaseFormControl
-	& Partial<ComponentPropsWithoutRef<typeof TagManager>>
+	& Omit<ComponentPropsWithoutRef<typeof TagManager>, "updateValue" | "value">
 	& {
 		controlType: "TagManager";
 	}
 
-export default function getTagManager(
+type GetTagManager = (
 	field: FormControlTagManager,
-	newItem: Record<string, FormData>,
-	setNewItem: (newItem: Record<string, FormData>) => void,
-) {
-	if (!isTagManager(field)) return <></>;
+	newItem: NewFormData,
+	setNewItem: (newItem: NewFormData) => void,
+) => ReturnType<typeof TagManager>
+
+const getTagManager: GetTagManager = (
+	field,
+	newItem,
+	setNewItem,
+) => {
 	const { id } = field;
 
 	let tags: string[];
@@ -22,7 +26,6 @@ export default function getTagManager(
 		tags = newItem[id] as string[];
 	} else return <></>;
 
-	if (!Array.isArray(tags)) return <></>;
 	return <TagManager
 		key={id}
 		id={id}
@@ -44,10 +47,6 @@ export default function getTagManager(
 			});
 		}}
 	/>;
-}
-
-function isTagManager(field: FormControl): field is FormControlTagManager {
-	return field.controlType === "TagManager";
 };
 
 function isStringArray(values: unknown): values is string[] {
@@ -55,3 +54,5 @@ function isStringArray(values: unknown): values is string[] {
 
 	return values.every((value) => typeof value === "string");
 }
+
+export default getTagManager;

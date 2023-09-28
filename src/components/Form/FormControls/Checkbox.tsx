@@ -1,7 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { BaseFormControl } from "./Base";
 import Checkbox from "../../../elements/Checkbox";
-import { NewFormData } from "../form-controls";
+import { BaseFormControl, NewFormData } from "../form-controls";
 
 export type FormControlCheckbox = BaseFormControl
 	& Omit<ComponentPropsWithoutRef<typeof Checkbox>, "updateValue" | "value">

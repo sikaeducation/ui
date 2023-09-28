@@ -1,7 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { BaseFormControl } from "./Base";
 import DropDown from "../../../elements/DropDown";
-import { NewFormData } from "../form-controls";
+import { BaseFormControl, NewFormData } from "../form-controls";
 
 export type FormControlDropDown = BaseFormControl
 	& Omit<ComponentPropsWithoutRef<typeof DropDown>, "updateValue" | "value">

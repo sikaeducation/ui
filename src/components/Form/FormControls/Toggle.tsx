@@ -1,7 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { BaseFormControl } from "./Base";
 import Toggle from "../../../elements/Toggle";
-import { NewFormData } from "../form-controls";
+import { BaseFormControl, NewFormData } from "../form-controls";
 
 export type FormControlToggle = BaseFormControl
 	& Omit<ComponentPropsWithoutRef<typeof Toggle>, "updateValue" | "value">

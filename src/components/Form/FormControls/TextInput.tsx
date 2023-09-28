@@ -1,7 +1,6 @@
 import { ComponentPropsWithoutRef } from "react";
-import { BaseFormControl } from "./Base";
 import TextInput from "../../../elements/TextInput";
-import { NewFormData } from "../form-controls";
+import { BaseFormControl, NewFormData } from "../form-controls";
 
 export type FormControlTextInput = BaseFormControl
 	& Omit<ComponentPropsWithoutRef<typeof TextInput>, "updateValue" | "value">
