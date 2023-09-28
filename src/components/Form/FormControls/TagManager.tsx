@@ -3,7 +3,7 @@ import TagManager from "../../../components/TagManager";
 import { BaseFormControl, NewFormData } from "../form-controls";
 
 export type FormControlTagManager = BaseFormControl
-	& Omit<ComponentPropsWithoutRef<typeof TagManager>, "updateValue" | "value">
+	& Omit<ComponentPropsWithoutRef<typeof TagManager>, "tags" | "removeTag" | "addTag">
 	& {
 		controlType: "TagManager";
 	}

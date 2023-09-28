@@ -2,19 +2,19 @@ import type { StoryObj, Meta } from "@storybook/react";
 
 import Form from ".";
 import { useState } from "react";
+import { NewFormData } from "./form-controls";
 
 const meta: Meta<typeof Form> = { component: Form };
 export default meta;
 
 type Story = StoryObj<typeof Form>;
-type FormData = string | boolean | number | string[];
 
 export const Default: Story = {
 	render: (args) => {
 		const [
 			newItem,
 			setNewItem,
-		] = useState<Record<string, FormData>>(args.newItem ?? {});
+		] = useState<NewFormData>(args.newItem ?? {});
 		return (
 			<Form
 				{...args}
