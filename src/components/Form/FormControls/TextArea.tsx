@@ -1,39 +1,37 @@
 import { ComponentPropsWithoutRef } from "react";
 import { BaseFormControl } from "./Base";
-import TextInput from "../../../elements/TextInput";
+import TextArea from "../../../elements/TextArea";
 import { FormControl, FormData } from "../form-controls";
 
-export type FormControlTextInput = BaseFormControl
-	& Partial<ComponentPropsWithoutRef<typeof TextInput>>
+export type FormControlTextArea = BaseFormControl
+	& Partial<ComponentPropsWithoutRef<typeof TextArea>>
 	& {
-		controlType: "TextInput";
+		controlType: "TextArea";
 	}
 
 export default function getTextInput(
-	field: FormControlTextInput,
+	field: FormControlTextArea,
 	newItem: Record<string, FormData>,
 	setNewItem: (newItem: Record<string, FormData>) => void,
 ) {
-	if (!isTextInput(field)) return (<></>);
+	if (!isTextArea(field)) return <></>;
 	const { id, label } = field;
 	const value = newItem[String(id)] ? String(newItem[String(id)]) : "";
-	const updateValue = (newValue: string) => {
+	const updateValue = (newValue: FormData) => {
 		return setNewItem({
 			...newItem,
 			[id]: newValue,
 		});
 	};
-	const type = field.type;
-	return <TextInput
+	return <TextArea
 		key={id}
 		id={id}
 		label={label}
 		value={value}
-		type={type}
 		updateValue={updateValue}
 	/>;
 }
 
-function isTextInput(field: FormControl): field is FormControlTextInput {
-	return field.controlType === "TextInput";
-}
+function isTextArea(field: FormControl): field is FormControlTextArea {
+	return field.controlType === "TextArea";
+};

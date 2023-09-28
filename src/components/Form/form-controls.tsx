@@ -1,10 +1,11 @@
 import type { ComponentPropsWithoutRef } from "react";
-import TextInput from "../../elements/TextInput";
-import TextArea from "../../elements/TextArea";
 import DropDown from "../../elements/DropDown";
 import Checkbox from "../../elements/Checkbox";
 import Toggle from "../../elements/Toggle";
 import TagManager from "../TagManager";
+
+import TextInput, { FormControlTextInput } from "./FormControls/TextInput";
+import TextArea, { FormControlTextArea } from "./FormControls/TextArea";
 
 export type FormData = boolean | string | number | string[];
 
@@ -15,11 +16,6 @@ export type BaseFormControl = {
 	required?: boolean;
 }
 
-type FormControlTextInput = BaseFormControl
-	& Partial<ComponentPropsWithoutRef<typeof TextInput>>
-	& {
-		controlType: "TextInput";
-	}
 type FormControlDropDown = BaseFormControl
 	& Partial<ComponentPropsWithoutRef<typeof DropDown>>
 	& {
@@ -40,11 +36,6 @@ type FormControlToggle = BaseFormControl
 	& {
 		controlType: "Toggle";
 	}
-type FormControlTextArea = BaseFormControl
-	& Partial<ComponentPropsWithoutRef<typeof TextArea>>
-	& {
-		controlType: "TextArea";
-	}
 
 export type FormControl = | FormControlTextInput
 	| FormControlTextArea
@@ -53,12 +44,6 @@ export type FormControl = | FormControlTextInput
 	| FormControlTagManager
 	| FormControlToggle;
 
-const isTextInput = (field: FormControl): field is FormControlTextInput => {
-	return field.controlType === "TextInput";
-};
-const isTextArea = (field: FormControl): field is FormControlTextArea => {
-	return field.controlType === "TextArea";
-};
 const isDropDown = (field: FormControl): field is FormControlDropDown => {
 	return field.controlType === "DropDown";
 };
@@ -97,52 +82,8 @@ const controlTypes = {
 			updateValue={updateValue}
 		/>;
 	},
-	"TextInput": (
-		field: FormControlTextInput,
-		newItem: Record<string, FormData>,
-		setNewItem: (newItem: Record<string, FormData>) => void,
-	) => {
-		if (!isTextInput(field)) return <></>;
-		const { id, label } = field;
-		const value = newItem[String(id)] ? String(newItem[String(id)]) : "";
-		const updateValue = (newValue: FormData) => {
-			return setNewItem({
-				...newItem,
-				[id]: newValue,
-			});
-		};
-		const type = field.type;
-		return <TextInput
-			key={id}
-			id={id}
-			label={label}
-			value={value}
-			type={type}
-			updateValue={updateValue}
-		/>;
-	},
-	"TextArea": (
-		field: FormControlTextArea,
-		newItem: Record<string, FormData>,
-		setNewItem: (newItem: Record<string, FormData>) => void,
-	) => {
-		if (!isTextArea(field)) return <></>;
-		const { id, label } = field;
-		const value = newItem[String(id)] ? String(newItem[String(id)]) : "";
-		const updateValue = (newValue: FormData) => {
-			return setNewItem({
-				...newItem,
-				[id]: newValue,
-			});
-		};
-		return <TextArea
-			key={id}
-			id={id}
-			label={label}
-			value={value}
-			updateValue={updateValue}
-		/>;
-	},
+	TextInput,
+	TextArea,
 	"Checkbox": (
 		field: FormControlCheckbox,
 		newItem: Record<string, FormData>,
