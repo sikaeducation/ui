@@ -6,7 +6,7 @@ type Props = {
 	label: string;
 	required?: boolean;
 	type?: "text" | "url" | "email" | "password";
-	updateValue: (newValue: FormData) => void;
+	updateValue: (newValue: string) => void;
 	value: string;
 };
 
