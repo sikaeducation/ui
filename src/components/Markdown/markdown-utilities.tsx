@@ -2,11 +2,11 @@ import { ComponentPropsWithoutRef, ReactNode } from "react";
 import { CodeProps } from "react-markdown/lib/ast-to-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
-import { dracula as style } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { dracula as style } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import Heading from "../../elements/Heading";
 import Separator from "../../elements/Separator";
 
-export function addLinkToImage({ src, alt }: ComponentPropsWithoutRef<"img">){
+export function addLinkToImage({ src, alt }: ComponentPropsWithoutRef<"img">) {
 	return (
 		<a href={src} className="image-container" rel="noopener noreferrer">
 			<img src={src} alt={alt} />
@@ -14,24 +14,22 @@ export function addLinkToImage({ src, alt }: ComponentPropsWithoutRef<"img">){
 	);
 }
 
-
 export function formatCode({
 	inline,
 	className: elementClassName,
 	children,
-}: CodeProps){
+}: CodeProps) {
 	const match = /language-(\w+)/.exec(elementClassName || "");
 	return !inline && match
 		? <SyntaxHighlighter style={style as Record<string, string>} language={match[1]} PreTag="div">
 			{String(children).replace(/\n$/, "")}
 		</SyntaxHighlighter>
-		: <code className={elementClassName}>{children}</code>
-	;
+		: <code className={elementClassName}>{children}</code>;
 }
 
-export function formatHeading(level: number){
-	return function _formatHeading({ children }: { children: ReactNode }){
-		switch (level){
+export function formatHeading(level: number) {
+	return function _formatHeading({ children }: { children: ReactNode }) {
+		switch (level) {
 			case 1:
 				return <Heading level={1}>{children}</Heading>;
 			case 2:
@@ -46,6 +44,6 @@ export function formatHeading(level: number){
 	};
 }
 
-export function getSeparator(){
+export function getSeparator() {
 	return <Separator />;
 }
