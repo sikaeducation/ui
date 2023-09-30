@@ -13,3 +13,11 @@ export const Default: Story = {
 		alt: "Alt text",
 	},
 };
+
+export const WithAttribution: Story = {
+	args: {
+		src: "https://via.placeholder.com/500#medium",
+		alt: "Alt text",
+		attribution: "Photo by Kyle Coberly",
+	},
+};

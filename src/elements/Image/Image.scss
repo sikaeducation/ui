@@ -1,7 +1,18 @@
 @use "../../styles" as *;
 
 .Image {
-  border-radius: $borders-radius;
-	max-width: 100%;
 	margin-bottom: $sizes-f4;
+	.image-wrapper {
+		max-width: $sizes-s17;
+		display: inline-block;
+		img {
+			border-radius: $borders-radius;
+			align-self: center;
+		}
+		.attribution {
+			font-style: italic;
+			color: $colors-grey-5;
+			text-align: right;
+		}
+	}
 }
