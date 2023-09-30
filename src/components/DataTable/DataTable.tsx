@@ -1,5 +1,5 @@
 import "./DataTable.scss";
-import { KeyboardEvent } from "react";
+import React, { KeyboardEvent, ReactNode } from "react";
 import classNames from "classnames";
 import useWindowSize, { Size } from "../../hooks/use-window-size";
 
@@ -22,7 +22,7 @@ type Props<RowType> = {
 };
 
 export default function DataTable<
-	RowType extends { id: string;[key: string]: unknown },
+	RowType extends { id: string;[key: string]: string | ReactNode },
 >({ tableData, fields, activeId }: Props<RowType>) {
 	const size = useWindowSize();
 	const normalizedFields = normalizeFields(size, fields);
@@ -75,7 +75,7 @@ export default function DataTable<
 							tabIndex={0}
 							role="gridcell"
 						>
-							row[key || ""] ? row[key] : null
+							{row[key] || null}
 						</span>)
 						: null}
 				</div>)
