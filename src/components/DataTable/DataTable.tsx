@@ -75,7 +75,7 @@ export default function DataTable<
 							tabIndex={0}
 							role="gridcell"
 						>
-							{String(row[key || ""]) ? String(row[key]) : null}
+							row[key || ""] ? row[key] : null
 						</span>)
 						: null}
 				</div>)
