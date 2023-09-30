@@ -14,6 +14,7 @@ export { default as Link } from "./elements/Link";
 export { default as Logo } from "./elements/Logo";
 export { default as Notification } from "./elements/Notification";
 export { default as OutlinedCircle } from "./elements/OutlinedCircle";
+export { default as Panel } from "./elements/Panel";
 export { default as Question } from "./elements/Question";
 export { default as Separator } from "./elements/Separator";
 export { default as Skeleton } from "./elements/Skeleton";
@@ -22,7 +23,6 @@ export { default as TextArea } from "./elements/TextArea";
 export { default as TextContent } from "./elements/TextContent";
 export { default as TextInput } from "./elements/TextInput";
 export { default as Toggle } from "./elements/Toggle";
-export { default as Panel } from "./elements/Panel";
 
 export { default as Breadcrumbs } from "./components/Breadcrumbs";
 export { default as DataTable } from "./components/DataTable";

@@ -10,6 +10,9 @@ const messages = {
 	"network-error": {
 		message: "There was a problem fetching this data.",
 	},
+	"no-data": {
+		message: "There's no data to show yet!",
+	},
 } as const;
 
 export default function StatusMessage({
