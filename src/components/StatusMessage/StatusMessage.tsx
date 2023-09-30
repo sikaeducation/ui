@@ -1,11 +1,5 @@
 import "./StatusMessage.scss";
 
-type MessageId = "network-error";
-
-type Props = {
-	type: MessageId;
-};
-
 const messages = {
 	"network-error": {
 		message: "There was a problem fetching this data.",
@@ -14,6 +8,10 @@ const messages = {
 		message: "There's no data to show yet!",
 	},
 } as const;
+
+type Props = {
+	type: keyof typeof messages;
+};
 
 export default function StatusMessage({
 	type,
