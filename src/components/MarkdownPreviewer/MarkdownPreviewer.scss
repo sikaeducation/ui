@@ -5,18 +5,16 @@
     color: $colors-grey-4;
     margin-bottom: $sizes-s1;
 	}
-	.TextArea {
-		max-width: 100%;
-		textarea {
-			margin: 0;
-			width: 100%;
-		}
+	.TextArea textarea {
+    width: calc(100% + 16px);
+    margin-left: -8px; // Visually adjust to align with input
 	}
 	.Markdown {
 		@include borders-trace;
 		max-height: $sizes-s12;
 		overflow: auto;
-		max-width: 100%;
+    width: calc(100% + 16px);
+    margin-left: -8px; // Visually adjust to align with input
 		margin-bottom: $sizes-s4;
 	}
 }
