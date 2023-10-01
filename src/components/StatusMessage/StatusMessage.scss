@@ -1,6 +1,7 @@
 @use "../../styles" as *;
 
 .StatusMessage {
+	@include shadows-small;
 	display: flex;
 	justify-content: center;
 	align-items: center;
