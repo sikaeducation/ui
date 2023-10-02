@@ -3,7 +3,7 @@
 .MarkdownPreviewer {
 	width: calc(100% + 16px);
 	.preview-actions {
-		max-width: calc($sizes-s15); // Override max default
+		max-width: $sizes-s15; // Override max default
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -27,8 +27,9 @@
 		}
 	}
 	.TextArea {
-		max-width: calc($sizes-s15 - 16px); // Override max default
+		max-width: $sizes-s15; // Override max default
 		textarea {
+			width: 100%;
 			margin-left: -8px; // Visually adjust to align with input
 		}
 	}
@@ -39,5 +40,6 @@
     margin-left: -8px; // Visually adjust to align with input
 		margin-bottom: $sizes-s4;
 		min-height: $sizes-s4;
+		width: 100%;
 	}
 }
