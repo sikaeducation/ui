@@ -1,0 +1,39 @@
+@use "~@sikaeducation/ui/styles" as *;
+
+// Uses IDs because there should always only be one lightbox active at once
+
+#lightbox-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+#LightBox {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5% 10%;
+}
+
+#lightbox-content {
+  z-index: 20;
+  width: $sizes-s15;
+  border-radius: $borders-radius;
+}
+
+#underlay {
+  background-color: hsla(0, 0%, 0%, 0.85);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+}
