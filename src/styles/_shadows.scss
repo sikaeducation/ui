@@ -50,7 +50,3 @@
     box-shadow: 0 $offset $size colors.$primary-10;
   }
 }
-
-@mixin underlay {
-  background-color: hsla(0, 0%, 0%, 0.85);
-}
