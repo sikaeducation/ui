@@ -5,14 +5,22 @@
 	.image-wrapper {
 		max-width: $sizes-s17;
 		display: inline-block;
+		&.lightboxed {
+			max-width: 90%;
+			p {
+				color: $colors-white;
+				width: 100%;
+			}
+		}
 		img {
 			border-radius: $borders-radius;
 			align-self: center;
+			max-width: 100%;
 		}
 		.attribution {
 			font-style: italic;
-			color: $colors-grey-5;
 			text-align: right;
+			color: $colors-grey-5;
 		}
 	}
 }
