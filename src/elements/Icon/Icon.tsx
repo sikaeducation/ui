@@ -10,28 +10,11 @@ import {
 	faTimes,
 	faPlus,
 	faMagnifyingGlass,
+	faEyeSlash,
+	faEye,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
-
-type IconType =
-	| "accepted"
-	| "pending"
-	| "rejected"
-	| "clear"
-	| "confident"
-	| "unclear"
-	| "deferred"
-	| "checkmark"
-	| "article"
-	| "close"
-	| "plus"
-	| "search";
-
-type Props = {
-	type: IconType;
-	action?: () => void;
-};
 
 const icons = {
 	accepted:
@@ -83,7 +66,17 @@ const icons = {
 	plus: <FontAwesomeIcon icon={faPlus} className="plus" title="Plus" />,
 	close: <FontAwesomeIcon icon={faClose} className="close" title="Close" />,
 	search: <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" title="search" />,
+	eye: <FontAwesomeIcon icon={faEye} className="eye-icon" title="search" />,
+	"eye-slash": <FontAwesomeIcon icon={faEyeSlash} className="eye-slash-icon" title="search" />,
 } as const;
+
+type IconType = keyof typeof icons;
+
+type Props = {
+	type: IconType;
+	action?: () => void;
+};
+
 
 export default function Icon(props: Props) {
 	const { action, type } = props;

@@ -1,22 +1,35 @@
 @use "../../styles" as *;
 
 .MarkdownPreviewer {
-	.preview-subheading {
-    color: $colors-grey-4;
-    margin-bottom: $sizes-s1;
-		font-style: italic;
+	width: calc(100% + 16px);
+	.preview-actions {
+		max-width: calc($sizes-s15); // Override max default
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: $sizes-s1;
+		.preview-subheading {
+			color: $colors-grey-4;
+			margin-bottom: $sizes-s1;
+			font-style: italic;
+		}
+		button {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
 	}
-	.TextArea textarea {
-    width: calc(100% + 16px);
-    margin-left: -8px; // Visually adjust to align with input
+	.TextArea {
+		max-width: calc($sizes-s15 - 16px); // Override max default
+		textarea {
+			margin-left: -8px; // Visually adjust to align with input
+		}
 	}
 	.Markdown {
 		@include borders-trace;
 		max-height: $sizes-s12;
 		overflow: auto;
-    width: calc(100% + 16px);
     margin-left: -8px; // Visually adjust to align with input
 		margin-bottom: $sizes-s4;
-		min-height: $sizes-4;
+		min-height: $sizes-s4;
 	}
 }

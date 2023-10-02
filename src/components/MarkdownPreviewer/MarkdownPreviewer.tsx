@@ -1,6 +1,8 @@
 import "./MarkdownPreviewer.scss";
 import Markdown from "../Markdown";
 import TextArea from "../../elements/TextArea";
+import Button from "../../elements/Button";
+import Icon from "../../elements/Icon";
 
 type Props = {
 	id: string;
@@ -23,7 +25,10 @@ export default function MarkdownPreviewer({
 				label={label}
 				value={content}
 			/>
-			<p className="preview-subheading">Preview:</p>
+			<div className="preview-actions">
+				<p className="preview-subheading">Preview:</p>
+				<Button type="ghost"><Icon type="eye" /></Button>
+			</div>
 			<Markdown
 				content={content}
 			/>
