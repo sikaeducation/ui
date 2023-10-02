@@ -8,6 +8,14 @@
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: $sizes-s1;
+		.Icon {
+			.eye-icon {
+				color: $colors-grey-8;
+			}
+			.eye-slash-icon {
+				color: $colors-grey-6;
+			}
+		}
 		.preview-subheading {
 			color: $colors-grey-4;
 			margin-bottom: $sizes-s1;

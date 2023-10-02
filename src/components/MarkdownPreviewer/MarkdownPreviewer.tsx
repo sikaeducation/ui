@@ -3,6 +3,7 @@ import Markdown from "../Markdown";
 import TextArea from "../../elements/TextArea";
 import Button from "../../elements/Button";
 import Icon from "../../elements/Icon";
+import { useState } from "react";
 
 type Props = {
 	id: string;
@@ -17,6 +18,10 @@ export default function MarkdownPreviewer({
 	content,
 	updateContent,
 }: Props) {
+	const [
+		isPreviewing,
+		setIsPreviewing,
+	] = useState(false);
 	return (
 		<div className="MarkdownPreviewer">
 			<TextArea
@@ -26,12 +31,16 @@ export default function MarkdownPreviewer({
 				value={content}
 			/>
 			<div className="preview-actions">
-				<p className="preview-subheading">Preview:</p>
-				<Button type="ghost"><Icon type="eye" /></Button>
+				<p className="preview-subheading">{isPreviewing ? "Preview:" : <>&nbsp;</>}</p>
+				{
+					isPreviewing
+						? <Button type="ghost" action={() => setIsPreviewing(false)}><Icon type="eye-slash" /></Button>
+						: <Button type="ghost" action={() => setIsPreviewing(true)}><Icon type="eye" /></Button>
+				}
 			</div>
-			<Markdown
+			{isPreviewing && <Markdown
 				content={content}
-			/>
+			/>}
 		</div>
 	);
 }
