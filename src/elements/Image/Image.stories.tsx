@@ -1,4 +1,6 @@
-import type { StoryObj, Meta } from "@storybook/react";
+import type {
+	StoryObj, Meta,
+} from "@storybook/react";
 
 import Image from ".";
 
@@ -7,28 +9,25 @@ export default meta;
 
 type Story = StoryObj<typeof Image>;
 
-export const Default: Story = {
-	args: {
-		src: "https://via.placeholder.com/500#medium",
-		alt: "Alt text",
-	},
-};
+export const Default: Story = { args: {
+	src: "https://via.placeholder.com/500#medium",
+	alt: "Alt text",
+}};
 
-export const WithAttribution: Story = {
-	args: {
-		src: "https://via.placeholder.com/500#medium",
-		alt: "Alt text",
-		attribution: "Photo by Kyle Coberly",
-	},
-};
+export const WithAttribution: Story = { args: {
+	src: "https://via.placeholder.com/500#medium",
+	alt: "Alt text",
+	attribution: "Photo by Kyle Coberly",
+}};
 
-export const WithLightBox: Story = {
-	args: {
-		src: "https://via.placeholder.com/500#medium",
-		alt: "Alt text",
-		attribution: "Photo by Kyle Coberly",
-		Lightbox: function Lightbox({ onClose, children }) {
-			return (
+export const WithLightBox: Story = { args: {
+	src: "https://via.placeholder.com/500#medium",
+	alt: "Alt text",
+	attribution: "Photo by Kyle Coberly",
+	Lightbox: function Lightbox({
+		onClose, children,
+	}) {
+		return (
 				<div style={{
 					backgroundColor: "hsla(0, 0%, 0%, 0.5)",
 					height: "100%",
@@ -44,14 +43,11 @@ export const WithLightBox: Story = {
 					alignItems: "center",
 				}} onClick={() => onClose()}>
 					<div
-						style={{
-							zIndex: 3,
-						}}
+						style={{ zIndex: 3 }}
 					>
 						{children}
 					</div>
 				</div>
-			);
-		},
+		);
 	},
-};
+}};

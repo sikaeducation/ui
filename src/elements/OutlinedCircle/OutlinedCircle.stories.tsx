@@ -1,4 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type {
+	Meta, StoryObj,
+} from "@storybook/react";
 
 import OutlinedCircle from ".";
 
@@ -7,9 +9,8 @@ export default meta;
 
 type Story = StoryObj<typeof OutlinedCircle>;
 
-export const Default: Story = {
-	decorators: [
-		(Story) => <svg width="100" height="100" viewBox="-5 -5 10 10">
+export const Default: Story = { decorators: [
+	(Story) => <svg width="100" height="100" viewBox="-5 -5 10 10">
 			<defs><Story /></defs>
 			<use
 				width={5}
@@ -21,5 +22,4 @@ export const Default: Story = {
 				y={0}
 			/>
 		</svg>,
-	],
-};
+]};

@@ -1,6 +1,8 @@
 import type { ComponentPropsWithoutRef } from "react";
 import Checkbox from "../../../elements/Checkbox";
-import { BaseFormControl, NewFormData } from "../form-controls";
+import {
+	BaseFormControl, NewFormData,
+} from "../form-controls";
 
 export type FormControlCheckbox = BaseFormControl
 	& Omit<ComponentPropsWithoutRef<typeof Checkbox>, "updateValue" | "value">
@@ -19,7 +21,9 @@ const getCheckbox: GetCheckbox = (
 	newItem,
 	setNewItem,
 ) => {
-	const { id, label, type } = field;
+	const {
+		id, label, type,
+	} = field;
 	const value = String(newItem[id] ? newItem[id] : "");
 	const updateValue = (newValue: boolean) => {
 		return setNewItem({

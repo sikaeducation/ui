@@ -1,4 +1,6 @@
-import type { StoryObj, Meta } from "@storybook/react";
+import type {
+	StoryObj, Meta,
+} from "@storybook/react";
 
 import Form from ".";
 import { useState } from "react";
@@ -111,20 +113,16 @@ export const Default: Story = {
 	},
 };
 
-export const WithChildren: Story = {
-	args: {
-		...Default.args,
-		children: <p>Some free text here</p>,
-	},
-};
+export const WithChildren: Story = { args: {
+	...Default.args,
+	children: <p>Some free text here</p>,
+}};
 
 export const OnlyMarkdownPreviewer: Story = {
 	render: Default.render,
 	args: {
 		heading: "Some Form",
-		newItem: {
-			"markdown-previewer": "# Hello, world!",
-		},
+		newItem: { "markdown-previewer": "# Hello, world!" },
 		fields: [
 			{
 				id: "markdown-previewer",

@@ -6,7 +6,9 @@ type props = {
 	children: ReactNode;
 };
 
-export default function LightBox({ onClose, children }: props) {
+export default function LightBox({
+	onClose, children,
+}: props) {
 	return (
 		<div id="lightbox-wrapper">
 			<div id="LightBox">
@@ -14,5 +16,5 @@ export default function LightBox({ onClose, children }: props) {
 				<div id="lightbox-content">{children}</div>
 			</div>
 		</div>
-	)
+	);
 }

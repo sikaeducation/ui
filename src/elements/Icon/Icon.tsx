@@ -79,7 +79,9 @@ type Props = {
 
 
 export default function Icon(props: Props) {
-	const { action, type } = props;
+	const {
+		action, type,
+	} = props;
 	return <span
 		className={classNames({
 			Icon: true,

@@ -1,4 +1,6 @@
-import { Link, Node as NodeType, RawNode } from "./types";
+import {
+	Link, Node as NodeType, RawNode,
+} from "./types";
 import classnames from "classnames";
 import "./GraphNode.scss";
 
@@ -13,8 +15,12 @@ const criticalNodeDiameter = 4;
 type NodeState = "open" | "opening" | "closed" | "complete" | "in_progress"
 
 // eslint-disable-next-line max-statements
-export default function GraphNode({ node, links, zoomTo }: Props){
-	const { id, complete, in_progress, critical } = node;
+export default function GraphNode({
+	node, links, zoomTo,
+}: Props){
+	const {
+		id, complete, in_progress, critical,
+	} = node;
 	const formattedId = id.replace(/\s/g, "-");
 
 	const feederNodes = links

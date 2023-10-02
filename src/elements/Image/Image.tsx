@@ -1,5 +1,7 @@
 import classNames from "classnames";
-import { ComponentType, MouseEventHandler, ReactNode, useState } from "react";
+import {
+	ComponentType, MouseEventHandler, ReactNode, useState,
+} from "react";
 import "./Image.scss";
 
 type Props = {
@@ -12,7 +14,9 @@ type Props = {
 	}>;
 };
 
-export default function Image({ src, alt, attribution, Lightbox }: Props) {
+export default function Image({
+	src, alt, attribution, Lightbox,
+}: Props) {
 	const [
 		isLightboxed,
 		setIsLightBoxed,

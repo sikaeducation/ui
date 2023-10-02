@@ -21,7 +21,7 @@
 	],
 	"scripts": {
 		"start": "storybook dev -p 6006",
-		"lint": "eslint --ignore-path .gitignore --fix .",
+		"lint": "eslint  --ignore-path .gitignore --fix .",
 		"build": "rm -rf dist && microbundle --globals react/jsx-runtime=jsx --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react -f modern,cjs && npm run build:static-files",
 		"build:storybook": "storybook build",
 		"build:static-files": "cp -r src/styles dist && cp -r src/styles/fonts dist/fonts",

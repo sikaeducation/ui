@@ -1,4 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type {
+	Meta, StoryObj,
+} from "@storybook/react";
 
 import Graph from ".";
 import Circle from "../../elements/Circle";
@@ -6,15 +8,13 @@ import OutlinedCircle from "../../elements/OutlinedCircle";
 import options from "./sample-options";
 import data from "./sample-data";
 
-const { groups, nodes, links } = data;
+const {
+	groups, nodes, links,
+} = data;
 
 const meta: Meta<typeof Graph> = {
 	component: Graph,
-	argTypes: {
-		options: {
-			control: "object",
-		},
-	},
+	argTypes: { options: { control: "object" }},
 	decorators: [
 		(Story) => <svg
 			width="400"
@@ -37,12 +37,10 @@ export default meta;
 
 type Story = StoryObj<typeof Graph>;
 
-export const Default: Story = {
-	args: {
-		options,
-		nodes,
-		links,
-		groups,
-		currentFilter: "all",
-	},
-};
+export const Default: Story = { args: {
+	options,
+	nodes,
+	links,
+	groups,
+	currentFilter: "all",
+}};

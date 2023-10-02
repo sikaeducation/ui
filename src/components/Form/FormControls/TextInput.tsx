@@ -1,6 +1,8 @@
 import { ComponentPropsWithoutRef } from "react";
 import TextInput from "../../../elements/TextInput";
-import { BaseFormControl, NewFormData } from "../form-controls";
+import {
+	BaseFormControl, NewFormData,
+} from "../form-controls";
 
 export type FormControlTextInput = BaseFormControl
 	& Omit<ComponentPropsWithoutRef<typeof TextInput>, "updateValue" | "value">
@@ -19,7 +21,9 @@ const getTextInput: GetTextInput = (
 	newItem,
 	setNewItem,
 ) => {
-	const { id, label, type } = field;
+	const {
+		id, label, type,
+	} = field;
 	const value = String(newItem[id] ? newItem[id] : "");
 	const updateValue = (newValue: string) => {
 		return setNewItem({

@@ -1,17 +1,13 @@
-import type { StoryObj, Meta } from "@storybook/react";
+import type {
+	StoryObj, Meta,
+} from "@storybook/react";
 import { useState } from "react";
 
 import EditableField from ".";
 
 const meta: Meta<typeof EditableField> = {
 	component: EditableField,
-	argTypes: {
-		value: {
-			control: {
-				disable: true,
-			},
-		},
-	},
+	argTypes: { value: { control: { disable: true }}},
 };
 export default meta;
 

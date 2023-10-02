@@ -1,6 +1,8 @@
 import { ComponentPropsWithoutRef } from "react";
 import MarkdownPreviewer from "../../MarkdownPreviewer";
-import { BaseFormControl, NewFormData } from "../form-controls";
+import {
+	BaseFormControl, NewFormData,
+} from "../form-controls";
 
 export type FormControlMarkdownPreviewer = BaseFormControl
 	& Omit<ComponentPropsWithoutRef<typeof MarkdownPreviewer>, "content" | "updateContent">
@@ -19,7 +21,9 @@ const getMarkdownPreviewer: GetMarkdownPreviewer = (
 	newItem,
 	setNewItem,
 ) => {
-	const { id, label } = field;
+	const {
+		id, label,
+	} = field;
 	const content = String(newItem[id] ? newItem[id] : "");
 	const updateContent = (newValue: string) => {
 		return setNewItem({

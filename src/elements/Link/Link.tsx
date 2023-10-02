@@ -8,13 +8,17 @@ type Props = {
 	children: ReactNode | ReactNode[];
 };
 
-const InternalLink = ({ href, children }: Props) => {
+const InternalLink = ({
+	href, children,
+}: Props) => {
 	return <a className="Link InternalLink" href={href} target="blank" rel="noreferrer">
 		{children}
 	</a>;
 };
 
-const ExternalLink = ({ href, children }: Props) => {
+const ExternalLink = ({
+	href, children,
+}: Props) => {
 	return <span className="Link">
 		<a className="ExternalLink" href={href} target="blank" rel="noreferrer">
 			{children}
@@ -27,7 +31,9 @@ const ExternalLink = ({ href, children }: Props) => {
 	</span>;
 };
 
-export default function Link({ href, children }: Props){
+export default function Link({
+	href, children,
+}: Props){
 	const isExternal = href?.match(/^(https?:)?\/\//) || href?.match(/^mailto:/);
 	return isExternal
 		? <ExternalLink href={href}>{children}</ExternalLink>

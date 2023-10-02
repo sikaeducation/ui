@@ -1,5 +1,9 @@
-import { BaseFormControl, FormControl, getFormControl } from "./form-controls";
-import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import {
+	BaseFormControl, FormControl, getFormControl,
+} from "./form-controls";
+import type {
+	ComponentPropsWithoutRef, ReactNode,
+} from "react";
 import Button from "../../elements/Button";
 import Heading from "../../elements/Heading";
 import "./Form.scss";

@@ -1,11 +1,11 @@
-import type { StoryObj, Meta } from "@storybook/react";
+import type {
+	StoryObj, Meta,
+} from "@storybook/react";
 import { useState } from "react";
 
 import DropDown from ".";
 
-const meta: Meta<typeof DropDown> = {
-	component: DropDown,
-};
+const meta: Meta<typeof DropDown> = { component: DropDown };
 export default meta;
 
 type Story = StoryObj<typeof DropDown>;

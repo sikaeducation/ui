@@ -1,11 +1,11 @@
-import type { StoryObj, Meta } from "@storybook/react";
+import type {
+	StoryObj, Meta,
+} from "@storybook/react";
 import { useState } from "react";
 
 import MarkdownPreviewer from ".";
 
-const meta: Meta<typeof MarkdownPreviewer> = {
-	component: MarkdownPreviewer,
-};
+const meta: Meta<typeof MarkdownPreviewer> = { component: MarkdownPreviewer };
 export default meta;
 
 type Story = StoryObj<typeof MarkdownPreviewer>;

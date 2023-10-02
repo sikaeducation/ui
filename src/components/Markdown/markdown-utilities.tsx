@@ -1,4 +1,6 @@
-import { ComponentPropsWithoutRef, ReactNode } from "react";
+import {
+	ComponentPropsWithoutRef, ReactNode,
+} from "react";
 import { CodeProps } from "react-markdown/lib/ast-to-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
@@ -6,7 +8,9 @@ import { dracula as style } from "react-syntax-highlighter/dist/cjs/styles/prism
 import Heading from "../../elements/Heading";
 import Separator from "../../elements/Separator";
 
-export function addLinkToImage({ src, alt }: ComponentPropsWithoutRef<"img">) {
+export function addLinkToImage({
+	src, alt,
+}: ComponentPropsWithoutRef<"img">) {
 	return (
 		<a href={src} className="image-container" rel="noopener noreferrer">
 			<img src={src} alt={alt} />

@@ -1,4 +1,6 @@
-import { SimulationLinkDatum, SimulationNodeDatum } from "d3";
+import {
+	SimulationLinkDatum, SimulationNodeDatum,
+} from "d3";
 
 export type RawGroup = {
 	id: string;

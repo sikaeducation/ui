@@ -35,7 +35,9 @@ export default function DropDown({
 					updateValue(event.target.value);
 				}}
 			>
-				{options.map(({ id, label }) => (
+				{options.map(({
+					id, label,
+				}) => (
 					<option key={id} value={id}>{label}</option>
 				))}
 			</select>

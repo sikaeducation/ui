@@ -1,11 +1,11 @@
-import type { StoryObj, Meta } from "@storybook/react";
+import type {
+	StoryObj, Meta,
+} from "@storybook/react";
 
 import { useState } from "react";
 import TagManager from ".";
 
-const meta: Meta<typeof TagManager> = {
-	component: TagManager,
-};
+const meta: Meta<typeof TagManager> = { component: TagManager };
 export default meta;
 
 type Story = StoryObj<typeof TagManager>;

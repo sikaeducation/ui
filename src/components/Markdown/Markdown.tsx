@@ -18,7 +18,9 @@ type props = {
 	className?: string;
 };
 
-export default function AppContent({ content, className = "" }: props){
+export default function AppContent({
+	content, className = "",
+}: props){
 	// const getIndicator = useIndicator();
 	return (
 		<article
@@ -33,7 +35,9 @@ export default function AppContent({ content, className = "" }: props){
 					remarkUnwrapImages,
 					[
 						frontmatter,
-						{ type: "yaml", marker: "-" },
+						{
+							type: "yaml", marker: "-",
+						},
 					],
 				]}
 				components={{

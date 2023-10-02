@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+import {
+	useState, useEffect,
+} from "react";
 
 type Breakpoint = "small" | "large";
 
@@ -8,9 +10,7 @@ export type Size = {
   breakpoint: Breakpoint | undefined;
 };
 
-const breakpoints = {
-	small: 480,
-} as const;
+const breakpoints = { small: 480 } as const;
 
 export default function useWindowSize(): Size{
 	const [

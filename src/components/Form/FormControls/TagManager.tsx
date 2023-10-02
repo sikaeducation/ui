@@ -1,6 +1,8 @@
 import type { ComponentPropsWithoutRef } from "react";
 import TagManager from "../../../components/TagManager";
-import { BaseFormControl, NewFormData } from "../form-controls";
+import {
+	BaseFormControl, NewFormData,
+} from "../form-controls";
 
 export type FormControlTagManager = BaseFormControl
 	& Omit<ComponentPropsWithoutRef<typeof TagManager>, "tags" | "removeTag" | "addTag">

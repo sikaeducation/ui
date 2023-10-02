@@ -1,5 +1,7 @@
 import "./DataTable.scss";
-import React, { KeyboardEvent, ReactNode } from "react";
+import React, {
+	KeyboardEvent, ReactNode,
+} from "react";
 import classNames from "classnames";
 import useWindowSize, { Size } from "../../hooks/use-window-size";
 
@@ -23,7 +25,9 @@ type Props<RowType> = {
 
 export default function DataTable<
 	RowType extends { id: string;[key: string]: string | ReactNode },
->({ tableData, fields, activeId }: Props<RowType>) {
+>({
+	tableData, fields, activeId,
+}: Props<RowType>) {
 	const size = useWindowSize();
 	const normalizedFields = normalizeFields(size, fields);
 	const proportions = normalizedFields.map(getProportion(size));
@@ -63,7 +67,9 @@ export default function DataTable<
 					})}
 				>
 					{normalizedFields.length
-						? normalizedFields.map(({ key, title, action }) => <span
+						? normalizedFields.map(({
+							key, title, action,
+						}) => <span
 							onClick={() => action && action(row.id)}
 							onKeyDown={(event) => {
 								return action

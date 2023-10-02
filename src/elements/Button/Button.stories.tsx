@@ -1,12 +1,16 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { jest, expect } from "@storybook/jest";
-import { within, userEvent } from "@storybook/testing-library";
+import type {
+	Meta, StoryObj,
+} from "@storybook/react";
+import {
+	jest, expect,
+} from "@storybook/jest";
+import {
+	within, userEvent,
+} from "@storybook/testing-library";
 
 import Button from ".";
 
-const meta: Meta<typeof Button> = {
-	component: Button,
-};
+const meta: Meta<typeof Button> = { component: Button };
 export default meta;
 
 type Story = StoryObj<typeof Button>;
@@ -17,7 +21,9 @@ export const Action: Story = {
 		children: "Do it!",
 		action: jest.fn(),
 	},
-	play: async({ args, canvasElement }) => {
+	play: async({
+		args, canvasElement,
+	}) => {
 		const canvas = within(canvasElement);
 		expect(args.action).not.toHaveBeenCalled();
 
@@ -64,15 +70,11 @@ export const PrimaryLargeFailure: Story = {
 		actionType: "failure",
 	},
 };
-export const Secondary: Story = {
-	args: {
-		type: "secondary",
-		children: "Maybe do it?",
-	},
-};
-export const Ghost: Story = {
-	args: {
-		type: "ghost",
-		children: "Could do it",
-	},
-};
+export const Secondary: Story = { args: {
+	type: "secondary",
+	children: "Maybe do it?",
+}};
+export const Ghost: Story = { args: {
+	type: "ghost",
+	children: "Could do it",
+}};

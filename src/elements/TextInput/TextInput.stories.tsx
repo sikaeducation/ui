@@ -1,13 +1,13 @@
-import type { StoryObj, Meta } from "@storybook/react";
+import type {
+	StoryObj, Meta,
+} from "@storybook/react";
 import { expect } from "@storybook/jest";
 import { within } from "@storybook/testing-library";
 
 import { useState } from "react";
 import TextInput from ".";
 
-const meta: Meta<typeof TextInput> = {
-	component: TextInput,
-};
+const meta: Meta<typeof TextInput> = { component: TextInput };
 export default meta;
 
 type Story = StoryObj<typeof TextInput>;

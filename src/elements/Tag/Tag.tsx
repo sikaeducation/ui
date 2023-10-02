@@ -11,7 +11,9 @@ type Props = {
 };
 
 export default function Tag(props: Props) {
-	const { children, close, engage, active } = props;
+	const {
+		children, close, engage, active,
+	} = props;
 
 	return <span
 		className={

@@ -1,6 +1,8 @@
 import { ComponentPropsWithoutRef } from "react";
 import TextArea from "../../../elements/TextArea";
-import { BaseFormControl, NewFormData } from "../form-controls";
+import {
+	BaseFormControl, NewFormData,
+} from "../form-controls";
 
 export type FormControlTextArea = BaseFormControl
 	& Omit<ComponentPropsWithoutRef<typeof TextArea>, "updateValue" | "value">
@@ -19,7 +21,9 @@ const getTextArea: GetTextArea = (
 	newItem,
 	setNewItem,
 ) => {
-	const { id, label } = field;
+	const {
+		id, label,
+	} = field;
 	const value = (newItem[id] ? newItem[id] : "") as string;
 	const updateValue = (newValue: string) => {
 		return setNewItem({

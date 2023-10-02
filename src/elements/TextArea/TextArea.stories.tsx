@@ -1,17 +1,13 @@
-import type { StoryObj, Meta } from "@storybook/react";
+import type {
+	StoryObj, Meta,
+} from "@storybook/react";
 import { useState } from "react";
 
 import TextArea from ".";
 
 const meta: Meta<typeof TextArea> = {
 	component: TextArea,
-	argTypes: {
-		value: {
-			control: {
-				disable: true,
-			},
-		},
-	},
+	argTypes: { value: { control: { disable: true }}},
 };
 export default meta;
 

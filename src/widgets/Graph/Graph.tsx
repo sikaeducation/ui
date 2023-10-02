@@ -1,3 +1,4 @@
+/* eslint-disable */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
@@ -22,8 +23,8 @@ export default function Graph({
 	currentFilter,
 }: Props) {
 	const {
-		nodes: graphNodes,
 		// groups: graphGroups,
+		nodes: graphNodes,
 	} = runSimulation({
 		nodes,
 		links,

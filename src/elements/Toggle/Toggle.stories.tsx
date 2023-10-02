@@ -1,6 +1,10 @@
-import { StoryObj, Meta } from "@storybook/react";
+import {
+	StoryObj, Meta,
+} from "@storybook/react";
 import { expect } from "@storybook/jest";
-import { within, userEvent } from "@storybook/testing-library";
+import {
+	within, userEvent,
+} from "@storybook/testing-library";
 
 import { useState } from "react";
 import Toggle from ".";
