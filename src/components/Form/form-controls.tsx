@@ -41,31 +41,45 @@ export function getFormControl(
 	switch (field.controlType) {
 		case "TextInput":
 			return controlTypes["TextInput"](
-				field, newItem, setNewItem,
+				field,
+				newItem,
+				setNewItem,
 			);
 		case "TextArea":
 			return controlTypes["TextArea"](
-				field, newItem, setNewItem,
+				field,
+				newItem,
+				setNewItem,
 			);
 		case "DropDown":
 			return controlTypes["DropDown"](
-				field, newItem, setNewItem,
+				field,
+				newItem,
+				setNewItem,
 			);
 		case "Checkbox":
 			return controlTypes["Checkbox"](
-				field, newItem, setNewItem,
+				field,
+				newItem,
+				setNewItem,
 			);
 		case "Toggle":
 			return controlTypes["Toggle"](
-				field, newItem, setNewItem,
+				field,
+				newItem,
+				setNewItem,
 			);
 		case "TagManager":
 			return controlTypes["TagManager"](
-				field, newItem, setNewItem,
+				field,
+				newItem,
+				setNewItem,
 			);
 		case "MarkdownPreviewer":
 			return controlTypes["MarkdownPreviewer"](
-				field, newItem, setNewItem,
+				field,
+				newItem,
+				setNewItem,
 			);
 	}
 }

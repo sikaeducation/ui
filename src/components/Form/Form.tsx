@@ -35,7 +35,9 @@ export default function Form({
 			<form>
 				{fields.map((field) => {
 					return getFormControl(
-						field, newItem, setNewItem,
+						field,
+						newItem,
+						setNewItem,
 					);
 				})}
 				{children}

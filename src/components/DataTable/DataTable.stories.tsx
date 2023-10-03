@@ -52,7 +52,8 @@ export const OneRow: Story = { args: {
 			proportion: "30%",
 			key: "header_3",
 			// eslint-disable-next-line no-console
-			action: (id) => console.log("I got clicked", id),
+			action: (id) => console.log("I got clicked",
+				id),
 		},
 	],
 	tableData: [
@@ -128,7 +129,7 @@ export const LongField: Story = { args: {
 			id: "1",
 			header_1: "Data one",
 			header_2:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+					"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
 			header_3: "Data three",
 		},
 	],
@@ -161,7 +162,7 @@ export const MobileFields: Story = {
 				id: "1",
 				header_1: "Data one",
 				header_2:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+					"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
 				header_3: "Data three",
 			},
 		],

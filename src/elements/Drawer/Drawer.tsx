@@ -29,7 +29,8 @@ export default function Drawer({
 			aria-describedby="drawer-content"
 			aria-label={`${modal && "modal "}drawer`}
 			className={classNames({
-				Drawer: true, modal,
+				Drawer: true,
+				modal,
 			})}
 			onClick={handleClick}
 			onKeyDown={handleKey}

@@ -26,7 +26,8 @@ export function formatCode({
 	const match = /language-(\w+)/.exec(elementClassName || "");
 	return !inline && match
 		? <SyntaxHighlighter style={style as Record<string, string>} language={match[1]} PreTag="div">
-			{String(children).replace(/\n$/, "")}
+			{String(children).replace(/\n$/,
+				"")}
 		</SyntaxHighlighter>
 		: <code className={elementClassName}>{children}</code>;
 }

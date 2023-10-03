@@ -36,7 +36,8 @@ export default function AppContent({
 					[
 						frontmatter,
 						{
-							type: "yaml", marker: "-",
+							type: "yaml",
+							marker: "-",
 						},
 					],
 				]}

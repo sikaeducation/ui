@@ -5,14 +5,14 @@ import {
 type Breakpoint = "small" | "large";
 
 export type Size = {
-  width: number | undefined;
-  height: number | undefined;
-  breakpoint: Breakpoint | undefined;
+	width: number | undefined;
+	height: number | undefined;
+	breakpoint: Breakpoint | undefined;
 };
 
 const breakpoints = { small: 480 } as const;
 
-export default function useWindowSize(): Size{
+export default function useWindowSize(): Size {
 	const [
 		windowSize,
 		setWindowSize,
@@ -23,17 +23,20 @@ export default function useWindowSize(): Size{
 	});
 
 	useEffect(() => {
-		function handleResize(){
+		function handleResize() {
 			setWindowSize({
 				width: window.innerWidth,
 				height: window.innerHeight,
 				breakpoint: window.innerWidth > breakpoints.small ? "large" : "small",
 			});
 		}
-		window.addEventListener("resize", handleResize);
+		window.addEventListener("resize",
+			handleResize);
 		handleResize();
-		return () => window.removeEventListener("resize", handleResize);
-	}, []);
+		return () => window.removeEventListener("resize",
+			handleResize);
+	},
+	[]);
 
 	return windowSize;
 }

@@ -29,7 +29,8 @@ export default function DataTable<
 	tableData, fields, activeId,
 }: Props<RowType>) {
 	const size = useWindowSize();
-	const normalizedFields = normalizeFields(size, fields);
+	const normalizedFields = normalizeFields(size,
+		fields);
 	const proportions = normalizedFields.map(getProportion(size));
 	const headers = normalizedFields.map(({ header }) => header);
 	const columnWidths = proportions.join(" ");
@@ -73,7 +74,8 @@ export default function DataTable<
 							onClick={() => action && action(row.id)}
 							onKeyDown={(event) => {
 								return action
-									&& handleKey(action, row.id)(event);
+									&& handleKey(action,
+										row.id)(event);
 							}}
 							title={title}
 							className="field"
@@ -81,8 +83,8 @@ export default function DataTable<
 							tabIndex={0}
 							role="gridcell"
 						>
-							{row[key] || null}
-						</span>)
+								{row[key] || null}
+							</span>)
 						: null}
 				</div>)
 				: null}

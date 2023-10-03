@@ -17,26 +17,27 @@ type NodeState = "open" | "opening" | "closed" | "complete" | "in_progress"
 // eslint-disable-next-line max-statements
 export default function GraphNode({
 	node, links, zoomTo,
-}: Props){
+}: Props) {
 	const {
 		id, complete, in_progress, critical,
 	} = node;
-	const formattedId = id.replace(/\s/g, "-");
+	const formattedId = id.replace(/\s/g,
+		"-");
 
 	const feederNodes = links
 		.filter((link) => link.target.id === node.id)
 		.map((link) => link.source);
 
 	let nodeState: NodeState;
-	if (complete){
+	if (complete) {
 		nodeState = "complete";
-	} else if (in_progress){
+	} else if (in_progress) {
 		nodeState = "in_progress";
 	} else if (feederNodes.every((node) => (
 		node.complete || feederNodes.length === 0
-	))){
+	))) {
 		nodeState = "open";
-	} else if (feederNodes.some((node) => node.complete)){
+	} else if (feederNodes.some((node) => node.complete)) {
 		nodeState = "opening";
 	} else {
 		nodeState = "closed";

@@ -7,7 +7,8 @@ import Circle from "../../elements/Circle";
 import OutlinedCircle from "../../elements/OutlinedCircle";
 
 const meta: Meta<typeof GraphNode> = {
-	component: GraphNode, decorators: [
+	component: GraphNode,
+	decorators: [
 		(Story) => <svg width="100" height="100" viewBox="-5 -5 10 10">
 			<defs>
 				<Circle />
