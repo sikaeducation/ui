@@ -1,17 +1,25 @@
 import {
 	StoryObj, Meta,
 } from "@storybook/react";
-import { expect } from "@storybook/jest";
+import {
+	expect,
+} from "@storybook/jest";
 import {
 	within, userEvent,
 } from "@storybook/testing-library";
 
-import { useState } from "react";
+import {
+	useState,
+} from "react";
 import Toggle from ".";
 
-const { click } = userEvent;
+const {
+	click,
+} = userEvent;
 
-const meta: Meta<typeof Toggle> = { component: Toggle };
+const meta: Meta<typeof Toggle> = {
+	component: Toggle,
+};
 export default meta;
 
 type Story = StoryObj<typeof Toggle>;
@@ -29,14 +37,19 @@ export const Primary: Story = {
 		id: "some-id",
 		value: true,
 	},
-	play: async({ canvasElement }) => {
+	play: async({
+		canvasElement,
+	}) => {
 		const canvas = within(canvasElement);
 
 		const checkbox = await canvas.findByRole<HTMLInputElement>("checkbox");
-		expect(checkbox.checked).toBe(true);
+		expect(checkbox.checked)
+			.toBe(true);
 		await click(checkbox);
-		expect(checkbox.checked).toBe(false);
+		expect(checkbox.checked)
+			.toBe(false);
 		await click(checkbox);
-		expect(checkbox.checked).toBe(true);
+		expect(checkbox.checked)
+			.toBe(true);
 	},
 };

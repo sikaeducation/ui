@@ -1,1 +1,3 @@
-export { default } from "./Panel";
+export {
+	default,
+} from "./Panel";

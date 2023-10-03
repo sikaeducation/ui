@@ -1,5 +1,7 @@
 import classNames from "classnames";
-import { ReactNode } from "react";
+import {
+	ReactNode,
+} from "react";
 import "./Heading.scss";
 
 type HeadingLevels = 1 | 2 | 3 | 4;

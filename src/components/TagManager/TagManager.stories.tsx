@@ -2,10 +2,14 @@ import type {
 	StoryObj, Meta,
 } from "@storybook/react";
 
-import { useState } from "react";
+import {
+	useState,
+} from "react";
 import TagManager from ".";
 
-const meta: Meta<typeof TagManager> = { component: TagManager };
+const meta: Meta<typeof TagManager> = {
+	component: TagManager,
+};
 export default meta;
 
 type Story = StoryObj<typeof TagManager>;
@@ -15,7 +19,9 @@ export const Default: Story = {
 		const [
 			tags,
 			updateTags,
-		] = useState<string[]>([...args.tags]);
+		] = useState<string[]>([
+			...args.tags,
+		]);
 		const addTag = (tag: string) => {
 			updateTags([
 				...tags,

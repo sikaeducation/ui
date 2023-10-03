@@ -1,1 +1,3 @@
-export { default } from "./Circle";
+export {
+	default,
+} from "./Circle";

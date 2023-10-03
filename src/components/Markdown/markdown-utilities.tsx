@@ -1,10 +1,16 @@
 import {
 	ComponentPropsWithoutRef, ReactNode,
 } from "react";
-import { CodeProps } from "react-markdown/lib/ast-to-react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import {
+	CodeProps,
+} from "react-markdown/lib/ast-to-react";
+import {
+	Prism as SyntaxHighlighter,
+} from "react-syntax-highlighter";
 
-import { dracula as style } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import {
+	dracula as style,
+} from "react-syntax-highlighter/dist/cjs/styles/prism";
 import Heading from "../../elements/Heading";
 import Separator from "../../elements/Separator";
 
@@ -26,14 +32,19 @@ export function formatCode({
 	const match = /language-(\w+)/.exec(elementClassName || "");
 	return !inline && match
 		? <SyntaxHighlighter style={style as Record<string, string>} language={match[1]} PreTag="div">
-			{String(children).replace(/\n$/,
-				"")}
+			{String(children)
+				.replace(
+					/\n$/,
+					"",
+				)}
 		</SyntaxHighlighter>
 		: <code className={elementClassName}>{children}</code>;
 }
 
 export function formatHeading(level: number) {
-	return function _formatHeading({ children }: { children: ReactNode }) {
+	return function _formatHeading({
+		children,
+	}: { children: ReactNode }) {
 		switch (level) {
 			case 1:
 				return <Heading level={1}>{children}</Heading>;

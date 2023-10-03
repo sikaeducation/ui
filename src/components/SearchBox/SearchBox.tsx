@@ -4,7 +4,9 @@ import Button from "../../elements/Button";
 import {
 	FormEventHandler, useState,
 } from "react";
-import { useFocus } from "../../hooks/use-focus";
+import {
+	useFocus,
+} from "../../hooks/use-focus";
 import classNames from "classnames";
 
 type Props = {

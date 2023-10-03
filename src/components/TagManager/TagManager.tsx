@@ -1,6 +1,8 @@
 import "./TagManager.scss";
 import Tag from "../../elements/Tag";
-import { useState } from "react";
+import {
+	useState,
+} from "react";
 import Button from "../../elements/Button";
 import Icon from "../../elements/Icon";
 import QuickAdd from "../../components/QuickAdd";

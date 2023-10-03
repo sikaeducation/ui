@@ -4,7 +4,9 @@ import type {
 
 import LightBox from ".";
 
-const meta: Meta<typeof LightBox> = { component: LightBox };
+const meta: Meta<typeof LightBox> = {
+	component: LightBox,
+};
 export default meta;
 
 type Story = StoryObj<typeof LightBox>;
@@ -24,5 +26,7 @@ export const Default: Story = {
 			</LightBox>
 		</div>;
 	},
-	args: { onClose: () => console.log("Lightbox closed") },
+	args: {
+		onClose: () => console.log("Lightbox closed"),
+	},
 };

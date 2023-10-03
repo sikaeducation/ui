@@ -1,4 +1,6 @@
-import { ComponentPropsWithoutRef } from "react";
+import {
+	ComponentPropsWithoutRef,
+} from "react";
 import TextArea from "../../../elements/TextArea";
 import {
 	BaseFormControl, NewFormData,
@@ -24,7 +26,9 @@ const getTextArea: GetTextArea = (
 	const {
 		id, label,
 	} = field;
-	const value = (newItem[id] ? newItem[id] : "") as string;
+	const value = (newItem[id]
+		? newItem[id]
+		: "") as string;
 	const updateValue = (newValue: string) => {
 		return setNewItem({
 			...newItem,

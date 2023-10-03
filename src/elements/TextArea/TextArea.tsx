@@ -27,7 +27,9 @@ export default function TextArea({
 				id={id}
 				value={value}
 				required={required}
-				className={`${className} ${classNames({ editable })}`}
+				className={`${className} ${classNames({
+					editable,
+				})}`}
 				onChange={(event) => {
 					updateValue(event.target.value);
 				}}

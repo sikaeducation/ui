@@ -48,7 +48,8 @@ export default function LightBox({
 				);
 			}
 		},
-		[],
+		[
+		],
 	);
 	return (
 		<div id="lightbox-wrapper" role="dialog" aria-modal="true">

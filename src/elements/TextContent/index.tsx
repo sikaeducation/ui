@@ -1,1 +1,3 @@
-export { default } from "./TextContent";
+export {
+	default,
+} from "./TextContent";

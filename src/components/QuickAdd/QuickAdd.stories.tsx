@@ -4,16 +4,20 @@ import type {
 
 import QuickAdd from ".";
 
-const meta: Meta<typeof QuickAdd> = { component: QuickAdd };
+const meta: Meta<typeof QuickAdd> = {
+	component: QuickAdd,
+};
 export default meta;
 
 type Story = StoryObj<typeof QuickAdd>;
 
-export const Default: Story = { args: {
-	add: (newItem: string) => {
-		console.log(`Adding ${newItem}`);
+export const Default: Story = {
+	args: {
+		add: (newItem: string) => {
+			console.log(`Adding ${newItem}`);
+		},
+		stop: () => {
+			console.log(`Stopping`);
+		},
 	},
-	stop: () => {
-		console.log(`Stopping`);
-	},
-}};
+};

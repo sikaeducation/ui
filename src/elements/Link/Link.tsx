@@ -1,6 +1,12 @@
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ReactNode } from "react";
+import {
+	faExternalLinkAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+	FontAwesomeIcon,
+} from "@fortawesome/react-fontawesome";
+import {
+	ReactNode,
+} from "react";
 import "./Link.scss";
 
 type Props = {

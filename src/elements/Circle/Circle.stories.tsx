@@ -4,13 +4,16 @@ import type {
 
 import Circle from ".";
 
-const meta: Meta<typeof Circle> = { component: Circle };
+const meta: Meta<typeof Circle> = {
+	component: Circle,
+};
 export default meta;
 
 type Story = StoryObj<typeof Circle>;
 
-export const Default: Story = { decorators: [
-	(Story) => <svg width="100" height="100" viewBox="-5 -5 10 10">
+export const Default: Story = {
+	decorators: [
+		(Story) => <svg width="100" height="100" viewBox="-5 -5 10 10">
 			<defs><Story /></defs>
 			<use
 				width={5}
@@ -21,4 +24,5 @@ export const Default: Story = { decorators: [
 				y={0}
 			/>
 		</svg>,
-]};
+	],
+};

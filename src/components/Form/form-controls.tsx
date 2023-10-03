@@ -1,10 +1,24 @@
-import TextInput, { FormControlTextInput } from "./FormControls/TextInput";
-import TextArea, { FormControlTextArea } from "./FormControls/TextArea";
-import DropDown, { FormControlDropDown } from "./FormControls/DropDown";
-import Checkbox, { FormControlCheckbox } from "./FormControls/Checkbox";
-import Toggle, { FormControlToggle } from "./FormControls/Toggle";
-import TagManager, { FormControlTagManager } from "./FormControls/TagManager";
-import MarkdownPreviewer, { FormControlMarkdownPreviewer } from "./FormControls/MarkdownPreviewer";
+import TextInput, {
+	FormControlTextInput,
+} from "./FormControls/TextInput";
+import TextArea, {
+	FormControlTextArea,
+} from "./FormControls/TextArea";
+import DropDown, {
+	FormControlDropDown,
+} from "./FormControls/DropDown";
+import Checkbox, {
+	FormControlCheckbox,
+} from "./FormControls/Checkbox";
+import Toggle, {
+	FormControlToggle,
+} from "./FormControls/Toggle";
+import TagManager, {
+	FormControlTagManager,
+} from "./FormControls/TagManager";
+import MarkdownPreviewer, {
+	FormControlMarkdownPreviewer,
+} from "./FormControls/MarkdownPreviewer";
 
 type FormData = boolean | string | number | string[];
 export type NewFormData = Record<string, FormData>

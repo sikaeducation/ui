@@ -10,7 +10,9 @@ export type Size = {
 	breakpoint: Breakpoint | undefined;
 };
 
-const breakpoints = { small: 480 } as const;
+const breakpoints = {
+	small: 480,
+} as const;
 
 export default function useWindowSize(): Size {
 	const [
@@ -22,21 +24,30 @@ export default function useWindowSize(): Size {
 		breakpoint: undefined,
 	});
 
-	useEffect(() => {
-		function handleResize() {
-			setWindowSize({
-				width: window.innerWidth,
-				height: window.innerHeight,
-				breakpoint: window.innerWidth > breakpoints.small ? "large" : "small",
-			});
-		}
-		window.addEventListener("resize",
-			handleResize);
-		handleResize();
-		return () => window.removeEventListener("resize",
-			handleResize);
-	},
-	[]);
+	useEffect(
+		() => {
+			function handleResize() {
+				setWindowSize({
+					width: window.innerWidth,
+					height: window.innerHeight,
+					breakpoint: window.innerWidth > breakpoints.small
+						? "large"
+						: "small",
+				});
+			}
+			window.addEventListener(
+				"resize",
+				handleResize,
+			);
+			handleResize();
+			return () => window.removeEventListener(
+				"resize",
+				handleResize,
+			);
+		},
+		[
+		],
+	);
 
 	return windowSize;
 }

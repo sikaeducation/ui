@@ -1,1 +1,3 @@
-export { default } from "./GraphNode";
+export {
+	default,
+} from "./GraphNode";

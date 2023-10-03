@@ -1,5 +1,7 @@
 import "./Checkbox.scss";
-import { Checkbox as MaterialCheckbox } from "@material-ui/core";
+import {
+	Checkbox as MaterialCheckbox,
+} from "@material-ui/core";
 
 type Props = {
 	className?: string;

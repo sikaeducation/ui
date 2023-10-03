@@ -1,18 +1,26 @@
 import type {
 	Meta, StoryObj,
 } from "@storybook/react";
-import { expect } from "@storybook/jest";
+import {
+	expect,
+} from "@storybook/jest";
 import {
 	within, userEvent,
 } from "@storybook/testing-library";
 
-import { useState } from "react";
+import {
+	useState,
+} from "react";
 import Checkbox from ".";
 
-const meta: Meta<typeof Checkbox> = { component: Checkbox };
+const meta: Meta<typeof Checkbox> = {
+	component: Checkbox,
+};
 export default meta;
 
-const { click } = userEvent;
+const {
+	click,
+} = userEvent;
 
 type Story = StoryObj<typeof Checkbox>;
 
@@ -29,15 +37,20 @@ export const Primary: Story = {
 		] = useState(args.value ?? true);
 		return <Checkbox {...args} value={value} updateValue={updateValue} />;
 	},
-	play: async({ canvasElement }) => {
+	play: async({
+		canvasElement,
+	}) => {
 		const canvas = within(canvasElement);
 
 		const checkbox = await canvas.findByRole<HTMLInputElement>("checkbox");
-		expect(checkbox.checked).toBe(true);
+		expect(checkbox.checked)
+			.toBe(true);
 		await click(checkbox);
-		expect(checkbox.checked).toBe(false);
+		expect(checkbox.checked)
+			.toBe(false);
 		await click(checkbox);
-		expect(checkbox.checked).toBe(true);
+		expect(checkbox.checked)
+			.toBe(true);
 	},
 };
 

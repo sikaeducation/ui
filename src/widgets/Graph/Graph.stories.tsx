@@ -14,13 +14,19 @@ const {
 
 const meta: Meta<typeof Graph> = {
 	component: Graph,
-	argTypes: { options: { control: "object" }},
+	argTypes: {
+		options: {
+			control: "object",
+		},
+	},
 	decorators: [
 		(Story) => <svg
 			width="400"
 			height="400"
 			viewBox="-50 -50  100 100"
-			style={{ border: "1px solid red" }}
+			style={{
+				border: "1px solid red",
+			}}
 		>
 			<defs>
 				<Circle />
@@ -37,10 +43,12 @@ export default meta;
 
 type Story = StoryObj<typeof Graph>;
 
-export const Default: Story = { args: {
-	options,
-	nodes,
-	links,
-	groups,
-	currentFilter: "all",
-}};
+export const Default: Story = {
+	args: {
+		options,
+		nodes,
+		links,
+		groups,
+		currentFilter: "all",
+	},
+};

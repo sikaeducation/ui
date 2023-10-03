@@ -22,114 +22,138 @@ export default meta;
 
 type Story = StoryObj<typeof GraphNode>;
 
-export const Default: Story = { args: {
-	node: {
-		id: "Id goes here",
-		group: "default",
-		critical: false,
-		complete: false,
-		in_progress: false,
-		x: 0,
-		y: 0,
+export const Default: Story = {
+	args: {
+		node: {
+			id: "Id goes here",
+			group: "default",
+			critical: false,
+			complete: false,
+			in_progress: false,
+			x: 0,
+			y: 0,
+		},
+		links: [
+		],
+		zoomTo: () => { },
 	},
-	links: [],
-	zoomTo: () => { },
-}};
+};
 
-export const Critical: Story = { args: {
-	node: {
-		id: "Id goes here",
-		group: "default",
-		critical: true,
-		complete: false,
-		in_progress: false,
-		x: 0,
-		y: 0,
+export const Critical: Story = {
+	args: {
+		node: {
+			id: "Id goes here",
+			group: "default",
+			critical: true,
+			complete: false,
+			in_progress: false,
+			x: 0,
+			y: 0,
+		},
+		links: [
+		],
+		zoomTo: () => { },
 	},
-	links: [],
-	zoomTo: () => { },
-}};
+};
 
-export const Complete: Story = { args: {
-	node: {
-		id: "Id goes here",
-		group: "default",
-		critical: false,
-		complete: true,
-		in_progress: false,
-		x: 0,
-		y: 0,
+export const Complete: Story = {
+	args: {
+		node: {
+			id: "Id goes here",
+			group: "default",
+			critical: false,
+			complete: true,
+			in_progress: false,
+			x: 0,
+			y: 0,
+		},
+		links: [
+		],
+		zoomTo: () => { },
 	},
-	links: [],
-	zoomTo: () => { },
-}};
+};
 
-export const CompleteCritical: Story = { args: {
-	node: {
-		id: "Id goes here",
-		group: "default",
-		critical: true,
-		complete: true,
-		in_progress: false,
-		x: 0,
-		y: 0,
+export const CompleteCritical: Story = {
+	args: {
+		node: {
+			id: "Id goes here",
+			group: "default",
+			critical: true,
+			complete: true,
+			in_progress: false,
+			x: 0,
+			y: 0,
+		},
+		links: [
+		],
+		zoomTo: () => { },
 	},
-	links: [],
-	zoomTo: () => { },
-}};
+};
 
-export const InProgress: Story = { args: {
-	node: {
-		id: "Id goes here",
-		group: "default",
-		critical: false,
-		complete: false,
-		in_progress: true,
-		x: 0,
-		y: 0,
+export const InProgress: Story = {
+	args: {
+		node: {
+			id: "Id goes here",
+			group: "default",
+			critical: false,
+			complete: false,
+			in_progress: true,
+			x: 0,
+			y: 0,
+		},
+		links: [
+		],
+		zoomTo: () => { },
 	},
-	links: [],
-	zoomTo: () => { },
-}};
+};
 
-export const InProgressCritical: Story = { args: {
-	node: {
-		id: "Id goes here",
-		group: "default",
-		critical: true,
-		complete: false,
-		in_progress: true,
-		x: 0,
-		y: 0,
+export const InProgressCritical: Story = {
+	args: {
+		node: {
+			id: "Id goes here",
+			group: "default",
+			critical: true,
+			complete: false,
+			in_progress: true,
+			x: 0,
+			y: 0,
+		},
+		links: [
+		],
+		zoomTo: () => { },
 	},
-	links: [],
-	zoomTo: () => { },
-}};
+};
 
-export const InProgressComplete: Story = { args: {
-	node: {
-		id: "Id goes here",
-		group: "default",
-		critical: true,
-		complete: false,
-		in_progress: true,
-		x: 0,
-		y: 0,
+export const InProgressComplete: Story = {
+	args: {
+		node: {
+			id: "Id goes here",
+			group: "default",
+			critical: true,
+			complete: false,
+			in_progress: true,
+			x: 0,
+			y: 0,
+		},
+		links: [
+		],
+		zoomTo: () => { },
 	},
-	links: [],
-	zoomTo: () => { },
-}};
+};
 
-export const InProgressCompleteCritical: Story = { args: {
-	node: {
-		id: "Id goes here",
-		group: "default",
-		critical: true,
-		complete: false,
-		in_progress: true,
-		x: 0,
-		y: 0,
+export const InProgressCompleteCritical: Story = {
+	args: {
+		node: {
+			id: "Id goes here",
+			group: "default",
+			critical: true,
+			complete: false,
+			in_progress: true,
+			x: 0,
+			y: 0,
+		},
+		links: [
+		],
+		zoomTo: () => { },
 	},
-	links: [],
-	zoomTo: () => { },
-}};
+};

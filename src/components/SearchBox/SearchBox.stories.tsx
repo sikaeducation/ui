@@ -2,10 +2,14 @@ import type {
 	StoryObj, Meta,
 } from "@storybook/react";
 
-import { useState } from "react";
+import {
+	useState,
+} from "react";
 import SearchBox from ".";
 
-const meta: Meta<typeof SearchBox> = { component: SearchBox };
+const meta: Meta<typeof SearchBox> = {
+	component: SearchBox,
+};
 export default meta;
 
 type Story = StoryObj<typeof SearchBox>;

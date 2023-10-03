@@ -4,13 +4,16 @@ import type {
 
 import OutlinedCircle from ".";
 
-const meta: Meta<typeof OutlinedCircle> = { component: OutlinedCircle };
+const meta: Meta<typeof OutlinedCircle> = {
+	component: OutlinedCircle,
+};
 export default meta;
 
 type Story = StoryObj<typeof OutlinedCircle>;
 
-export const Default: Story = { decorators: [
-	(Story) => <svg width="100" height="100" viewBox="-5 -5 10 10">
+export const Default: Story = {
+	decorators: [
+		(Story) => <svg width="100" height="100" viewBox="-5 -5 10 10">
 			<defs><Story /></defs>
 			<use
 				width={5}
@@ -22,4 +25,5 @@ export const Default: Story = { decorators: [
 				y={0}
 			/>
 		</svg>,
-]};
+	],
+};

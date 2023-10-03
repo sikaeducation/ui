@@ -1,4 +1,6 @@
-import { ReactNode } from "react";
+import {
+	ReactNode,
+} from "react";
 import "./TextContent.scss";
 import classNames from "classnames";
 

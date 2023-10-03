@@ -3,9 +3,12 @@ import type {
 } from "@storybook/react";
 import Notification from ".";
 
-const meta: Meta<typeof Notification> = { component: Notification };
+const meta: Meta<typeof Notification> = {
+	component: Notification,
+};
 export default meta;
 
 type Story = StoryObj<typeof Notification>;
 
-export const Default: Story = {};
+export const Default: Story = {
+};

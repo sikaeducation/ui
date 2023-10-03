@@ -1,5 +1,7 @@
 import classNames from "classnames";
-import { ReactNode } from "react";
+import {
+	ReactNode,
+} from "react";
 import "./Button.scss";
 
 type ButtonType = "primary" | "secondary" | "ghost";
@@ -36,7 +38,9 @@ export default function ButtonFormSubmission({
 	return (
 		<button
 			onClick={action}
-			type={submit ? "submit" : "button"}
+			type={submit
+				? "submit"
+				: "button"}
 			className={`${className} ${classNames({
 				Button: true,
 				[buttonClass]: true,

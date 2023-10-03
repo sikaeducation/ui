@@ -13,7 +13,9 @@ import {
 	faEyeSlash,
 	faEye,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	FontAwesomeIcon,
+} from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
 
 const icons = {
@@ -87,6 +89,8 @@ export default function Icon(props: Props) {
 			Icon: true,
 			interactive: !!action,
 		})}
-		onClick={action ? () => action() : undefined}
+		onClick={action
+			? () => action()
+			: undefined}
 	>{icons[type]}</span>;
 }

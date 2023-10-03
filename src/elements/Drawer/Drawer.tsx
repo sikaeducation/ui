@@ -1,5 +1,7 @@
 import classNames from "classnames";
-import { ReactNode } from "react";
+import {
+	ReactNode,
+} from "react";
 import Icon from "../Icon";
 import "./Drawer.scss";
 

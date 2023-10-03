@@ -21,8 +21,10 @@ export default function GraphNode({
 	const {
 		id, complete, in_progress, critical,
 	} = node;
-	const formattedId = id.replace(/\s/g,
-		"-");
+	const formattedId = id.replace(
+		/\s/g,
+		"-",
+	);
 
 	const feederNodes = links
 		.filter((link) => link.target.id === node.id)

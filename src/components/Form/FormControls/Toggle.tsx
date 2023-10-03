@@ -1,4 +1,6 @@
-import type { ComponentPropsWithoutRef } from "react";
+import type {
+	ComponentPropsWithoutRef,
+} from "react";
 import Toggle from "../../../elements/Toggle";
 import {
 	BaseFormControl, NewFormData,
@@ -24,7 +26,9 @@ const getToggle: GetToggle = (
 	const {
 		id, label,
 	} = field;
-	const value = String(newItem[id] ? newItem[id] : "");
+	const value = String(newItem[id]
+		? newItem[id]
+		: "");
 	const updateValue = (newValue: boolean) => {
 		return setNewItem({
 			...newItem,

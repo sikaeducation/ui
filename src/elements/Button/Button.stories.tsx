@@ -10,7 +10,9 @@ import {
 
 import Button from ".";
 
-const meta: Meta<typeof Button> = { component: Button };
+const meta: Meta<typeof Button> = {
+	component: Button,
+};
 export default meta;
 
 type Story = StoryObj<typeof Button>;
@@ -30,7 +32,8 @@ export const Action: Story = {
 		const button = await canvas.findByRole("button");
 		await userEvent.click(button);
 
-		expect(args.action).toHaveBeenCalled();
+		expect(args.action)
+			.toHaveBeenCalled();
 	},
 };
 
@@ -70,11 +73,15 @@ export const PrimaryLargeFailure: Story = {
 		actionType: "failure",
 	},
 };
-export const Secondary: Story = { args: {
-	type: "secondary",
-	children: "Maybe do it?",
-}};
-export const Ghost: Story = { args: {
-	type: "ghost",
-	children: "Could do it",
-}};
+export const Secondary: Story = {
+	args: {
+		type: "secondary",
+		children: "Maybe do it?",
+	},
+};
+export const Ghost: Story = {
+	args: {
+		type: "ghost",
+		children: "Could do it",
+	},
+};

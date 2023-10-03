@@ -3,13 +3,16 @@ import type {
 } from "@storybook/react";
 import Arrow from ".";
 
-const meta: Meta<typeof Arrow> = { component: Arrow };
+const meta: Meta<typeof Arrow> = {
+	component: Arrow,
+};
 export default meta;
 
 type Story = StoryObj<typeof Arrow>;
 
-export const Default: Story = { decorators: [
-	(Story) => <svg width="500" height="100" viewBox="-10 -10 20 20">
+export const Default: Story = {
+	decorators: [
+		(Story) => <svg width="500" height="100" viewBox="-10 -10 20 20">
 			<g>
 				<Story />
 				<path
@@ -38,4 +41,5 @@ export const Default: Story = { decorators: [
 			</g>
 		</svg>,
 
-]};
+	],
+};

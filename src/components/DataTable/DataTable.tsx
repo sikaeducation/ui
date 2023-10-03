@@ -3,7 +3,9 @@ import React, {
 	KeyboardEvent, ReactNode,
 } from "react";
 import classNames from "classnames";
-import useWindowSize, { Size } from "../../hooks/use-window-size";
+import useWindowSize, {
+	Size,
+} from "../../hooks/use-window-size";
 
 export type Field = {
 	header: string;
@@ -29,10 +31,14 @@ export default function DataTable<
 	tableData, fields, activeId,
 }: Props<RowType>) {
 	const size = useWindowSize();
-	const normalizedFields = normalizeFields(size,
-		fields);
+	const normalizedFields = normalizeFields(
+		size,
+		fields,
+	);
 	const proportions = normalizedFields.map(getProportion(size));
-	const headers = normalizedFields.map(({ header }) => header);
+	const headers = normalizedFields.map(({
+		header,
+	}) => header);
 	const columnWidths = proportions.join(" ");
 	const handleKey = (action?: (id?: string) => void, id?: string) => {
 		return (event: KeyboardEvent<HTMLSpanElement>) => {
@@ -47,7 +53,9 @@ export default function DataTable<
 			{headers.length
 				? <div
 					role="row"
-					style={{ gridTemplateColumns: columnWidths }}
+					style={{
+						gridTemplateColumns: columnWidths,
+					}}
 					className="table-row table-headers"
 				>
 					{headers.map((header) => <span key={header} className="table-header" role="cell">
@@ -61,7 +69,9 @@ export default function DataTable<
 				? tableData.map((row) => <div
 					key={row.id}
 					role="row"
-					style={{ gridTemplateColumns: columnWidths }}
+					style={{
+						gridTemplateColumns: columnWidths,
+					}}
 					className={classNames({
 						"table-row": true,
 						active: row.id === activeId,
@@ -74,8 +84,10 @@ export default function DataTable<
 							onClick={() => action && action(row.id)}
 							onKeyDown={(event) => {
 								return action
-									&& handleKey(action,
-										row.id)(event);
+									&& handleKey(
+										action,
+										row.id,
+									)(event);
 							}}
 							title={title}
 							className="field"
@@ -104,9 +116,13 @@ function getProportion(size: ReturnType<typeof useWindowSize>) {
 
 function normalizeFields(size: Size, fields: Field[]) {
 	return (
-		size.breakpoint === "small" ? fields.filter(hasSmallProportion) : fields
+		size.breakpoint === "small"
+			? fields.filter(hasSmallProportion)
+			: fields
 	).map((field) => ({
 		...field,
-		title: typeof field.key === "string" ? field.key : "icon",
+		title: typeof field.key === "string"
+			? field.key
+			: "icon",
 	}));
 }

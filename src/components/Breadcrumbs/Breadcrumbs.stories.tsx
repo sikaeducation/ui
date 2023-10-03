@@ -1,23 +1,36 @@
 import type {
 	Meta, StoryObj,
 } from "@storybook/react";
-import { within } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
-import { withRouter } from "storybook-addon-react-router-v6";
+import {
+	within,
+} from "@storybook/testing-library";
+import {
+	expect,
+} from "@storybook/jest";
+import {
+	withRouter,
+} from "storybook-addon-react-router-v6";
 
 import Breadcrumbs from ".";
 
 const meta: Meta<typeof Breadcrumbs> = {
 	component: Breadcrumbs,
-	decorators: [withRouter],
+	decorators: [
+		withRouter,
+	],
 };
 export default meta;
 
 type Story = StoryObj<typeof Breadcrumbs>;
 
 export const NoLinks: Story = {
-	args: { links: []},
-	play: async({ canvasElement }) => {
+	args: {
+		links: [
+		],
+	},
+	play: async({
+		canvasElement,
+	}) => {
 		const canvas = within(canvasElement);
 		const elements = canvas.queryByRole("listitem");
 
@@ -26,14 +39,18 @@ export const NoLinks: Story = {
 };
 
 export const OneLink: Story = {
-	args: { links: [
-		{
-			path: "/some-path",
-			label: "Some Label",
-			slug: "some-slug",
-		},
-	]},
-	play: async({ canvasElement }) => {
+	args: {
+		links: [
+			{
+				path: "/some-path",
+				label: "Some Label",
+				slug: "some-slug",
+			},
+		],
+	},
+	play: async({
+		canvasElement,
+	}) => {
 		const canvas = within(canvasElement);
 		const elements = canvas.queryByRole("listitem");
 
@@ -42,48 +59,58 @@ export const OneLink: Story = {
 };
 
 export const TwoLinks: Story = {
-	args: { links: [
-		{
-			path: "/some-path",
-			label: "Some Label",
-			slug: "some-slug",
-		},
-		{
-			path: "/some-other-path",
-			label: "Some Other Label",
-			slug: "some-other-slug",
-		},
-	]},
-	play: async({ canvasElement }) => {
+	args: {
+		links: [
+			{
+				path: "/some-path",
+				label: "Some Label",
+				slug: "some-slug",
+			},
+			{
+				path: "/some-other-path",
+				label: "Some Other Label",
+				slug: "some-other-slug",
+			},
+		],
+	},
+	play: async({
+		canvasElement,
+	}) => {
 		const canvas = within(canvasElement);
 		const elements = await canvas.findAllByRole("listitem");
 
-		expect(elements).toHaveLength(2);
+		expect(elements)
+			.toHaveLength(2);
 	},
 };
 
 export const MultipleLinks: Story = {
-	args: { links: [
-		{
-			path: "/some-path",
-			label: "Some Label",
-			slug: "some-slug",
-		},
-		{
-			path: "/some-other-path",
-			label: "Some Other Label",
-			slug: "some-other-slug",
-		},
-		{
-			path: "/yet-another-path",
-			label: "Yet Another Label",
-			slug: "yet-another-slug",
-		},
-	]},
-	play: async({ canvasElement }) => {
+	args: {
+		links: [
+			{
+				path: "/some-path",
+				label: "Some Label",
+				slug: "some-slug",
+			},
+			{
+				path: "/some-other-path",
+				label: "Some Other Label",
+				slug: "some-other-slug",
+			},
+			{
+				path: "/yet-another-path",
+				label: "Yet Another Label",
+				slug: "yet-another-slug",
+			},
+		],
+	},
+	play: async({
+		canvasElement,
+	}) => {
 		const canvas = within(canvasElement);
 		const elements = await canvas.findAllByRole("listitem");
 
-		expect(elements).toHaveLength(3);
+		expect(elements)
+			.toHaveLength(3);
 	},
 };

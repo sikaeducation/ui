@@ -1,4 +1,6 @@
-import type { ComponentPropsWithoutRef } from "react";
+import type {
+	ComponentPropsWithoutRef,
+} from "react";
 import TagManager from "../../../components/TagManager";
 import {
 	BaseFormControl, NewFormData,
@@ -21,7 +23,9 @@ const getTagManager: GetTagManager = (
 	newItem,
 	setNewItem,
 ) => {
-	const { id } = field;
+	const {
+		id,
+	} = field;
 
 	let tags: string[];
 	if (isStringArray(newItem[id])) {

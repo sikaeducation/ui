@@ -1,1 +1,3 @@
-export { default } from "./TagManager";
+export {
+	default,
+} from "./TagManager";

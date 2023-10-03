@@ -1,4 +1,6 @@
-import { ComponentPropsWithoutRef } from "react";
+import {
+	ComponentPropsWithoutRef,
+} from "react";
 import TextInput from "../../../elements/TextInput";
 import {
 	BaseFormControl, NewFormData,
@@ -24,7 +26,9 @@ const getTextInput: GetTextInput = (
 	const {
 		id, label, type,
 	} = field;
-	const value = String(newItem[id] ? newItem[id] : "");
+	const value = String(newItem[id]
+		? newItem[id]
+		: "");
 	const updateValue = (newValue: string) => {
 		return setNewItem({
 			...newItem,

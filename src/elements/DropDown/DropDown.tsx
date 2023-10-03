@@ -21,7 +21,8 @@ export default function DropDown({
 	required,
 	editable = false,
 	className = "",
-	options = [],
+	options = [
+	],
 }: Props) {
 	return (
 		<div className="DropDown">
@@ -30,7 +31,9 @@ export default function DropDown({
 				id={id}
 				value={value}
 				required={required}
-				className={`${className} ${classNames({ editable })}`}
+				className={`${className} ${classNames({
+					editable,
+				})}`}
 				onChange={(event) => {
 					updateValue(event.target.value);
 				}}

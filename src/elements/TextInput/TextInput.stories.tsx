@@ -1,13 +1,21 @@
 import type {
 	StoryObj, Meta,
 } from "@storybook/react";
-import { expect } from "@storybook/jest";
-import { within } from "@storybook/testing-library";
+import {
+	expect,
+} from "@storybook/jest";
+import {
+	within,
+} from "@storybook/testing-library";
 
-import { useState } from "react";
+import {
+	useState,
+} from "react";
 import TextInput from ".";
 
-const meta: Meta<typeof TextInput> = { component: TextInput };
+const meta: Meta<typeof TextInput> = {
+	component: TextInput,
+};
 export default meta;
 
 type Story = StoryObj<typeof TextInput>;
@@ -25,7 +33,9 @@ export const Default: Story = {
 		id: "some-id",
 		value: "Some value",
 	},
-	play: async({ canvasElement }) => {
+	play: async({
+		canvasElement,
+	}) => {
 		const canvas = within(canvasElement);
 
 		const elements = canvas.queryByRole("listitem");

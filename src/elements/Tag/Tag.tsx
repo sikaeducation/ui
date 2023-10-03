@@ -1,5 +1,7 @@
 import classNames from "classnames";
-import { ReactNode } from "react";
+import {
+	ReactNode,
+} from "react";
 import Icon from "../Icon";
 import "./Tag.scss";
 
@@ -23,11 +25,15 @@ export default function Tag(props: Props) {
 				interactive: engage,
 			})
 		}
-		onClick={engage ? () => engage() : undefined}
+		onClick={engage
+			? () => engage()
+			: undefined}
 	>
 		{children}
 		{
-			close ? <Icon type="close" action={close} /> : null
+			close
+				? <Icon type="close" action={close} />
+				: null
 		}
 	</span>;
 }

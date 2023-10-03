@@ -1,4 +1,6 @@
-import type { ComponentPropsWithoutRef } from "react";
+import type {
+	ComponentPropsWithoutRef,
+} from "react";
 import DropDown from "../../../elements/DropDown";
 import {
 	BaseFormControl, NewFormData,
@@ -24,7 +26,9 @@ const getDropDown: GetDropDown = (
 	const {
 		id, label, options,
 	} = field;
-	const value = String(newItem[id] ? newItem[id] : "");
+	const value = String(newItem[id]
+		? newItem[id]
+		: "");
 	const updateValue = (newValue: string) => {
 		return setNewItem({
 			...newItem,
