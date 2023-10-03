@@ -1,3 +1,4 @@
+/* eslint-disable */
 const options = {
 	simulation: {
 		tickCount: 300,

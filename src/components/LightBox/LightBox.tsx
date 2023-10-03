@@ -7,7 +7,8 @@ type props = {
 };
 
 export default function LightBox({
-	onClose, children,
+	onClose,
+	children,
 }: props) {
 	return (
 		<div id="lightbox-wrapper">
