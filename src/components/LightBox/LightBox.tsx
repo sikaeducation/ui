@@ -1,4 +1,3 @@
-/* eslint function-paren-newline: "off" */
 import "./LightBox.scss";
 import {
 	createRef,
