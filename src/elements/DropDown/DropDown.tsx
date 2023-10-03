@@ -21,8 +21,7 @@ export default function DropDown({
 	required,
 	editable = false,
 	className = "",
-	options = [
-	],
+	options = [],
 }: Props) {
 	return (
 		<div className="DropDown">

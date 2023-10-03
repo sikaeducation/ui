@@ -47,16 +47,16 @@ export default function LightBox({
 				);
 			}
 		},
-		[
-		],
+		[],
 	);
 
 	return (
 		<div id="lightbox-wrapper" role="dialog" aria-modal="true">
 			<div id="LightBox" ref={lightBoxRef}>
-				<div role="presentation" id="underlay" onClick={onClose}></div>
-				<div id="lightbox-clightBoxRef">{children}
-					<Button className="close-lightbox" type="ghost" size="tiny" action={onClose}>
+				<div role="presentation" id="underlay" onClick={onClose}>&nbsp;</div>
+				<div id="lightbox-content">
+					{children}
+					<Button className="close-lightbox" type="ghost" action={onClose} size="large">
 						<Icon type="close" />
 					</Button>
 				</div>

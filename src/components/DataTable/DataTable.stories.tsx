@@ -13,10 +13,8 @@ type Story = StoryObj<typeof DataTable>;
 
 export const Empty: Story = {
 	args: {
-		fields: [
-		],
-		tableData: [
-		],
+		fields: [],
+		tableData: [],
 	},
 };
 
@@ -39,8 +37,7 @@ export const NoData: Story = {
 				key: "header_3",
 			},
 		],
-		tableData: [
-		],
+		tableData: [],
 	},
 };
 

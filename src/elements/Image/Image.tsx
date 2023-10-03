@@ -1,21 +1,19 @@
 import classNames from "classnames";
 import {
-	ComponentType, MouseEventHandler, ReactNode, useState,
+	MouseEventHandler, useState,
 } from "react";
 import "./Image.scss";
+import LightBox from "../../components/LightBox";
 
 type Props = {
 	src: string;
 	alt: string;
 	attribution?: string;
-	Lightbox?: ComponentType<{
-		children: ReactNode,
-		onClose: () => void;
-	}>;
+	lightbox: boolean;
 };
 
 export default function Image({
-	src, alt, attribution, Lightbox,
+	src, alt, attribution, lightbox = true,
 }: Props) {
 	const [
 		isLightboxed,
@@ -33,8 +31,8 @@ export default function Image({
 		/>
 	);
 
-	const ImageElement = Lightbox && isLightboxed
-		? <Lightbox onClose={() => setIsLightBoxed(false)}>
+	const ImageElement = isLightboxed
+		? <LightBox onClose={() => setIsLightBoxed(false)}>
 			<div className={classNames({
 				"image-wrapper": true,
 				"lightboxed": isLightboxed,
@@ -45,10 +43,10 @@ export default function Image({
 				}
 				{potentialAttribution}
 			</div>
-		</Lightbox>
+		</LightBox>
 		: <div className="image-wrapper">
 			{
-				Lightbox
+				lightbox
 					? <>
 						{getImage(() => setIsLightBoxed(true))}
 						{potentialAttribution}

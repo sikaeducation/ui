@@ -45,8 +45,7 @@ export default function useWindowSize(): Size {
 				handleResize,
 			);
 		},
-		[
-		],
+		[],
 	);
 
 	return windowSize;

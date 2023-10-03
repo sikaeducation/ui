@@ -33,8 +33,7 @@ export const Default: Story = {
 			x: 0,
 			y: 0,
 		},
-		links: [
-		],
+		links: [],
 		zoomTo: () => { },
 	},
 };
@@ -50,8 +49,7 @@ export const Critical: Story = {
 			x: 0,
 			y: 0,
 		},
-		links: [
-		],
+		links: [],
 		zoomTo: () => { },
 	},
 };
@@ -67,8 +65,7 @@ export const Complete: Story = {
 			x: 0,
 			y: 0,
 		},
-		links: [
-		],
+		links: [],
 		zoomTo: () => { },
 	},
 };
@@ -84,8 +81,7 @@ export const CompleteCritical: Story = {
 			x: 0,
 			y: 0,
 		},
-		links: [
-		],
+		links: [],
 		zoomTo: () => { },
 	},
 };
@@ -101,8 +97,7 @@ export const InProgress: Story = {
 			x: 0,
 			y: 0,
 		},
-		links: [
-		],
+		links: [],
 		zoomTo: () => { },
 	},
 };
@@ -118,8 +113,7 @@ export const InProgressCritical: Story = {
 			x: 0,
 			y: 0,
 		},
-		links: [
-		],
+		links: [],
 		zoomTo: () => { },
 	},
 };
@@ -135,8 +129,7 @@ export const InProgressComplete: Story = {
 			x: 0,
 			y: 0,
 		},
-		links: [
-		],
+		links: [],
 		zoomTo: () => { },
 	},
 };
@@ -152,8 +145,7 @@ export const InProgressCompleteCritical: Story = {
 			x: 0,
 			y: 0,
 		},
-		links: [
-		],
+		links: [],
 		zoomTo: () => { },
 	},
 };

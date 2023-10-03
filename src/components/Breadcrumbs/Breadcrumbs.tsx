@@ -18,8 +18,7 @@ export default function Breadcrumbs({
 	links,
 }: props){
 	let normalizedLinks = links.length === 1
-		? [
-		]
+		? []
 		: links;
 	normalizedLinks = normalizedLinks.map((link, index) => ({
 		...link,

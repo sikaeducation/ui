@@ -101,3 +101,6 @@ export {
 export {
 	default as TagManager,
 } from "./components/TagManager";
+export {
+	default as LightBox,
+} from "./components/LightBox";

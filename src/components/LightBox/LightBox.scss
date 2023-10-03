@@ -20,7 +20,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5% 10%;
+  padding: 10% 15%;
 }
 
 #lightbox-content {
@@ -28,11 +28,15 @@
   z-index: 20;
   max-width: $sizes-s15;
   width: 100%;
-	margin-top: -25%;
+	text-align: center;
 	.close-lightbox {
 		position: absolute;
-		top: $sizes-s2;
-		right: $sizes-s2;
+		top: 0;
+		right: $sizes-f7 * -1;
+		.Icon {
+			color: $colors-white;
+			font-size: $sizes-f7;
+		}
 	}
 }
 

@@ -25,8 +25,7 @@ type Story = StoryObj<typeof Breadcrumbs>;
 
 export const NoLinks: Story = {
 	args: {
-		links: [
-		],
+		links: [],
 	},
 	play: async({
 		canvasElement,
