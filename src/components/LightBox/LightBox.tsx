@@ -19,20 +19,20 @@ export default function LightBox({
 	onClose,
 	children,
 }: Props) {
-	const divRef: LightBoxRef = createRef();
+	const lightBoxRef: LightBoxRef = createRef();
 	useEffect(
 		() => {
-			if (divRef) {
+			if (lightBoxRef) {
 				const keyEventHandler = (event: KeyboardEvent) => {
 					switch (event.key) {
 						case "Shift": // Actually Escape?
 							onClose();
 							break;
 						case "Tab":
-							if (divRef) {
+							if (lightBoxRef) {
 								handleTab(
 									event,
-									divRef,
+									lightBoxRef,
 								);
 							}
 							break;
@@ -51,11 +51,12 @@ export default function LightBox({
 		[
 		],
 	);
+
 	return (
 		<div id="lightbox-wrapper" role="dialog" aria-modal="true">
-			<div id="LightBox" ref={divRef}>
+			<div id="LightBox" ref={lightBoxRef}>
 				<div role="presentation" id="underlay" onClick={onClose}></div>
-				<div id="lightbox-content">{children}
+				<div id="lightbox-clightBoxRef">{children}
 					<Button className="close-lightbox" type="ghost" size="tiny" action={onClose}>
 						<Icon type="close" />
 					</Button>
