@@ -15,25 +15,16 @@ export default function LightBox({
 	onClose,
 	children,
 }: props) {
-	const keyListeners = {
-		"escape": onClose,
-		"tab": onClose,
-	};
-
 	useEffect(() => {
-		const keyEventHandler: KeyboardEventHandler = (event) => {
-			let handler: () => void;
+		const keyEventHandler = (event: { key: string }) => {
 			switch (event.key) {
 				case "escape":
-					handler = onClose;
+					onClose();
 					break;
 				case "tab":
-					handler = onClose;
+					onClose();
 					break;
-				default:
-					return;
 			}
-			handler();
 		};
 
 		document.addEventListener("keydown", keyEventHandler);
