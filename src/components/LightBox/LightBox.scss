@@ -24,10 +24,16 @@
 }
 
 #lightbox-content {
+	position: relative;
   z-index: 20;
   max-width: $sizes-s15;
   width: 100%;
 	margin-top: -25%;
+	.close-lightbox {
+		position: absolute;
+		top: $sizes-s2;
+		right: $sizes-s2;
+	}
 }
 
 #underlay {
