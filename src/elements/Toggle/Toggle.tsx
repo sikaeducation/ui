@@ -9,6 +9,7 @@ type Props = {
 	value: boolean | string;
 	updateValue: (newValue: boolean) => void;
 	required?: boolean;
+	side: "left" | "right";
 };
 
 export default function Toggle({
@@ -17,18 +18,37 @@ export default function Toggle({
 	value,
 	updateValue,
 	required = false,
+	side = "left",
 }: Props) {
+	const Switch = <>
+		<MaterialSwitch
+			checked={!!value}
+			id={id}
+			required={required}
+			name={id}
+			onChange={() => updateValue(!value)}
+			color="primary"
+		/>
+		<label htmlFor={id}>{label}</label>
+	</>;
+	const Label = <>
+		<label htmlFor={id}>{label}</label>
+		<MaterialSwitch
+			checked={!!value}
+			id={id}
+			required={required}
+			name={id}
+			onChange={() => updateValue(!value)}
+			color="primary"
+		/>
+	</>;
 	return (
 		<div className="Toggle">
-			<MaterialSwitch
-				checked={!!value}
-				id={id}
-				required={required}
-				name={id}
-				onChange={() => updateValue(!value)}
-				color="primary"
-			/>
-			<label htmlFor={id}>{label}</label>
+			{
+				side === "left"
+					? <>{Switch}{Label}</>
+					: <>{Label}{Switch}</>
+			}
 		</div>
 	);
 }
