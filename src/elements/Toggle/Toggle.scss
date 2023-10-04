@@ -8,6 +8,12 @@
     display: inline-block;
     position: relative;
   }
+	.left {
+		text-align: left;
+	}
+	.right {
+		text-align: right;
+	}
   .MuiSwitch-colorPrimary {
     color: $colors-primary-5 !important;
   }

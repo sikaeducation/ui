@@ -1,6 +1,7 @@
 import {
-	BaseFormControl, FormControl, getFormControl,
+	BaseFormControl, FormControl,
 } from "./form-controls";
+import createFormControlElements from "./create-form-control-elements";
 import type {
 	ComponentPropsWithoutRef, ReactNode,
 } from "react";
@@ -21,6 +22,7 @@ type Props = {
 	children?: ReactNode;
 };
 
+
 export default function Form({
 	heading,
 	fields,
@@ -29,33 +31,36 @@ export default function Form({
 	setNewItem,
 	children = <></>,
 }: Props) {
+	const $fields = createFormControlElements(
+		fields,
+		newItem,
+		setNewItem,
+	);
+
+	const $actions = actions.map(({
+		label,
+		type,
+		action,
+		size,
+	}) => <Button
+			key={label}
+			action={action}
+			type={type ?? "primary"}
+			size={size}
+			children={label}
+		/>);
 	return (
 		<div className="Form">
 			<Heading level={2}>{heading}</Heading>
 			<form>
-				{fields.map((field) => {
-					return getFormControl(
-						field,
-						newItem,
-						setNewItem,
-					);
-				})}
+				<fieldset className="form-fields">
+					{$fields}
+				</fieldset>
 				{children}
 				<fieldset className="actions">
-					{actions.map(({
-						label,
-						type,
-						action,
-						size,
-					}) => <Button
-							key={label}
-							action={action}
-							type={type ?? "primary"}
-							size={size}
-							children={label}
-						/>)}
+					{$actions}
 				</fieldset>
-			</form>
-		</div>
+			</form >
+		</div >
 	);
 }

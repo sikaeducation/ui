@@ -27,6 +27,7 @@ export type BaseFormControl = {
 	label: string;
 	className?: string;
 	required?: boolean;
+	width?: "third" | "half" | "full";
 }
 
 export type FormControl = | FormControlTextInput

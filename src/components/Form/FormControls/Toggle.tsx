@@ -10,6 +10,7 @@ export type FormControlToggle = BaseFormControl
 	& Omit<ComponentPropsWithoutRef<typeof Toggle>, "updateValue" | "value">
 	& {
 		controlType: "Toggle";
+		side?: "left" | "right";
 	}
 
 type GetToggle = (
@@ -24,7 +25,7 @@ const getToggle: GetToggle = (
 	setNewItem,
 ) => {
 	const {
-		id, label,
+		id, label, side,
 	} = field;
 	const value = String(newItem[id]
 		? newItem[id]
@@ -42,6 +43,7 @@ const getToggle: GetToggle = (
 		label={label}
 		value={value}
 		updateValue={updateValue}
+		side={side}
 	/>;
 };
 
