@@ -61,6 +61,31 @@ export const Deferred: Story = {
 		type: "deferred",
 	},
 };
+export const Plus: Story = {
+	args: {
+		type: "plus",
+	},
+};
+export const Search: Story = {
+	args: {
+		type: "search",
+	},
+};
+export const View: Story = {
+	args: {
+		type: "view",
+	},
+};
+export const NoView: Story = {
+	args: {
+		type: "no-view",
+	},
+};
+export const Expand: Story = {
+	args: {
+		type: "expand",
+	},
+};
 export const Interactive: Story = {
 	args: {
 		type: "close",

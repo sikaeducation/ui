@@ -8,6 +8,7 @@
   bottom: 0;
   right: 0;
   left: 0;
+  z-index: 1000;
 }
 
 #LightBox {
@@ -21,18 +22,19 @@
   justify-content: center;
   align-items: center;
   padding: 10% 15%;
+  z-index: 1000;
 }
 
 #lightbox-content {
 	position: relative;
-  z-index: 20;
+  z-index: 2000;
   max-width: $sizes-s15;
   width: 100%;
 	text-align: center;
 	.close-lightbox {
 		position: absolute;
 		top: 0;
-		right: $sizes-f7 * -1;
+		right: $sizes-f9 * -1;
 		.Icon {
 			color: $colors-white;
 			font-size: $sizes-f7;
@@ -47,5 +49,5 @@
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 10;
+  z-index: 1000;
 }

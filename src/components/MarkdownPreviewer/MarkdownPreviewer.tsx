@@ -6,6 +6,7 @@ import Icon from "../../elements/Icon";
 import {
 	useState,
 } from "react";
+import LightBox from "../LightBox";
 
 type Props = {
 	id: string;
@@ -24,27 +25,55 @@ export default function MarkdownPreviewer({
 		isPreviewing,
 		setIsPreviewing,
 	] = useState(false);
+	const [
+		isLightBoxing,
+		setIsLightBoxing,
+	] = useState(false);
+
 	return (
 		<div className="MarkdownPreviewer">
+			<header>
+				<ul className="actions-bar">
+					<li><Button type="ghost" action={() => setIsLightBoxing(true)}><Icon type="expand" /></Button></li>
+					<li>
+						{
+							isPreviewing
+								? <Button type="ghost" action={() => setIsPreviewing(false)}><Icon type="no-view" /></Button>
+								: <Button type="ghost" action={() => setIsPreviewing(true)}><Icon type="view" /></Button>
+						}
+					</li>
+				</ul>
+			</header>
 			<TextArea
 				id={id}
 				updateValue={updateContent}
 				label={label}
 				value={content}
 			/>
+
 			<div className="preview-actions">
-				<p className="preview-subheading">{isPreviewing
-					? "Preview:"
-					: <>&nbsp;</>}</p>
-				{
-					isPreviewing
-						? <Button type="ghost" action={() => setIsPreviewing(false)}><Icon type="eye-slash" /></Button>
-						: <Button type="ghost" action={() => setIsPreviewing(true)}><Icon type="eye" /></Button>
-				}
+				{content && <>
+					<p className="preview-subheading">
+						{isPreviewing
+							? "Preview:"
+							: <>&nbsp;</>
+						}
+					</p>
+				</>}
 			</div>
-			{isPreviewing && <Markdown
-				content={content}
-			/>}
+			{
+				isLightBoxing
+				&& <LightBox onClose={() => setIsLightBoxing(false)}>
+					<div id="markdown-lightbox-wrapper">
+						<Markdown content={content} />
+					</div>
+				</LightBox>
+			}
+			{
+				isPreviewing && <Markdown
+					content={content}
+				/>
+			}
 		</div>
 	);
 }

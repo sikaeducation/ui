@@ -12,6 +12,7 @@ import {
 	faMagnifyingGlass,
 	faEyeSlash,
 	faEye,
+	faExpand,
 } from "@fortawesome/free-solid-svg-icons";
 import {
 	FontAwesomeIcon,
@@ -68,8 +69,9 @@ const icons = {
 	plus: <FontAwesomeIcon icon={faPlus} className="plus" title="Plus" />,
 	close: <FontAwesomeIcon icon={faClose} className="close" title="Close" />,
 	search: <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" title="search" />,
-	eye: <FontAwesomeIcon icon={faEye} className="eye-icon" title="search" />,
-	"eye-slash": <FontAwesomeIcon icon={faEyeSlash} className="eye-slash-icon" title="search" />,
+	view: <FontAwesomeIcon icon={faEye} className="view-icon" title="view" />,
+	"no-view": <FontAwesomeIcon icon={faEyeSlash} className="no-view-icon" title="no view" />,
+	expand: <FontAwesomeIcon icon={faExpand} className="expand-icon" title="expand" />,
 } as const;
 
 type IconType = keyof typeof icons;

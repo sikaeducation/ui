@@ -2,28 +2,44 @@
 
 .MarkdownPreviewer {
 	width: calc(100% + 16px);
+	> header {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+		max-width: $sizes-s15;
+		position: relative;
+		z-index: 2;
+		top: $sizes-s6;
+		.actions-bar {
+			margin-bottom: $sizes-s2;
+			li {
+				display: inline-block;
+				button {
+					padding: 0 $sizes-s2;
+				}
+			}
+		}
+	}
 	.preview-actions {
 		max-width: $sizes-s15; // Override max default
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin-bottom: $sizes-s1;
 		.Icon {
-			.eye-icon {
+			.expand-icon {
+				color: $colors-grey-7;
+			}
+			.view-icon {
 				color: $colors-grey-8;
 			}
-			.eye-slash-icon {
+			.no-view-icon {
 				color: $colors-grey-6;
 			}
 		}
 		.preview-subheading {
 			color: $colors-grey-4;
-			margin-bottom: $sizes-s1;
+			margin-bottom: 0;
 			font-style: italic;
-		}
-		button {
-			padding-top: 0;
-			padding-bottom: 0;
 		}
 	}
 	.TextArea {
@@ -41,5 +57,12 @@
 		margin-bottom: $sizes-s4;
 		min-height: $sizes-s4;
 		width: 100%;
+	}
+}
+
+#markdown-lightbox-wrapper {
+	background-color: $colors-white;
+	.Markdown {
+		margin: 0;
 	}
 }
