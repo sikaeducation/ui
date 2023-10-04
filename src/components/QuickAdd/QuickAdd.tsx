@@ -15,7 +15,7 @@ export default function QuickAdd({
 	id,
 	add,
 	stop,
-}: Props) {
+}: Props){
 	const [
 		newItem,
 		setNewItem,

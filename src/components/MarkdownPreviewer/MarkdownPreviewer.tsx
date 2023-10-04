@@ -20,7 +20,7 @@ export default function MarkdownPreviewer({
 	label,
 	content,
 	updateContent,
-}: Props) {
+}: Props){
 	const [
 		isPreviewing,
 		setIsPreviewing,

@@ -20,7 +20,7 @@ export default function Checkbox({
 	updateValue,
 	required = false,
 	type = "primary",
-}: Props) {
+}: Props){
 	return (
 		<div className="Checkbox">
 			<MaterialCheckbox

@@ -2,7 +2,7 @@ import type {
 	LightBoxRef,
 } from "./LightBox";
 
-export default function(event: KeyboardEvent, lightBoxRef: LightBoxRef) {
+export default function(event: KeyboardEvent, lightBoxRef: LightBoxRef){
 	const focusableModalElements = lightBoxRef.current?.querySelectorAll<HTMLDivElement>("a[href], button, textarea, input[type=\"text\"], input[type=\"radio\"], input[type=\"checkbox\"], select") || [];
 	const firstElement = focusableModalElements?.length > 0
 		? focusableModalElements[0]

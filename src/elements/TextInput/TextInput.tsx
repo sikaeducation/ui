@@ -18,7 +18,7 @@ export default function TextInput({
 	type = "text",
 	required = false,
 	className = "",
-}: Props) {
+}: Props){
 	return (
 		<div className="TextInput">
 			<label htmlFor={id}>{label}</label>

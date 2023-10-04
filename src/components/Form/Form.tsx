@@ -30,7 +30,7 @@ export default function Form({
 	newItem,
 	setNewItem,
 	children = <></>,
-}: Props) {
+}: Props){
 	const $fields = createFormControlElements(
 		fields,
 		newItem,

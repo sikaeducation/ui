@@ -22,7 +22,7 @@ export default function TagManager({
 	tags,
 	removeTag,
 	addTag,
-}: Props) {
+}: Props){
 	const [
 		isAdding,
 		setIsAdding,

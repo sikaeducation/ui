@@ -9,7 +9,7 @@ function loadNextFormControl(
 	fields: FormControl[],
 	newItem: NewFormData,
 	setNewItem: (value: NewFormData) => void,
-) {
+){
 	const field = fields.shift()!;
 	return getFormControl(
 		field,
@@ -23,7 +23,7 @@ export default function createFormControlElements(
 	fields: FormControl[],
 	newItem: NewFormData,
 	setNewItem: (value: NewFormData) => void,
-) {
+){
 	let $fields: ReactNode[] = [];
 
 	while (fields.length > 0) {

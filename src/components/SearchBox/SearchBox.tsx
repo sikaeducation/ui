@@ -25,7 +25,7 @@ export default function SearchBox({
 	className = "",
 	size,
 	action,
-}: Props) {
+}: Props){
 	const [
 		focused,
 		setFocused,

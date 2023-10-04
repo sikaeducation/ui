@@ -82,7 +82,7 @@ type Props = {
 };
 
 
-export default function Icon(props: Props) {
+export default function Icon(props: Props){
 	const {
 		action, type,
 	} = props;

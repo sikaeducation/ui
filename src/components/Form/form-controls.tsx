@@ -52,7 +52,7 @@ export function getFormControl(
 	field: FormControl,
 	newItem: Record<string, FormData>,
 	setNewItem: (newItem: Record<string, FormData>) => void,
-) {
+){
 	switch (field.controlType) {
 		case "TextInput":
 			return controlTypes["TextInput"](

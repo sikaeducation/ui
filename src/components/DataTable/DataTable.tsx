@@ -29,7 +29,7 @@ export default function DataTable<
 	RowType extends { id: string;[key: string]: string | ReactNode },
 >({
 	tableData, fields, activeId,
-}: Props<RowType>) {
+}: Props<RowType>){
 	const size = useWindowSize();
 	const normalizedFields = normalizeFields(
 		size,
@@ -104,17 +104,17 @@ export default function DataTable<
 	);
 }
 
-function hasSmallProportion(field: Field) {
+function hasSmallProportion(field: Field){
 	return typeof field.proportion === "number" || !!field.proportion.small;
 }
 
-function getProportion(size: ReturnType<typeof useWindowSize>) {
+function getProportion(size: ReturnType<typeof useWindowSize>){
 	return (field: Field) => typeof field.proportion === "string"
 		? field.proportion
 		: field.proportion[size.breakpoint || "large"];
 }
 
-function normalizeFields(size: Size, fields: Field[]) {
+function normalizeFields(size: Size, fields: Field[]){
 	return (
 		size.breakpoint === "small"
 			? fields.filter(hasSmallProportion)

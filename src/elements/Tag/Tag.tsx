@@ -12,7 +12,7 @@ type Props = {
 	children: ReactNode;
 };
 
-export default function Tag(props: Props) {
+export default function Tag(props: Props){
 	const {
 		children, close, engage, active,
 	} = props;

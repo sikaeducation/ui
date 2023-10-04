@@ -15,7 +15,7 @@ type Props = {
 
 export default function StatusMessage({
 	type,
-}: Props) {
+}: Props){
 	return (
 		<div className="StatusMessage">
 			{messages[type].message}

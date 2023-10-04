@@ -17,7 +17,7 @@ type NodeState = "open" | "opening" | "closed" | "complete" | "in_progress"
 // eslint-disable-next-line max-statements
 export default function GraphNode({
 	node, links, zoomTo,
-}: Props) {
+}: Props){
 	const {
 		id, complete, in_progress, critical,
 	} = node;

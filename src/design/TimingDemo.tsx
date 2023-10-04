@@ -3,7 +3,7 @@ import {
 } from "react";
 import "./TimingDemo.scss";
 
-export default function TimingDemo() {
+export default function TimingDemo(){
 	const [
 		showing,
 		setShowing,

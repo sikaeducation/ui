@@ -19,7 +19,7 @@ export default function TextArea({
 	required,
 	editable = false,
 	className = "",
-}: Props) {
+}: Props){
 	return (
 		<div className="TextArea">
 			<label htmlFor={id}>{label}</label>

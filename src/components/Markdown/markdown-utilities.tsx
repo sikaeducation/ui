@@ -16,7 +16,7 @@ import Separator from "../../elements/Separator";
 
 export function addLinkToImage({
 	src, alt,
-}: ComponentPropsWithoutRef<"img">) {
+}: ComponentPropsWithoutRef<"img">){
 	return (
 		<a href={src} className="image-container" rel="noopener noreferrer">
 			<img src={src} alt={alt} />
@@ -28,7 +28,7 @@ export function formatCode({
 	inline,
 	className: elementClassName,
 	children,
-}: CodeProps) {
+}: CodeProps){
 	const match = /language-(\w+)/.exec(elementClassName || "");
 	return !inline && match
 		? <SyntaxHighlighter style={style as Record<string, string>} language={match[1]} PreTag="div">
@@ -41,10 +41,10 @@ export function formatCode({
 		: <code className={elementClassName}>{children}</code>;
 }
 
-export function formatHeading(level: number) {
+export function formatHeading(level: number){
 	return function _formatHeading({
 		children,
-	}: { children: ReactNode }) {
+	}: { children: ReactNode }){
 		switch (level) {
 			case 1:
 				return <Heading level={1}>{children}</Heading>;
@@ -60,6 +60,6 @@ export function formatHeading(level: number) {
 	};
 }
 
-export function getSeparator() {
+export function getSeparator(){
 	return <Separator />;
 }

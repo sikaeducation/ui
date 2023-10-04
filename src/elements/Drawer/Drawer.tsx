@@ -13,7 +13,7 @@ type Props = {
 
 export default function Drawer({
 	children, close, modal = false,
-}: Props) {
+}: Props){
 	const handleClick = () => {
 		if (modal) {
 			close();

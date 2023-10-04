@@ -14,7 +14,7 @@ const breakpoints = {
 	small: 480,
 } as const;
 
-export default function useWindowSize(): Size {
+export default function useWindowSize(): Size{
 	const [
 		windowSize,
 		setWindowSize,
@@ -26,7 +26,7 @@ export default function useWindowSize(): Size {
 
 	useEffect(
 		() => {
-			function handleResize() {
+			function handleResize(){
 				setWindowSize({
 					width: window.innerWidth,
 					height: window.innerHeight,

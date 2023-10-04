@@ -12,7 +12,7 @@ type Props = {
 export default function TextArea({
 	children,
 	className = "",
-}: Props) {
+}: Props){
 	return (
 		<p className={classNames({
 			[className]: true,

@@ -17,7 +17,7 @@ export type LightBoxRef = ReturnType<typeof createRef<HTMLDivElement>>
 export default function LightBox({
 	onClose,
 	children,
-}: Props) {
+}: Props){
 	const lightBoxRef: LightBoxRef = createRef();
 	useEffect(
 		() => {

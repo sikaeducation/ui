@@ -14,7 +14,7 @@ type Props = {
 
 export default function Image({
 	src, alt, attribution, lightbox = true,
-}: Props) {
+}: Props){
 	const [
 		isLightboxed,
 		setIsLightBoxed,

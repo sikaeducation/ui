@@ -55,7 +55,7 @@ const getTagManager: GetTagManager = (
 	/>;
 };
 
-function isStringArray(values: unknown): values is string[] {
+function isStringArray(values: unknown): values is string[]{
 	if (!Array.isArray(values)) return false;
 
 	return values.every((value) => typeof value === "string");

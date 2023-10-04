@@ -33,7 +33,7 @@ export default function ButtonFormSubmission({
 	actionType = "normal",
 	disabled = false,
 	className = "",
-}: Props) {
+}: Props){
 	const buttonClass = buttonClasses[type];
 	return (
 		<button

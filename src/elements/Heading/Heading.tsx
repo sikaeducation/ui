@@ -19,7 +19,7 @@ export default function Heading({
 	level,
 	className = "",
 }: Props){
-	switch (level){
+	switch (level) {
 		case 1:
 			return (
 				<h1

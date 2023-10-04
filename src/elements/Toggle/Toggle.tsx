@@ -19,7 +19,7 @@ export default function Toggle({
 	updateValue,
 	required = false,
 	side = "left",
-}: Props) {
+}: Props){
 	const Switch = <MaterialSwitch
 		checked={!!value}
 		id={id}

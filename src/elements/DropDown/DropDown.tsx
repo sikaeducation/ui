@@ -22,7 +22,7 @@ export default function DropDown({
 	editable = false,
 	className = "",
 	options = [],
-}: Props) {
+}: Props){
 	return (
 		<div className="DropDown">
 			<label htmlFor={id}>{label}</label>
