@@ -20,61 +20,75 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+  vertical-align: baseline;
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
+  font-size: 100%;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
+
 body {
+  @include typography.body-font;
+
   line-height: 1;
 }
+
 ol, ul {
   list-style: none;
 }
+
 blockquote, q {
   quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote::before, blockquote::after,
+q::before, q::after {
   content: '';
   content: none;
 }
+
 table {
-  border-collapse: collapse;
   border-spacing: 0;
+  border-collapse: collapse;
 }
+
 * {
   box-sizing: border-box;
 }
-body {
-  @include typography.body-font;
-}
+
 a {
   color: inherit;
 }
+
 input, select, label, button, textarea {
-  display: block;
   @include typography.body-font;
+
+  display: block;
 }
+
 p, ul, ol, section, form, blockquote {
-  margin-bottom: sizes.$f5;
+  margin-block-end: sizes.$f5;
 }
+
 strong {
   font-weight: 700;
 }
+
 em {
   font-style: italic;
 }
+
 code {
   @include typography.code-font;
 }
+
 img, blockquote, code, pre {
   border-radius: borders.$radius;
 }

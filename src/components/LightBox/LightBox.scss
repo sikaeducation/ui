@@ -4,37 +4,39 @@
 
 #lightbox-wrapper {
   position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
   z-index: 1000;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  inset-inline-start: 0;
 }
 
 #LightBox {
   position: relative;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-	height: 100%;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10% 15%;
-  z-index: 1000;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  inset-inline-start: 0;
+	block-size: 100%;
 }
 
 #lightbox-content {
 	position: relative;
   z-index: 2000;
-  max-width: $sizes-s15;
-  width: 100%;
 	text-align: center;
+  max-inline-size: $sizes-s15;
+  inline-size: 100%;
+
 	.close-lightbox {
 		position: absolute;
-		top: 0;
-		right: $sizes-f9 * -1;
+		inset-block-start: 0;
+		inset-inline-end: $sizes-f9 * -1;
+
 		.Icon {
 			color: $colors-white;
 			font-size: $sizes-f7;
@@ -43,11 +45,11 @@
 }
 
 #underlay {
-  background-color: hsla(0, 0%, 0%, 0.85);
   position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
   z-index: 1000;
+  background-color: hsl(0deg 0% 0% / 85%);
+  inset-block-start: 0;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  inset-inline-start: 0;
 }

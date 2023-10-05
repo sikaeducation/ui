@@ -1,53 +1,89 @@
 @use "../../styles" as *;
 
-.Drawer {
-  &.modal {
+.Drawer {@media screen and (prefers-reduced-motion: reduce) {
+.content {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    @include shadows-underlay;
-    z-index: 10;
-  }
-  &:not(.modal) {
-    .content {
-      @include shadows-large;
-    }
-  }
-  .content {
-    position: fixed;
+    z-index: 20;
     display: flex;
     flex-flow: column nowrap;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background-color: $colors-white;
-    width: $sizes-s14;
     padding: $sizes-s5;
-    animation: slide-open $sizes-transition;
-    z-index: 20;
-    overflow-y: auto;
+    background-color: $colors-white;
+    animation: none;
+    inset-block-start: 0;
+    inset-block-end: 0;
+    inset-inline-end: 0;
+    inline-size: $sizes-s14;
+    overflow-block: auto;
+
     .close-button {
-      align-self: flex-end;
-      margin-left: auto;
-      cursor: pointer;
       z-index: 30;
-      border: none;
+      align-self: flex-end;
       padding: 0;
+      border: none;
       background-color: transparent;
+      cursor: pointer;
+      margin-inline-start: auto;
+
       &:focus {
         @include borders-trace;
       }
+    }
+}
+}
+
+  &.modal {
+    @include shadows-underlay;
+
+    position: fixed;
+    z-index: 10;
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+  }
+
+  .content {
+    position: fixed;
+    z-index: 20;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: $sizes-s5;
+    background-color: $colors-white;
+    animation: slide-open $sizes-transition;
+    inset-block-start: 0;
+    inset-block-end: 0;
+    inset-inline-end: 0;
+    inline-size: $sizes-s14;
+    overflow-block: auto;
+
+    .close-button {
+      z-index: 30;
+      align-self: flex-end;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      margin-inline-start: auto;
+
+      &:focus {
+        @include borders-trace;
+      }
+    }
+  }
+
+  &:not(.modal) {
+    .content {
+      @include shadows-large;
     }
   }
 }
 
 @keyframes slide-open {
   from {
-    right: -100%;
+    inset-inline-end: -100%;
   }
+
   to {
-    right: 0;
+    inset-inline-end: 0;
   }
 }

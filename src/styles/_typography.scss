@@ -1,41 +1,74 @@
 @use "sizes";
 @use "colors";
-@import url("https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap");
+@import "https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap";
 
 @font-face {
   font-family: "Gill Sans";
   src: url("./fonts/gs.woff") format("woff");
 }
+
 @font-face {
   font-family: "Gill Sans Condensed";
   src: url("./fonts/gsc.woff") format("woff");
 }
 
-@mixin body-font {
+@mixin heading-1 {
+  color: $colors-primary-3;
+  font-weight: 700;
+  font-size: $sizes-f8;
   font-family: "Gill Sans", sans-serif;
+  line-height: 1.1;
+
+  @media (max-width: $sizes-small-breakpoint){
+    font-size: $sizes-f6;
+
+    code {
+      font-size: $sizes-f4 + 0.2rem; // Visual match
+    }
+  }
+
+  code {
+    font-size: $sizes-f7 + 0.2rem; // Visual match
+  }
+
+  &.margin {
+    margin-block-start: $sizes-s4;
+    margin-block-end: $sizes-s5;
+
+    @media (max-width: $sizes-small-breakpoint){
+      margin-block-end: $sizes-s4;
+    }
+  }
+}
+
+@mixin body-font {
   color: colors.$grey-1;
-  font-size: sizes.$f3;
   font-weight: 400;
+  font-size: sizes.$f3;
+  font-family: "Gill Sans", sans-serif;
   line-height: 1.5;
+
   @media (max-width: sizes.$small-breakpoint){
     font-size: sizes.$f3;
   }
 }
 
 @mixin form-font {
-  font-family: "Gill Sans", sans-serif;
   color: colors.$grey-1;
-  font-size: sizes.$f4;
   font-weight: 400;
+  font-size: sizes.$f4;
+  font-family: "Gill Sans", sans-serif;
   line-height: 1.5;
+
   @media (max-width: sizes.$small-breakpoint){
     font-size: sizes.$f4;
   }
 }
 
 @mixin code-font {
-  font-family: "Fira Mono", monospace;
   font-size: inherit;
+  font-family: "Fira Mono", monospace;
+
   @media (max-width: sizes.$small-breakpoint){
     font-size: sizes.$f3;
   }

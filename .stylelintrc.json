@@ -5,23 +5,17 @@
 		"stylelint-config-hudochenkov/order"
 	],
 	"plugins": [
-		"stylelint-no-unresolved-module",
 		"stylelint-color-format",
 		"stylelint-use-nesting",
-		"use-defensive-css",
+		"stylelint-plugin-defensive-css",
 		"stylelint-plugin-logical-css"
 	],
 	"rules": {
+		"selector-class-pattern": null,
+		"selector-id-pattern": null,
+		"block-no-empty": null,
 		"color-format/format": {
 			"format": "hsla"
-		},
-		"plugin/no-unresolved-module": {
-			"alias": {
-				"assets": "public"
-			},
-			"modules": [
-				"node_modules"
-			]
 		},
 		"csstools/use-nesting": "always",
 		"plugin/use-defensive-css": [
@@ -54,5 +48,7 @@
 				"severity": "warning"
 			}
 		]
-	}
+	},
+	"reportInvalidScopeDisables": true,
+	"reportNeedlessDisables": true
 }

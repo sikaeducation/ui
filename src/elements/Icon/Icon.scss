@@ -4,39 +4,48 @@
   color: $colors-grey-5;
   font-weight: 700;
   font-size: $sizes-f4;
+
 	.unclear, .clear, .confident, .pending, .rejected, .deferred, .accepted {
 		border-radius: $borders-radius;
-		width: initial!important; // Override FA default
+		inline-size: initial!important; // Override FA default
 	}
+
 	.deferred {
 		padding: 2px;
 		background-color: $colors-grey-5;
 		color: $colors-white;
 	}
+
 	.unclear {
 		padding: 0 $sizes-s1;
 		background-color: $colors-failure-5;
 		color: $colors-white;
 	}
+
 	.confident {
 		padding: 2px;
 		background-color: $colors-success-5;
 		color: $colors-white;
 	}
+
 	.accepted {
 		color: $colors-success-5;
 	}
+
 	.pending {
 		color: $colors-grey-5;
 	}
+
 	.rejected {
 		color: $colors-failure-5;
 	}
+
 	.clear {
 		padding: 0 $sizes-s1;
 		background-color: $colors-grey-5;
 		color: $colors-white;
 	}
+
 	&.interactive {
 		cursor: pointer;
 	}

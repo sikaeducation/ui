@@ -4,22 +4,25 @@
 $radius: 4px;
 
 @mixin trace {
-  outline: 1px solid colors.$grey-9;
 	border: none;
   border-radius: $radius;
+  outline: 1px solid colors.$grey-9;
 }
 
 @mixin underline-on-focus {
+  transition: border-block-end sizes.$transition;
+
   // border-top: calc(3px + 2px) solid transparentize($colors-primary-5, 1);
-  border-bottom: 3px solid colors.$white;
-  transition: border-bottom sizes.$transition;
+  border-block-end: 3px solid colors.$white;
+
   &:focus {
     @include trace;
-    border-bottom: 3px solid colors.$primary-5;
+
+    border-block-end: 3px solid colors.$primary-5;
   }
 }
 
 @mixin halo-on-focus {
-  transition: box-shadow sizes.$transition;
 	box-shadow: 0 0 30px colors.$grey-9;
+  transition: box-shadow sizes.$transition;
 }

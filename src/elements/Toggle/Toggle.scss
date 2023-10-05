@@ -2,18 +2,23 @@
 
 .Toggle {
   @include forms-form-control;
+
   display: inline-block;
-  margin-bottom: 0;
+  margin-block-end: 0;
+
   label {
-    display: inline-block;
     position: relative;
+    display: inline-block;
   }
+
 	.left {
-		text-align: left;
+		text-align: start;
 	}
+
 	.right {
-		text-align: right;
+		text-align: end;
 	}
+
   .MuiSwitch-colorPrimary {
     color: $colors-primary-5 !important;
   }

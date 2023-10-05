@@ -1,33 +1,39 @@
 @use "../../styles" as *;
 
 .Breadcrumbs {
-  font-family: "Gill Sans", sans-serif;
-  font-size: $sizes-f3;
-  font-weight: 400;
   color: $colors-grey-4;
-  margin-bottom: $sizes-s6;
+  font-weight: 400;
+  font-size: $sizes-f3;
+  font-family: "Gill Sans", sans-serif;
+  margin-block-end: $sizes-s6;
+
   @media (max-width: $sizes-small-breakpoint){
-    margin-bottom: $sizes-s3;
+    margin-block-end: $sizes-s3;
   }
+
   > ol {
     &::after {
       content: "\a0"; // Holds space open with an empty list
     }
   }
+
   li {
     display: inline-block;
-  }
-  li + li {
-    margin-left: $sizes-s1;
+
+  & + li {
+    margin-inline-start: $sizes-s1;
+
     &::before {
       content: ">";
-      margin-right: $sizes-s1;
+      margin-inline-end: $sizes-s1;
     }
   }
+  }
+
   a {
     /* Controls spacing of underline */
     display: inline-block;
     text-decoration: none;
-    border-bottom: 1px solid $colors-grey-5;
+    border-block-end: 1px solid $colors-grey-5;
   }
 }

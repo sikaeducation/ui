@@ -2,18 +2,23 @@
 
 .QuickAdd {
 	margin: 2px $sizes-s1 0 $sizes-s1;
+
 	&, input {
 		display: inline-block;
 	}
+
 	input {
 		@include borders-trace;
-		font-size: $sizes-f1;
+
 		padding: $sizes-s1;
-		margin-right: $sizes-s2;
+		font-size: $sizes-f1;
+		margin-inline-end: $sizes-s2;
 	}
+
 	.Button {
-		margin-right: $sizes-s1;
+		margin-inline-end: $sizes-s1;
 	}
+
 	.Icon {
 		color: $colors-white;
 	}

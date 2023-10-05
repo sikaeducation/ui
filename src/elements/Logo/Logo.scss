@@ -1,15 +1,17 @@
 @use "../../styles" as *;
 
 .Logo {
-  color: $colors-primary-3;
   display: inline-block;
-  font-family: "Gill Sans Condensed", sans-serif;
+  color: $colors-primary-3;
   font-size: $sizes-f9;
+  font-family: "Gill Sans Condensed", sans-serif;
   letter-spacing: -2px;
-  margin-top: -12px; // Visual alignment with user avatar
+  margin-block-start: -12px; // Visual alignment with user avatar
+
   @media (max-width: $sizes-small-breakpoint){
     font-size: $sizes-f8;
   }
+
   a {
     text-decoration: none;
   }

@@ -4,24 +4,61 @@
   .transition {
     display: inline-block;
     padding: 24px;
-    transition: all $sizes-transition;
-    background-color: #eee;
+    background-color: hsl(0deg 0% 93%);
     outline: 1px solid;
-    &:hover {
-      transform: scale(1.1);
-    }
+    transition: all $sizes-transition;
+
+		@media screen and (prefers-reduced-motion: reduce) {
+				display: inline-block;
+				padding: 24px;
+				background-color: hsl(0deg 0% 93%);
+				outline: 1px solid;
+				transition: none;
+
+				@media (hover: hover){
+					&:hover, &:focus {
+						transform: scale(1.1);
+					}
+				}
+		}
+
+		@media (hover: hover){
+			&:hover, &:focus {
+				transform: scale(1.1);
+			}
+		}
   }
+
   .notification-container {
     position: relative;
     outline: 1px dashed;
+
+@media screen and (prefers-reduced-motion: reduce) {
+.notification {
+      position: absolute;
+      animation: none;
+      animation-iteration-count: 1;
+}
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+.timer {
+      display: inline-block;
+      background-color: hsl(0deg 0% 80%);
+      animation: none;
+      animation-iteration-count: 1;
+}
+}
+
     .notification {
       position: absolute;
       animation: demo-notification $sizes-toast-duration forwards;
       animation-iteration-count: 1
     }
+
     .timer {
       display: inline-block;
-      background-color: #ccc;
+      background-color: hsl(0deg 0% 80%);
       animation: timer-countdown $sizes-toast-duration linear forwards;
       animation-iteration-count: 1
     }
@@ -30,24 +67,28 @@
 
 @keyframes timer-countdown {
   from {
-    width: 100%;
+    inline-size: 100%;
   }
+
   to {
-    width: 0%;
+    inline-size: 0%;
   }
 }
 
 @keyframes demo-notification {
-  from {
-    bottom: -9999px;
+  0% {
+    inset-block-end: -9999px;
   }
+
   3% {
-    bottom: 0;
+    inset-block-end: 0;
   }
+
   95% {
-    bottom: 0;
+    inset-block-end: 0;
   }
-  to {
-    bottom: -9999px;
+
+  100% {
+    inset-block-end: -9999px;
   }
 }

@@ -3,116 +3,145 @@
 .SizeDemo {
   div {
     position: relative;
-    outline: 1px dashed #333;
+    outline: 1px dashed hsl(0deg 0% 20%);
   }
+
   .label {
     position: absolute;
-    right: 4px;
-    bottom: 0;
+    inset-inline-end: 4px;
+    inset-block-end: 0;
   }
+
   .size-17 {
-    width: $sizes-s17;
-    height: $sizes-s17;
+    inline-size: $sizes-s17;
+    block-size: $sizes-s17;
+
     .label {
       font-size: $sizes-f9;
     }
   }
+
   .size-16 {
-    width: $sizes-s16;
-    height: $sizes-s16;
+    inline-size: $sizes-s16;
+    block-size: $sizes-s16;
+
     .label {
       font-size: $sizes-f8;
     }
   }
+
   .size-15 {
-    width: $sizes-s15;
-    height: $sizes-s15;
+    inline-size: $sizes-s15;
+    block-size: $sizes-s15;
+
     .label {
       font-size: $sizes-f7;
     }
   }
+
   .size-14 {
-    width: $sizes-s14;
-    height: $sizes-s14;
+    inline-size: $sizes-s14;
+    block-size: $sizes-s14;
+
     .label {
       font-size: $sizes-f6;
     }
   }
+
   .size-13 {
-    width: $sizes-s13;
-    height: $sizes-s13;
+    inline-size: $sizes-s13;
+    block-size: $sizes-s13;
+
     .label {
       font-size: $sizes-f5;
     }
   }
+
   .size-12 {
-    width: $sizes-s12;
-    height: $sizes-s12;
+    inline-size: $sizes-s12;
+    block-size: $sizes-s12;
+
     .label {
       font-size: $sizes-f4;
     }
   }
+
   .size-11 {
-    width: $sizes-s11;
-    height: $sizes-s11;
+    inline-size: $sizes-s11;
+    block-size: $sizes-s11;
+
     .label {
       font-size: $sizes-f3;
     }
   }
+
   .size-10 {
-    width: $sizes-s10;
-    height: $sizes-s10;
+    inline-size: $sizes-s10;
+    block-size: $sizes-s10;
+
     .label {
       font-size: $sizes-f2;
     }
   }
+
   .size-9 {
-    width: $sizes-s9;
-    height: $sizes-s9;
+    inline-size: $sizes-s9;
+    block-size: $sizes-s9;
+
     .label {
       font-size: $sizes-f2;
     }
   }
+
   .size-8 {
-    width: $sizes-s8;
-    height: $sizes-s8;
+    inline-size: $sizes-s8;
+    block-size: $sizes-s8;
+
     .label {
       font-size: $sizes-f1;
     }
   }
+
 	.size-1, .size-2, .size-3, .size-4, .size-5, .size-6, .size-7 {
 		.label {
-			right: unset;
-			left: -16px;
 			font-size: 5px;
+			inset-inline-end: unset;
+			inset-inline-start: -16px;
 		}
 	}
+
   .size-7 {
-    width: $sizes-s7;
-    height: $sizes-s7;
+    inline-size: $sizes-s7;
+    block-size: $sizes-s7;
   }
+
   .size-6 {
-    width: $sizes-s6;
-    height: $sizes-s6;
+    inline-size: $sizes-s6;
+    block-size: $sizes-s6;
   }
+
   .size-5 {
-    width: $sizes-s5;
-    height: $sizes-s5;
+    inline-size: $sizes-s5;
+    block-size: $sizes-s5;
   }
+
   .size-4 {
-    width: $sizes-s4;
-    height: $sizes-s4;
+    inline-size: $sizes-s4;
+    block-size: $sizes-s4;
   }
+
   .size-3 {
-    width: $sizes-s3;
-    height: $sizes-s3;
+    inline-size: $sizes-s3;
+    block-size: $sizes-s3;
   }
+
   .size-2 {
-    width: $sizes-s2;
-    height: $sizes-s2;
+    inline-size: $sizes-s2;
+    block-size: $sizes-s2;
   }
+
   .size-1 {
-    width: $sizes-s1;
-    height: $sizes-s1;
+    inline-size: $sizes-s1;
+    block-size: $sizes-s1;
   }
 }

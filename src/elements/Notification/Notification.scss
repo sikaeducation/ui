@@ -1,13 +1,15 @@
 @use "../../styles" as *;
 
 .Notification {
-  color: $colors-primary-1;
-  background-color: $colors-primary-10;
+  @include shadows-large;
+
   padding: $sizes-s2;
   border-radius: $borders-radius;
-  @include shadows-large;
-  max-width: $sizes-s11;
+  background-color: $colors-primary-10;
+  color: $colors-primary-1;
   text-align: center;
+  max-inline-size: $sizes-s11;
+
   > p {
     margin: 0;
   }

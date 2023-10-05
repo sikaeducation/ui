@@ -1,6 +1,6 @@
 @use "../../styles" as *;
 
 .Separator {
-  width: 66%;
   border: 0.5px solid $colors-grey-8;
+  inline-size: 66%;
 }

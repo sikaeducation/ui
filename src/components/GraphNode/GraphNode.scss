@@ -1,46 +1,48 @@
 @use "../../styles" as *;
 
 .Node {
-	cursor: pointer;
 	opacity: 1;
+	cursor: pointer;
+
 	.label {
-		fill: $colors-grey-3;
 		font-size: 0.1em;
+		fill: $colors-grey-3;
 		stroke: none;
 	}
 
 	&.closed {
+		fill: $colors-grey-9;
 		stroke: $colors-grey-9;
 		stroke-width: 0.1px;
-		fill: $colors-grey-9;
+
 		.label {
-			stroke: none;
 			fill: $colors-grey-9;
+			stroke: none;
 		}
 	}
 
 	&.open {
+		fill: $colors-success-8;
 		stroke: $colors-success-5;
 		stroke-width: 0.05px;
-		fill: $colors-success-8;
 	}
 
 	&.in-progress {
+		fill: $colors-warning-7;
 		stroke: $colors-warning-4;
 		stroke-width: 0.1px;
-		fill: $colors-warning-7;
 	}
 
 	&.complete {
+		fill: $colors-primary-7;
 		stroke: $colors-primary-4;
 		stroke-width: 0.1px;
-		fill: $colors-primary-7;
 	}
 
 	&.opening {
+		fill: $colors-white;
 		stroke: $colors-primary-8;
 		stroke-width: 0.1px;
-		fill: $colors-white;
 	}
 
 	&.critical {

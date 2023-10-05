@@ -2,14 +2,16 @@
 
 .EditableField {
   label {
-    height: 0;
-    overflow-y: hidden;
+    block-size: 0;
+    overflow-block: hidden;
   }
+
   input {
-    outline: none;
-    border: none;
-    padding: $sizes-s2;
-    margin-left: -1 * $sizes-s2;
     @include borders-underline-on-focus;
+
+    padding: $sizes-s2;
+    border: none;
+    outline: none;
+    margin-inline-start: -1 * $sizes-s2;
   }
 }

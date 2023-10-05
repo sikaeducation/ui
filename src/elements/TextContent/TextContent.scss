@@ -6,5 +6,6 @@
 
 .TextContent.TextContent { // Increasing specificity to break Storybook styles
   @include typography-body-font;
-	max-width: $sizes-s16;
+
+	max-inline-size: $sizes-s16;
 }

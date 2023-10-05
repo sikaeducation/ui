@@ -2,12 +2,13 @@
 
 .StatusMessage {
 	@include shadows-small;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: $colors-grey-9;
-	min-height: $sizes-s13;
 	padding: $sizes-s6;
-	font-size: $sizes-f8;
 	border-radius: $borders-radius;
+	background-color: $colors-grey-9;
+	font-size: $sizes-f8;
+	min-block-size: $sizes-s13;
 }

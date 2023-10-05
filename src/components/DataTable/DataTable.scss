@@ -1,23 +1,27 @@
 @use "../../styles" as *;
 
 .DataTable {
-  max-width: $sizes-s17;
   margin: 0 auto;
+  max-inline-size: $sizes-s17;
+
   .table-headers {
-    text-align: left;
     color: $colors-grey-4;
-    padding-bottom: $sizes-s3;
+    text-align: start;
+    padding-block-end: $sizes-s3;
   }
+
   .table-row {
     display: grid;
     gap: $sizes-s2;
     border-radius: $borders-radius;
   }
+
   .field {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     align-content: start;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
     &:focus {
       @include borders-trace;
     }

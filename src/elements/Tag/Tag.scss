@@ -1,24 +1,28 @@
 @use "../../styles" as *;
 
 .Tag {
-  color: $colors-grey-3;
-  font-size: $sizes-f3;
-  background-color: $colors-grey-9;
+	@include shadows-small;
+
   padding: 0 $sizes-s3 $sizes-s1 $sizes-s3;
   border-radius: $borders-radius;
+  background-color: $colors-grey-9;
+  color: $colors-grey-3;
+  font-size: $sizes-f3;
 	white-space: nowrap;
-	@include shadows-small;
+
 	&.interactive {
 		cursor: pointer;
 	}
+
 	&.active {
 		background-color: $colors-primary-9;
 	}
+
 	.Icon {
-		display: inline-block;
-		margin-left: $sizes-s2;
 		position: relative; // Visual alignment
-		top: 1px; // Visual alignment
+		display: inline-block;
 		font-size: inherit;
+		margin-inline-start: $sizes-s2;
+		inset-block-start: 1px; // Visual alignment
 	}
 }

@@ -1,88 +1,109 @@
 @use "../../styles" as *;
 
 .primary-heading {
-  font-family: "Gill Sans", sans-serif;
+  color: $colors-primary-3;
   font-weight: 700;
   font-size: $sizes-f8;
-  color: $colors-primary-3;
+  font-family: "Gill Sans", sans-serif;
   line-height: 1.1;
-  code {
-    font-size: $sizes-f7 + 0.2rem; // Visual match
-  }
+
   @media (max-width: $sizes-small-breakpoint){
     font-size: $sizes-f6;
+
     code {
       font-size: $sizes-f4 + 0.2rem; // Visual match
     }
   }
+
+  code {
+    font-size: $sizes-f7 + 0.2rem; // Visual match
+  }
+
   &.margin {
-    margin-top: $sizes-s4;
-    margin-bottom: $sizes-s5;
+    margin-block-start: $sizes-s4;
+    margin-block-end: $sizes-s5;
+
     @media (max-width: $sizes-small-breakpoint){
-      margin-bottom: $sizes-s4;
+      margin-block-end: $sizes-s4;
     }
   }
 }
+
 .secondary-heading {
-  font-family: "Gill Sans", sans-serif;
+  color: $colors-grey-4;
   font-weight: 400;
   font-size: $sizes-f7;
-  color: $colors-grey-4;
+  font-family: "Gill Sans", sans-serif;
   line-height: 1.1;
-  code {
-    font-size: $sizes-f6 + 0.2rem; // Visual match
-  }
+
   @media (max-width: $sizes-small-breakpoint){
     font-size: $sizes-f6;
+
     code {
       font-size: $sizes-f5 + 0.1rem; // Visual match
     }
   }
+
+  code {
+    font-size: $sizes-f6 + 0.2rem; // Visual match
+  }
+
   &.margin {
-    margin-top: $sizes-s2;
-    margin-bottom: $sizes-s3;
+    margin-block-start: $sizes-s2;
+    margin-block-end: $sizes-s3;
+
     @media (max-width: $sizes-small-breakpoint){
-      margin-top: $sizes-s1;
-      margin-bottom: $sizes-s2;
+      margin-block-start: $sizes-s1;
+      margin-block-end: $sizes-s2;
     }
   }
 }
+
 .tertiary-heading {
-  font-family: "Gill Sans", sans-serif;
+  color: $colors-grey-4;
   font-weight: 400;
   font-size: $sizes-f6;
-  color: $colors-grey-4;
+  font-family: "Gill Sans", sans-serif;
   line-height: 1.1;
-  code {
-    font-size: $sizes-f4 + 0.2rem; // Visual match
-  }
+
   @media (max-width: $sizes-small-breakpoint){
     font-size: $sizes-f5;
+
     code {
       font-size: $sizes-f3 + 0.1rem; // Visual match
     }
   }
+
+  code {
+    font-size: $sizes-f4 + 0.2rem; // Visual match
+  }
+
   &.margin {
-    margin-bottom: $sizes-s1;
+    margin-block-end: $sizes-s1;
+
     @media (max-width: $sizes-small-breakpoint){
-      margin-bottom: $sizes-s1;
+      margin-block-end: $sizes-s1;
     }
   }
 }
+
 .quaternary-heading {
-  font-family: "Gill Sans", sans-serif;
+  color: $colors-grey-4;
   font-weight: 400;
   font-size: $sizes-f4;
-  color: $colors-grey-4;
-  margin-bottom: $sizes-s4;
+  font-family: "Gill Sans", sans-serif;
   line-height: 1.1;
-  code {
-    font-size: $sizes-f2 + 0.1rem; // Visual match
-  }
+  margin-block-end: $sizes-s4;
+
   @media (max-width: $sizes-small-breakpoint){
     font-size: $sizes-f4;
   }
+
+  code {
+    font-size: $sizes-f2 + 0.1rem; // Visual match
+  }
+
   &.margin {
-    margin-bottom: $sizes-s1;
+    margin-block-end: $sizes-s1;
   }
 }

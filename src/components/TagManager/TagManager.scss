@@ -2,20 +2,25 @@
 
 .TagManager {
 	ul {
-		margin-bottom: 0;
+		margin-block-end: 0;
 	}
+
 	.tag-list, li {
 		display: inline-block;
 	}
+
 	.tag-list {
 		display: inline-block;
 		line-height: 2.3;
+
 		> li {
-			margin-right: $sizes-s2;
+			margin-inline-end: $sizes-s2;
 		}
 	}
+
 	.Button {
-		margin-right: $sizes-s1;
+		margin-inline-end: $sizes-s1;
+
 		.secondary-button {
 			.Icon {
 				color: $colors-white;

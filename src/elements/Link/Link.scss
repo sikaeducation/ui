@@ -7,13 +7,15 @@
     & + em {
       display: none;
     }
+
     & + .indicator {
-      font-size: $sizes-f2;
       display: inline;
+      font-size: $sizes-f2;
     }
   }
+
   .external-link-icon {
-    font-size: $sizes-f2;
     color: $colors-grey-5;
+    font-size: $sizes-f2;
   }
 }

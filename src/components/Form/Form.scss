@@ -1,70 +1,83 @@
 @use "../../styles" as *;
 
 .Form {
-  background-color: $colors-white;
   display: flex;
   flex-flow: column nowrap;
   padding: $sizes-s7 $sizes-s8;
   border-radius: $borders-radius;
-  max-width: $sizes-s15;
+  background-color: $colors-white;
+  max-inline-size: $sizes-s15;
+
   .Heading {
-    margin-bottom: $sizes-s5;
+    margin-block-end: $sizes-s5;
   }
+
 	.TagManager {
-		margin-left: $sizes-s2 * -1; // Visual alignment
+		margin-inline-start: $sizes-s2 * -1; // Visual alignment
 	}
+
 	.Toggle {
-		margin-top: $sizes-s2;
-		margin-left: $sizes-s4 * -1; // Visual alignment
+		margin-block-start: $sizes-s2;
+		margin-inline-start: $sizes-s4 * -1; // Visual alignment
 	}
+
 	.form-field {
 		display: inline-block;
+
 		&.full {
-			width: 100%;
+			inline-size: 100%;
 		}
+
 		&.half {
-			width: calc(50% - $sizes-s4);
+			inline-size: calc(50% - $sizes-s4);
+
 			&:nth-of-type(1) {
-				text-align: left;
-				margin-right: $sizes-s4;
+				text-align: start;
+				margin-inline-end: $sizes-s4;
+
 				label, input, textarea {
 					text-align: initial;
 				}
 			}
+
 			&:nth-of-type(2) {
-				text-align: right;
-				margin-left: $sizes-s4;
+				text-align: end;
+				margin-inline-start: $sizes-s4;
+
 				label, input, textarea {
 					text-align: initial;
 				}
 			}
 		}
+
 		&.third {
-			width: calc((100% / 3) - $sizes-s4);
+			inline-size: calc((100% / 3) - $sizes-s4);
+
 			&:nth-of-type(1) {
-				margin-right: $sizes-s4;
+				margin-inline-end: $sizes-s4;
 			}
+
 			&:nth-of-type(2) {
-				margin-left: $sizes-s4;
-				margin-right: $sizes-s4;
-			}
-			&:nth-of-type(2) {
-				margin-left: $sizes-s4;
+				margin-inline-start: $sizes-s4;
+				margin-inline-end: $sizes-s4;
 			}
 		}
 	}
+
   .actions {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-		margin-right: -9px; // Visual alignment
-    margin-top: $sizes-s4;
+		margin-inline-end: -9px; // Visual alignment
+    margin-block-start: $sizes-s4;
+
     .Button {
-      margin-left: $sizes-s4;
+      margin-inline-start: $sizes-s4;
     }
   }
+
   .error {
     color: $colors-failure-5;
-    margin-top: $sizes-s6;
+    margin-block-start: $sizes-s6;
   }
 }

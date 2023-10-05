@@ -1,7 +1,7 @@
 @use "../../styles" as *;
 
 @keyframes blink {
-	from {
+	0% {
 		opacity: 0;
 	}
 
@@ -13,17 +13,25 @@
 		opacity: 1;
 	}
 
-	to {
+	100% {
 		opacity: 0;
 	}
 }
 
 #arrow {
 	path {
-		fill: $colors-grey-7;
-		stroke-width: 0.1px;
-		stroke: $colors-primary-7 !important;
 		font-size: 0.1em;
+		fill: $colors-grey-7;
+		stroke: $colors-primary-7 !important;
 		animation: blink 1.5s infinite;
+		stroke-width: 0.1px;
+
+@media screen and (prefers-reduced-motion: reduce) {
+		font-size: 0.1em;
+		fill: $colors-grey-7;
+		stroke: $colors-primary-7 !important;
+		animation: none;
+		stroke-width: 0.1px
+}
 	}
 }

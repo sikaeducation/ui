@@ -2,28 +2,34 @@
 
 .TextArea {
   @include forms-form-control;
-  display: block;
-  margin-bottom: $sizes-s3;
+
   position: relative;
+  display: block;
+  margin-block-end: $sizes-s3;
+
   textarea {
     @include borders-trace;
     @include borders-underline-on-focus;
-    border: none;
-    min-height: $sizes-s9;
-    width: calc(100% + 16px);
-    margin-left: -8px; // Visually adjust to align with input
+
     padding: $sizes-s2 $sizes-s2;
-    overflow-y: auto;
-    resize: vertical;
+    border: none;
+    resize: block;
+    min-block-size: $sizes-s9;
+    inline-size: calc(100% + 16px);
+    margin-inline-start: -8px; // Visually adjust to align with input
+    overflow-block: auto;
+
     &.editable {
+      @include borders-underline-on-focus;
+
       resize: none;
       cursor: pointer;
-      min-height: auto;
-      @include borders-underline-on-focus;
+      min-block-size: auto;
+
       &:focus {
+        resize: block;
         cursor: text;
-        min-height: $sizes-s9;
-        resize: vertical;
+        min-block-size: $sizes-s9;
       }
     }
   }

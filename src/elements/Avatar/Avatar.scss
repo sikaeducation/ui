@@ -1,10 +1,12 @@
 @use "../../styles" as *;
 
 .Avatar {
-  width: $sizes-s7;
-  border-radius: $borders-radius;
 	@include shadows-small;
+
+  border-radius: $borders-radius;
+  inline-size: $sizes-s7;
 }
+
 .react-gravatar {
   display: inline-block;
 }
