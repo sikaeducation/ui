@@ -74,7 +74,7 @@
 		"@babel/plugin-transform-modules-commonjs": "^7.16.7",
 		"@playwright/test": "^1.37.1",
 		"@sikaeducation/eslint-config": "^2.0.27",
-		"@sikaeducation/stylelint-config": "^0.0.3",
+		"@sikaeducation/stylelint-config": "^1.0.0",
 		"@storybook/addon-a11y": "^7.4.5",
 		"@storybook/addon-actions": "^7.3.2",
 		"@storybook/addon-essentials": "^7.3.2",
