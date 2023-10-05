@@ -6,9 +6,11 @@
   max-width: sizes.$s14;
   font-size: sizes.$f3;
   background-color: colors.$white;
+
 	input, textarea, select {
 		@include typography.form-font;
 	}
+
   label {
     color: colors.$grey-4;
     margin-bottom: sizes.$s1;
