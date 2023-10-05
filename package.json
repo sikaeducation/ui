@@ -74,6 +74,7 @@
 		"@babel/plugin-transform-modules-commonjs": "^7.16.7",
 		"@playwright/test": "^1.37.1",
 		"@sikaeducation/eslint-config": "^2.0.27",
+		"@sikaeducation/stylelint-config": "^0.0.3",
 		"@storybook/addon-a11y": "^7.4.5",
 		"@storybook/addon-actions": "^7.3.2",
 		"@storybook/addon-essentials": "^7.3.2",
@@ -120,15 +121,6 @@
 		"storybook-addon-react-router-v6": "^2.0.5",
 		"storybook-react-context": "^0.6.0",
 		"stylelint": "^15.10.3",
-		"stylelint-color-format": "^1.1.0",
-		"stylelint-config-hudochenkov": "^9.0.0",
-		"stylelint-config-standard": "^34.0.0",
-		"stylelint-config-standard-scss": "^11.0.0",
-		"stylelint-no-unresolved-module": "^2.2.1",
-		"stylelint-order": "^6.0.3",
-		"stylelint-plugin-defensive-css": "^0.9.1",
-		"stylelint-plugin-logical-css": "^0.13.2",
-		"stylelint-use-nesting": "^4.1.0",
 		"wait-on": "^7.0.1"
 	},
 	"overrides": {

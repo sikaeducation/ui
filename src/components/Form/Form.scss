@@ -1,7 +1,7 @@
 @use "../../styles" as *;
 
 .Form {
-  display: flex;
+	display: flex;
   flex-flow: column nowrap;
   padding: $sizes-s7 $sizes-s8;
   border-radius: $borders-radius;
