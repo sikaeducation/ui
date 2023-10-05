@@ -1,0 +1,58 @@
+{
+	"extends": [
+		"stylelint-config-standard-scss",
+		"stylelint-a11y/recommended",
+		"stylelint-config-hudochenkov/order"
+	],
+	"plugins": [
+		"stylelint-no-unresolved-module",
+		"stylelint-color-format",
+		"stylelint-use-nesting",
+		"use-defensive-css",
+		"stylelint-plugin-logical-css"
+	],
+	"rules": {
+		"color-format/format": {
+			"format": "hsla"
+		},
+		"plugin/no-unresolved-module": {
+			"alias": {
+				"assets": "public"
+			},
+			"modules": [
+				"node_modules"
+			]
+		},
+		"csstools/use-nesting": "always",
+		"plugin/use-defensive-css": [
+			true,
+			{
+				"accidental-hover": true
+			},
+			{
+				"background-repeat": true
+			},
+			{
+				"flex-wrapping": true
+			},
+			{
+				"scroll-chaining": true
+			},
+			{
+				"vendor-prefix-grouping": true
+			}
+		],
+		"plugin/use-logical-properties-and-values": [
+			true,
+			{
+				"severity": "warning"
+			}
+		],
+		"plugin/use-logical-units": [
+			true,
+			{
+				"severity": "warning"
+			}
+		]
+	}
+}
