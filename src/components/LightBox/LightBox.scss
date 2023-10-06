@@ -22,26 +22,26 @@
   inset-block-end: 0;
   inset-inline-end: 0;
   inset-inline-start: 0;
-	block-size: 100%;
+  block-size: 100%;
 }
 
 #lightbox-content {
-	position: relative;
+  position: relative;
   z-index: 2000;
-	text-align: center;
+  text-align: center;
   max-inline-size: $sizes-s15;
   inline-size: 100%;
 
-	.close-lightbox {
-		position: absolute;
-		inset-block-start: 0;
-		inset-inline-end: $sizes-f9 * -1;
+  .close-lightbox {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-end: $sizes-f9 * -1;
 
-		.Icon {
-			color: $colors-white;
-			font-size: $sizes-f7;
-		}
-	}
+    .Icon {
+      color: $colors-white;
+      font-size: $sizes-f7;
+    }
+  }
 }
 
 #underlay {

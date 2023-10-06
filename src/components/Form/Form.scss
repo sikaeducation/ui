@@ -1,7 +1,7 @@
 @use "../../styles" as *;
 
 .Form {
-	display: flex;
+  display: flex;
   flex-flow: column nowrap;
   padding: $sizes-s7 $sizes-s8;
   border-radius: $borders-radius;
@@ -12,63 +12,67 @@
     margin-block-end: $sizes-s5;
   }
 
-	.TagManager {
-		margin-inline-start: $sizes-s2 * -1; // Visual alignment
-	}
+  .TagManager {
+    margin-inline-start: $sizes-s2 * -1; // Visual alignment
+  }
 
-	.Toggle {
-		margin-block-start: $sizes-s2;
-		margin-inline-start: $sizes-s4 * -1; // Visual alignment
-	}
+  .Toggle {
+    margin-block-start: $sizes-s2;
+    margin-inline-start: $sizes-s4 * -1; // Visual alignment
+  }
 
-	.form-field {
-		display: inline-block;
+  .form-field {
+    display: inline-block;
 
-		&.full {
-			inline-size: 100%;
-		}
+    &.full {
+      inline-size: 100%;
+    }
 
-		&.half {
-			inline-size: calc(50% - $sizes-s4);
+    &.half {
+      inline-size: calc(50% - $sizes-s4);
 
-			&:nth-of-type(1) {
-				text-align: start;
-				margin-inline-end: $sizes-s4;
+      &:nth-of-type(1) {
+        text-align: start;
+        margin-inline-end: $sizes-s4;
 
-				label, input, textarea {
-					text-align: initial;
-				}
-			}
+        label,
+        input,
+        textarea {
+          text-align: initial;
+        }
+      }
 
-			&:nth-of-type(2) {
-				text-align: end;
-				margin-inline-start: $sizes-s4;
+      &:nth-of-type(2) {
+        text-align: end;
+        margin-inline-start: $sizes-s4;
 
-				label, input, textarea {
-					text-align: initial;
-				}
-			}
-		}
+        label,
+        input,
+        textarea {
+          text-align: initial;
+        }
+      }
+    }
 
-		&.third {
-			inline-size: calc((100% / 3) - $sizes-s4);
+    &.third {
+      inline-size: calc((100% / 3) - $sizes-s4);
 
-			&:nth-of-type(1) {
-				margin-inline-end: $sizes-s4;
-			}
+      &:nth-of-type(1) {
+        margin-inline-end: $sizes-s4;
+      }
 
-			&:nth-of-type(2) {
-				margin-inline-start: $sizes-s4;
-				margin-inline-end: $sizes-s4;
-			}
-		}
-	}
+      &:nth-of-type(2) {
+        margin-inline-start: $sizes-s4;
+        margin-inline-end: $sizes-s4;
+      }
+    }
+  }
 
   .actions {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-		margin-inline-end: -9px; // Visual alignment
+    margin-inline-end: -9px; // Visual alignment
     margin-block-start: $sizes-s4;
 
     .Button {

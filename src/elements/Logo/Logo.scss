@@ -8,7 +8,7 @@
   letter-spacing: -2px;
   margin-block-start: -12px; // Visual alignment with user avatar
 
-  @media (max-width: $sizes-small-breakpoint){
+  @media (max-width: $sizes-small-breakpoint) {
     font-size: $sizes-f8;
   }
 

@@ -1,30 +1,31 @@
 @use "../../styles" as *;
 
 .TagManager {
-	ul {
-		margin-block-end: 0;
-	}
+  ul {
+    margin-block-end: 0;
+  }
 
-	.tag-list, li {
-		display: inline-block;
-	}
+  .tag-list,
+  li {
+    display: inline-block;
+  }
 
-	.tag-list {
-		display: inline-block;
-		line-height: 2.3;
+  .tag-list {
+    display: inline-block;
+    line-height: 2.3;
 
-		> li {
-			margin-inline-end: $sizes-s2;
-		}
-	}
+    > li {
+      margin-inline-end: $sizes-s2;
+    }
+  }
 
-	.Button {
-		margin-inline-end: $sizes-s1;
+  .Button {
+    margin-inline-end: $sizes-s1;
 
-		.secondary-button {
-			.Icon {
-				color: $colors-white;
-			}
-		}
-	}
+    .secondary-button {
+      .Icon {
+        color: $colors-white;
+      }
+    }
+  }
 }

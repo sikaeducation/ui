@@ -4,7 +4,7 @@
 $radius: 4px;
 
 @mixin trace {
-	border: none;
+  border: none;
   border-radius: $radius;
   outline: 1px solid colors.$grey-9;
 }
@@ -23,6 +23,6 @@ $radius: 4px;
 }
 
 @mixin halo-on-focus {
-	box-shadow: 0 0 30px colors.$grey-9;
+  box-shadow: 0 0 30px colors.$grey-9;
   transition: box-shadow sizes.$transition;
 }

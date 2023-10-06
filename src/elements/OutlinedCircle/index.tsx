@@ -1,3 +1,1 @@
-export {
-	default,
-} from "./OutlinedCircle";
+export { default } from "./OutlinedCircle";

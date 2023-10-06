@@ -1,14 +1,14 @@
 @use "../../styles" as *;
 
 .StatusMessage {
-	@include shadows-small;
+  @include shadows-small;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: $sizes-s6;
-	border-radius: $borders-radius;
-	background-color: $colors-grey-9;
-	font-size: $sizes-f8;
-	min-block-size: $sizes-s13;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $sizes-s6;
+  border-radius: $borders-radius;
+  background-color: $colors-grey-9;
+  font-size: $sizes-f8;
+  min-block-size: $sizes-s13;
 }

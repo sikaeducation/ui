@@ -1,28 +1,28 @@
 @use "../../styles" as *;
 
 .Tag {
-	@include shadows-small;
+  @include shadows-small;
 
   padding: 0 $sizes-s3 $sizes-s1 $sizes-s3;
   border-radius: $borders-radius;
   background-color: $colors-grey-9;
   color: $colors-grey-3;
   font-size: $sizes-f3;
-	white-space: nowrap;
+  white-space: nowrap;
 
-	&.interactive {
-		cursor: pointer;
-	}
+  &.interactive {
+    cursor: pointer;
+  }
 
-	&.active {
-		background-color: $colors-primary-9;
-	}
+  &.active {
+    background-color: $colors-primary-9;
+  }
 
-	.Icon {
-		position: relative; // Visual alignment
-		display: inline-block;
-		font-size: inherit;
-		margin-inline-start: $sizes-s2;
-		inset-block-start: 1px; // Visual alignment
-	}
+  .Icon {
+    position: relative; // Visual alignment
+    display: inline-block;
+    font-size: inherit;
+    margin-inline-start: $sizes-s2;
+    inset-block-start: 1px; // Visual alignment
+  }
 }

@@ -7,7 +7,7 @@
   font-family: "Gill Sans", sans-serif;
   margin-block-end: $sizes-s6;
 
-  @media (max-width: $sizes-small-breakpoint){
+  @media (max-width: $sizes-small-breakpoint) {
     margin-block-end: $sizes-s3;
   }
 
@@ -20,14 +20,14 @@
   li {
     display: inline-block;
 
-  & + li {
-    margin-inline-start: $sizes-s1;
+    & + li {
+      margin-inline-start: $sizes-s1;
 
-    &::before {
-      content: ">";
-      margin-inline-end: $sizes-s1;
+      &::before {
+        content: ">";
+        margin-inline-end: $sizes-s1;
+      }
     }
-  }
   }
 
   a {

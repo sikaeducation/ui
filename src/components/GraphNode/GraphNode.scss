@@ -1,51 +1,51 @@
 @use "../../styles" as *;
 
 .Node {
-	opacity: 1;
-	cursor: pointer;
+  opacity: 1;
+  cursor: pointer;
 
-	.label {
-		font-size: 0.1em;
-		fill: $colors-grey-3;
-		stroke: none;
-	}
+  .label {
+    font-size: 0.1em;
+    fill: $colors-grey-3;
+    stroke: none;
+  }
 
-	&.closed {
-		fill: $colors-grey-9;
-		stroke: $colors-grey-9;
-		stroke-width: 0.1px;
+  &.closed {
+    fill: $colors-grey-9;
+    stroke: $colors-grey-9;
+    stroke-width: 0.1px;
 
-		.label {
-			fill: $colors-grey-9;
-			stroke: none;
-		}
-	}
+    .label {
+      fill: $colors-grey-9;
+      stroke: none;
+    }
+  }
 
-	&.open {
-		fill: $colors-success-8;
-		stroke: $colors-success-5;
-		stroke-width: 0.05px;
-	}
+  &.open {
+    fill: $colors-success-8;
+    stroke: $colors-success-5;
+    stroke-width: 0.05px;
+  }
 
-	&.in-progress {
-		fill: $colors-warning-7;
-		stroke: $colors-warning-4;
-		stroke-width: 0.1px;
-	}
+  &.in-progress {
+    fill: $colors-warning-7;
+    stroke: $colors-warning-4;
+    stroke-width: 0.1px;
+  }
 
-	&.complete {
-		fill: $colors-primary-7;
-		stroke: $colors-primary-4;
-		stroke-width: 0.1px;
-	}
+  &.complete {
+    fill: $colors-primary-7;
+    stroke: $colors-primary-4;
+    stroke-width: 0.1px;
+  }
 
-	&.opening {
-		fill: $colors-white;
-		stroke: $colors-primary-8;
-		stroke-width: 0.1px;
-	}
+  &.opening {
+    fill: $colors-white;
+    stroke: $colors-primary-8;
+    stroke-width: 0.1px;
+  }
 
-	&.critical {
-		stroke-width: 0.5px;
-	}
+  &.critical {
+    stroke-width: 0.5px;
+  }
 }

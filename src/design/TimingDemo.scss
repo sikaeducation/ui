@@ -8,59 +8,61 @@
     outline: 1px solid;
     transition: all $sizes-transition;
 
-		@media screen and (prefers-reduced-motion: reduce) {
-				display: inline-block;
-				padding: 24px;
-				background-color: hsl(0deg 0% 93%);
-				outline: 1px solid;
-				transition: none;
+    @media screen and (prefers-reduced-motion: reduce) {
+      display: inline-block;
+      padding: 24px;
+      background-color: hsl(0deg 0% 93%);
+      outline: 1px solid;
+      transition: none;
 
-				@media (hover: hover){
-					&:hover, &:focus {
-						transform: scale(1.1);
-					}
-				}
-		}
+      @media (hover: hover) {
+        &:hover,
+        &:focus {
+          transform: scale(1.1);
+        }
+      }
+    }
 
-		@media (hover: hover){
-			&:hover, &:focus {
-				transform: scale(1.1);
-			}
-		}
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        transform: scale(1.1);
+      }
+    }
   }
 
   .notification-container {
     position: relative;
     outline: 1px dashed;
 
-@media screen and (prefers-reduced-motion: reduce) {
-.notification {
-      position: absolute;
-      animation: none;
-      animation-iteration-count: 1;
-}
-}
+    @media screen and (prefers-reduced-motion: reduce) {
+      .notification {
+        position: absolute;
+        animation: none;
+        animation-iteration-count: 1;
+      }
+    }
 
-@media screen and (prefers-reduced-motion: reduce) {
-.timer {
-      display: inline-block;
-      background-color: hsl(0deg 0% 80%);
-      animation: none;
-      animation-iteration-count: 1;
-}
-}
+    @media screen and (prefers-reduced-motion: reduce) {
+      .timer {
+        display: inline-block;
+        background-color: hsl(0deg 0% 80%);
+        animation: none;
+        animation-iteration-count: 1;
+      }
+    }
 
     .notification {
       position: absolute;
       animation: demo-notification $sizes-toast-duration forwards;
-      animation-iteration-count: 1
+      animation-iteration-count: 1;
     }
 
     .timer {
       display: inline-block;
       background-color: hsl(0deg 0% 80%);
       animation: timer-countdown $sizes-toast-duration linear forwards;
-      animation-iteration-count: 1
+      animation-iteration-count: 1;
     }
   }
 }

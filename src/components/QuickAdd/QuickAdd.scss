@@ -1,25 +1,26 @@
 @use "../../styles" as *;
 
 .QuickAdd {
-	margin: 2px $sizes-s1 0 $sizes-s1;
+  margin: 2px $sizes-s1 0 $sizes-s1;
 
-	&, input {
-		display: inline-block;
-	}
+  &,
+  input {
+    display: inline-block;
+  }
 
-	input {
-		@include borders-trace;
+  input {
+    @include borders-trace;
 
-		padding: $sizes-s1;
-		font-size: $sizes-f1;
-		margin-inline-end: $sizes-s2;
-	}
+    padding: $sizes-s1;
+    font-size: $sizes-f1;
+    margin-inline-end: $sizes-s2;
+  }
 
-	.Button {
-		margin-inline-end: $sizes-s1;
-	}
+  .Button {
+    margin-inline-end: $sizes-s1;
+  }
 
-	.Icon {
-		color: $colors-white;
-	}
+  .Icon {
+    color: $colors-white;
+  }
 }

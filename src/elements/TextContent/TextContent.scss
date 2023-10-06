@@ -1,11 +1,12 @@
 @use "../../styles" as *;
 
 .text-content-wrapper {
-	border: 1px dashed red;
+  border: 1px dashed red;
 }
 
-.TextContent.TextContent { // Increasing specificity to break Storybook styles
+.TextContent.TextContent {
+  // Increasing specificity to break Storybook styles
   @include typography-body-font;
 
-	max-inline-size: $sizes-s16;
+  max-inline-size: $sizes-s16;
 }

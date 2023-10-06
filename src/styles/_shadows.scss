@@ -1,50 +1,70 @@
 @use "colors";
 
 @mixin small {
-  box-shadow: 0 1px 0 colors.$grey-6, 0 2px 5px colors.$grey-9;
+  box-shadow:
+    0 1px 0 colors.$grey-6,
+    0 2px 5px colors.$grey-9;
 
   &.interactive:active {
     position: relative;
-    box-shadow: 0 -1px 0 colors.$grey-8, 0 2px 5px colors.$grey-9;
+    box-shadow:
+      0 -1px 0 colors.$grey-8,
+      0 2px 5px colors.$grey-9;
     inset-block-start: 1px;
   }
 
   &.failure {
-    box-shadow: 0 1px 0 colors.$failure-6, 0 2px 5px colors.$grey-9;
+    box-shadow:
+      0 1px 0 colors.$failure-6,
+      0 2px 5px colors.$grey-9;
 
     &.interactive:active {
-      box-shadow: 0 -1px 0 colors.$failure-8, 0 2px 5px colors.$grey-9;
+      box-shadow:
+        0 -1px 0 colors.$failure-8,
+        0 2px 5px colors.$grey-9;
     }
   }
 
   &.warning {
-    box-shadow: 0 1px 0 colors.$warning-6, 0 2px 5px colors.$grey-9;
+    box-shadow:
+      0 1px 0 colors.$warning-6,
+      0 2px 5px colors.$grey-9;
 
     &.interactive:active {
-      box-shadow: 0 -1px 0 colors.$warning-8, 0 2px 5px colors.$grey-9;
+      box-shadow:
+        0 -1px 0 colors.$warning-8,
+        0 2px 5px colors.$grey-9;
     }
   }
 
   &.success {
-    box-shadow: 0 1px 0 colors.$success-6, 0 2px 5px colors.$grey-9;
+    box-shadow:
+      0 1px 0 colors.$success-6,
+      0 2px 5px colors.$grey-9;
 
     &.interactive:active {
-      box-shadow: 0 -1px 0 colors.$success-8, 0 2px 5px colors.$grey-9;
+      box-shadow:
+        0 -1px 0 colors.$success-8,
+        0 2px 5px colors.$grey-9;
     }
   }
 
   &.info {
-    box-shadow: 0 1px 0 colors.$primary-6, 0 2px 5px colors.$grey-9;
+    box-shadow:
+      0 1px 0 colors.$primary-6,
+      0 2px 5px colors.$grey-9;
 
     &.interactive:active {
-      box-shadow: 0 -1px 0 colors.$primary-8, 0 2px 5px colors.$grey-9;
+      box-shadow:
+        0 -1px 0 colors.$primary-8,
+        0 2px 5px colors.$grey-9;
     }
   }
 }
 
 @mixin large {
-	$offset: 2px;
-	$size: 30px;
+  $offset: 2px;
+  $size: 30px;
 
   box-shadow: 0 $offset $size colors.$grey-9;
 

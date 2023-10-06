@@ -1,31 +1,31 @@
 @use "../../styles" as *;
 
 .Image {
-	margin-block-end: $sizes-f4;
+  margin-block-end: $sizes-f4;
 
-	.image-wrapper {
-		display: inline-block;
-		max-inline-size: $sizes-s17;
+  .image-wrapper {
+    display: inline-block;
+    max-inline-size: $sizes-s17;
 
-		&.lightboxed {
-			max-inline-size: 90%;
+    &.lightboxed {
+      max-inline-size: 90%;
 
-			p {
-				color: $colors-white;
-				inline-size: 100%;
-			}
-		}
+      p {
+        color: $colors-white;
+        inline-size: 100%;
+      }
+    }
 
-		img {
-			align-self: center;
-			border-radius: $borders-radius;
-			max-inline-size: 100%;
-		}
+    img {
+      align-self: center;
+      border-radius: $borders-radius;
+      max-inline-size: 100%;
+    }
 
-		.attribution {
-			color: $colors-grey-5;
-			font-style: italic;
-			text-align: end;
-		}
-	}
+    .attribution {
+      color: $colors-grey-5;
+      font-style: italic;
+      text-align: end;
+    }
+  }
 }

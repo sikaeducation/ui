@@ -1,63 +1,61 @@
-import type {
-	StoryObj, Meta,
-} from "@storybook/react";
+import type { StoryObj, Meta } from "@storybook/react";
 import {
-	inline,
-	headers,
-	lineHeight,
-	lists,
-	images,
-	formatted,
-	tables,
+  inline,
+  headers,
+  lineHeight,
+  lists,
+  images,
+  formatted,
+  tables,
 } from "./sample-content";
 
 import Markdown from ".";
 import cssSyntaxSample from "./css-syntax-sample";
 
 const meta: Meta<typeof Markdown> = {
-	component: Markdown,
+  component: Markdown,
 };
 export default meta;
 
 type Story = StoryObj<typeof Markdown>;
 
 export const Headers: Story = {
-	args: {
-		content: headers,
-	},
+  args: {
+    content: headers,
+  },
 };
 export const LineHeight: Story = {
-	args: {
-		content: lineHeight,
-	},
+  args: {
+    content: lineHeight,
+  },
 };
 export const Inline: Story = {
-	args: {
-		content: inline,
-	},
+  args: {
+    content: inline,
+  },
 };
 export const Lists: Story = {
-	args: {
-		content: lists,
-	},
+  args: {
+    content: lists,
+  },
 };
 export const Images: Story = {
-	args: {
-		content: images,
-	},
+  args: {
+    content: images,
+  },
 };
 export const Tables: Story = {
-	args: {
-		content: tables,
-	},
+  args: {
+    content: tables,
+  },
 };
 export const Formatted: Story = {
-	args: {
-		content: formatted,
-	},
+  args: {
+    content: formatted,
+  },
 };
 export const Article: Story = {
-	args: {
-		content: cssSyntaxSample,
-	},
+  args: {
+    content: cssSyntaxSample,
+  },
 };

@@ -1,35 +1,36 @@
 @use "../../styles" as *;
 
-.Drawer {@media screen and (prefers-reduced-motion: reduce) {
-.content {
-    position: fixed;
-    z-index: 20;
-    display: flex;
-    flex-flow: column nowrap;
-    padding: $sizes-s5;
-    background-color: $colors-white;
-    animation: none;
-    inset-block-start: 0;
-    inset-block-end: 0;
-    inset-inline-end: 0;
-    inline-size: $sizes-s14;
-    overflow-block: auto;
+.Drawer {
+  @media screen and (prefers-reduced-motion: reduce) {
+    .content {
+      position: fixed;
+      z-index: 20;
+      display: flex;
+      flex-flow: column nowrap;
+      padding: $sizes-s5;
+      background-color: $colors-white;
+      animation: none;
+      inset-block-start: 0;
+      inset-block-end: 0;
+      inset-inline-end: 0;
+      inline-size: $sizes-s14;
+      overflow-block: auto;
 
-    .close-button {
-      z-index: 30;
-      align-self: flex-end;
-      padding: 0;
-      border: none;
-      background-color: transparent;
-      cursor: pointer;
-      margin-inline-start: auto;
+      .close-button {
+        z-index: 30;
+        align-self: flex-end;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        margin-inline-start: auto;
 
-      &:focus {
-        @include borders-trace;
+        &:focus {
+          @include borders-trace;
+        }
       }
     }
-}
-}
+  }
 
   &.modal {
     @include shadows-underlay;

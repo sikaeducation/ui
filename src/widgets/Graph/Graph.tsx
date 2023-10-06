@@ -8,47 +8,45 @@ import "./Graph.scss";
 import { runSimulation } from "@sikaeducation/sika-graph";
 
 type Props = {
-	nodes: any;//RawNode[];
-	links: any;//RawLink[];
-	groups: any;//Group[];
-	options: any;//Options;
-	currentFilter: string;
-}
+  nodes: any; //RawNode[];
+  links: any; //RawLink[];
+  groups: any; //Group[];
+  options: any; //Options;
+  currentFilter: string;
+};
 
 // eslint-disable-next-line max-statements
 export default function Graph({
-	nodes,
-	links,
-	groups,
-	options,
-	currentFilter,
+  nodes,
+  links,
+  groups,
+  options,
+  currentFilter,
 }: Props) {
-	const {
-		// groups: graphGroups,
-		nodes: graphNodes,
-	} = runSimulation({
-		nodes,
-		links,
-		groups,
-		options,
-		currentFilter,
-	});
+  const {
+    // groups: graphGroups,
+    nodes: graphNodes,
+  } = runSimulation({
+    nodes,
+    links,
+    groups,
+    options,
+    currentFilter,
+  });
 
-	console.log(nodes);
-	return (
-		<>
-			{
-				graphNodes.map((node: any) => (
-					<circle
-						key={node.id}
-						fill="black"
-						stroke="black"
-						cx={node.x}
-						cy={node.y}
-						r="1"
-					/>
-				))
-			}
-		</>
-	);
+  console.log(nodes);
+  return (
+    <>
+      {graphNodes.map((node: any) => (
+        <circle
+          key={node.id}
+          fill="black"
+          stroke="black"
+          cx={node.x}
+          cy={node.y}
+          r="1"
+        />
+      ))}
+    </>
+  );
 }

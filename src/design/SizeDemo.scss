@@ -102,13 +102,19 @@
     }
   }
 
-	.size-1, .size-2, .size-3, .size-4, .size-5, .size-6, .size-7 {
-		.label {
-			font-size: 5px;
-			inset-inline-end: unset;
-			inset-inline-start: -16px;
-		}
-	}
+  .size-1,
+  .size-2,
+  .size-3,
+  .size-4,
+  .size-5,
+  .size-6,
+  .size-7 {
+    .label {
+      font-size: 5px;
+      inset-inline-end: unset;
+      inset-inline-start: -16px;
+    }
+  }
 
   .size-7 {
     inline-size: $sizes-s7;

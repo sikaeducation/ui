@@ -1,3 +1,1 @@
-export {
-	default,
-} from "./QuickAdd";
+export { default } from "./QuickAdd";

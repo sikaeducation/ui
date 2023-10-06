@@ -1,80 +1,80 @@
 @use "../../styles" as *;
 
 .MarkdownPreviewer {
-	inline-size: calc(100% + 16px);
+  inline-size: calc(100% + 16px);
 
-	> header {
-		position: relative;
-		z-index: 2;
-		display: flex;
-		justify-content: flex-end;
-		inline-size: 100%;
-		max-inline-size: $sizes-s15;
-		inset-block-start: $sizes-s6;
+  > header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
+    inline-size: 100%;
+    max-inline-size: $sizes-s15;
+    inset-block-start: $sizes-s6;
 
-		.actions-bar {
-			margin-block-end: $sizes-s2;
+    .actions-bar {
+      margin-block-end: $sizes-s2;
 
-			li {
-				display: inline-block;
+      li {
+        display: inline-block;
 
-				button {
-					padding: 0 $sizes-s2;
-				}
-			}
-		}
-	}
+        button {
+          padding: 0 $sizes-s2;
+        }
+      }
+    }
+  }
 
-	.preview-actions {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		max-inline-size: $sizes-s15; // Override max default
-		.Icon {
-			.expand-icon {
-				color: $colors-grey-7;
-			}
+  .preview-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-inline-size: $sizes-s15; // Override max default
+    .Icon {
+      .expand-icon {
+        color: $colors-grey-7;
+      }
 
-			.view-icon {
-				color: $colors-grey-8;
-			}
+      .view-icon {
+        color: $colors-grey-8;
+      }
 
-			.no-view-icon {
-				color: $colors-grey-6;
-			}
-		}
+      .no-view-icon {
+        color: $colors-grey-6;
+      }
+    }
 
-		.preview-subheading {
-			color: $colors-grey-4;
-			font-style: italic;
-			margin-block-end: 0;
-		}
-	}
+    .preview-subheading {
+      color: $colors-grey-4;
+      font-style: italic;
+      margin-block-end: 0;
+    }
+  }
 
-	.TextArea {
-		max-inline-size: $sizes-s15; // Override max default
-		textarea {
-			inline-size: 100%;
-			margin-inline-start: -8px; // Visually adjust to align with input
-		}
-	}
+  .TextArea {
+    max-inline-size: $sizes-s15; // Override max default
+    textarea {
+      inline-size: 100%;
+      margin-inline-start: -8px; // Visually adjust to align with input
+    }
+  }
 
-	.Markdown {
-		@include borders-trace;
+  .Markdown {
+    @include borders-trace;
 
-		overflow: auto;
-		max-block-size: $sizes-s12;
+    overflow: auto;
+    max-block-size: $sizes-s12;
     margin-inline-start: -8px; // Visually adjust to align with input
-		margin-block-end: $sizes-s4;
-		min-block-size: $sizes-s4;
-		inline-size: 100%;
-	}
+    margin-block-end: $sizes-s4;
+    min-block-size: $sizes-s4;
+    inline-size: 100%;
+  }
 }
 
 #markdown-lightbox-wrapper {
-	background-color: $colors-white;
+  background-color: $colors-white;
 
-	.Markdown {
-		margin: 0;
-	}
+  .Markdown {
+    margin: 0;
+  }
 }

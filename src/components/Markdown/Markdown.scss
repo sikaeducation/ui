@@ -7,7 +7,17 @@
   padding: 0 $sizes-s2;
   max-inline-size: $sizes-s15;
 
-  h1, h2, h3, h4, p, blockquote, ul, ol, table, pre, pre > code {
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  blockquote,
+  ul,
+  ol,
+  table,
+  pre,
+  pre > code {
     inline-size: 100%;
   }
 
@@ -21,19 +31,20 @@
     list-style-position: outside;
   }
 
-  ul, ol {
+  ul,
+  ol {
     padding-inline-start: 0;
     margin-block-end: 0;
 
-    @media (max-width: $sizes-small-breakpoint){
+    @media (max-width: $sizes-small-breakpoint) {
       padding-inline-start: $sizes-s5;
     }
 
-    ul, ol {
+    ul,
+    ol {
       padding-inline-start: $sizes-s5;
     }
   }
-
 
   li {
     margin-block-end: $sizes-s1;
@@ -44,21 +55,21 @@
     margin-block-end: $sizes-f4;
     max-inline-size: 100%;
 
-  &[src$="#medium"] {
-    inline-size: 50%;
-
-    @media (max-width: $sizes-small-breakpoint){
-      inline-size: 100%;
-    }
-  }
-
-  &[src$="#small"] {
-    inline-size: 30%;
-
-    @media (max-width: $sizes-small-breakpoint){
+    &[src$="#medium"] {
       inline-size: 50%;
+
+      @media (max-width: $sizes-small-breakpoint) {
+        inline-size: 100%;
+      }
     }
-  }
+
+    &[src$="#small"] {
+      inline-size: 30%;
+
+      @media (max-width: $sizes-small-breakpoint) {
+        inline-size: 50%;
+      }
+    }
   }
 
   .image-container {
@@ -66,7 +77,10 @@
   }
 
   // Inline Code
-  p, li, td, th {
+  p,
+  li,
+  td,
+  th {
     code {
       display: inline-block;
       padding: 0 4px;
@@ -87,7 +101,7 @@
       border-radius: $borders-radius !important;
       inline-size: 100%;
 
-      @media (max-width: $sizes-small-breakpoint){
+      @media (max-width: $sizes-small-breakpoint) {
         box-sizing: border-box;
       }
     }
@@ -119,7 +133,8 @@
       padding-block-end: $sizes-s2;
     }
 
-    td, th {
+    td,
+    th {
       padding: $sizes-s2;
     }
 

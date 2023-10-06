@@ -13,19 +13,19 @@
   .indicator {
     padding: 0 $sizes-s1;
 
-  &:first-child {
-    border-start-end-radius: 0;
-    border-end-end-radius: 0;
-  }
+    &:first-child {
+      border-start-end-radius: 0;
+      border-end-end-radius: 0;
+    }
 
-  &:nth-child(2) {
-    border-radius: 0;
-  }
+    &:nth-child(2) {
+      border-radius: 0;
+    }
 
-  &:last-child {
-    border-start-start-radius: 0;
-    border-end-start-radius: 0;
-  }
+    &:last-child {
+      border-start-start-radius: 0;
+      border-end-start-radius: 0;
+    }
   }
 
   .failure {
@@ -47,8 +47,8 @@
     font-style: normal;
     font-size: $sizes-f5;
 
-  &::before {
-    content: "/ ";
-  }
+    &::before {
+      content: "/ ";
+    }
   }
 }

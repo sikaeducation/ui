@@ -1,123 +1,125 @@
 @use "../../styles" as *;
 
 .SearchBox {
-	@include borders-trace;
-	@include shadows-small;
+  @include borders-trace;
+  @include shadows-small;
 
-	position: relative;
+  position: relative;
   display: inline-flex;
-	justify-content: center;
-	inline-size: 100%;
+  justify-content: center;
+  inline-size: 100%;
   margin-block-end: $sizes-s3;
-	overflow-inline: clip;
+  overflow-inline: clip;
 
-@media screen and (prefers-reduced-motion: reduce) {
-.Button {
-		position: relative;
-    border: none;
-    box-shadow: none!important;
-		animation: none;
-		border-start-start-radius: 0!important;
-		border-end-start-radius: 0!important;
-		inset-inline-end: 0;
+  @media screen and (prefers-reduced-motion: reduce) {
+    .Button {
+      position: relative;
+      border: none;
+      box-shadow: none !important;
+      animation: none;
+      border-start-start-radius: 0 !important;
+      border-end-start-radius: 0 !important;
+      inset-inline-end: 0;
 
-		.search-icon {
-			color: $colors-white;
-		}
-}
-}
-
-	&.focused {
-		@include borders-halo-on-focus;
-	}
-
-  input {
-		flex: 1;
-    border: none;
-		border-start-end-radius: 0;
-		border-end-end-radius: 0;
+      .search-icon {
+        color: $colors-white;
+      }
+    }
   }
 
-	.Button {
-		position: relative;
+  &.focused {
+    @include borders-halo-on-focus;
+  }
+
+  input {
+    flex: 1;
     border: none;
-    box-shadow: none!important;
-		animation: $sizes-transition ease-out fly-right-to-left;
-		border-start-start-radius: 0!important;
-		border-end-start-radius: 0!important;
-		inset-inline-end: 0;
+    border-start-end-radius: 0;
+    border-end-end-radius: 0;
+  }
 
-		.search-icon {
-			color: $colors-white;
-		}
-	}
+  .Button {
+    position: relative;
+    border: none;
+    box-shadow: none !important;
+    animation: $sizes-transition ease-out fly-right-to-left;
+    border-start-start-radius: 0 !important;
+    border-end-start-radius: 0 !important;
+    inset-inline-end: 0;
 
-	.search-wrapper {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		cursor: pointer;
-	}
+    .search-icon {
+      color: $colors-white;
+    }
+  }
 
-	&.small {
-		max-inline-size: $sizes-s12;
+  .search-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
 
-		input {
-			padding: $sizes-s2 $sizes-s3;
-			font-size: $sizes-f3;
-		}
+  &.small {
+    max-inline-size: $sizes-s12;
 
-		.Button, .search-wrapper {
-			padding: $sizes-s2 $sizes-s3;
-		}
+    input {
+      padding: $sizes-s2 $sizes-s3;
+      font-size: $sizes-f3;
+    }
 
-		.search-icon {
-			font-size: $sizes-f3;
-		}
-	}
+    .Button,
+    .search-wrapper {
+      padding: $sizes-s2 $sizes-s3;
+    }
 
-	&.medium {
-		max-inline-size: $sizes-s13;
+    .search-icon {
+      font-size: $sizes-f3;
+    }
+  }
 
-		input {
-			padding: $sizes-s3 $sizes-s4;
-			font-size: $sizes-f6;
-		}
+  &.medium {
+    max-inline-size: $sizes-s13;
 
-		.Button, .search-wrapper {
-			padding: $sizes-s3 $sizes-s4;
-		}
+    input {
+      padding: $sizes-s3 $sizes-s4;
+      font-size: $sizes-f6;
+    }
 
-		.search-icon {
-			font-size: $sizes-f6;
-		}
-	}
+    .Button,
+    .search-wrapper {
+      padding: $sizes-s3 $sizes-s4;
+    }
 
-	&.large {
-		max-inline-size: $sizes-s15;
+    .search-icon {
+      font-size: $sizes-f6;
+    }
+  }
 
-		input {
-			padding: $sizes-s5 $sizes-s6;
-			font-size: $sizes-f7;
-		}
+  &.large {
+    max-inline-size: $sizes-s15;
 
-		.Button, .search-wrapper {
-			padding: $sizes-s4 $sizes-s5;
-		}
+    input {
+      padding: $sizes-s5 $sizes-s6;
+      font-size: $sizes-f7;
+    }
 
-		.search-icon {
-			font-size: $sizes-f8;
-		}
-	}
+    .Button,
+    .search-wrapper {
+      padding: $sizes-s4 $sizes-s5;
+    }
 
+    .search-icon {
+      font-size: $sizes-f8;
+    }
+  }
 }
 
 @keyframes fly-right-to-left {
-	from {
-		inset-inline-end: -100px;
-	}
+  from {
+    inset-inline-end: -100px;
+  }
 
-	to {
-		inset-inline-end: 0;
-	}
+  to {
+    inset-inline-end: 0;
+  }
 }

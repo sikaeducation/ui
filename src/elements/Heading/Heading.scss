@@ -7,7 +7,7 @@
   font-family: "Gill Sans", sans-serif;
   line-height: 1.1;
 
-  @media (max-width: $sizes-small-breakpoint){
+  @media (max-width: $sizes-small-breakpoint) {
     font-size: $sizes-f6;
 
     code {
@@ -23,7 +23,7 @@
     margin-block-start: $sizes-s4;
     margin-block-end: $sizes-s5;
 
-    @media (max-width: $sizes-small-breakpoint){
+    @media (max-width: $sizes-small-breakpoint) {
       margin-block-end: $sizes-s4;
     }
   }
@@ -36,7 +36,7 @@
   font-family: "Gill Sans", sans-serif;
   line-height: 1.1;
 
-  @media (max-width: $sizes-small-breakpoint){
+  @media (max-width: $sizes-small-breakpoint) {
     font-size: $sizes-f6;
 
     code {
@@ -52,7 +52,7 @@
     margin-block-start: $sizes-s2;
     margin-block-end: $sizes-s3;
 
-    @media (max-width: $sizes-small-breakpoint){
+    @media (max-width: $sizes-small-breakpoint) {
       margin-block-start: $sizes-s1;
       margin-block-end: $sizes-s2;
     }
@@ -66,7 +66,7 @@
   font-family: "Gill Sans", sans-serif;
   line-height: 1.1;
 
-  @media (max-width: $sizes-small-breakpoint){
+  @media (max-width: $sizes-small-breakpoint) {
     font-size: $sizes-f5;
 
     code {
@@ -81,7 +81,7 @@
   &.margin {
     margin-block-end: $sizes-s1;
 
-    @media (max-width: $sizes-small-breakpoint){
+    @media (max-width: $sizes-small-breakpoint) {
       margin-block-end: $sizes-s1;
     }
   }
@@ -95,7 +95,7 @@
   line-height: 1.1;
   margin-block-end: $sizes-s4;
 
-  @media (max-width: $sizes-small-breakpoint){
+  @media (max-width: $sizes-small-breakpoint) {
     font-size: $sizes-f4;
   }
 

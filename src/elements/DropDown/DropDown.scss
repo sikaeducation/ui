@@ -7,13 +7,13 @@
   display: block;
   margin-block-end: $sizes-s3;
 
-	select {
-		@include borders-trace;
+  select {
+    @include borders-trace;
 
     padding: $sizes-s1 $sizes-s2;
-		background-color: $colors-white;
-		color: $colors-grey-2;
+    background-color: $colors-white;
+    color: $colors-grey-2;
     inline-size: calc(100% + $sizes-s2 + $sizes-s2);
     margin-inline-start: -1 * $sizes-s2;
-	}
+  }
 }

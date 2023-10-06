@@ -1,7 +1,7 @@
 @use "../../styles" as *;
 
 .Avatar {
-	@include shadows-small;
+  @include shadows-small;
 
   border-radius: $borders-radius;
   inline-size: $sizes-s7;

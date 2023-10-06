@@ -1,3 +1,1 @@
-export {
-	default,
-} from "./MarkdownPreviewer";
+export { default } from "./MarkdownPreviewer";
