@@ -1,3 +1,3 @@
 module.exports = {
-	extends: ["@sikaeducation/stylelint-config"],
+  extends: ["@sikaeducation/stylelint-config"],
 };
