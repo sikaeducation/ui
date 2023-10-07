@@ -1,7 +1,7 @@
-import type { StoryObj, Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
-import Form from ".";
 import { useState } from "react";
+import Form from ".";
 import { NewFormData } from "./form-controls";
 
 const meta: Meta<typeof Form> = {
