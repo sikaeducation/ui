@@ -13,7 +13,7 @@ type Props = {
   heading: string;
   newItem: Record<string, FormData>;
   setNewItem: (value: Record<string, FormData>) => void;
-  fields: FormControl[];
+  fields: Readonly<FormControl>[];
   actions: Action[];
   children?: ReactNode;
 };
