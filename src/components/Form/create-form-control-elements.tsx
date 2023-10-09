@@ -1,26 +1,19 @@
 import { ReactNode } from "react";
 import { FormControl, getFormControl, NewFormData } from "./form-controls";
 
-function loadNextFormControl(
-  fields: FormControl[],
-  newItem: NewFormData,
-  setNewItem: (value: NewFormData) => void,
-) {
-  const field = fields.shift()!;
-  return getFormControl(field, newItem, setNewItem);
-}
-
 // eslint-disable-next-line max-statements
 export default function createFormControlElements(
-  fields: FormControl[],
+  fields: Readonly<FormControl[]>,
   newItem: NewFormData,
   setNewItem: (value: NewFormData) => void,
 ) {
   let $fields: ReactNode[] = [];
 
-  while (fields.length > 0) {
-    const field = fields[0];
-    const formControl = loadNextFormControl(fields, newItem, setNewItem);
+  let currentFieldIndex = 0
+  while (currentFieldIndex < fields.length) {
+    const field = fields[currentFieldIndex];
+    const formControl = getFormControl(field, newItem, setNewItem);
+    currentFieldIndex += 1
 
     const [nextField, thirdField] = fields;
     if (
@@ -29,7 +22,7 @@ export default function createFormControlElements(
         nextField?.width === "third" &&
         thirdField?.width !== "third")
     ) {
-      const nextFormControl = loadNextFormControl(fields, newItem, setNewItem);
+      const nextFormControl = getFormControl(fields[currentFieldIndex++], newItem, setNewItem);
       $fields.push(
         <div key={field.id} className="form-row">
           <span className="form-field half">{formControl}</span>
@@ -41,8 +34,8 @@ export default function createFormControlElements(
       nextField?.width === "third" &&
       thirdField?.width === "third"
     ) {
-      const nextFormControl = loadNextFormControl(fields, newItem, setNewItem);
-      const thirdFormControl = loadNextFormControl(fields, newItem, setNewItem);
+      const nextFormControl = getFormControl(fields[currentFieldIndex++], newItem, setNewItem);
+      const thirdFormControl = getFormControl(fields[currentFieldIndex++], newItem, setNewItem);
       $fields.push(
         <div key={field.id} className="form-row">
           <span className="form-field third">{formControl}</span>
