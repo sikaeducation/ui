@@ -13,8 +13,8 @@
   .table-row {
     display: grid;
     gap: $sizes-s2;
+		padding: $sizes-s2 0;
     border-radius: $borders-radius;
-		margin-block-end: $sizes-s2;
   }
 
   .field {
