@@ -26,22 +26,26 @@ export default function MarkdownPreviewer({
     <div className="MarkdownPreviewer">
       <header>
         <ul className="actions-bar">
-          <li>
-            <Button type="ghost" action={() => setIsLightBoxing(true)}>
-              <Icon type="expand" />
-            </Button>
-          </li>
-          <li>
-            {isPreviewing ? (
-              <Button type="ghost" action={() => setIsPreviewing(false)}>
-                <Icon type="no-view" />
-              </Button>
-            ) : (
-              <Button type="ghost" action={() => setIsPreviewing(true)}>
-                <Icon type="view" />
-              </Button>
-            )}
-          </li>
+          {content ? (
+            <>
+              <li>
+                <Button type="ghost" action={() => setIsLightBoxing(true)}>
+                  <Icon type="expand" />
+                </Button>
+              </li>
+              <li>
+                {isPreviewing ? (
+                  <Button type="ghost" action={() => setIsPreviewing(false)}>
+                    <Icon type="no-view" />
+                  </Button>
+                ) : (
+                  <Button type="ghost" action={() => setIsPreviewing(true)}>
+                    <Icon type="view" />
+                  </Button>
+                )}
+              </li>
+            </>
+          ) : <li className="placeholder" aria-role="presentation">&nbsp;</li>}
         </ul>
       </header>
       <TextArea

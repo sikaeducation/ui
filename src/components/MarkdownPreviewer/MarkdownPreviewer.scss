@@ -19,6 +19,11 @@
       li {
         display: inline-block;
 
+				&.placeholder { // Keep UI from thrasing as element is conditionally rendered
+					font-size: $sizes-f4;
+					line-height: 1.5;
+				}
+
         button {
           padding: 0 $sizes-s2;
         }
