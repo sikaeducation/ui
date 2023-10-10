@@ -71,7 +71,10 @@ export default function MarkdownPreviewer({
           </div>
         </LightBox>
       )}
-      {isPreviewing && <Markdown content={content} />}
+      {isPreviewing
+        ? <Markdown content={content} />
+        : <div>&nbsp;</div> /* Reduce UI thrash */
+      }
     </div>
   );
 }

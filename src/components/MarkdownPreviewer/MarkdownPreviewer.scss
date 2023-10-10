@@ -9,7 +9,7 @@
     display: flex;
     justify-content: flex-end;
     inline-size: 100%;
-    max-inline-size: $sizes-s15;
+    max-inline-size: $sizes-s17;
     margin-block-start: $sizes-s6 * -1;
     inset-block-start: $sizes-s6;
 
@@ -72,9 +72,8 @@
 
     overflow: auto;
 		padding: $sizes-s2;
-    max-block-size: $sizes-s12;
+    max-block-size: 100%;
     margin-inline-start: -8px; // Visually adjust to align with input
-    margin-block-end: $sizes-s4;
     min-block-size: $sizes-s4;
     inline-size: 100%;
   }
