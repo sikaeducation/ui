@@ -10,6 +10,7 @@
     justify-content: flex-end;
     inline-size: 100%;
     max-inline-size: $sizes-s15;
+    margin-block-start: $sizes-s6 * -1;
     inset-block-start: $sizes-s6;
 
     .actions-bar {
