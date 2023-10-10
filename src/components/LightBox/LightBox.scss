@@ -28,14 +28,14 @@
 #lightbox-content {
   position: relative;
   z-index: 2000;
-  text-align: center;
+  text-align: revert;
   max-inline-size: $sizes-s15;
   inline-size: 100%;
 
   .close-lightbox {
     position: absolute;
-    inset-block-start: 0;
-    inset-inline-end: $sizes-f9 * -1;
+    inset-block-start: -50px; // Visual alignment
+    inset-inline-end: -60px; // Visual alignment
 
     .Icon {
       color: $colors-white;
