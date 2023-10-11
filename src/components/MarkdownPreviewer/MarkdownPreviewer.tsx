@@ -45,7 +45,11 @@ export default function MarkdownPreviewer({
                 )}
               </li>
             </>
-          ) : <li className="placeholder" aria-role="presentation">&nbsp;</li>}
+          ) : (
+            <li className="placeholder" aria-role="presentation">
+              &nbsp;
+            </li>
+          )}
         </ul>
       </header>
       <TextArea
@@ -55,6 +59,13 @@ export default function MarkdownPreviewer({
         value={content}
       />
 
+      {isLightBoxing && (
+        <LightBox onClose={() => setIsLightBoxing(false)}>
+          <div id="markdown-lightbox-wrapper">
+            <Markdown content={content} />
+          </div>
+        </LightBox>
+      )}
       <div className="preview-actions">
         {content && (
           <>
@@ -64,16 +75,12 @@ export default function MarkdownPreviewer({
           </>
         )}
       </div>
-      {isLightBoxing && (
-        <LightBox onClose={() => setIsLightBoxing(false)}>
-          <div id="markdown-lightbox-wrapper">
-            <Markdown content={content} />
-          </div>
-        </LightBox>
-      )}
-      {isPreviewing
-        ? <Markdown content={content} />
-        : <div>&nbsp;</div> /* Reduce UI thrash */
+      {
+        isPreviewing ? (
+          <Markdown content={content} />
+        ) : (
+          <div>&nbsp;</div>
+        ) /* Reduce UI thrash */
       }
     </div>
   );

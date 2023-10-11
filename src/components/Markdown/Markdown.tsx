@@ -12,6 +12,7 @@ import {
   // formatLinks,
   getSeparator,
 } from "./markdown-utilities";
+import TextContent from "../../elements/TextContent";
 
 type props = {
   content: string;
@@ -42,6 +43,7 @@ export default function AppContent({ content, className = "" }: props) {
         components={{
           img: addLinkToImage,
           code: formatCode,
+          p: TextContent,
           h1: formatHeading(1),
           h2: formatHeading(2),
           h3: formatHeading(3),

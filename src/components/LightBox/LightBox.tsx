@@ -17,7 +17,7 @@ export default function LightBox({ onClose, children }: Props) {
     if (lightBoxRef) {
       const keyEventHandler = (event: KeyboardEvent) => {
         switch (event.key) {
-          case "Shift": // Actually Escape?
+          case "Escape":
             onClose();
             break;
           case "Tab":

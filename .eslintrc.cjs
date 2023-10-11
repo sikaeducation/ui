@@ -1,9 +1,6 @@
 module.exports = {
+  extends: ["@sikaeducation"],
   overrides: [
-    require("@sikaeducation/eslint-config/ts"),
-    require("@sikaeducation/eslint-config/react"),
-    require("@sikaeducation/eslint-config/jest"),
-    require("@sikaeducation/eslint-config/storybook"),
     {
       files: ["**/*.tsx"],
       rules: {
