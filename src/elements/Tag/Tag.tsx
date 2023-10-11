@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ReactNode } from "react";
+import { KeyboardEventHandler, ReactNode } from "react";
 import Icon from "../Icon";
 import "./Tag.scss";
 
@@ -12,8 +12,14 @@ type Props = {
 
 export default function Tag(props: Props) {
   const { children, close, engage, active } = props;
+  const handleKeyDown: KeyboardEventHandler = (event) => {
+    if (engage && event.key === "Space") {
+      engage();
+    }
+  };
 
   return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <span
       className={classNames({
         Tag: true,
@@ -21,6 +27,8 @@ export default function Tag(props: Props) {
         interactive: engage,
       })}
       onClick={engage ? () => engage() : undefined}
+      role={engage ? "button" : undefined}
+      onKeyDown={engage ? handleKeyDown : undefined}
     >
       {children}
       {close ? <Icon type="close" action={close} /> : null}

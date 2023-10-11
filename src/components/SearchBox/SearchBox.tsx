@@ -1,7 +1,7 @@
 import "./SearchBox.scss";
 import Icon from "../../elements/Icon";
 import Button from "../../elements/Button";
-import { FormEventHandler, useState } from "react";
+import { FormEventHandler, KeyboardEventHandler, useState } from "react";
 import { useFocus } from "../../hooks/use-focus";
 import classNames from "classnames";
 
@@ -23,6 +23,11 @@ export default function SearchBox({
   action,
 }: Props) {
   const [focused, setFocused] = useState(false);
+  const handleKeyDown: KeyboardEventHandler = (event) => {
+    if (event.key === "Space") {
+      setFocused(true);
+    }
+  };
   {
     const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
       event.preventDefault();
@@ -67,6 +72,8 @@ export default function SearchBox({
             onClick={() => {
               setInputFocus();
             }}
+            onKeyDown={handleKeyDown}
+            role="search"
           >
             <Icon type="search" />
           </div>

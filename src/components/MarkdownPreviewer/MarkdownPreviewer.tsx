@@ -46,7 +46,7 @@ export default function MarkdownPreviewer({
               </li>
             </>
           ) : (
-            <li className="placeholder" aria-role="presentation">
+            <li className="placeholder" role="presentation">
               &nbsp;
             </li>
           )}

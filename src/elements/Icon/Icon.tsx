@@ -16,6 +16,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
+import { KeyboardEventHandler } from "react";
 
 const icons = {
   accepted: (
@@ -104,13 +105,22 @@ type Props = {
 
 export default function Icon(props: Props) {
   const { action, type } = props;
+  const handleKeyDown: KeyboardEventHandler = (event) => {
+    if (action && event.key === "Space") {
+      action();
+    }
+  };
   return (
+    // Condition satisifies a11y
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <span
       className={classNames({
         Icon: true,
         interactive: !!action,
       })}
       onClick={action ? () => action() : undefined}
+      role={action ? "button" : undefined}
+      onKeyDown={action ? handleKeyDown : undefined}
     >
       {icons[type]}
     </span>
