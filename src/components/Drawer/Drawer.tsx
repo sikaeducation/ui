@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { ReactNode } from "react";
-import Icon from "../Icon";
+import Icon from "../../elements/Icon";
 import "./Drawer.scss";
 
 type Props = {
