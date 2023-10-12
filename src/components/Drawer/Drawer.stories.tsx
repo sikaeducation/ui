@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import Drawer from ".";
-import Heading from "../Heading";
+import Heading from "../../elements/Heading";
 
 const meta: Meta<typeof Drawer> = {
   component: Drawer,

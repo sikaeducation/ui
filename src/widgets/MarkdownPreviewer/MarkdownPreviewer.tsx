@@ -1,10 +1,10 @@
 import "./MarkdownPreviewer.scss";
-import Markdown from "../Markdown";
+import Markdown from "../../components/Markdown";
 import TextArea from "../../elements/TextArea";
 import Button from "../../elements/Button";
 import Icon from "../../elements/Icon";
 import { useState } from "react";
-import LightBox from "../LightBox";
+import LightBox from "../../components/LightBox";
 
 type Props = {
   id: string;

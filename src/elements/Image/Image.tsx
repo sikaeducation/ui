@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { MouseEventHandler, useState } from "react";
+import { KeyboardEventHandler, useState } from "react";
 import "./Image.scss";
 import LightBox from "../../components/LightBox";
 
@@ -18,13 +18,23 @@ export default function Image({
 }: Props) {
   const [isLightboxed, setIsLightBoxed] = useState(false);
 
-  const potentialAttribution = attribution && (
+  const $attribution = attribution && (
     <p className="attribution">{attribution}</p>
   );
 
-  const getImage = (clickHandler?: MouseEventHandler) => (
-    <img onClick={clickHandler} alt={alt} src={src} />
-  );
+  const getImage = (clickHandler: () => void) => {
+    const handleKeyDown: KeyboardEventHandler = (event) => {
+      if (["Enter", "Space"].includes(event.key)) {
+        setIsLightBoxed(true);
+      }
+    };
+    <img
+      onClick={clickHandler}
+      onKeyDown={handleKeyDown}
+      alt={alt}
+      src={src}
+    />;
+  };
 
   const ImageElement = isLightboxed ? (
     <LightBox onClose={() => setIsLightBoxed(false)}>
@@ -34,11 +44,13 @@ export default function Image({
           lightboxed: isLightboxed,
         })}
       >
-        {
-          /* Swallow click, prevent bubbling */
-          getImage((event) => event.stopPropagation())
-        }
-        {potentialAttribution}
+        <>
+          {
+            /* Swallow click, prevent bubbling */
+            getImage(() => event?.stopPropagation())
+          }
+          {$attribution}
+        </>
       </div>
     </LightBox>
   ) : (
@@ -46,12 +58,12 @@ export default function Image({
       {lightbox ? (
         <>
           {getImage(() => setIsLightBoxed(true))}
-          {potentialAttribution}
+          {$attribution}
         </>
       ) : (
         <>
-          {getImage()}
-          {potentialAttribution}
+          {getImage(() => event?.stopPropagation())}
+          {$attribution}
         </>
       )}
     </div>
