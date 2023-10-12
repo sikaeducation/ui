@@ -13,13 +13,14 @@
   .table-row {
     display: grid;
     gap: $sizes-s2;
-		padding: $sizes-s2 0;
+    padding: $sizes-s2 0;
     border-radius: $borders-radius;
   }
 
   .field {
     align-content: start;
     overflow: hidden;
+    padding: $sizes-s2 0;
     text-overflow: ellipsis;
     white-space: nowrap;
 
