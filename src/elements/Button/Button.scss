@@ -2,89 +2,89 @@
 @use "sass:color";
 
 .Button {
-	&.primary-button {
-		@include shadows-small;
+  &.primary-button {
+    @include shadows-small;
 
-		border: none;
-		border-radius: $borders-radius;
-		background-color: $colors-primary-4;
-		color: $colors-white;
-		font-weight: 700;
-		cursor: pointer;
-		transition: none;
+    border: none;
+    border-radius: $borders-radius;
+    background-color: $colors-primary-4;
+    color: $colors-white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: none;
 
-		@media (hover: hover) {
-			&:hover,
-			&:focus {
-				background-color: color.adjust($colors-primary-5, $lightness: -10%);
-			}
-		}
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        background-color: color.adjust($colors-primary-5, $lightness: -10%);
+      }
+    }
 
-		&.failure {
-			background-color: $colors-failure-4;
+    &.failure {
+      background-color: $colors-failure-4;
 
-			@media (hover: hover) {
-				&:hover,
-				&:focus {
-					background-color: color.adjust($colors-failure-4, $lightness: -10%);
-				}
-			}
-		}
-	}
+      @media (hover: hover) {
+        &:hover,
+        &:focus {
+          background-color: color.adjust($colors-failure-4, $lightness: -10%);
+        }
+      }
+    }
+  }
 
-	&.secondary-button {
-		@include shadows-small;
+  &.secondary-button {
+    @include shadows-small;
 
-		border: none;
-		border-radius: $borders-radius;
-		background-color: $colors-grey-9;
-		color: $colors-grey-2;
-		cursor: pointer;
-		transition: none;
+    border: none;
+    border-radius: $borders-radius;
+    background-color: $colors-grey-9;
+    color: $colors-grey-2;
+    cursor: pointer;
+    transition: none;
 
-		@media (hover: hover) {
-			&:hover,
-			&:focus {
-				background-color: color.adjust($colors-grey-9, $lightness: -5%);
-			}
-		}
-	}
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        background-color: color.adjust($colors-grey-9, $lightness: -5%);
+      }
+    }
+  }
 
-	&.tertiary-button {
-		padding: $sizes-s2 $sizes-s3;
-		border: none;
-		background-color: hsl(0deg 0% 0% / 0%);
-		color: $colors-grey-2;
-		text-decoration: underline;
-		cursor: pointer;
-	}
+  &.tertiary-button {
+    padding: $sizes-s2 $sizes-s3;
+    border: none;
+    background-color: hsl(0deg 0% 0% / 0%);
+    color: $colors-grey-2;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 
-	&.tiny {
-		position: relative;
-		display: inline-flex;
-		justify-content: center;
-		align-items: center;
-		font-size: $sizes-f7;
-		line-height: 0.8;
-		inline-size: $sizes-s5;
-		block-size: $sizes-s5;
-		padding-block-start: 3px; // Visual alignment
-		inset-block-start: 2px; // Visual alignment
-	}
+  &.tiny {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $sizes-f7;
+    line-height: 0.8;
+    inline-size: $sizes-s5;
+    block-size: $sizes-s5;
+    padding-block-start: 3px; // Visual alignment
+    inset-block-start: 2px; // Visual alignment
+  }
 
-	&.small {
-		padding: $sizes-s1 $sizes-s3;
-		font-size: $sizes-f3;
-		block-size: auto;
-	}
+  &.small {
+    padding: $sizes-s1 $sizes-s3;
+    font-size: $sizes-f3;
+    block-size: auto;
+  }
 
-	&.large {
-		padding: $sizes-s2 $sizes-s6;
-		font-size: $sizes-f4;
-	}
+  &.large {
+    padding: $sizes-s2 $sizes-s6;
+    font-size: $sizes-f4;
+  }
 
-	&.disabled {
-		background-color: $colors-grey-9;
-		color: $colors-grey-6;
-	}
+  &.disabled {
+    background-color: $colors-grey-9;
+    color: $colors-grey-6;
+  }
 }

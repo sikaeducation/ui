@@ -9,11 +9,11 @@ export default function createFormControlElements(
 ) {
   let $fields: ReactNode[] = [];
 
-  let currentFieldIndex = 0
+  let currentFieldIndex = 0;
   while (currentFieldIndex < fields.length) {
     const field = fields[currentFieldIndex];
     const formControl = getFormControl(field, newItem, setNewItem);
-    currentFieldIndex += 1
+    currentFieldIndex += 1;
 
     const [nextField, thirdField] = fields;
     if (
@@ -22,7 +22,11 @@ export default function createFormControlElements(
         nextField?.width === "third" &&
         thirdField?.width !== "third")
     ) {
-      const nextFormControl = getFormControl(fields[currentFieldIndex++], newItem, setNewItem);
+      const nextFormControl = getFormControl(
+        fields[currentFieldIndex++],
+        newItem,
+        setNewItem,
+      );
       $fields.push(
         <div key={field.id} className="form-row">
           <span className="form-field half">{formControl}</span>
@@ -34,8 +38,16 @@ export default function createFormControlElements(
       nextField?.width === "third" &&
       thirdField?.width === "third"
     ) {
-      const nextFormControl = getFormControl(fields[currentFieldIndex++], newItem, setNewItem);
-      const thirdFormControl = getFormControl(fields[currentFieldIndex++], newItem, setNewItem);
+      const nextFormControl = getFormControl(
+        fields[currentFieldIndex++],
+        newItem,
+        setNewItem,
+      );
+      const thirdFormControl = getFormControl(
+        fields[currentFieldIndex++],
+        newItem,
+        setNewItem,
+      );
       $fields.push(
         <div key={field.id} className="form-row">
           <span className="form-field third">{formControl}</span>
