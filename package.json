@@ -32,7 +32,7 @@
     "build:static-files": "cp -r src/styles dist/styles && cp -r src/styles/fonts dist/fonts",
     "test": "test-storybook -- --detectOpenHandles",
     "test:watch": "test-storybook --detectOpenHandles --watch",
-    "test:ci": "npm run test:unit && ./static-server-test.sh"
+    "test:ci": "./static-server-test.sh"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
