@@ -43,7 +43,9 @@
     "@material-ui/core": "^4.12.4",
     "@material-ui/lab": "^4.0.0-alpha.61",
     "@sikaeducation/sika-graph": "^1.0.8",
-    "storybook": "^7.4.6"
+    "storybook": "^7.4.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -103,9 +105,6 @@
     "typescript": "^4.5.4",
     "vite": "^4.4.11",
     "wait-on": "^7.0.1"
-  },
-  "overrides": {
-    "postcss": "8.4.19"
   },
   "browserslist": {
     "production": [
