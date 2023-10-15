@@ -25,16 +25,14 @@
     "format": "prettier . --write",
     "lint:ts": "eslint  --ignore-path .gitignore --fix .",
     "lint:scss": "stylelint --fix **/*.scss",
+    "build:watch": "npm run clean && npm run build:static-files && microbundle --globals react/jsx-runtime=jsx --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react -f modern,cjs --watch",
     "build:storybook": "storybook build && cp -r src/styles/fonts storybook-static/assets/fonts",
     "clean": "rm -rf dist && mkdir dist",
     "build": "npm run clean && microbundle --globals react/jsx-runtime=jsx --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react -f modern,cjs && npm run build:static-files",
     "build:static-files": "cp -r src/styles dist/styles && cp -r src/styles/fonts dist/fonts",
-    "build:watch": "npm run clean && npm run build:static-files && microbundle --globals react/jsx-runtime=jsx --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react -f modern,cjs --watch",
     "test": "test-storybook -- --detectOpenHandles",
-    "test:watch": "test-storybook --watch",
-    "test:ci": "concurrently -k -s first -n \"Storybook,Component Tests\" -c \"bgGray.white,auto\" \"npm:ci:serve\" \"npm:ci:wait-to-test\"",
-    "ci:wait-to-test": "wait-on tcp:127.0.0.1:6006 && test-storybook --url http://127.0.0.1:6006",
-    "ci:serve": "http-server storybook-static --port 6006 --silent"
+    "test:watch": "test-storybook --detectOpenHandles --watch",
+    "test:ci": "npm run test:unit && ./static-server-test.sh"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
