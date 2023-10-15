@@ -92,7 +92,6 @@
     "react-markdown": "^8.0.7",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.2.1",
-    "react-scripts": "5.0.1",
     "react-syntax-highlighter": "^15.5.0",
     "react-use-clipboard": "^1.0.7",
     "remark-frontmatter": "^5.0.0",
