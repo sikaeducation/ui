@@ -1,5 +1,10 @@
 module.exports = {
-  extends: ["@sikaeducation"],
+  extends: [
+    "@sikaeducation",
+    "@sikaeducation/eslint-config/src/configs/storybook",
+    "@sikaeducation/eslint-config/src/configs/jest-ts",
+    "@sikaeducation/eslint-config/src/configs/playwright-test",
+  ],
   overrides: [
     {
       files: ["**/*.tsx"],
