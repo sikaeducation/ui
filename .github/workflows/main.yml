@@ -20,6 +20,13 @@ jobs:
           node-version: 19
       - name: Install dependencies
         run: npm install
+      - name: Build app
+        run: npm run build
+      - name: Upload build
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist
       - name: Build Storybook
         run: npm run build:storybook
       - name: Upload Storybook build
@@ -56,15 +63,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: Download build
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: dist
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
         with:
           node-version: 19
           registry-url: "https://registry.npmjs.org"
-      - name: Install dependencies
-        run: npm install
-      - name: Build UI library
-        run: npm run build
       - name: Publish @sikaeducation/ui to npm
         run: npm publish
         env:
