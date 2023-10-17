@@ -1,22 +1,6 @@
 @use "sizes";
 @use "colors";
 
-// @font-face {
-//   font-family: "Gill Sans";
-//   src:
-//     local("Gill Sans"),
-//     url("/dist/fonts/gs.woff") format("woff"),
-//     url("/gs.woff") format("woff");
-// }
-//
-// @font-face {
-//   font-family: "Gill Sans Condensed";
-//   src:
-//     local("Gill Sans Condensed"),
-//     url("/dist/fonts/gsc.woff") format("woff"),
-//     url("/gsc.woff") format("woff");
-// }
-
 @mixin heading-1 {
   color: $colors-primary-3;
   font-weight: 700;
