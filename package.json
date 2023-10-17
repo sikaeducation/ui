@@ -7,15 +7,13 @@
   "source": "src/index.ts",
   "type": "module",
   "exports": {
-    ".": "./dist/index.js",
-    "./components.css": "./dist/index.css",
-    "./reset": "./dist/styles/_reset.scss",
-    "./styles": "./dist/styles/_index.scss",
-    "./types": "./dist/index.d.ts"
+    ".": "./dist/components.js",
+    "./components.css": "./dist/style.css",
+    "./reset": "./dist/_reset.scss",
+    "./styles": "./dist/_index.scss",
+    "./types": "./dist/components.d.ts"
   },
-  "module": "./dist/index.js",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/components.d.ts",
   "files": [
     "dist/*"
   ],
@@ -27,9 +25,7 @@
     "lint:scss": "stylelint --fix **/*.scss",
     "build:watch": "npm run clean && npm run build:static-files && microbundle --globals react/jsx-runtime=jsx --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react -f modern,cjs --watch",
     "build:storybook": "storybook build && cp -r src/styles/fonts storybook-static/assets/fonts",
-    "clean": "rm -rf dist && mkdir dist",
-    "build": "npm run clean && microbundle --globals react/jsx-runtime=jsx --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react -f modern,cjs && npm run build:static-files",
-    "build:static-files": "cp -r src/styles dist/styles && cp -r src/styles/fonts dist/fonts",
+    "build": "vite build",
     "test": "test-storybook -- --detectOpenHandles",
     "test:watch": "test-storybook --detectOpenHandles --watch",
     "test:ci": "./static-server-test.sh"
@@ -41,9 +37,9 @@
     "@material-ui/core": "^4.12.4",
     "@material-ui/lab": "^4.0.0-alpha.61",
     "@sikaeducation/sika-graph": "^1.0.8",
-    "storybook": "^7.4.6",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "storybook": "^7.4.6"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -84,7 +80,6 @@
     "eslint": "^8.48.0",
     "expect": "^29.3.1",
     "http-server": "^14.1.1",
-    "microbundle": "^0.15.1",
     "prettier": "^3.0.3",
     "react-gravatar": "^2.6.3",
     "react-markdown": "^8.0.7",
@@ -101,6 +96,7 @@
     "stylelint": "^15.10.3",
     "typescript": "^4.5.4",
     "vite": "^4.4.11",
+    "vite-plugin-dts": "^3.6.0",
     "wait-on": "^7.0.1"
   },
   "browserslist": {
