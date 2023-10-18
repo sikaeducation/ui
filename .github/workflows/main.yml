@@ -10,7 +10,7 @@ permissions: write-all
 jobs:
   build_library:
     runs-on: ubuntu-latest
-    name: Build component library
+    name: Build library
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -80,7 +80,7 @@ jobs:
       - name: Run Storybook tests
         run: npm run test:ci
   publish_npm:
-    name: Publish UI library to npm
+    name: Publish library to npm
     runs-on: ubuntu-latest
     needs: test_library
     steps:
@@ -101,7 +101,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   deploy_storybook:
-    name: Deploy Storybook
+    name: Deploy Storybook to Netlify
     runs-on: ubuntu-latest
     needs: test_library
     steps:
