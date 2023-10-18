@@ -29,7 +29,7 @@ jobs:
           path: dist
   build_storybook:
     runs-on: ubuntu-latest
-    name: Install dependencies and build Storybook
+    name: Build Storybook
     needs: build_library
     steps:
       - name: Checkout code
@@ -38,6 +38,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
+      - name: Download library build
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: dist
       - name: Install dependencies
         run: npm ci
       - name: Build Storybook
@@ -45,7 +50,7 @@ jobs:
       - name: Upload Storybook build
         uses: actions/upload-artifact@v3
         with:
-          name: storybook-build
+          name: storybook-static
           path: storybook-static
   test_library:
     runs-on: ubuntu-latest
@@ -54,7 +59,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Download Storybook build
+      - name: Download library build
         uses: actions/download-artifact@v3
         with:
           name: dist
