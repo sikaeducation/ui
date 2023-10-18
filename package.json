@@ -1,7 +1,7 @@
 {
   "name": "@sikaeducation/ui",
   "author": "Kyle Coberly <kyle.coberly@gmail.com>",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "repository": "git@github.com:sikaeducation/janus.git",
   "license": "Apache 2.0",
   "type": "module",
