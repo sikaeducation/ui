@@ -46,7 +46,7 @@ jobs:
         with:
           name: storybook-build
           path: storybook-static
-  test:
+  test_library:
     runs-on: ubuntu-latest
     needs: build_library
     name: Test library
@@ -71,7 +71,7 @@ jobs:
   publish_npm:
     name: Publish UI library to npm
     runs-on: ubuntu-latest
-    needs: test
+    needs: test_library
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -93,8 +93,8 @@ jobs:
     name: Deploy Storybook
     runs-on: ubuntu-latest
     needs:
-      - storybook_build
-      - test
+      - build_storybook
+      - test_library
     steps:
       - name: Download Storybook build
         uses: actions/download-artifact@v3
@@ -114,7 +114,7 @@ jobs:
   create_release:
     name: Create release
     runs-on: ubuntu-latest
-    needs: test
+    needs: test_library
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
