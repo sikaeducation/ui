@@ -1,6 +1,6 @@
 # Sika UI
 
-Sika's UI library
+Sika's [UI library](https://ui.sikaeducation.com)
 
 [![CI](https://github.com/sikaeducation/ui/actions/workflows/main.yml/badge.svg)](https://github.com/sikaeducation/ui/actions/workflows/main.yml)
 
@@ -24,3 +24,18 @@ Sika's UI library
 - `test` - Runs all tests
 - `test:ci` - Run all tests statically
 - `test:watch` - Run tests continuously
+
+## Modules
+
+- `@sikaeducation`: The Sika component library
+- `@sikaeducation/components.css`: CSS for all components
+- `@sikaeducation/reset`: CSS reset
+- `@sikaeducation/styles`: Base SCSS styles, including these namespaces:
+  - `sizes-*`
+  - `colors-*`
+  - `typography-*`
+  - `shadows-*`
+  - `borders-*`
+  - `forms-*`
+- `@sikaeducation/types`: TypeScript types for components
+- `@sikaeducation/fonts`: Font files
