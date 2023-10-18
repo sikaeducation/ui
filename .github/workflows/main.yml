@@ -8,7 +8,26 @@ env:
   FORCE_COLOR: 1
 permissions: write-all
 jobs:
-  build:
+  build_library:
+    runs-on: ubuntu-latest
+    name: Build component library
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: npm ci
+      - name: Build app
+        run: npm run build
+      - name: Upload build
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist
+  build_storybook:
     runs-on: ubuntu-latest
     name: Install dependencies and build Storybook
     steps:
@@ -17,16 +36,9 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
         with:
-          node-version: 19
+          node-version: 20
       - name: Install dependencies
         run: npm install
-      - name: Build app
-        run: npm run build
-      - name: Upload build
-        uses: actions/upload-artifact@v3
-        with:
-          name: dist
-          path: dist
       - name: Build Storybook
         run: npm run build:storybook
       - name: Upload Storybook build
@@ -36,20 +48,20 @@ jobs:
           path: storybook-static
   test:
     runs-on: ubuntu-latest
-    needs: build
-    name: Test components
+    needs: build_library
+    name: Test library
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Download Storybook build
         uses: actions/download-artifact@v3
         with:
-          name: storybook-build
+          name: storybook-static
           path: storybook-static
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
         with:
-          node-version: 19
+          node-version: 20
       - name: Install dependencies
         run: npm install
       - name: Install browsers
@@ -71,7 +83,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
         with:
-          node-version: 19
+          node-version: 20
           registry-url: "https://registry.npmjs.org"
       - name: Publish @sikaeducation/ui to npm
         run: npm publish
@@ -80,12 +92,14 @@ jobs:
   deploy_storybook:
     name: Deploy Storybook
     runs-on: ubuntu-latest
-    needs: test
+    needs:
+      - storybook_build
+      - test
     steps:
       - name: Download Storybook build
         uses: actions/download-artifact@v3
         with:
-          name: storybook-build
+          name: storybook-static
           path: storybook-static
       - name: Deploy Storybook to Netlify
         uses: jsmrcaga/action-netlify-deploy@v2.0.0
