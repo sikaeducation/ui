@@ -11,8 +11,7 @@
 		"./components.css": "./dist/style.css",
 		"./reset": "./dist/styles/_reset.scss",
 		"./styles": "./dist/styles/_index.scss",
-		"./types": "./dist/components.d.ts",
-		"./fonts": "./dist/fonts/*"
+		"./types": "./dist/components.d.ts"
 	},
 	"types": "dist/components.d.ts",
 	"files": [
@@ -26,7 +25,8 @@
 		"format": "prettier . --write",
 		"build:watch": "vite build --watch",
 		"build:storybook": "storybook build",
-		"build": "vite build",
+		"build:assets": "cp -r ./public/* ./dist/",
+		"build": "vite build && npm run build:assets",
 		"test": "test-storybook -- --detectOpenHandles",
 		"test:watch": "test-storybook --detectOpenHandles --watch",
 		"test:ci": "./static-server-test.sh"
@@ -44,7 +44,6 @@
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
-		"@laynezh/vite-plugin-lib-assets": "^0.5.6-beta.0",
 		"@playwright/test": "^1.37.1",
 		"@sikaeducation/eslint-config": "^3.0.3",
 		"@sikaeducation/stylelint-config": "^1.1.2",

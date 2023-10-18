@@ -1,5 +1,16 @@
 @use "sizes";
 @use "colors";
+@import "https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap";
+
+@font-face {
+  font-family: "Gill Sans";
+  src: url("/fonts/gs.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gill Sans Condensed";
+  src: url("/fonts/gsc.woff") format("woff");
+}
 
 @mixin heading-1 {
   color: $colors-primary-3;
