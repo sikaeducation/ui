@@ -30,6 +30,7 @@ jobs:
   build_storybook:
     runs-on: ubuntu-latest
     name: Install dependencies and build Storybook
+    needs: build_library
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
