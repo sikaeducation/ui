@@ -34,7 +34,6 @@ export default function Graph({
     currentFilter,
   });
 
-  console.log(nodes);
   return (
     <>
       {graphNodes.map((node: any) => (
