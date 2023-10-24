@@ -6,7 +6,6 @@ on:
       - v*
 env:
   FORCE_COLOR: 1
-permissions: write-all
 jobs:
   build_library:
     runs-on: ubuntu-latest
@@ -130,6 +129,6 @@ jobs:
       - name: Publish release
         uses: elgohr/Github-Release-Action@v5
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           title: Release
