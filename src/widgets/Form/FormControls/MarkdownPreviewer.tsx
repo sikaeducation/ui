@@ -1,5 +1,5 @@
 import { ComponentPropsWithoutRef } from "react";
-import MarkdownPreviewer from "@/MarkdownPreviewer";
+import MarkdownPreviewer from "@/widgets/MarkdownPreviewer";
 import { BaseFormControl, NewFormData } from "../form-controls";
 
 export type FormControlMarkdownPreviewer = BaseFormControl &

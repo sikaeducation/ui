@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { KeyboardEventHandler, ReactNode } from "react";
-import Icon from "@/Icon";
+import Icon from "@/elements/Icon";
 import "./Tag.scss";
 
 type Props = {

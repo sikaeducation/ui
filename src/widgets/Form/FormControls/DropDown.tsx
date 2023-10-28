@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
-import DropDown from "@/DropDown";
+import DropDown from "@/elements/DropDown";
 import { BaseFormControl, NewFormData } from "../form-controls";
 
 export type FormControlDropDown = BaseFormControl &

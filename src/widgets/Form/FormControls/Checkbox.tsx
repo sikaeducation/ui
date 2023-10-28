@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
-import Checkbox from "@/Checkbox";
+import Checkbox from "@/elements/Checkbox";
 import { BaseFormControl, NewFormData } from "../form-controls";
 
 export type FormControlCheckbox = BaseFormControl &

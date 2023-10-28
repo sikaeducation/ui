@@ -78,12 +78,8 @@ Run `npm link` while inside this repo to create a global symlink for that folder
 
 Aliases:
 
-- `@/`: Looks for a match in this order:
-  1.  `./src/widgets/`
-  2.  `./src/components/`
-  3.  `./src/elements/`
-  4.  `./src/`
-- `$/`: `./style-library/`
+- `@`: `./src`
+- `$`: `./style-library`
 
 ### Deployment
 

@@ -1,5 +1,5 @@
 import { ComponentPropsWithoutRef } from "react";
-import TextInput from "@/TextInput";
+import TextInput from "@/elements/TextInput";
 import { BaseFormControl, NewFormData } from "../form-controls";
 
 export type FormControlTextInput = BaseFormControl &
