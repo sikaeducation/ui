@@ -1,5 +1,7 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 import remarkGfm from "remark-gfm";
+import { mergeConfig } from "vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 const config: StorybookConfig = {
   framework: "@storybook/react-vite",
@@ -30,6 +32,11 @@ const config: StorybookConfig = {
     autodocs: true,
   },
   staticDirs: ["../public"],
+  viteFinal(config) {
+    return mergeConfig(config, {
+      plugins: [tsconfigPaths()],
+    });
+  },
 };
 
 export default config;

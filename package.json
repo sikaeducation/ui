@@ -1,9 +1,28 @@
 {
   "name": "@sikaeducation/ui",
-  "author": "Kyle Coberly <kyle.coberly@gmail.com>",
   "version": "1.3.2",
-  "repository": "git@github.com:sikaeducation/janus.git",
+  "description": "Sika's UI library, docs at [https://ui.sikaeducation.com](https://ui.sikaeducation.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sikaeducation/ui.git"
+  },
+  "keywords": [
+    "ui",
+    "component library",
+    "react",
+    "storybook",
+    "styling",
+    "scss"
+  ],
+  "author": "Kyle Coberly <kyle.coberly@gmail.com>",
   "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/sikaeducation/ui/issues"
+  },
+  "engines": {
+    "node": ">= 20.8.1"
+  },
+  "homepage": "https://github.com/sikaeducation/ui",
   "type": "module",
   "main": "./src/index.ts",
   "exports": {
@@ -20,7 +39,7 @@
   "scripts": {
     "dev": "storybook dev -p 6006",
     "lint": "npm run lint:ts ; npm run lint:scss ; npm run format",
-    "lint:ts": "eslint  --ignore-path .gitignore --fix .",
+    "lint:ts": "eslint --report-unused-disable-directives --ignore-path .gitignore --fix .",
     "lint:scss": "stylelint --fix **/*.scss",
     "format": "prettier . --write",
     "build:watch": "vite build --watch",
@@ -64,6 +83,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "^7.0.2",
     "@testing-library/user-event": "^14.5.1",
+    "@tsconfig/vite-react": "^2.0.1",
     "@types/d3": "^7.4.0",
     "@types/jest": "^29.5.5",
     "@types/lodash": "^4.14.199",
@@ -98,6 +118,7 @@
     "typescript": "^4.5.4",
     "vite": "^4.4.11",
     "vite-plugin-dts": "^3.6.0",
+    "vite-tsconfig-paths": "^4.2.1",
     "wait-on": "^7.0.1"
   },
   "browserslist": {
