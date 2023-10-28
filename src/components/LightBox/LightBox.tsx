@@ -33,7 +33,12 @@ export default function LightBox({ onClose, children }: Props) {
   }, []);
 
   return (
-    <div id="lightbox-wrapper" role="dialog" aria-modal="true">
+    <div
+      id="lightbox-wrapper"
+      role="dialog"
+      aria-modal="true"
+      aria-label="wrapper element"
+    >
       <div id="LightBox" ref={lightBoxRef}>
         <div role="presentation" id="underlay" onClick={onClose}>
           &nbsp;

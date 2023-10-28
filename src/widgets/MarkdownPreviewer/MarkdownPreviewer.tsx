@@ -46,9 +46,7 @@ export default function MarkdownPreviewer({
               </li>
             </>
           ) : (
-            <li className="placeholder" role="presentation">
-              &nbsp;
-            </li>
+            <li className="placeholder">&nbsp;</li>
           )}
         </ul>
       </header>

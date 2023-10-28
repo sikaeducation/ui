@@ -59,6 +59,7 @@ export default function SearchBox({
           }}
           className={className}
           ref={inputRef}
+          aria-label="search"
         />
         {searchTerm ? (
           <Button type="primary">
