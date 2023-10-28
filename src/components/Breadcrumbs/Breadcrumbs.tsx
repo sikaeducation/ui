@@ -1,18 +1,18 @@
 import "./Breadcrumbs.scss";
 import { Link } from "react-router-dom";
 
-type internalLink = {
+type InternalLink = {
   slug: string;
   path: string;
   label: string;
   isLinked?: boolean;
 };
 
-type props = {
-  links: internalLink[];
+type Props = {
+  links: InternalLink[];
 };
 
-export default function Breadcrumbs({ links }: props) {
+export default function Breadcrumbs({ links }: Props) {
   let normalizedLinks = links.length === 1 ? [] : links;
   normalizedLinks = normalizedLinks.map((link, index) => ({
     ...link,

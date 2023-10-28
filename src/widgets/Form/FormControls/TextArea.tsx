@@ -1,5 +1,5 @@
 import { ComponentPropsWithoutRef } from "react";
-import TextArea from "../../../elements/TextArea";
+import TextArea from "@/TextArea";
 import { BaseFormControl, NewFormData } from "../form-controls";
 
 export type FormControlTextArea = BaseFormControl &

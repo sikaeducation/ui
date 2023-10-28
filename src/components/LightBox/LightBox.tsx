@@ -1,8 +1,8 @@
 import "./LightBox.scss";
 import { createRef, ReactNode, useEffect } from "react";
 import handleTab from "./handle-tab";
-import Icon from "../../elements/Icon";
-import Button from "../../elements/Button";
+import Icon from "@/Icon";
+import Button from "@/Button";
 
 type Props = {
   onClose: () => void;

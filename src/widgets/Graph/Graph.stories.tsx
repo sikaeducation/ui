@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import Graph from ".";
-import Circle from "../../elements/Circle";
-import OutlinedCircle from "../../elements/OutlinedCircle";
+import Circle from "@/Circle";
+import OutlinedCircle from "@/OutlinedCircle";
 import options from "./sample-options";
 import data from "./sample-data";
 

@@ -1,8 +1,8 @@
 import "./SearchBox.scss";
-import Icon from "../../elements/Icon";
-import Button from "../../elements/Button";
+import Icon from "@/Icon";
+import Button from "@/Button";
 import { FormEventHandler, KeyboardEventHandler, useState } from "react";
-import { useFocus } from "../../hooks/use-focus";
+import { useFocus } from "@/hooks/use-focus";
 import classNames from "classnames";
 
 type Props = {

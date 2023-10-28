@@ -1,7 +1,7 @@
 import "./DataTable.scss";
-import React, { KeyboardEvent, ReactNode } from "react";
+import { KeyboardEvent, ReactNode } from "react";
 import classNames from "classnames";
-import useWindowSize, { Size } from "../../hooks/use-window-size";
+import useWindowSize, { Size } from "@/hooks/use-window-size";
 
 export type Field = {
   header: string;

@@ -1,6 +1,6 @@
 import "./EditableField.scss";
 
-type props = {
+type Props = {
   value?: string;
   updateValue: (newValue: string) => void;
   id: string;
@@ -16,7 +16,7 @@ export default function EditableField({
   updateValue,
   isRequired,
   className = "",
-}: props) {
+}: Props) {
   return (
     <div className="EditableField">
       <label htmlFor={id}>{label}</label>

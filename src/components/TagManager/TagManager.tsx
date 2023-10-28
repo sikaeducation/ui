@@ -1,9 +1,9 @@
 import "./TagManager.scss";
-import Tag from "../../elements/Tag";
+import Tag from "@/Tag";
 import { useState } from "react";
-import Button from "../../elements/Button";
-import Icon from "../../elements/Icon";
-import QuickAdd from "../../components/QuickAdd";
+import Button from "@/Button";
+import Icon from "@/Icon";
+import QuickAdd from "@/QuickAdd";
 import classNames from "classnames";
 
 type Props = {

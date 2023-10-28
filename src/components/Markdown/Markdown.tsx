@@ -4,15 +4,13 @@ import frontmatter from "remark-frontmatter";
 import gfm from "remark-gfm";
 import remarkUnwrapImages from "remark-unwrap-images";
 import classNames from "classnames";
-// import useIndicator from "../../hooks/use-indicator";
 import {
   addLinkToImage,
   formatCode,
   formatHeading,
-  // formatLinks,
   getSeparator,
 } from "./markdown-utilities";
-import TextContent from "../../elements/TextContent";
+import TextContent from "@/TextContent";
 
 type props = {
   content: string;
@@ -20,7 +18,6 @@ type props = {
 };
 
 export default function AppContent({ content, className = "" }: props) {
-  // const getIndicator = useIndicator();
   return (
     <article
       className={classNames({

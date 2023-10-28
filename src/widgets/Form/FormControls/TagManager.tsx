@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
-import TagManager from "../../../components/TagManager";
+import TagManager from "@/TagManager";
 import { BaseFormControl, NewFormData } from "../form-controls";
 
 export type FormControlTagManager = BaseFormControl &

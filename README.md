@@ -76,6 +76,8 @@ Scripts:
 
 Run `npm link` while inside this repo to create a global symlink for that folder. Run `npm link @sikaeducation/stylelint-config` in a client repo to link to locally installed version (this will be overwritten on the next `npm install`). Then run `npm run build:watch` in this repo to auto-build server for real-time style updates in clients.
 
+`@/` is aliased `./src/` and `$/` is aliased to `./style-library/`.
+
 ### Deployment
 
 Set `NPM_TOKEN` on GitHub Actions to publish. Generate it on [Sika's npm page](https://www.npmjs.com/settings/sikaeducation/tokens) then add it to the [secrets page](https://github.com/sikaeducation/eslint-config/settings/secrets/actions).
