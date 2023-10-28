@@ -28,8 +28,11 @@
 #lightbox-content {
   position: relative;
   z-index: 2000;
+  padding: $sizes-s5;
+  border-radius: $borders-radius;
+  background-color: $colors-white;
   text-align: revert;
-  max-inline-size: $sizes-s15;
+  max-inline-size: $sizes-s16;
   inline-size: 100%;
 
   .close-lightbox {
