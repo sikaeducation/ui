@@ -76,7 +76,14 @@ Scripts:
 
 Run `npm link` while inside this repo to create a global symlink for that folder. Run `npm link @sikaeducation/stylelint-config` in a client repo to link to locally installed version (this will be overwritten on the next `npm install`). Then run `npm run build:watch` in this repo to auto-build server for real-time style updates in clients.
 
-`@/` is aliased `./src/` and `$/` is aliased to `./style-library/`.
+Aliases:
+
+- `@/`: Looks for a match in this order:
+  1.  `./src/widgets/`
+  2.  `./src/components/`
+  3.  `./src/elements/`
+  4.  `./src/`
+- `$/`: `./style-library/`
 
 ### Deployment
 
