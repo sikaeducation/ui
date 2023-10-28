@@ -56,7 +56,7 @@ export const OneRow: Story = {
         header: "Header 3",
         proportion: "30%",
         key: "header_3",
-        // eslint-disable-next-line no-console
+
         action: (id) => console.log("I got clicked", id),
       },
     ],

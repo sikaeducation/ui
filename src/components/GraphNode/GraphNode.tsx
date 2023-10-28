@@ -12,7 +12,6 @@ const nodeDiameter = 3;
 const criticalNodeDiameter = 4;
 type NodeState = "open" | "opening" | "closed" | "complete" | "in_progress";
 
-// eslint-disable-next-line max-statements
 export default function GraphNode({ node, links, zoomTo }: Props) {
   const { id, complete, in_progress, critical } = node;
   const formattedId = id.replace(/\s/g, "-");

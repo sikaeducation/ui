@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 import { FormControl, getFormControl, NewFormData } from "./form-controls";
 
-// eslint-disable-next-line max-statements
 export default function createFormControlElements(
   fields: Readonly<FormControl[]>,
   newItem: NewFormData,

@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 export const inline = `# Inline Text
 
 Whereupon we find **bold text**, as well as _italic text_, and even \`some monospace text\`.

@@ -7,49 +7,47 @@ import QuickAdd from "@/components/QuickAdd";
 import classNames from "classnames";
 
 type Props = {
-	id: string;
-	className?: string;
-	tags: string[];
-	removeTag: (id: string) => void;
-	addTag: (tagName: string) => void;
+  id: string;
+  className?: string;
+  tags: string[];
+  removeTag: (id: string) => void;
+  addTag: (tagName: string) => void;
 };
 
 export default function TagManager({
-	id,
-	className = "",
-	tags,
-	removeTag,
-	addTag,
+  id,
+  className = "",
+  tags,
+  removeTag,
+  addTag,
 }: Props) {
-	const [isAdding, setIsAdding] = useState(false);
+  const [isAdding, setIsAdding] = useState(false);
 
-	return (
-		<div
-			className={classNames({
-				TagManager: true,
-				[className]: true,
-			})}
-		>
-			<ul className="tag-list">
-				{tags.map((tag) => (
-					<li key={tag}>
-						<Tag close={() => removeTag(tag)}>{tag}</Tag>
-					</li>
-				))}
-				{isAdding ? (
-					<li>
-						<QuickAdd
-							id={id}
-							add={(newTag: string) => addTag(newTag)}
-							stop={() => setIsAdding(false)}
-						/>
-					</li>
-				) : (
-					<Button size="tiny" type="secondary" action={() => setIsAdding(true)}>
-						<Icon type="plus" />
-					</Button>
-				)}
-			</ul>
-		</div>
-	);
+  return (
+    <div
+      className={classNames({
+        TagManager: true,
+        [className]: true,
+      })}
+    >
+      <ul className="tag-list">
+        {tags.map((tag) => (
+          <li key={tag}>
+            <Tag close={() => removeTag(tag)}>{tag}</Tag>
+          </li>
+        ))}
+      </ul>
+      {isAdding ? (
+        <QuickAdd
+          id={id}
+          add={(newTag: string) => addTag(newTag)}
+          stop={() => setIsAdding(false)}
+        />
+      ) : (
+        <Button size="tiny" type="secondary" action={() => setIsAdding(true)}>
+          <Icon type="plus" />
+        </Button>
+      )}
+    </div>
+  );
 }
