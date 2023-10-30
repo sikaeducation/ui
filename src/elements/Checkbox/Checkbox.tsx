@@ -1,35 +1,43 @@
+import { ReactNode } from "react";
 import "./Checkbox.scss";
-import { Checkbox as MaterialCheckbox } from "@material-ui/core";
+import MaterialCheckbox from "@mui/material/Checkbox";
 
 type Props = {
-  className?: string;
-  id: string;
-  label: string;
-  required?: boolean;
-  type?: "primary" | "secondary";
-  updateValue: (newValue: boolean) => void;
-  value: boolean | string;
+	id: string;
+	label: string;
+	value: boolean | string;
+	updateValue: (newValue: boolean) => void;
+	type?: "primary" | "secondary";
+	required?: boolean;
+	className?: string;
+	icon?: ReactNode;
+	checkedIcon?: ReactNode;
 };
 
 export default function Checkbox({
-  id,
-  label,
-  value,
-  updateValue,
-  required = false,
-  type = "primary",
+	id,
+	label,
+	value,
+	updateValue,
+	type = "primary",
+	required = false,
+	className = "",
+	icon,
+	checkedIcon,
 }: Props) {
-  return (
-    <div className="Checkbox">
-      <MaterialCheckbox
-        checked={!!value}
-        id={id}
-        required={required}
-        name={id}
-        color={type}
-        onChange={() => updateValue(!value)}
-      />
-      <label htmlFor={id}>{label}</label>
-    </div>
-  );
+	return (
+		<div className={`${"Checkbox"} ${className}`}>
+			<MaterialCheckbox
+				checked={!!value}
+				id={id}
+				required={required}
+				name={id}
+				color={type}
+				onChange={() => updateValue(!value)}
+				icon={icon}
+				checkedIcon={checkedIcon}
+			/>
+			<label htmlFor={id}>{label}</label>
+		</div>
+	);
 }

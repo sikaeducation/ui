@@ -1,6 +1,6 @@
 import "./Skeleton.scss";
-import MaterialSkeleton from "@material-ui/lab/Skeleton/index.js";
+import MaterialSkeleton from "@mui/material/Skeleton";
 
 export default function Skeleton() {
-  return <MaterialSkeleton />;
+	return <MaterialSkeleton />;
 }
