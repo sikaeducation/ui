@@ -72,7 +72,7 @@ Scripts:
 - `build:watch` - Continuously build (for `npm link`ed projects)
 - `build:storybook` - Build static storybook site
 - `test:ci` - Run all tests statically
-- `test`, `test:watch` - Run tests through Storybook
+- `test`, `test:watch` - Run tests through Storybook (Server must be running)
 
 Run `npm link` while inside this repo to create a global symlink for that folder. Run `npm link @sikaeducation/stylelint-config` in a client repo to link to locally installed version (this will be overwritten on the next `npm install`). Then run `npm run build:watch` in this repo to auto-build server for real-time style updates in clients.
 
