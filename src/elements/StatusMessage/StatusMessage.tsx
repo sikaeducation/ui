@@ -2,10 +2,13 @@ import "./StatusMessage.scss";
 
 const messages = {
   "network-error": {
-    message: "There was a problem fetching this data.",
+    message: "There's problem with the network. Are you online?",
   },
   "no-data": {
     message: "There's no data to show yet!",
+  },
+  "general-error": {
+    message: "Something went wrong but it wasn't your fault. Try refreshing!",
   },
 } as const;
 
