@@ -66,13 +66,13 @@ Requires `npm i -D eslint prettier`.
 
 Scripts:
 
-- `dev` - Launch a local server on 6006
-- `lint` - Lint and fix
+- `dev`, `d` - Launch a local server on 6006
+- `lint`, `l` - Lint and fix
 - `build` - Build the component library and copy the static files
-- `build:watch` - Continuously build (for `npm link`ed projects)
+- `build:watch`, `bw` - Continuously build (for `npm link`ed projects)
 - `build:storybook` - Build static storybook site
 - `test:ci` - Run all tests statically
-- `test`, `test:watch` - Run tests through Storybook (Server must be running)
+- `test`, `test:watch`, `tw` - Run tests through Storybook (Server must be running)
 
 Run `npm link` while inside this repo to create a global symlink for that folder. Run `npm link @sikaeducation/stylelint-config` in a client repo to link to locally installed version (this will be overwritten on the next `npm install`). Then run `npm run build:watch` in this repo to auto-build server for real-time style updates in clients.
 
