@@ -3,16 +3,38 @@
 .Logo {
   display: inline-block;
   color: $colors-primary-3;
-  font-size: $sizes-f9;
   font-family: "Gill Sans Condensed", sans-serif;
-  letter-spacing: -2px;
-  margin-block-start: -12px; // Visual alignment with user avatar
-
-  @media (max-width: $sizes-small-breakpoint) {
-    font-size: $sizes-f8;
-  }
 
   a {
     text-decoration: none;
+  }
+
+  &.small {
+    font-weight: 400;
+    font-size: $sizes-f6;
+    letter-spacing: -1px;
+
+    @media (max-width: $sizes-small-breakpoint) {
+      font-size: $sizes-f5;
+    }
+  }
+
+  &.medium {
+    font-size: $sizes-f9;
+    letter-spacing: -1px;
+    margin-block-start: -12px; // Visual alignment with user avatar
+
+    @media (max-width: $sizes-small-breakpoint) {
+      font-size: $sizes-f8;
+    }
+  }
+
+  &.large {
+    font-size: $sizes-f11;
+    letter-spacing: -3px;
+
+    @media (max-width: $sizes-small-breakpoint) {
+      font-size: $sizes-f10;
+    }
   }
 }
