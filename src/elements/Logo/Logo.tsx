@@ -5,7 +5,7 @@ type Props = {
   size: "small" | "medium" | "large";
 };
 
-function Logo({ size }: Props) {
+function Logo({ size = "medium" }: Props) {
   return (
     <span
       className={classNames({
