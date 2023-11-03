@@ -38,16 +38,20 @@
   ],
   "scripts": {
     "dev": "storybook dev -p 6006",
+    "d": "npm run dev",
     "lint": "npm run lint:ts ; npm run lint:scss ; npm run format",
+    "l": "npm run lint",
     "lint:ts": "eslint --report-unused-disable-directives --ignore-path .gitignore --fix .",
     "lint:scss": "stylelint --fix **/*.scss",
     "format": "prettier . --write",
     "build:watch": "vite build --watch",
+    "bw": "npm run build:watch",
     "build:storybook": "storybook build",
     "build:assets": "cp -r ./public/* ./dist/",
     "build": "vite build && npm run build:assets",
     "test": "test-storybook -- --detectOpenHandles",
     "test:watch": "test-storybook -- --detectOpenHandles --watch",
+    "tw": "npm run test:watch",
     "test:ci": "./static-server-test.sh"
   },
   "dependencies": {
