@@ -1,135 +1,134 @@
 {
-	"name": "@sikaeducation/ui",
-	"version": "2.0.4",
-	"description": "Sika's UI library, docs at [https://ui.sikaeducation.com](https://ui.sikaeducation.com)",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/sikaeducation/ui.git"
-	},
-	"keywords": [
-		"ui",
-		"component library",
-		"react",
-		"storybook",
-		"styling",
-		"scss"
-	],
-	"author": "Kyle Coberly <kyle.coberly@gmail.com>",
-	"license": "Apache 2.0",
-	"bugs": {
-		"url": "https://github.com/sikaeducation/ui/issues"
-	},
-	"engines": {
-		"node": ">= 20.8.1"
-	},
-	"homepage": "https://github.com/sikaeducation/ui",
-	"type": "module",
-	"main": "./src/index.ts",
-	"exports": {
-		".": "./dist/components.js",
-		"./components.css": "./dist/style.css",
-		"./reset": "./dist/styles/_reset.scss",
-		"./styles": "./dist/styles/_index.scss",
-		"./types": "./dist/components.d.ts"
-	},
-	"types": "dist/components.d.ts",
-	"files": [
-		"dist/*"
-	],
-	"scripts": {
-		"dev": "storybook dev -p 6006",
-		"d": "npm run dev",
-		"lint": "npm run lint:ts ; npm run lint:scss ; npm run format",
-		"l": "npm run lint",
-		"lint:ts": "eslint --report-unused-disable-directives --ignore-path .gitignore --fix .",
-		"lint:scss": "stylelint --fix **/*.scss",
-		"format": "prettier . --write",
-		"build:watch": "vite build --watch",
-		"bw": "npm run build:watch",
-		"build:storybook": "storybook build",
-		"build:assets": "cp -r ./public/* ./dist/",
-		"build": "vite build && npm run build:assets",
-		"test": "test-storybook -- --detectOpenHandles",
-		"test:watch": "test-storybook -- --detectOpenHandles --watch",
-		"tw": "npm run test:watch",
-		"test:ci": "./static-server-test.sh"
-	},
-	"dependencies": {
-		"@emotion/react": "^11.11.1",
-		"@emotion/styled": "^11.11.0",
-		"@fortawesome/fontawesome-svg-core": "^6.1.1",
-		"@fortawesome/free-solid-svg-icons": "^6.1.1",
-		"@fortawesome/react-fontawesome": "^0.1.18",
-		"@mui/material": "^5.14.15",
-		"@sikaeducation/sika-graph": "^1.0.8"
-	},
-	"peerDependencies": {
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
-	},
-	"devDependencies": {
-		"@playwright/test": "^1.37.1",
-		"@sikaeducation/eslint-config": "^3.0.3",
-		"@sikaeducation/stylelint-config": "^1.1.2",
-		"@storybook/addon-a11y": "^7.4.5",
-		"@storybook/addon-actions": "^7.3.2",
-		"@storybook/addon-docs": "^7.4.6",
-		"@storybook/addon-essentials": "^7.3.2",
-		"@storybook/addon-interactions": "^7.4.5",
-		"@storybook/addon-links": "^7.3.2",
-		"@storybook/blocks": "^7.3.2",
-		"@storybook/jest": "^0.2.1",
-		"@storybook/node-logger": "^7.3.2",
-		"@storybook/react": "^7.3.2",
-		"@storybook/react-vite": "^7.4.6",
-		"@storybook/test-runner": "^0.13.0",
-		"@storybook/testing-library": "^0.2.0",
-		"@tsconfig/vite-react": "^2.0.1",
-		"@types/d3": "^7.4.0",
-		"@types/lodash": "^4.14.199",
-		"@types/node": "^16.11.26",
-		"@types/react": "^18.2.22",
-		"@types/react-dom": "^17.0.11",
-		"@types/react-gravatar": "^2.6.10",
-		"@types/react-syntax-highlighter": "^13.5.2",
-		"axe-playwright": "^1.2.3",
-		"classnames": "^2.3.1",
-		"concurrently": "^8.2.0",
-		"eslint": "^8.48.0",
-		"http-server": "^14.1.1",
-		"prettier": "^3.0.3",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"react-gravatar": "^2.6.3",
-		"react-markdown": "^8.0.7",
-		"react-redux": "^8.0.5",
-		"react-router-dom": "^6.2.1",
-		"react-syntax-highlighter": "^15.5.0",
-		"react-use-clipboard": "^1.0.7",
-		"remark-frontmatter": "^5.0.0",
-		"remark-gfm": "^3.0.1",
-		"remark-unwrap-images": "^4.0.0",
-		"sass": "^1.68.0",
-		"storybook": "^7.4.6",
-		"storybook-addon-react-router-v6": "^2.0.5",
-		"storybook-react-context": "^0.6.0",
-		"stylelint": "^15.10.3",
-		"typescript": "^5.2.2",
-		"vite": "^4.4.11",
-		"vite-plugin-dts": "^3.6.0",
-		"vite-tsconfig-paths": "^4.2.1",
-		"wait-on": "^7.0.1"
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	}
+  "name": "@sikaeducation/ui",
+  "version": "2.0.4",
+  "description": "Sika's UI library, docs at [https://ui.sikaeducation.com](https://ui.sikaeducation.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sikaeducation/ui.git"
+  },
+  "keywords": [
+    "ui",
+    "component library",
+    "react",
+    "storybook",
+    "styling",
+    "scss"
+  ],
+  "author": "Kyle Coberly <kyle.coberly@gmail.com>",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/sikaeducation/ui/issues"
+  },
+  "engines": {
+    "node": ">= 20.8.1"
+  },
+  "homepage": "https://github.com/sikaeducation/ui",
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./dist/components.js",
+    "./components.css": "./dist/style.css",
+    "./reset": "./dist/styles/_reset.scss",
+    "./styles": "./dist/styles/_index.scss",
+    "./types": "./dist/components.d.ts"
+  },
+  "types": "dist/components.d.ts",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "d": "npm run dev",
+    "lint": "npm run lint:ts ; npm run lint:scss ; npm run format",
+    "l": "npm run lint",
+    "lint:ts": "eslint --report-unused-disable-directives --ignore-path .gitignore --fix .",
+    "lint:scss": "stylelint --fix **/*.scss",
+    "format": "prettier . --write",
+    "build:watch": "vite build --watch",
+    "bw": "npm run build:watch",
+    "build:storybook": "storybook build",
+    "build:assets": "cp -r ./public/* ./dist/",
+    "build": "vite build && npm run build:assets",
+    "test": "test-storybook -- --detectOpenHandles",
+    "test:watch": "test-storybook -- --detectOpenHandles --watch",
+    "tw": "npm run test:watch",
+    "test:ci": "./static-server-test.sh"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "@mui/material": "^5.14.15",
+    "@sikaeducation/sika-graph": "^1.0.8"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@sikaeducation/eslint-config": "^3.0.3",
+    "@sikaeducation/stylelint-config": "^1.1.2",
+    "@storybook/addon-a11y": "^7.4.5",
+    "@storybook/addon-actions": "^7.3.2",
+    "@storybook/addon-docs": "^7.4.6",
+    "@storybook/addon-essentials": "^7.3.2",
+    "@storybook/addon-interactions": "^7.4.5",
+    "@storybook/addon-links": "^7.3.2",
+    "@storybook/blocks": "^7.3.2",
+    "@storybook/jest": "^0.2.1",
+    "@storybook/node-logger": "^7.3.2",
+    "@storybook/react": "^7.3.2",
+    "@storybook/react-vite": "^7.4.6",
+    "@storybook/test-runner": "^0.13.0",
+    "@storybook/testing-library": "^0.2.0",
+    "@tsconfig/vite-react": "^2.0.1",
+    "@types/d3": "^7.4.0",
+    "@types/lodash": "^4.14.199",
+    "@types/node": "^16.11.26",
+    "@types/react": "^18.2.22",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-gravatar": "^2.6.10",
+    "@types/react-syntax-highlighter": "^13.5.2",
+    "axe-playwright": "^1.2.3",
+    "classnames": "^2.3.1",
+    "concurrently": "^8.2.0",
+    "eslint": "^8.48.0",
+    "http-server": "^14.1.1",
+    "prettier": "^3.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-gravatar": "^2.6.3",
+    "react-markdown": "^8.0.7",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.2.1",
+    "react-syntax-highlighter": "^15.5.0",
+    "react-use-clipboard": "^1.0.7",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^3.0.1",
+    "remark-unwrap-images": "^4.0.0",
+    "sass": "^1.68.0",
+    "storybook": "^7.4.6",
+    "storybook-addon-react-router-v6": "^2.0.5",
+    "storybook-react-context": "^0.6.0",
+    "stylelint": "^15.10.3",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.11",
+    "vite-plugin-dts": "^3.6.0",
+    "vite-tsconfig-paths": "^4.2.1",
+    "wait-on": "^7.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
