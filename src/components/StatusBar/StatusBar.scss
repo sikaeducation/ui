@@ -1,0 +1,44 @@
+@use "$/styles" as *;
+
+.StatusBar {
+  position: absolute;
+  border-end-start-radius: $borders-radius;
+  border-end-end-radius: $borders-radius;
+  inset-block-end: 0;
+  block-size: 5px;
+  inline-size: 100%;
+  border-block-end: 5px solid $colors-primary-5;
+
+  &.success {
+    border-block-end-color: $colors-success-6;
+  }
+
+  &.error {
+    border-block-end-color: $colors-failure-5;
+  }
+
+  &.working {
+    animation-name: pulse-primary-color;
+    animation-duration: 0.8s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    border-block-end-color: $colors-primary-5;
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      animation: none;
+      border-block-end-color: $colors-primary-5;
+      block-size: 5px;
+    }
+  }
+}
+
+@keyframes pulse-primary-color {
+  from {
+    border-block-end-color: $colors-primary-3;
+  }
+
+  to {
+    border-block-end-color: $colors-primary-8;
+  }
+}

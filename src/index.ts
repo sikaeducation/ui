@@ -32,6 +32,7 @@ export { default as QuickAdd } from "@/components/QuickAdd";
 export { default as SearchBox } from "@/components/SearchBox";
 export { default as Tag } from "@/components/Tag";
 export { default as TagManager } from "@/components/TagManager";
+export { default as StatusBar } from "@/components/StatusBar";
 
 export { default as DataTable } from "@/widgets/DataTable";
 export { default as Form } from "@/widgets/Form";
