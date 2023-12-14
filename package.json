@@ -106,7 +106,7 @@
     "react-syntax-highlighter": "^15.5.0",
     "react-use-clipboard": "^1.0.7",
     "remark-frontmatter": "^5.0.0",
-    "remark-gfm": "^3.0.1",
+    "remark-gfm": "^4.0.0",
     "remark-unwrap-images": "^4.0.0",
     "sass": "^1.68.0",
     "storybook": "^7.4.6",
