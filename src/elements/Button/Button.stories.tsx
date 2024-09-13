@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { jest, expect } from "@storybook/jest";
-import { within, userEvent } from "@storybook/testing-library";
+import { expect } from "@storybook/test";
+import * as test from "@storybook/test";
+import { within, userEvent } from "@storybook/test";
 
 import Button from ".";
 
@@ -15,7 +16,7 @@ export const Action: Story = {
   args: {
     type: "primary",
     children: "Do it!",
-    action: jest.fn(),
+    action: test.fn(),
   },
   play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement);
@@ -33,7 +34,7 @@ export const PrimarySmall: Story = {
   args: {
     type: "primary",
     children: "Do it!",
-    action: jest.fn(),
+    action: test.fn(),
   },
 };
 

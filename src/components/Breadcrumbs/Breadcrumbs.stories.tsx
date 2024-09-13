@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { within } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
-import { withRouter } from "storybook-addon-react-router-v6";
+import { within } from "@storybook/test";
+import { expect } from "@storybook/test";
+import { withRouter } from "storybook-addon-remix-react-router";
 
 import Breadcrumbs from ".";
 

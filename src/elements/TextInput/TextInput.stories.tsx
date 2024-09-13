@@ -1,6 +1,6 @@
 import type { StoryObj, Meta } from "@storybook/react";
-import { expect } from "@storybook/jest";
-import { within } from "@storybook/testing-library";
+import { expect } from "@storybook/test";
+import { within } from "@storybook/test";
 
 import { useState } from "react";
 import TextInput from ".";
