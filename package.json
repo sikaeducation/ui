@@ -81,7 +81,7 @@
     "@storybook/node-logger": "^7.3.2",
     "@storybook/react": "^7.3.2",
     "@storybook/react-vite": "^7.4.6",
-    "@storybook/test-runner": "^0.13.0",
+    "@storybook/test-runner": "^0.19.1",
     "@storybook/testing-library": "^0.2.0",
     "@tsconfig/vite-react": "^2.0.1",
     "@types/d3": "^7.4.0",
@@ -115,7 +115,7 @@
     "stylelint": "^15.10.3",
     "typescript": "^5.2.2",
     "vite": "^4.4.11",
-    "vite-plugin-dts": "^3.6.0",
+    "vite-plugin-dts": "^4.2.1",
     "vite-tsconfig-paths": "^4.2.1",
     "wait-on": "^7.0.1"
   },
