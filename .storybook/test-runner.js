@@ -1,11 +1,11 @@
 import { getStoryContext } from "@storybook/test-runner";
-import { configureAxe, injectAxe, checkA11y } from "axe-playwright";
+import { checkA11y, configureAxe, injectAxe } from "axe-playwright";
 
 export default {
-  async preRender(page) {
+  async preVisit(page) {
     await injectAxe(page);
   },
-  async postRender(page, context) {
+  async postVisit(page, context) {
     const storyContext = await getStoryContext(page, context);
 
     // Do not test a11y for stories that disable a11y
