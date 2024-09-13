@@ -9,7 +9,7 @@ const config: StorybookConfig = {
   stories: [
     "../src/**/*.mdx",
     "../src/**/*.mdx",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+    "../src/**/*.stories.@(js|jsx|ts|tsx)",
   ],
 
   addons: [
@@ -24,7 +24,7 @@ const config: StorybookConfig = {
       },
     },
     "@storybook/addon-interactions",
-    "storybook-addon-react-router-v6",
+    "storybook-addon-remix-react-router",
     "@storybook/addon-a11y",
     "storybook-react-context",
     "@storybook/addon-links",
@@ -42,8 +42,8 @@ const config: StorybookConfig = {
   },
 
   typescript: {
-    reactDocgen: "react-docgen-typescript"
-  }
+    reactDocgen: "react-docgen-typescript",
+  },
 };
 
 export default config;
