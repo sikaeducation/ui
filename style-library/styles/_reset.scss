@@ -114,7 +114,9 @@ section {
 body {
   @include typography.body-font;
 
-  line-height: 1;
+  & {
+    line-height: 1;
+  }
 }
 
 ol,
@@ -155,7 +157,9 @@ button,
 textarea {
   @include typography.body-font;
 
-  display: block;
+  & {
+    display: block;
+  }
 }
 
 p,

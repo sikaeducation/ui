@@ -18,13 +18,17 @@
   .low-shadow {
     @include shadows-small;
 
-    border: 1px dashed hsl(0deg 0% 93%);
+    & {
+      border: 1px dashed hsl(0deg 0% 93%);
+    }
   }
 
   .high-shadow {
     @include shadows-large;
 
-    border: 1px dashed hsl(0deg 0% 93%);
+    & {
+      border: 1px dashed hsl(0deg 0% 93%);
+    }
   }
 
   .underlay-container {
