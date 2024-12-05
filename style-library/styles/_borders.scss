@@ -10,10 +10,12 @@ $radius: 4px;
 }
 
 @mixin underline-on-focus {
-  transition: border-block-end sizes.$transition;
+  & {
+    transition: border-block-end sizes.$transition;
 
-  // border-top: calc(3px + 2px) solid transparentize($colors-primary-5, 1);
-  border-block-end: 3px solid colors.$white;
+    // border-top: calc(3px + 2px) solid transparentize($colors-primary-5, 1);
+    border-block-end: 3px solid colors.$white;
+  }
 
   &:focus {
     @include trace;

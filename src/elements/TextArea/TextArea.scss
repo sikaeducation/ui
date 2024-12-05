@@ -11,13 +11,15 @@
     @include borders-trace;
     @include borders-underline-on-focus;
 
-    padding: $sizes-s2 $sizes-s2;
-    border: none;
-    resize: block;
-    min-block-size: $sizes-s9;
-    inline-size: calc(100% + 16px);
-    margin-inline-start: -8px; // Visually adjust to align with input
-    overflow-block: auto;
+    & {
+      padding: $sizes-s2 $sizes-s2;
+      border: none;
+      resize: block;
+      min-block-size: $sizes-s9;
+      inline-size: calc(100% + 16px);
+      margin-inline-start: -8px; // Visually adjust to align with input
+      overflow-block: auto;
+    }
 
     &.editable {
       @include borders-underline-on-focus;
