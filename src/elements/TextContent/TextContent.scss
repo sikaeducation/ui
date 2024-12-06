@@ -8,5 +8,7 @@
   // Increasing specificity to break Storybook styles
   @include typography-body-font;
 
-  max-inline-size: $sizes-s16;
+  & {
+    max-inline-size: $sizes-s16;
+  }
 }
