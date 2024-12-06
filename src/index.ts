@@ -8,7 +8,7 @@ export { default as DropDown } from "@/elements/DropDown";
 export { default as Heading } from "@/elements/Heading";
 export { default as Icon } from "@/elements/Icon";
 export { default as Link } from "@/elements/Link";
-export { default as Logo } from "@/elements/Logo";
+export { default as SikaLogo } from "@/elements/SikaLogo";
 export { default as Notification } from "@/elements/Notification";
 export { default as OutlinedCircle } from "@/elements/OutlinedCircle";
 export { default as Panel } from "@/elements/Panel";
@@ -20,6 +20,8 @@ export { default as TextContent } from "@/elements/TextContent";
 export { default as TextInput } from "@/elements/TextInput";
 export { default as Toggle } from "@/elements/Toggle";
 export { default as StatusMessage } from "@/elements/StatusMessage";
+export { default as Logo } from "@/elements/Logo";
+export { default as Wordmark } from "@/elements/Wordmark";
 
 export { default as Breadcrumbs } from "@/components/Breadcrumbs";
 export { default as Drawer } from "@/components/Drawer";

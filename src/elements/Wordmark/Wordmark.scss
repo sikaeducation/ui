@@ -1,15 +1,12 @@
 @use "$/styles" as *;
 
-.Logo {
+.Wordmark {
   display: inline-block;
-  &.badge {
-    width: $sizes-s6;
-  }
-  &.regular {
-    width: $sizes-s8;
-  }
-  &.full {
+  &.small {
     width: $sizes-s10;
+  }
+  &.large {
+    width: $sizes-s14;
   }
   &.monochrome {
     filter: grayscale(100);

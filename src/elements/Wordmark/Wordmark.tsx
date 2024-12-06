@@ -1,25 +1,24 @@
 import classNames from "classnames";
-import "./Logo.scss";
+import "./Wordmark.scss";
 
 import logos from "./logos";
 
 type Props = {
-  size: "badge" | "regular" | "full";
+  size: "small" | "large";
   subject: keyof typeof logos;
   style: "color" | "monochrome";
 };
 
-export default function Logo(
-  { size = "regular", subject, style = "color" }: Props,
+export default function Wordmark(
+  { size = "small", subject, style = "color" }: Props,
 ) {
   const { Svg, name } = logos[subject];
   return (
     <span
       className={classNames({
-        Logo: true,
-        badge: size === "badge",
-        regular: size === "regular",
-        full: size === "full",
+        Wordmark: true,
+        small: size === "small",
+        large: size === "large",
         color: style === "color",
         monochrome: style === "monochrome",
       })}

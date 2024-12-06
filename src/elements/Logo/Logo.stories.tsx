@@ -1,27 +1,60 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import Logo from ".";
 
 const meta: Meta<typeof Logo> = {
   component: Logo,
 };
-
 export default meta;
 
 type Story = StoryObj<typeof Logo>;
 
-export const Small: Story = {
+export const Default: Story = {
   args: {
-    size: "small",
+    subject: "git",
   },
 };
-export const Medium: Story = {
+
+export const Badge: Story = {
   args: {
-    size: "medium",
+    ...Default.args,
+    size: "badge",
   },
 };
-export const Large: Story = {
+
+export const Regular: Story = {
   args: {
-    size: "large",
+    ...Default.args,
+    size: "regular",
+  },
+};
+
+export const Full: Story = {
+  args: {
+    ...Default.args,
+    size: "full",
+  },
+};
+
+export const BadgeMono: Story = {
+  args: {
+    ...Default.args,
+    size: "badge",
+    style: "monochrome",
+  },
+};
+
+export const RegularMono: Story = {
+  args: {
+    ...Default.args,
+    size: "regular",
+    style: "monochrome",
+  },
+};
+
+export const FullMono: Story = {
+  args: {
+    ...Default.args,
+    size: "full",
+    style: "monochrome",
   },
 };
