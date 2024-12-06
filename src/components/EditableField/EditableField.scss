@@ -9,9 +9,11 @@
   input {
     @include borders-underline-on-focus;
 
-    padding: $sizes-s2;
-    border: none;
-    outline: none;
-    margin-inline-start: -1 * $sizes-s2;
+    & {
+      padding: $sizes-s2;
+      border: none;
+      outline: none;
+      margin-inline-start: -1 * $sizes-s2;
+    }
   }
 }

@@ -3,12 +3,14 @@
 .Notification {
   @include shadows-large;
 
-  padding: $sizes-s2;
-  border-radius: $borders-radius;
-  background-color: $colors-primary-10;
-  color: $colors-primary-1;
-  text-align: center;
-  max-inline-size: $sizes-s11;
+  & {
+    padding: $sizes-s2;
+    border-radius: $borders-radius;
+    background-color: $colors-primary-10;
+    color: $colors-primary-1;
+    text-align: center;
+    max-inline-size: $sizes-s11;
+  }
 
   > p {
     margin: 0;

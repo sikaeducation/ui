@@ -12,7 +12,7 @@ type Props = {
 export default function Wordmark(
   { size = "small", subject, style = "color" }: Props,
 ) {
-  const { Svg, name } = logos[subject];
+  const { Svg, name, proportion } = logos[subject];
   return (
     <span
       className={classNames({
@@ -20,6 +20,9 @@ export default function Wordmark(
         small: size === "small",
         large: size === "large",
         color: style === "color",
+        balanced: proportion === "balanced",
+        wide: proportion === "wide",
+        tall: proportion === "tall",
         monochrome: style === "monochrome",
       })}
       title={name}

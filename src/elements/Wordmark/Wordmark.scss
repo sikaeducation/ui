@@ -1,12 +1,30 @@
 @use "$/styles" as *;
 
 .Wordmark {
-  display: inline-block;
-  &.small {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  &.small.tall {
     width: $sizes-s10;
+    height: $sizes-s10;
   }
-  &.large {
-    width: $sizes-s14;
+  &.small.balanced {
+    width: $sizes-s11;
+    height: $sizes-s10;
+  }
+  &.small.wide {
+    width: $sizes-s13;
+    height: $sizes-s10;
+  }
+  &.large.tall {
+    width: $sizes-s12;
+  }
+  &.large.balanced {
+    width: $sizes-s13;
+  }
+  &.large.wide {
+    width: $sizes-s15;
   }
   &.monochrome {
     filter: grayscale(100);
