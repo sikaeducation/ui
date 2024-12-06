@@ -6,11 +6,11 @@
   align-items: center;
 
   &.small.tall {
-    width: $sizes-s10;
+    width: $sizes-s11;
     height: $sizes-s10;
   }
   &.small.balanced {
-    width: $sizes-s11;
+    width: $sizes-s12;
     height: $sizes-s10;
   }
   &.small.wide {
@@ -19,14 +19,17 @@
   }
   &.large.tall {
     width: $sizes-s12;
+    height: $sizes-s11;
   }
   &.large.balanced {
     width: $sizes-s13;
+    height: $sizes-s11;
   }
   &.large.wide {
     width: $sizes-s15;
+    height: $sizes-s11;
   }
   &.monochrome {
-    filter: grayscale(100);
+    filter: grayscale(0.95);
   }
 }

@@ -1,0 +1,11 @@
+@use "$/styles" as *;
+
+.WordmarkList {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  svg {
+    margin: 0 $sizes-s5;
+  }
+}

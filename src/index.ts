@@ -39,3 +39,5 @@ export { default as StatusBar } from "@/components/StatusBar";
 export { default as DataTable } from "@/widgets/DataTable";
 export { default as Form } from "@/widgets/Form";
 export { default as MarkdownPreviewer } from "@/widgets/MarkdownPreviewer";
+
+export { default as WordmarkList } from "@/web/WordmarkList";
