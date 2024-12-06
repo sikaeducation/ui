@@ -3,9 +3,11 @@
 .TextArea {
   @include forms-form-control;
 
-  position: relative;
-  display: block;
-  margin-block-end: $sizes-s3;
+  & {
+    position: relative;
+    display: block;
+    margin-block-end: $sizes-s3;
+  }
 
   textarea {
     @include borders-trace;
@@ -24,9 +26,11 @@
     &.editable {
       @include borders-underline-on-focus;
 
-      resize: none;
-      cursor: pointer;
-      min-block-size: auto;
+      & {
+        resize: none;
+        cursor: pointer;
+        min-block-size: auto;
+      }
 
       &:focus {
         resize: block;

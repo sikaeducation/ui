@@ -20,7 +20,9 @@ $radius: 4px;
   &:focus {
     @include trace;
 
-    border-block-end: 3px solid colors.$primary-5;
+    & {
+      border-block-end: 3px solid colors.$primary-5;
+    }
   }
 }
 
