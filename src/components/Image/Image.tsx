@@ -7,7 +7,7 @@ type Props = {
   src: string;
   alt: string;
   attribution?: string;
-  lightbox: boolean;
+  lightbox?: boolean;
 };
 
 export default function Image({
@@ -38,38 +38,42 @@ export default function Image({
     );
   };
 
-  const ImageElement = isLightboxed ? (
-    <LightBox onClose={() => setIsLightBoxed(false)}>
-      <div
-        className={classNames({
-          "image-wrapper": true,
-          lightboxed: isLightboxed,
-        })}
-      >
-        <>
-          {
-            /* Swallow click, prevent bubbling */
-            getImage(() => event?.stopPropagation())
-          }
-          {$attribution}
-        </>
+  const ImageElement = isLightboxed
+    ? (
+      <LightBox onClose={() => setIsLightBoxed(false)}>
+        <div
+          className={classNames({
+            "image-wrapper": true,
+            lightboxed: isLightboxed,
+          })}
+        >
+          <>
+            {
+              /* Swallow click, prevent bubbling */
+              getImage(() => event?.stopPropagation())
+            }
+            {$attribution}
+          </>
+        </div>
+      </LightBox>
+    )
+    : (
+      <div className="image-wrapper">
+        {lightbox
+          ? (
+            <>
+              {getImage(() => setIsLightBoxed(true))}
+              {$attribution}
+            </>
+          )
+          : (
+            <>
+              {getImage(() => event?.stopPropagation())}
+              {$attribution}
+            </>
+          )}
       </div>
-    </LightBox>
-  ) : (
-    <div className="image-wrapper">
-      {lightbox ? (
-        <>
-          {getImage(() => setIsLightBoxed(true))}
-          {$attribution}
-        </>
-      ) : (
-        <>
-          {getImage(() => event?.stopPropagation())}
-          {$attribution}
-        </>
-      )}
-    </div>
-  );
+    );
 
   return <div className="Image">{ImageElement}</div>;
 }

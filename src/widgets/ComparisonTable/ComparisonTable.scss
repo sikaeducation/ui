@@ -1,4 +1,30 @@
 @use "$/styles" as *;
 
 .ComparisonTable {
+  font-size: $sizes-f6;
+  thead {
+    font-weight: bold;
+  }
+  tbody {
+    td:first-child {
+      border-right: 1px solid $colors-grey-7;
+      text-align: right;
+      width: $sizes-s11;
+    }
+    td:nth-child(2n + 3) {
+      background-color: $colors-grey-9;
+    }
+  }
+  tr {
+  }
+  td {
+    text-align: center;
+    padding: $sizes-s5 $sizes-s5;
+    &:has(.Icon) {
+      padding: 0 $sizes-s5;
+    }
+  }
+  .Icon {
+    font-size: $sizes-f7;
+  }
 }
