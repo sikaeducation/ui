@@ -11,4 +11,10 @@
   & {
     max-inline-size: $sizes-s16;
   }
+
+  &.hero {
+    font-family: "Fira Mono", mono;
+    font-size: $sizes-f11;
+    line-height: 1.1;
+  }
 }
