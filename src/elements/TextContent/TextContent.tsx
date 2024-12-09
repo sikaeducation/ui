@@ -5,7 +5,7 @@ import classNames from "classnames";
 type Props = {
   children: ReactNode;
   className?: string;
-  style: "body" | "hero";
+  style?: "body" | "hero" | "accent";
 };
 
 export default function TextArea(
@@ -16,6 +16,8 @@ export default function TextArea(
       className={classNames({
         [className]: true,
         TextContent: true,
+        body: style === "body",
+        accent: style === "accent",
         hero: style === "hero",
       })}
     >

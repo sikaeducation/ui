@@ -3,16 +3,20 @@
 .TextInput {
   @include forms-form-control;
 
-  display: block;
-  margin-block-end: $sizes-s3;
+  & {
+    display: block;
+    margin-block-end: $sizes-s3;
+  }
 
   input {
     @include borders-trace;
     @include borders-underline-on-focus;
 
-    padding: $sizes-s1 $sizes-s2;
-    border: none;
-    inline-size: calc(100% + $sizes-s2 + $sizes-s2);
-    margin-inline-start: -1 * $sizes-s2;
+    & {
+      padding: $sizes-s1 $sizes-s2;
+      border: none;
+      inline-size: calc(100% + $sizes-s2 + $sizes-s2);
+      margin-inline-start: -1 * $sizes-s2;
+    }
   }
 }

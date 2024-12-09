@@ -12,6 +12,11 @@
     max-inline-size: $sizes-s16;
   }
 
+  &.accent {
+    font-size: $sizes-f6;
+    line-height: 1.3;
+  }
+
   &.hero {
     font-family: "Fira Mono", mono;
     font-size: $sizes-f11;
