@@ -5,9 +5,17 @@
 TYPE="${1,,}s" # Lowercase + naive pluralize
 NAME=$2
 
+mkdir "src/$TYPE/$NAME"
+
 for FILE in $(ls scripts/templates) ; do
-    sed "s/Component/$NAME/g" ./scripts/templates/$FILE \
-      > ./src/$TYPE/$NAME/$FILE
+  if [[ $FILE != 'index.tsx' ]]; then
+    DESTINATION=`echo $FILE | sed --expression="s/^\w*\./$NAME\./"`
+  else
+    DESTINATION=$FILE
+  fi
+
+  sed "s/Component/$NAME/g" "./scripts/templates/$FILE" \
+    > "src/$TYPE/$NAME/$DESTINATION"
 done
 
 echo "Created src/$TYPE/$NAME"
