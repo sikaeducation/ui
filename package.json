@@ -52,7 +52,11 @@
     "test": "test-storybook -- --detectOpenHandles",
     "test:watch": "test-storybook -- --detectOpenHandles --watch",
     "tw": "npm run test:watch",
-    "test:ci": "./static-server-test.sh"
+    "test:ci": "./scripts/static-server-test",
+    "new": "./scripts/new",
+    "new:e": "./scripts/new element",
+    "new:c": "./scripts/new component",
+    "new:w": "./scripts/new widget"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",

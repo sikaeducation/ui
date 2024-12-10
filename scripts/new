@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Ex. `./new component Button`
+
+TYPE="${1,,}s" # Lowercase + naive pluralize
+NAME=$2
+
+for FILE in $(ls scripts/templates) ; do
+    sed "s/Component/$NAME/g" ./scripts/templates/$FILE \
+      > ./src/$TYPE/$NAME/$FILE
+done
+
+echo "Created src/$TYPE/$NAME"
