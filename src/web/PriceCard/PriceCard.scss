@@ -1,4 +1,72 @@
 @use "$/styles" as *;
 
 .PriceCard {
+  @include shadows-large;
+
+  & {
+    max-width: $sizes-s14;
+  }
+
+  header {
+    background: radial-gradient($colors-white, lighten($colors-primary-9, 12%));
+    border-image: radial-gradient($colors-primary-1, $colors-primary-6) 1 round;
+    border-image-width: 8px 0 0 0;
+    border-width: 8px;
+    border-style: solid;
+    .badge {
+      @include shadows-small;
+      & {
+        display: inline-block;
+        margin-top: $sizes-s2;
+        padding: $sizes-s2;
+        background: radial-gradient($colors-primary-10, $colors-primary-6);
+        border-radius: 4px;
+      }
+    }
+    h2 {
+      color: $colors-black;
+      font-weight: 700;
+    }
+    .subheading {
+      margin-top: -6px;
+      font-size: $sizes-f6;
+    }
+  }
+
+  .pricing {
+    display: flex;
+    flex-flow: row wrap;
+    margin: $sizes-s5 0;
+    .sale {
+      font-size: $sizes-f10;
+      font-weight: 700;
+      text-shadow: 1px 1px 2px $colors-grey-5;
+    }
+    del {
+      font-size: $sizes-f10;
+      margin-left: $sizes-s4;
+      color: $colors-grey-8;
+      margin-top: -4px;
+    }
+    .unit {
+      font-size: $sizes-f6;
+      margin-left: $sizes-s2;
+      font-style: italic;
+    }
+  }
+
+  header, .content {
+    padding: $sizes-s4;
+  }
+
+  .content .Markdown {
+    p, li {
+      font-size: $sizes-f5;
+    }
+  }
+
+  .Button {
+    width: 100%;
+    font-size: $sizes-f5;
+  }
 }
