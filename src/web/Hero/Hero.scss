@@ -1,0 +1,12 @@
+@use "$/styles" as *;
+
+.Hero {
+  min-height: 300px;
+  background: linear-gradient(to right, $colors-primary-4, $colors-primary-9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .tagline {
+    font-size: $sizes-f11;
+  }
+}
