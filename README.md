@@ -21,7 +21,7 @@ import "@sikaeducation/ui/reset"; // App reset SCSS
 import "@sikaeducation/ui/styles"; // SCSS style library
 
 // Import these in any component
-import { Markdown, Button, TextInput } from "@sikaeducation/ui"; // Component library
+import { Button, Markdown, TextInput } from "@sikaeducation/ui"; // Component library
 ```
 
 SCSS:
@@ -47,7 +47,8 @@ button {
   - `borders-*`
   - `forms-*`
 
-Sika fonts are in `/dist/fonts` of the compiled package and should be copied into a public `fonts` directory on the client.
+Sika fonts are in `/dist/fonts` of the compiled package and should be copied
+into a public `fonts` directory on the client.
 
 ### Component Library
 
@@ -72,9 +73,16 @@ Scripts:
 - `build:watch`, `bw` - Continuously build (for `npm link`ed projects)
 - `build:storybook` - Build static storybook site
 - `test:ci` - Run all tests statically
-- `test`, `test:watch`, `tw` - Run tests through Storybook (Server must be running)
+- `test`, `test:watch`, `tw` - Run tests through Storybook (Server must be
+  running)
+- `new <component|widget|element> <name>`, `new:c`, `new:w`, `new:e`
+  - Example: `new component SearchBox`
 
-Run `npm link` while inside this repo to create a global symlink for that folder. Run `npm link @sikaeducation/stylelint-config` in a client repo to link to locally installed version (this will be overwritten on the next `npm install`). Then run `npm run build:watch` in this repo to auto-build server for real-time style updates in clients.
+Run `npm link` while inside this repo to create a global symlink for that
+folder. Run `npm link @sikaeducation/stylelint-config` in a client repo to link
+to locally installed version (this will be overwritten on the next
+`npm install`). Then run `npm run build:watch` in this repo to auto-build server
+for real-time style updates in clients.
 
 Aliases:
 
@@ -83,10 +91,21 @@ Aliases:
 
 ### Deployment
 
-Set `NPM_TOKEN` on GitHub Actions to publish. Generate it on [Sika's npm page](https://www.npmjs.com/settings/sikaeducation/tokens) then add it to the [secrets page](https://github.com/sikaeducation/eslint-config/settings/secrets/actions).
+Set `NPM_TOKEN` on GitHub Actions to publish. Generate it on
+[Sika's npm page](https://www.npmjs.com/settings/sikaeducation/tokens) then add
+it to the
+[secrets page](https://github.com/sikaeducation/eslint-config/settings/secrets/actions).
 
-Set `NETLIFY_SITE_ID` and `NETLIFY_AUTH_TOKEN` on GitHub Actions to deploy to Netlify. Get these on the [Netlify apps page](https://app.netlify.com/user/applications) and add them to the [secrets page](https://github.com/sikaeducation/eslint-config/settings/secrets/actions).
+Set `NETLIFY_SITE_ID` and `NETLIFY_AUTH_TOKEN` on GitHub Actions to deploy to
+Netlify. Get these on the
+[Netlify apps page](https://app.netlify.com/user/applications) and add them to
+the
+[secrets page](https://github.com/sikaeducation/eslint-config/settings/secrets/actions).
 
-Publish updates by incrementing the version with `npm version patch|minor|major` and pushing.
+Publish updates by incrementing the version with `npm version patch|minor|major`
+and pushing.
 
-Static documentation deploys to [Netflify](https://app.netlify.com/sites/sikaeducation-ui/overview), library deploys to npm as [@sikaeducation/ui](https://www.npmjs.com/package/@sikaeducation/ui).
+Static documentation deploys to
+[Netflify](https://app.netlify.com/sites/sikaeducation-ui/overview), library
+deploys to npm as
+[@sikaeducation/ui](https://www.npmjs.com/package/@sikaeducation/ui).
