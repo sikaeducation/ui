@@ -2,6 +2,7 @@
 
 .Hero {
   min-height: 600px;
+  padding-top: $sizes-s9;
   background: linear-gradient(to bottom, $colors-primary-1, $colors-primary-5);
   color: $colors-white;
   display: flex;
@@ -14,6 +15,25 @@
   }
   .subheading {
     font-size: $sizes-f6;
-    color: $colors-grey-10;
+    color: $colors-grey-9;
+    max-width: $sizes-s14;
+    line-height: 1.3;
+    text-align: center;
+  }
+  .badges {
+    display: flex;
+    flex-flow: row wrap;
+    .Badge {
+      margin: 0 $sizes-s2;
+    }
+  }
+  .clients {
+    text-align: center;
+    font-size: $sizes-f5;
+    font-weight: 700;
+    color: $colors-grey-9;
+    margin-top: $sizes-s8;
+    margin-bottom: $sizes-s8;
+    max-width: $sizes-s15;
   }
 }

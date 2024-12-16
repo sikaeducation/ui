@@ -1,6 +1,7 @@
 import { Heading, Markdown, Tag, TextContent } from "@/index";
 import "./PriceCard.scss";
 import Button from "@/elements/Button";
+import Badge from "@/components/Badge";
 
 type Props = {
   heading: string;
@@ -24,7 +25,7 @@ export default function PriceCard(
   return (
     <section className="PriceCard">
       <header>
-        <span className="badge">{differentiator}</span>
+        <Badge type="primary">{differentiator}</Badge>
         <Heading level={2}>{heading}</Heading>
         <TextContent className="subheading">{subheading}</TextContent>
         <div className="pricing">

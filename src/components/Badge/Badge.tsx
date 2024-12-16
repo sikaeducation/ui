@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 type Props = {
   children: ReactNode;
-  type: "light" | "primary" | "dark";
+  type?: "light" | "primary" | "dark";
 };
 
 export default function Badge({ children, type = "light" }: Props) {

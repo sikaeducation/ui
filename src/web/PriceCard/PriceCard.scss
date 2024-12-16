@@ -13,16 +13,6 @@
     border-image-width: 8px 0 0 0;
     border-width: 8px;
     border-style: solid;
-    .badge {
-      @include shadows-small;
-      & {
-        display: inline-block;
-        margin-top: $sizes-s2;
-        padding: $sizes-s2;
-        background: radial-gradient($colors-primary-10, $colors-primary-6);
-        border-radius: 4px;
-      }
-    }
     h2 {
       color: $colors-black;
       font-weight: 700;
