@@ -3,12 +3,14 @@
 .Tag {
   @include shadows-small;
 
-  padding: 0 $sizes-s3 $sizes-s1 $sizes-s3;
-  border-radius: $borders-radius;
-  background-color: $colors-grey-9;
-  color: $colors-grey-3;
-  font-size: $sizes-f3;
-  white-space: nowrap;
+  & {
+    padding: 0 $sizes-s3 $sizes-s1 $sizes-s3;
+    border-radius: $borders-radius;
+    background-color: $colors-grey-9;
+    color: $colors-grey-3;
+    font-size: $sizes-f3;
+    white-space: nowrap;
+  }
 
   &.interactive {
     cursor: pointer;
