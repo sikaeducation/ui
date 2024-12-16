@@ -1,12 +1,19 @@
 @use "$/styles" as *;
 
 .Hero {
-  min-height: 300px;
-  background: linear-gradient(to right, $colors-primary-4, $colors-primary-9);
+  min-height: 600px;
+  background: linear-gradient(to bottom, $colors-primary-1, $colors-primary-5);
+  color: $colors-white;
   display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   .tagline {
     font-size: $sizes-f11;
+    margin-bottom: $sizes-s6;
+  }
+  .subheading {
+    font-size: $sizes-f6;
+    color: $colors-grey-10;
   }
 }
