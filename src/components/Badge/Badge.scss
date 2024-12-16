@@ -1,0 +1,40 @@
+@use "$/styles" as *;
+
+.Badge {
+  @include shadows-small;
+  & {
+    display: inline-block;
+    margin-top: $sizes-s2;
+    padding: $sizes-s2 $sizes-s3;
+    border-radius: 9px;
+    .Icon {
+      margin-right: $sizes-s2;
+      position: relative;
+      top: 1px; // Visual adjustment
+      color: $colors-grey-7;
+    }
+  }
+  &.light {
+    background-color: $colors-white;
+    color: $colors-grey-1;
+    .Icon {
+      color: $colors-grey-7;
+    }
+  }
+  &.primary {
+    background: linear-gradient(to bottom, $colors-primary-8, $colors-primary-6);
+    color: $colors-primary-1;
+    font-weight: 700;
+    .Icon {
+      color: $colors-primary-1;
+    }
+  }
+  &.dark {
+    background: linear-gradient(to bottom, $colors-primary-1, $colors-primary-4);
+    font-weight: 700;
+    color: $colors-white;
+    .Icon {
+      color: $colors-grey-9;
+    }
+  }
+}
