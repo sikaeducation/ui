@@ -2,10 +2,11 @@ import classNames from "classnames";
 import "./SikaLogo.scss";
 
 type Props = {
-  size: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large";
+  style?: "color" | "monochrome";
 };
 
-function SikaLogo({ size = "medium" }: Props) {
+function SikaLogo({ size = "medium", style = "color" }: Props) {
   return (
     <span
       className={classNames({
@@ -13,6 +14,8 @@ function SikaLogo({ size = "medium" }: Props) {
         small: size === "small",
         medium: size === "medium",
         large: size === "large",
+        color: style === "color",
+        monochrome: style === "monochrome",
       })}
     >
       <span className="s">S</span>

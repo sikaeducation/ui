@@ -1,0 +1,18 @@
+@use "$/styles" as *;
+
+.Header {
+  width: 100%;
+  position: absolute;
+  padding: $sizes-s5;
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    max-width: $sizes-s16;
+    margin: 0 auto;
+  }
+  .Button {
+    color: $colors-grey-9!important;
+  }
+}

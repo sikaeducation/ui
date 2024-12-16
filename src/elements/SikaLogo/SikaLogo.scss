@@ -2,11 +2,18 @@
 
 .SikaLogo {
   display: inline-block;
-  color: $colors-primary-3;
   font-family: "Gill Sans Condensed", sans-serif;
 
   a {
     text-decoration: none;
+  }
+
+  &.color {
+    color: $colors-primary-3;
+  }
+
+  &.monochrome {
+    color: $colors-white;
   }
 
   &.small {
