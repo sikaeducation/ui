@@ -28,7 +28,6 @@ const config: StorybookConfig = {
     "@storybook/addon-a11y",
     "storybook-react-context",
     "@storybook/addon-links",
-    "@storybook/addon-essentials",
   ],
 
   docs: {},
