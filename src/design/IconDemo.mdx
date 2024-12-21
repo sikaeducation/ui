@@ -1,0 +1,55 @@
+import { Meta, IconGallery, IconItem } from "@storybook/blocks";
+
+import Icon from "@/elements/Icon";
+
+<Meta title="Design/Icons" />
+
+# Icons
+
+## Interactions
+
+<IconGallery>
+  {[
+    "plus",
+    "close",
+    "search",
+    "view",
+    "no-view",
+    "expand",
+  ].map((icon) => (
+    <IconItem name={ icon }>
+      <Icon type={ icon } />
+    </IconItem>
+  ))}
+</IconGallery>
+
+## Activity Types
+
+<IconGallery>
+  {[
+    "article",
+  ].map((icon) => (
+    <IconItem name={ icon }>
+      <Icon type={ icon } />
+    </IconItem>
+  ))}
+</IconGallery>
+
+## Submissions
+
+<IconGallery>
+  {[
+    "accepted",
+    "pending",
+    "rejected",
+    "clear",
+    "confident",
+    "unclear",
+    "deferred",
+    "checkmark",
+  ].map((icon) => (
+    <IconItem name={ icon }>
+      <Icon type={ icon } />
+    </IconItem>
+  ))}
+</IconGallery>
