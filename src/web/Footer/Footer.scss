@@ -1,0 +1,24 @@
+@use "$/styles" as *;
+
+.Footer {
+  background-color: $colors-grey-1;
+  color: $colors-white;
+  padding: $sizes-s5 0;
+  .footer-wrapper {
+    max-width: $sizes-s15;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    section {
+      width: $sizes-s12;
+    }
+    h3 {
+      font-weight: 700;
+    }
+    li {
+      margin: $sizes-s3 0;
+      font-size: $sizes-f4;
+    }
+  }
+}

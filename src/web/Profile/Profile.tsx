@@ -1,13 +1,14 @@
 import "./Profile.scss";
 import Portrait from "@/components/Portrait";
 import TextContent from "@/elements/TextContent";
+import { Markdown } from "@/index";
 import classNames from "classnames";
 
 type Props = {
   imageUrl: string;
   altText: string;
   copy: string;
-  attribution: string;
+  attribution?: string;
   style: "profile" | "testimonial";
 };
 
@@ -24,15 +25,15 @@ export default function Profile(
         testimonial: style === "testimonial",
       })}
     >
-      <Portrait
-        src={imageUrl}
-        alt={altText}
-        style={portraitStyle}
-      />
+      <div className="portrait-wrapper">
+        <Portrait
+          src={imageUrl}
+          alt={altText}
+          style={portraitStyle}
+        />
+      </div>
       <div className="copy">
-        <TextContent style="accent">
-          {copy}
-        </TextContent>
+        <Markdown content={copy.trim()} />
         {attribution &&
           <p className="attribution">—{attribution}</p>}
       </div>

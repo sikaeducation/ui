@@ -8,7 +8,7 @@ type Props = {
   style?: "body" | "hero" | "accent";
 };
 
-export default function TextArea(
+export default function TextContent(
   { children, className = "", style = "body" }: Props,
 ) {
   return (

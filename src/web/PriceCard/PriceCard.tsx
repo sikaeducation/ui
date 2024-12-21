@@ -36,7 +36,7 @@ export default function PriceCard(
       </header>
       <div className="content">
         <Markdown content={body.trim()} />
-        <Button type="primary" action={button.action}>{button.text}</Button>
+        <Button type="cta" action={button.action}>{button.text}</Button>
       </div>
     </section>
   );

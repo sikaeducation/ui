@@ -5,15 +5,19 @@
   clip-path: border-box;
   border-radius: 50%;
   &.badge {
-    width: $sizes-s6;
+    max-height: $sizes-s6;
+    max-width: $sizes-s6;
   }
   &.small {
-    width: $sizes-s8;
+    max-height: $sizes-s8;
+    max-width: $sizes-s8;
   }
   &.medium {
-    width: $sizes-s12;
+    max-height: $sizes-s12;
+    max-width: $sizes-s12;
   }
   &.large {
-    width: $sizes-s13;
+    max-height: $sizes-s13;
+    max-width: $sizes-s13;
   }
 }

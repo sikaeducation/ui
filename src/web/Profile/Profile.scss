@@ -7,12 +7,19 @@
     margin: 0 auto;
     max-width: $sizes-s15;
   }
-  .Portrait {
+  .portrait-wrapper {
     flex: 1;
+    filter: drop-shadow(2px 2px 5px $colors-grey-2);
+  }
+  .Portrait {
   }
   .copy {
     flex: 2;
     padding-left: $sizes-f9;
+    p {
+      font-size: $sizes-f5;
+      margin-bottom: $sizes-s4;
+    }
   }
   .attribution {
     font-style: italic;

@@ -5,13 +5,15 @@
   &.primary-button {
     @include shadows-small;
 
-    border: none;
-    border-radius: $borders-radius;
-    background-color: $colors-primary-4;
-    color: $colors-white;
-    font-weight: 700;
-    cursor: pointer;
-    transition: none;
+    & {
+      border: none;
+      border-radius: $borders-radius;
+      background-color: $colors-primary-4;
+      color: $colors-white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: none;
+    }
 
     @media (hover: hover) {
       &:hover,
@@ -32,15 +34,38 @@
     }
   }
 
+  &.cta-button {
+    @include shadows-small;
+
+    & {
+      border: none;
+      border-radius: $borders-radius;
+      background-color: $colors-accent-4;
+      color: $colors-white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: none;
+    }
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        background-color: color.adjust($colors-accent-5, $lightness: -10%);
+      }
+    }
+  }
+
   &.secondary-button {
     @include shadows-small;
 
-    border: none;
-    border-radius: $borders-radius;
-    background-color: $colors-grey-9;
-    color: $colors-grey-2;
-    cursor: pointer;
-    transition: none;
+    & {
+      border: none;
+      border-radius: $borders-radius;
+      background-color: $colors-grey-9;
+      color: $colors-grey-2;
+      cursor: pointer;
+      transition: none;
+    }
 
     @media (hover: hover) {
       &:hover,

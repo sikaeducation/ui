@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { ReactNode } from "react";
 import "./Button.scss";
 
-type ButtonType = "primary" | "secondary" | "ghost";
+type ButtonType = "primary" | "secondary" | "ghost" | "cta";
 type Size = "tiny" | "small" | "large";
 type ActionType = "normal" | "failure";
 type Props = {
@@ -20,6 +20,7 @@ const buttonClasses: Record<ButtonType, string> = {
   primary: "primary-button",
   secondary: "secondary-button",
   ghost: "tertiary-button",
+  cta: "cta-button",
 };
 
 export default function ButtonFormSubmission({
@@ -37,16 +38,18 @@ export default function ButtonFormSubmission({
     <button
       onClick={action}
       type={submit ? "submit" : "button"}
-      className={`${className} ${classNames({
-        Button: true,
-        [buttonClass]: true,
-        disabled,
-        interactive: !disabled,
-        failure: actionType === "failure",
-        tiny: size === "tiny",
-        small: size === "small",
-        large: size === "large",
-      })}`}
+      className={`${className} ${
+        classNames({
+          Button: true,
+          [buttonClass]: true,
+          disabled,
+          interactive: !disabled,
+          failure: actionType === "failure",
+          tiny: size === "tiny",
+          small: size === "small",
+          large: size === "large",
+        })
+      }`}
     >
       {children}
     </button>

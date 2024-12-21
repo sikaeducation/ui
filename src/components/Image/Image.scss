@@ -4,7 +4,7 @@
   display: inline-block;
 
   .image-wrapper {
-    display: inline-block;
+    display: inline-flex;
     max-inline-size: $sizes-s17;
 
     &.lightboxed {

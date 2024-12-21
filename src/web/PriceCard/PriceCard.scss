@@ -10,15 +10,15 @@
   header {
     background: radial-gradient($colors-white, lighten($colors-primary-9, 12%));
     border-image: radial-gradient($colors-primary-1, $colors-primary-6) 1 round;
-    border-image-width: 8px 0 0 0;
-    border-width: 8px;
+    border-image-width: $sizes-s2 0 0 0;
+    border-width: $sizes-s2
     border-style: solid;
     h2 {
       color: $colors-black;
       font-weight: 700;
     }
     .subheading {
-      margin-top: -6px;
+      margin-top: -6px; // Visual adjustment
       font-size: $sizes-f6;
     }
   }
