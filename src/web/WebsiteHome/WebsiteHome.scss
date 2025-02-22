@@ -1,72 +1,48 @@
 @use "$/styles" as *;
 
 .WebsiteHome {
-  .price-cards {
-    margin-top: $sizes-s8;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-  }
-  .coach-profile {
+  section {
     margin-top: $sizes-s6;
+    @include utilities-center-block;
     h2 {
-      font-size: $sizes-f9;
-      text-align: center;
-      margin-bottom: $sizes-s6;
+      @include typography-display-heading-2;
     }
-    .Profile {
-      margin: 0 auto;
+    .Markdown {
+      @include utilities-center-block;
     }
   }
-  .how-it-works {
-    margin-top: $sizes-s8;
-    h2 {
-      font-size: $sizes-f8;
-      text-align: center;
-      margin-bottom: $sizes-s6;
-    }
+  .what-is-sika, .how-it-works, .testimonials, {
+    max-width: $sizes-s15;
   }
-  .what-is-sika {
-    margin-top: $sizes-s8;
-    h2 {
-      font-size: $sizes-f8;
-      text-align: center;
-      margin-bottom: $sizes-s6;
-    }
+  .coach-profile, .technologies,  {
+    max-width: $sizes-s17;
   }
-  .testimonials {
-    margin-top: $sizes-s8;
-    h2 {
-      font-size: $sizes-f8;
-      text-align: center;
-      margin-bottom: $sizes-s6;
-    }
+  .price-cards, .sika-difference {
+    max-width: 100%;
   }
   .sika-difference {
-    margin-top: $sizes-s8;
     h2 {
-      font-size: $sizes-f8;
-      text-align: center;
-      margin-bottom: $sizes-s6;
+      @include utilities-center-block;
+      max-width: $sizes-s15;
     }
   }
-  .technologies {
-    max-width: $sizes-s17;
-    margin-left: auto;
-    margin-right: auto;
+  .price-cards {
+    @include utilities-flex-center-row;
     margin-top: $sizes-s8;
-    h2 {
-      font-size: $sizes-f7;
-      text-align: center;
-      margin-bottom: $sizes-s6;
+  }
+  .ComparisonTable {
+    @include utilities-center-block;
+  }
+  .technologies {
+    @include utilities-center-block;
+    @include typography-display-heading-2;
+    margin-top: $sizes-s8;
+    text-align: center;
+    .Markdown {
+      @include utilities-center-block;
     }
-    ul {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-    }
-    li {
-      margin: $sizes-s4;
-    }
+  }
+  .Profile {
+    @include utilities-center-block;
   }
 }

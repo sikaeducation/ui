@@ -29,3 +29,6 @@ export default function Logo(
     </span>
   );
 }
+
+// Object.keys strips types
+export const technologies = Object.keys(logos) as (keyof typeof logos)[];

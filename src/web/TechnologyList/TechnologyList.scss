@@ -1,0 +1,8 @@
+@use "$/styles" as *;
+
+.TechnologyList {
+  @include utilities-flex-center-row;
+  li {
+    margin: $sizes-s4;
+  }
+}

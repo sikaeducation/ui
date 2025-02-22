@@ -12,18 +12,30 @@
   src: url("/fonts/gsc.woff") format("woff");
 }
 
+@mixin display-heading-1 {
+  font-family: "Gill Sans", sans-serif;
+  font-size: sizes.$f11;
+  margin-bottom: sizes.$s6;
+}
+
+@mixin display-heading-2 {
+  font-family: "Gill Sans", sans-serif;
+  font-size: sizes.$f8;
+  margin-bottom: sizes.$s6;
+}
+
 @mixin heading-1 {
-  color: $colors-primary-3;
+  color: colors.$primary-3;
   font-weight: 700;
-  font-size: $sizes-f8;
+  font-size: sizes.$f8;
   font-family: "Gill Sans", sans-serif;
   line-height: 1.1;
 
-  @media (max-width: $sizes-small-breakpoint) {
-    font-size: $sizes-f6;
+  @media (max-width: sizes.$small-breakpoint) {
+    font-size: sizes.$f6;
 
     code {
-      font-size: $sizes-f4 + 0.2rem; // Visual match
+      font-size: sizes.$f4 + 0.2rem; // Visual match
     }
   }
 
@@ -32,11 +44,11 @@
   }
 
   &.margin {
-    margin-block-start: $sizes-s4;
-    margin-block-end: $sizes-s5;
+    margin-block-start: sizes.$s4;
+    margin-block-end: sizes.$s5;
 
-    @media (max-width: $sizes-small-breakpoint) {
-      margin-block-end: $sizes-s4;
+    @media (max-width: sizes.$small-breakpoint) {
+      margin-block-end: sizes.$s4;
     }
   }
 }

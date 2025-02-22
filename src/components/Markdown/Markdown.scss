@@ -1,11 +1,15 @@
 @use "$/styles" as *;
 
 .Markdown {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  padding: 0 $sizes-s2;
-  max-inline-size: $sizes-s15;
+  @include typography-body-font;
+
+  & {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 0 $sizes-s2;
+    max-inline-size: $sizes-s15;
+  }
 
   h1,
   h2,

@@ -3,8 +3,10 @@
 .Avatar {
   @include shadows-small;
 
-  border-radius: $borders-radius;
-  inline-size: $sizes-s7;
+  & {
+    border-radius: $borders-radius;
+    inline-size: $sizes-s7;
+  }
 }
 
 .react-gravatar {

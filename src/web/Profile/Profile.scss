@@ -3,8 +3,10 @@
 .Profile {
   display: flex;
   flex-flow: row wrap;
+  align-items: center;
+  margin: 0 auto;
+  max-width: $sizes-s17;
   &.testimonial {
-    margin: 0 auto;
     max-width: $sizes-s15;
   }
   .portrait-wrapper {

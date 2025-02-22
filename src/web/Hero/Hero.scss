@@ -14,8 +14,7 @@
     max-width: $sizes-s16;
   }
   .tagline {
-    font-size: $sizes-f11;
-    margin-bottom: $sizes-s6;
+    @include typography-display-heading-1;
     text-align: center;
   }
   .subheading {
